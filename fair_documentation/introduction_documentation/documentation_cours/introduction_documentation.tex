@@ -1,0 +1,32 @@
+\documentclass[10pt, sans, compress, usenames, dvipsnames, aspectratio=169]{beamer}
+
+%% Import the template configuration
+\input{beamer-uca-16_9.tex}
+
+\title{Reproducibility: an old friend, the laboratory notebook }
+\subtitle{Better reproducibility with documented code}
+\author[Pierre MARIN]{Pierre Marin\\\texttt{pierre.marin@uca.fr}}
+\institute{Université Clermont Auvergne, AuBi, Mésocentre}
+\date{\today}
+
+\newif\iflattersubsect
+
+% \AtBeginSubsection[] {
+%     \iflattersubsect
+%     \begin{frame}<beamer>
+%     \frametitle{Sommaire} %
+%     \tableofcontents[currentsubsection]
+%     \end{frame}
+%     \fi
+%     \lattersubsecttrue
+% }
+
+
+\begin{document}
+% titre et sommaire
+\input{documentation_partie0.tex}
+% cahier de manip
+\input{documentation_partie1.tex}
+% les notebook
+\input{documentation_partie2.tex}
+\end{document}
