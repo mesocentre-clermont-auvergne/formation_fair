@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.14)  22 SEP 2022 17:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.14)  23 SEP 2022 15:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -817,10 +817,44 @@ TextBlockOrigin set to 0pt x 0pt
 ) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty
 )
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerectangles.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen307
+\captionmargin@=\dimen308
+\captionwidth=\dimen309
+\caption@tempdima=\dimen310
+\caption@indent=\dimen311
+\caption@parindent=\dimen312
+\caption@hangindent=\dimen313
+Package caption Info: beamer document class detected.
+Package caption Info: french babel package is loaded.
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption-beamer.sto
+File: caption-beamer.sto 2020/08/22 v2.0 Adaption of the caption package to the
+ beamer document classes (AR)
+))
+\c@caption@flags=\count339
+\c@continuedfloat=\count340
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
 )
+Package caption Info: Option `figurename' requires the `newfloat' package on in
+put line 16.
+
+(/usr/share/texlive/texmf-dist/tex/latex/newfloat/newfloat.sty
+Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
+))
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 8.
+(hyperref)                removing `\\' on input line 9.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\footnote' on input line 25.
 
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
 5.
@@ -829,7 +863,7 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count339
+\l__color_backend_stack_int=\count341
 \l__pdf_internal_box=\box79
 )
 (./introduction_documentation.aux)
@@ -890,16 +924,16 @@ LaTeX Font Info:    ... okay on input line 25.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count340
-\scratchdimen=\dimen307
+\scratchcounter=\count342
+\scratchdimen=\dimen314
 \scratchbox=\box80
-\nofMPsegments=\count341
-\nofMParguments=\count342
+\nofMPsegments=\count343
+\nofMParguments=\count344
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count343
-\MPscratchDim=\dimen308
-\MPnumerator=\count344
-\makeMPintoPDFobject=\count345
+\MPscratchCnt=\count345
+\MPscratchDim=\dimen315
+\MPnumerator=\count346
+\makeMPintoPDFobject=\count347
 \everyMPtoPDFconversion=\toks52
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -921,7 +955,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count346
+\c@section@level=\count348
 )
 LaTeX Info: Redefining \ref on input line 25.
 LaTeX Info: Redefining \pageref on input line 25.
@@ -1004,34 +1038,90 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \degres on input line 25.
 LaTeX Info: Redefining \up on input line 25.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
  (./introduction_documentation.nav)
 (./documentation_partie0.tex
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
+17.
+ (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+7.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+17.
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+17.
+
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 17.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 17.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 17.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 17
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 17.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 17.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 17.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 7.
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<images/logo_ifb.pdf, id=45, 1333.98375pt x 665.48625pt>
+<images/logo_ifb.pdf, id=53, 1333.98375pt x 665.48625pt>
 File: images/logo_ifb.pdf Graphic file (type pdf)
 <use images/logo_ifb.pdf>
 Package pdftex.def Info: images/logo_ifb.pdf  used on input line 17.
 (pdftex.def)             Requested size: 65.44109pt x 36.98264pt.
-<images/i2bc.png, id=46, 225.84375pt x 184.43906pt>
+<images/i2bc.png, id=54, 225.84375pt x 184.43906pt>
 File: images/i2bc.png Graphic file (type png)
 <use images/i2bc.png>
 Package pdftex.def Info: images/i2bc.png  used on input line 17.
 (pdftex.def)             Requested size: 42.67642pt x 42.679pt.
-<images/logoAuBi-2019.pdf, id=48, 437.1841pt x 310.18314pt>
+<images/logoAuBi-2019.pdf, id=56, 437.1841pt x 310.18314pt>
 File: images/logoAuBi-2019.pdf Graphic file (type pdf)
 <use images/logoAuBi-2019.pdf>
 Package pdftex.def Info: images/logoAuBi-2019.pdf  used on input line 17.
 (pdftex.def)             Requested size: 99.58295pt x 85.35504pt.
-<images/mesocentre.png, id=49, 143.15985pt x 123.08484pt>
+<images/mesocentre.png, id=57, 143.15985pt x 123.08484pt>
 File: images/mesocentre.png Graphic file (type png)
 <use images/mesocentre.png>
 Package pdftex.def Info: images/mesocentre.png  used on input line 17.
 (pdftex.def)             Requested size: 85.35919pt x 85.36247pt.
-<images/ucabackground-16_9.png, id=50, 4817.21016pt x 2709.53262pt>
+<images/ucabackground-16_9.png, id=58, 4817.21016pt x 2709.53262pt>
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
 Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 17.
@@ -1052,126 +1142,189 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 21.
 
 ])
 (./documentation_partie1.tex
-<images/cahierlabo.png, id=87, 628.3475pt x 432.61626pt>
+<images/cahierlabo.png, id=96, 628.3475pt x 432.61626pt>
 File: images/cahierlabo.png Graphic file (type png)
 <use images/cahierlabo.png>
-Package pdftex.def Info: images/cahierlabo.png  used on input line 19.
-(pdftex.def)             Requested size: 65.43672pt x 36.98642pt.
-<images/cahier2.pdf, id=88, 1405.25pt x 965.6075pt>
+Package pdftex.def Info: images/cahierlabo.png  used on input line 22.
+(pdftex.def)             Requested size: 199.16733pt x 142.26212pt.
+<images/cahier2.pdf, id=97, 1405.25pt x 965.6075pt>
 File: images/cahier2.pdf Graphic file (type pdf)
 <use images/cahier2.pdf>
-Package pdftex.def Info: images/cahier2.pdf  used on input line 19.
-(pdftex.def)             Requested size: 65.42064pt x 36.98224pt.
+Package pdftex.def Info: images/cahier2.pdf  used on input line 22.
+(pdftex.def)             Requested size: 199.15665pt x 142.25642pt.
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 19.
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 22.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [3
 
  <./images/cahierlabo.png> <./images/cahier2.pdf>]
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-41.
- (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
-File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-1.
-
-(/usr/share/texmf/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-41.
-
-(/usr/share/texmf/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-41.
-
-(/usr/share/texmf/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 41.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 41.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 41.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 41
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
-File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-)
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 41.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 41.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 41.
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 41.
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 22.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [4
 
 ]
-<images/elabftw-logo.png, id=110, 433.62pt x 131.49126pt>
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 22.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [5
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 22.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [6
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 22.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [7
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [8
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [9
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [10
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [11
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [12
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [13
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [14
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [15
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [16
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [17
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 69.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [18
+
+]
+<images/elabftw-logo.png, id=234, 433.62pt x 131.49126pt>
 File: images/elabftw-logo.png Graphic file (type png)
 <use images/elabftw-logo.png>
-Package pdftex.def Info: images/elabftw-logo.png  used on input line 58.
-(pdftex.def)             Requested size: 85.35284pt x 56.90529pt.
-<images/elabftw1.jpg, id=111, 1709.38625pt x 905.3825pt>
+Package pdftex.def Info: images/elabftw-logo.png  used on input line 69.
+(pdftex.def)             Requested size: 85.35284pt x 28.45264pt.
+<images/elabftw1.jpg, id=235, 1709.38625pt x 905.3825pt>
 File: images/elabftw1.jpg Graphic file (type jpg)
 <use images/elabftw1.jpg>
-Package pdftex.def Info: images/elabftw1.jpg  used on input line 58.
-(pdftex.def)             Requested size: 199.14447pt x 85.3491pt.
-<images/elabftw2.jpg, id=112, 1738.495pt x 924.45375pt>
+Package pdftex.def Info: images/elabftw1.jpg  used on input line 69.
+(pdftex.def)             Requested size: 199.14447pt x 113.80801pt.
+<images/elabftw2.jpg, id=236, 1738.495pt x 924.45375pt>
 File: images/elabftw2.jpg Graphic file (type jpg)
 <use images/elabftw2.jpg>
-Package pdftex.def Info: images/elabftw2.jpg  used on input line 58.
-(pdftex.def)             Requested size: 199.16669pt x 85.35545pt.
-
-Overfull \vbox (57.6184pt too high) detected at line 58
- []
-
+Package pdftex.def Info: images/elabftw2.jpg  used on input line 69.
+(pdftex.def)             Requested size: 199.16669pt x 113.80728pt.
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 58.
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 69.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
-[5
+
+[19
 
  <./images/elabftw-logo.png> <./images/elabftw1.jpg> <./images/elabftw2.jpg>]
-<images/gt_eln.png, id=122, 1359.0775pt x 843.15pt>
-File: images/gt_eln.png Graphic file (type png)
-<use images/gt_eln.png>
-Package pdftex.def Info: images/gt_eln.png  used on input line 63.
-(pdftex.def)             Requested size: 199.16608pt x 85.34917pt.
-<images/gt_eln_temp.png, id=123, 1203.49625pt x 673.51625pt>
-File: images/gt_eln_temp.png Graphic file (type png)
-<use images/gt_eln_temp.png>
-Package pdftex.def Info: images/gt_eln_temp.png  used on input line 63.
-(pdftex.def)             Requested size: 199.15596pt x 85.35062pt.
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 63.
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 69.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
-[6
+ [20
 
- <./images/gt_eln.png> <./images/gt_eln_temp.png>])
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 69.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [21
+
+]
+<images/gt_eln.png, id=263, 1359.0775pt x 843.15pt>
+File: images/gt_eln.png Graphic file (type png)
+<use images/gt_eln.png>
+Package pdftex.def Info: images/gt_eln.png  used on input line 74.
+(pdftex.def)             Requested size: 284.52298pt x 199.16951pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 74.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [22
+
+ <./images/gt_eln.png>]
+<images/gt_eln_temp.png, id=273, 1203.49625pt x 673.51625pt>
+File: images/gt_eln_temp.png Graphic file (type png)
+<use images/gt_eln_temp.png>
+Package pdftex.def Info: images/gt_eln_temp.png  used on input line 74.
+(pdftex.def)             Requested size: 284.5295pt x 199.16858pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 74.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [23
+
+ <./images/gt_eln_temp.png>])
 (./documentation_partie2.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 18.
@@ -1185,39 +1338,470 @@ File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
 Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 18.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [7
+ [24
 
 ]
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 28.
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 18.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [8
+ [25
 
 ]
-<images/colomoto_github.png, id=153, 1831.84375pt x 919.435pt>
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 18.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [26
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 33.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [27
+
+]
+<images/jupyter_example.png, id=321, 1803.73875pt x 768.8725pt>
+File: images/jupyter_example.png Graphic file (type png)
+<use images/jupyter_example.png>
+Package pdftex.def Info: images/jupyter_example.png  used on input line 33.
+(pdftex.def)             Requested size: 341.42035pt x 170.71283pt.
+
+Overfull \hbox (199.15657pt too wide) in paragraph at lines 33--33
+ [] 
+ []
+
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 33.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[28
+
+ <./images/jupyter_example.png>]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 33.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [29
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 33.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [30
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 43.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [31
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 43.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [32
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 43.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [33
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 43.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [34
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 63.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [35
+
+]
+<images/colomoto_github.png, id=390, 1831.84375pt x 919.435pt>
 File: images/colomoto_github.png Graphic file (type png)
 <use images/colomoto_github.png>
-Package pdftex.def Info: images/colomoto_github.png  used on input line 35.
-(pdftex.def)             Requested size: 65.4348pt x 36.98157pt.
-<images/colomoto_jupyter.png, id=154, 1831.84375pt x 919.435pt>
-File: images/colomoto_jupyter.png Graphic file (type png)
-<use images/colomoto_jupyter.png>
-Package pdftex.def Info: images/colomoto_jupyter.png  used on input line 35.
-(pdftex.def)             Requested size: 65.4348pt x 36.98157pt.
-<images/colomoto_paper.png, id=155, 1157.32375pt x 917.4275pt>
-File: images/colomoto_paper.png Graphic file (type png)
-<use images/colomoto_paper.png>
-Package pdftex.def Info: images/colomoto_paper.png  used on input line 35.
-(pdftex.def)             Requested size: 65.42776pt x 36.98482pt.
+Package pdftex.def Info: images/colomoto_github.png  used on input line 63.
+(pdftex.def)             Requested size: 426.79373pt x 256.0792pt.
+
+Overfull \vbox (104.643pt too high) detected at line 63
+ []
+
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 35.
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 63.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [9
+[36
 
- <./images/colomoto_github.png> <./images/colomoto_jupyter.png> <./images/colom
-oto_paper.png>])
+ <./images/colomoto_github.png>]
+<images/colomoto_jupyter.png, id=402, 1831.84375pt x 919.435pt>
+File: images/colomoto_jupyter.png Graphic file (type png)
+<use images/colomoto_jupyter.png>
+Package pdftex.def Info: images/colomoto_jupyter.png  used on input line 63.
+(pdftex.def)             Requested size: 426.79373pt x 256.0792pt.
+
+Overfull \vbox (104.643pt too high) detected at line 63
+ []
+
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 63.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[37
+
+ <./images/colomoto_jupyter.png>]
+<images/colomoto_paper.png, id=415, 1157.32375pt x 917.4275pt>
+File: images/colomoto_paper.png Graphic file (type png)
+<use images/colomoto_paper.png>
+Package pdftex.def Info: images/colomoto_paper.png  used on input line 63.
+(pdftex.def)             Requested size: 341.4252pt x 256.08002pt.
+
+Overfull \vbox (104.64383pt too high) detected at line 63
+ []
+
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 63.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[38
+
+ <./images/colomoto_paper.png>]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 75.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [39
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 75.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [40
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 75.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [41
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 75.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [42
+
+]
+<images/Markdown-mark.pdf, id=457, 156.585pt x 96.36pt>
+File: images/Markdown-mark.pdf Graphic file (type pdf)
+<use images/Markdown-mark.pdf>
+Package pdftex.def Info: images/Markdown-mark.pdf  used on input line 98.
+(pdftex.def)             Requested size: 65.44269pt x 36.98769pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 98.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [43
+
+ <./images/Markdown-mark.pdf>]
+File: images/Markdown-mark.pdf Graphic file (type pdf)
+<use images/Markdown-mark.pdf>
+Package pdftex.def Info: images/Markdown-mark.pdf  used on input line 98.
+(pdftex.def)             Requested size: 65.44269pt x 36.98769pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 98.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [44
+
+]
+File: images/Markdown-mark.pdf Graphic file (type pdf)
+<use images/Markdown-mark.pdf>
+Package pdftex.def Info: images/Markdown-mark.pdf  used on input line 98.
+(pdftex.def)             Requested size: 65.44269pt x 36.98769pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 98.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [45
+
+]
+File: images/Markdown-mark.pdf Graphic file (type pdf)
+<use images/Markdown-mark.pdf>
+Package pdftex.def Info: images/Markdown-mark.pdf  used on input line 98.
+(pdftex.def)             Requested size: 65.44269pt x 36.98769pt.
+<images/markdown_syntax.png, id=484, 280.04625pt x 310.15875pt>
+File: images/markdown_syntax.png Graphic file (type png)
+<use images/markdown_syntax.png>
+Package pdftex.def Info: images/markdown_syntax.png  used on input line 98.
+(pdftex.def)             Requested size: 113.81123pt x 113.81041pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 98.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [46
+
+ <./images/markdown_syntax.png>]
+File: images/Markdown-mark.pdf Graphic file (type pdf)
+<use images/Markdown-mark.pdf>
+Package pdftex.def Info: images/Markdown-mark.pdf  used on input line 98.
+(pdftex.def)             Requested size: 65.44269pt x 36.98769pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 98.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [47
+
+]
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 105.
+
+<images/R-vs-Python.jpg, id=502, 614.295pt x 291.0875pt>
+File: images/R-vs-Python.jpg Graphic file (type jpg)
+<use images/R-vs-Python.jpg>
+Package pdftex.def Info: images/R-vs-Python.jpg  used on input line 105.
+(pdftex.def)             Requested size: 341.43454pt x 142.26546pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 105.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [48
+
+ <./images/R-vs-Python.jpg>]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 117.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [49
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 117.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [50
+
+]
+<images/rmarkdown.png, id=530, 115.632pt x 133.4586pt>
+File: images/rmarkdown.png Graphic file (type png)
+<use images/rmarkdown.png>
+Package pdftex.def Info: images/rmarkdown.png  used on input line 132.
+(pdftex.def)             Requested size: 56.90543pt x 56.90547pt.
+<images/rmarkdownflow.png, id=531, 711.65875pt x 120.45pt>
+File: images/rmarkdownflow.png Graphic file (type png)
+<use images/rmarkdownflow.png>
+Package pdftex.def Info: images/rmarkdownflow.png  used on input line 132.
+(pdftex.def)             Requested size: 284.51729pt x 56.90556pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 132.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [51
+
+ <./images/rmarkdownflow.png> <./images/rmarkdown.png>]
+File: images/rmarkdownflow.png Graphic file (type png)
+<use images/rmarkdownflow.png>
+Package pdftex.def Info: images/rmarkdownflow.png  used on input line 132.
+(pdftex.def)             Requested size: 284.51729pt x 56.90556pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 132.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [52
+
+]
+File: images/rmarkdownflow.png Graphic file (type png)
+<use images/rmarkdownflow.png>
+Package pdftex.def Info: images/rmarkdownflow.png  used on input line 132.
+(pdftex.def)             Requested size: 284.51729pt x 56.90556pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 132.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [53
+
+]
+<images/rmarkdown_example1.png, id=559, 1850.915pt x 910.40125pt>
+File: images/rmarkdown_example1.png Graphic file (type png)
+<use images/rmarkdown_example1.png>
+Package pdftex.def Info: images/rmarkdown_example1.png  used on input line 137.
+
+(pdftex.def)             Requested size: 398.33437pt x 227.61363pt.
+
+Overfull \vbox (12.08304pt too high) detected at line 137
+ []
+
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 137.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[54
+
+ <./images/rmarkdown_example1.png>]
+<images/rmarkdown_example2.png, id=569, 1201.48875pt x 932.48375pt>
+File: images/rmarkdown_example2.png Graphic file (type png)
+<use images/rmarkdown_example2.png>
+Package pdftex.def Info: images/rmarkdown_example2.png  used on input line 137.
+
+(pdftex.def)             Requested size: 341.43787pt x 227.61392pt.
+
+Overfull \vbox (12.08333pt too high) detected at line 137
+ []
+
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 137.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[55
+
+ <./images/rmarkdown_example2.png>]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 149.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 149.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 149.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [56
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 149.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [57
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 149.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [58
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 149.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [59
+
+]
+<images/jupyterlab1.png, id=612, 1383.66937pt x 670.75594pt>
+File: images/jupyterlab1.png Graphic file (type png)
+<use images/jupyterlab1.png>
+Package pdftex.def Info: images/jupyterlab1.png  used on input line 165.
+(pdftex.def)             Requested size: 426.77954pt x 199.16087pt.
+
+Overfull \vbox (46.5747pt too high) detected at line 165
+ []
+
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 165.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[60
+
+ <./images/jupyterlab1.png (PNG copy)>]
+File: images/jupyterlab1.png Graphic file (type png)
+<use images/jupyterlab1.png>
+Package pdftex.def Info: images/jupyterlab1.png  used on input line 165.
+(pdftex.def)             Requested size: 426.77954pt x 199.16087pt.
+
+Overfull \vbox (46.5747pt too high) detected at line 165
+ []
+
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 165.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[61
+
+]
+File: images/jupyterlab1.png Graphic file (type png)
+<use images/jupyterlab1.png>
+Package pdftex.def Info: images/jupyterlab1.png  used on input line 165.
+(pdftex.def)             Requested size: 426.77954pt x 199.16087pt.
+
+Overfull \vbox (46.5747pt too high) detected at line 165
+ []
+
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 165.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[62
+
+]
+File: images/jupyterlab1.png Graphic file (type png)
+<use images/jupyterlab1.png>
+Package pdftex.def Info: images/jupyterlab1.png  used on input line 165.
+(pdftex.def)             Requested size: 426.77954pt x 199.16087pt.
+
+Overfull \vbox (46.5747pt too high) detected at line 165
+ []
+
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 165.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[63
+
+]
+File: images/jupyterlab1.png Graphic file (type png)
+<use images/jupyterlab1.png>
+Package pdftex.def Info: images/jupyterlab1.png  used on input line 165.
+(pdftex.def)             Requested size: 426.77954pt x 199.16087pt.
+<images/jupyterlab2.png, id=646, 1849.91125pt x 900.36375pt>
+File: images/jupyterlab2.png Graphic file (type png)
+<use images/jupyterlab2.png>
+Package pdftex.def Info: images/jupyterlab2.png  used on input line 165.
+(pdftex.def)             Requested size: 369.8628pt x 184.93295pt.
+
+Overfull \hbox (85.33524pt too wide) in paragraph at lines 165--165
+ [][] 
+ []
+
+
+Overfull \vbox (46.5747pt too high) detected at line 165
+ []
+
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 165.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[64
+
+ <./images/jupyterlab2.png>])
 \tf@nav=\write6
 \openout6 = `introduction_documentation.nav'.
 
@@ -1227,29 +1811,30 @@ oto_paper.png>])
 \tf@snm=\write8
 \openout8 = `introduction_documentation.snm'.
 
-
-(./introduction_documentation.aux)
+ (./introduction_documentation.aux)
 Package rerunfilecheck Info: File `introduction_documentation.out' has not chan
 ged.
-(rerunfilecheck)             Checksum: FD63D52FF06F8B48213DE3804475A82E;593.
+(rerunfilecheck)             Checksum: C3ACD70991D8DDF7D0A99AB5EBC55B80;881.
  ) 
 Here is how much of TeX's memory you used:
- 24694 strings out of 478287
- 477903 string characters out of 5849289
- 737002 words of memory out of 5000000
- 42295 multiletter control sequences out of 15000+600000
- 524679 words of font info for 75 fonts, out of 8000000 for 9000
+ 26403 strings out of 478287
+ 511728 string characters out of 5849289
+ 765492 words of memory out of 5000000
+ 43860 multiletter control sequences out of 15000+600000
+ 539850 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,406b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 128i,15n,122p,406b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/
 public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmtt8.pfb>
-Output written on introduction_documentation.pdf (9 pages, 2918226 bytes).
+/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbo10.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmtt8.pfb>
+Output written on introduction_documentation.pdf (64 pages, 3893875 bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 210 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 728 PDF objects out of 1000 (max. 8388607)
+ 579 compressed objects within 6 object streams
+ 135 named destinations out of 1000 (max. 500000)
+ 276 words of extra memory for PDF output out of 10000 (max. 10000000)
 
