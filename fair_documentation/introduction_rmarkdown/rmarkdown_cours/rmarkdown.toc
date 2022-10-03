@@ -1,3 +1,0 @@
-\babel@toc {french}{}\relax 
-\beamer@sectionintoc {1}{R versus Rmarkdown}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Processeur}{3}{0}{1}
