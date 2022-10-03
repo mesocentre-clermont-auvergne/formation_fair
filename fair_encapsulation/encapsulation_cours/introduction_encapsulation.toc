@@ -1,0 +1,13 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{A common use-case}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Retry my results}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{The use of packaging}{8}{0}{1}
+\beamer@subsectionintoc {1}{3}{Example with R}{11}{0}{1}
+\beamer@sectionintoc {2}{Manage your local environment}{26}{0}{2}
+\beamer@subsectionintoc {2}{1}{How conda works}{26}{0}{2}
+\beamer@sectionintoc {3}{Manage your hardware configuration}{29}{0}{3}
+\beamer@subsectionintoc {3}{1}{How virtual manager works}{29}{0}{3}
+\beamer@sectionintoc {4}{Manage your OS configuration}{36}{0}{4}
+\beamer@subsectionintoc {4}{1}{How container works}{36}{0}{4}
+\beamer@sectionintoc {5}{Conda ecosystem}{37}{0}{5}
+\beamer@subsectionintoc {5}{1}{a case of bioconda}{37}{0}{5}
