@@ -1,0 +1,15 @@
+client-server architecture
+\begin{enumerate}
+\item Client talk to a daemon (docker background program)
+\begin{block}{Client}
+    \begin{verbatim}
+$ docker build [path][url]
+docker build https://github.com/docker/rootfs.git#container:docker
+$ docker pull [image\_name]
+ docker pull biocontainers/samtools
+$ docker run [image\_name]
+docker run biocontainers/samtools
+    \end{verbatim}
+\end{block}
+\end{enumerate}
+

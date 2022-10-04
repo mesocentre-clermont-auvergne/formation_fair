@@ -8,6 +8,10 @@
 \usepackage{svg}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{minted}
 \usepackage[absolute,overlay]{textpos}
 \setbeamertemplate{navigation symbols}{}
 \useoutertheme{infolines}
@@ -22,7 +26,6 @@
 \definecolor{uca05}{HTML}{585656}
 \definecolor{uca06}{HTML}{438D97}
 \definecolor{grisuca}{HTML}{5E5C5C}
-
 
 \setbeamercolor{palette primary}{bg=uca06}
 \setbeamercolor{palette secondary}{bg=uca03}
@@ -49,3 +52,13 @@
 \setbeamercolor{section in toc}{fg=grisuca}
 \setbeamercolor{normal text}{fg=grisuca}
 
+
+\newenvironment<>{varblock}[2][.9\textwidth]{%
+  \setlength{\textwidth}{#1}
+  \begin{actionenv}#3%
+    \def\insertblocktitle{#2}%
+    \par%
+    \usebeamertemplate{block begin}}
+  {\par%
+    \usebeamertemplate{block end}%
+  \end{actionenv}}
