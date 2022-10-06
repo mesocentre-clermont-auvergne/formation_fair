@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.14)  4 OCT 2022 17:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.14)  6 OCT 2022 11:09
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **introduction_encapsulation.tex
 (./introduction_encapsulation.tex
@@ -791,23 +791,7 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
-Package shellesc Info: Unrestricted shell escape enabled on input line 75.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
-Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
-
-(/usr/share/texlive/texmf-dist/tex/generic/catchfile/catchfile.sty
-Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)
-runsystem(uname -s > "introduction_encapsulation.w18")...executed.
-
-
-(./introduction_encapsulation.w18)
-runsystem(rm -- "introduction_encapsulation.w18")...executed.
-
+Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
 \c@svg@param@lastpage=\count338
 \svg@box=\box75
@@ -863,135 +847,22 @@ File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
-(/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
-Package: minted 2021/12/24 v2.6 Yet another Pygments shim for LaTeX
-
-(/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
-Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2021/12/21 4.1b verbatim text (tvz,hv)
-\FV@CodeLineNo=\count349
-\FV@InFile=\read4
-\FV@TabBox=\box80
-\c@FancyVerbLine=\count350
-\FV@StepNumber=\count351
-\FV@OutFile=\write5
-)
-(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
-tim
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-))
-(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
-Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count352
-\output=\toks51
-\linenoprevgraf=\count353
-\linenumbersep=\dimen304
-\linenumberwidth=\dimen305
-\c@linenumber=\count354
-\c@pagewiselinenumber=\count355
-\c@LN@truepage=\count356
-\c@internallinenumber=\count357
-\c@internallinenumbers=\count358
-\quotelinenumbersep=\dimen306
-\bframerule=\dimen307
-\bframesep=\dimen308
-\bframebox=\box81
-LaTeX Info: Redefining \\ on input line 3056.
-)
-\c@FV@TrueTabGroupLevel=\count359
-\c@FV@TrueTabCounter=\count360
-\FV@TabBox@Group=\box82
-\FV@TmpLength=\skip66
-\c@FV@HighlightLinesStart=\count361
-\c@FV@HighlightLinesStop=\count362
-\FV@LoopCount=\count363
-\FV@NCharsBox=\box83
-\FV@BreakIndent=\dimen309
-\FV@BreakIndentNChars=\count364
-\FV@BreakSymbolSepLeft=\dimen310
-\FV@BreakSymbolSepLeftNChars=\count365
-\FV@BreakSymbolSepRight=\dimen311
-\FV@BreakSymbolSepRightNChars=\count366
-\FV@BreakSymbolIndentLeft=\dimen312
-\FV@BreakSymbolIndentLeftNChars=\count367
-\FV@BreakSymbolIndentRight=\dimen313
-\FV@BreakSymbolIndentRightNChars=\count368
-\c@FancyVerbLineBreakLast=\count369
-\FV@LineBox=\box84
-\FV@LineIndentBox=\box85
-\FV@LineWidth=\dimen314
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count370
-\calc@Bcount=\count371
-\calc@Adimen=\dimen315
-\calc@Bdimen=\dimen316
-\calc@Askip=\skip67
-\calc@Bskip=\skip68
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count372
-\calc@Cskip=\skip69
-)
-(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
-(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count373
-\decimalpart=\count374
-)
-Package: xstring 2021/07/21 v1.84 String manipulations (CT)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip70
-\fb@frw=\dimen317
-\fb@frh=\dimen318
-\FrameRule=\dimen319
-\FrameSep=\dimen320
-)
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count375
-\float@exts=\toks52
-\float@box=\box86
-\@float@everytoks=\toks53
-\@floatcapt=\box87
-)
-\minted@appexistsfile=\read5
-\minted@bgbox=\box88
-\minted@code=\write6
-\c@minted@FancyVerbLineTemp=\count376
-\c@minted@pygmentizecounter=\count377
-\@float@every@listing=\toks54
-\c@listing=\count378
-)
-runsystem(mkdir -p _minted-introduction_encapsulation)...executed.
-
-
 (/usr/share/texlive/texmf-dist/tex/latex/textpos/textpos.sty
 Package: textpos 2020/09/26 v1.10
 
 Package: textpos 2020/09/26 1.10, absolute positioning of text on the page
 Package textpos Info: choosing support for LaTeX3 on input line 61.
-\TP@textbox=\box89
-\TP@holdbox=\box90
-\TPHorizModule=\dimen321
-\TPVertModule=\dimen322
-\TP@margin=\dimen323
-\TP@absmargin=\dimen324
+\TP@textbox=\box80
+\TP@holdbox=\box81
+\TPHorizModule=\dimen304
+\TPVertModule=\dimen305
+\TP@margin=\dimen306
+\TP@absmargin=\dimen307
 Grid set 16 x 16 = 28.45274pt x 16.00467pt
-\TPboxrulesize=\dimen325
-\TP@ox=\dimen326
-\TP@oy=\dimen327
-\TP@tbargs=\toks55
+\TPboxrulesize=\dimen308
+\TP@ox=\dimen309
+\TP@oy=\dimen310
+\TP@tbargs=\toks51
 TextBlockOrigin set to 0pt x 0pt
 ) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty
 )
@@ -1001,13 +872,13 @@ Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen328
-\captionmargin@=\dimen329
-\captionwidth=\dimen330
-\caption@tempdima=\dimen331
-\caption@indent=\dimen332
-\caption@parindent=\dimen333
-\caption@hangindent=\dimen334
+\captionmargin=\dimen311
+\captionmargin@=\dimen312
+\captionwidth=\dimen313
+\caption@tempdima=\dimen314
+\caption@indent=\dimen315
+\caption@parindent=\dimen316
+\caption@hangindent=\dimen317
 Package caption Info: beamer document class detected.
 Package caption Info: french babel package is loaded.
 
@@ -1015,16 +886,15 @@ Package caption Info: french babel package is loaded.
 File: caption-beamer.sto 2020/08/22 v2.0 Adaption of the caption package to the
  beamer document classes (AR)
 ))
-\c@caption@flags=\count379
-\c@continuedfloat=\count380
-Package caption Info: float package is loaded.
+\c@caption@flags=\count349
+\c@continuedfloat=\count350
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
 (caption)             because hyperref has stopped early.
 Package caption Info: listings package is loaded.
 )
 Package caption Info: Option `figurename' requires the `newfloat' package on in
-put line 21.
+put line 20.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newfloat/newfloat.sty
 Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
@@ -1037,10 +907,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\footnote' on input line 14.
 
-runsystem(which pygmentize && touch introduction_encapsulation.aex)...executed.
-
-runsystem(rm introduction_encapsulation.aex)...executed.
-
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
 4.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
@@ -1048,8 +914,8 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count381
-\l__pdf_internal_box=\box91
+\l__color_backend_stack_int=\count351
+\l__pdf_internal_box=\box82
 )
 (./introduction_encapsulation.aux)
 \openout1 = `introduction_encapsulation.aux'.
@@ -1109,17 +975,17 @@ LaTeX Font Info:    ... okay on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count382
-\scratchdimen=\dimen335
-\scratchbox=\box92
-\nofMPsegments=\count383
-\nofMParguments=\count384
-\everyMPshowfont=\toks56
-\MPscratchCnt=\count385
-\MPscratchDim=\dimen336
-\MPnumerator=\count386
-\makeMPintoPDFobject=\count387
-\everyMPtoPDFconversion=\toks57
+\scratchcounter=\count352
+\scratchdimen=\dimen318
+\scratchbox=\box83
+\nofMPsegments=\count353
+\nofMParguments=\count354
+\everyMPshowfont=\toks52
+\MPscratchCnt=\count355
+\MPscratchDim=\dimen319
+\MPnumerator=\count356
+\makeMPintoPDFobject=\count357
+\everyMPtoPDFconversion=\toks53
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1140,15 +1006,15 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count388
+\c@section@level=\count358
 )
 LaTeX Info: Redefining \ref on input line 14.
 LaTeX Info: Redefining \pageref on input line 14.
 LaTeX Info: Redefining \nameref on input line 14.
 
 (./introduction_encapsulation.out) (./introduction_encapsulation.out)
-\@outlinefile=\write7
-\openout7 = `introduction_encapsulation.out'.
+\@outlinefile=\write5
+\openout5 = `introduction_encapsulation.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 14.
@@ -1223,23 +1089,22 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \degres on input line 14.
 LaTeX Info: Redefining \up on input line 14.
-\c@lstlisting=\count389
+\c@lstlisting=\count359
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-Package newfloat Info: `float' package detected.
  (./introduction_encapsulation.nav)
 (./06_encapsulation_container_singularity.tex
-<images/docker_logo2.png, id=25, 2569.6pt x 611.28375pt>
+<images/docker_logo2.png, id=29, 2569.6pt x 611.28375pt>
 File: images/docker_logo2.png Graphic file (type png)
 <use images/docker_logo2.png>
 Package pdftex.def Info: images/docker_logo2.png  used on input line 11.
 (pdftex.def)             Requested size: 87.04846pt x 20.70688pt.
-<images/container_port.pdf, id=27, 1304.875pt x 871.255pt>
+<images/container_port.pdf, id=31, 1304.875pt x 871.255pt>
 File: images/container_port.pdf Graphic file (type pdf)
 <use images/container_port.pdf>
 Package pdftex.def Info: images/container_port.pdf  used on input line 11.
 (pdftex.def)             Requested size: 174.09692pt x 116.23174pt.
-<images/ucabackground-16_9.png, id=28, 4817.21016pt x 2709.53262pt>
+<images/ucabackground-16_9.png, id=32, 4817.21016pt x 2709.53262pt>
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
 Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 11.
@@ -1253,6 +1118,34 @@ File: images/ucabackground-16_9.png Graphic file (type png)
 Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 21.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [2
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 21.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [3
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 21.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [4
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 21.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [5
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 21.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [6
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
@@ -1316,7 +1209,7 @@ File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
 Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 47.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [3
+ [7
 
 ]
 File: images/ucabackground-16_9.png Graphic file (type png)
@@ -1324,88 +1217,322 @@ File: images/ucabackground-16_9.png Graphic file (type png)
 Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 47.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 
-[4]
-<images/Docker-Architecture.png, id=72, 717.68124pt x 342.27875pt>
-File: images/Docker-Architecture.png Graphic file (type png)
-<use images/Docker-Architecture.png>
-Package pdftex.def Info: images/Docker-Architecture.png  used on input line 51.
-
-(pdftex.def)             Requested size: 304.67294pt x 145.30724pt.
+[8]
+<images/docker_arch_3.pdf, id=105, 759.23518pt x 397.00209pt>
+File: images/docker_arch_3.pdf Graphic file (type pdf)
+<use images/docker_arch_3.pdf>
+Package pdftex.def Info: images/docker_arch_3.pdf  used on input line 52.
+(pdftex.def)             Requested size: 348.20049pt x 182.07191pt.
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 51.
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 52.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [5
+ [9
 
- <./images/Docker-Architecture.png>]
+ <./images/docker_arch_3.pdf>]
 \openout4 = `introduction_encapsulation.vrb'.
 
  (./introduction_encapsulation.vrb
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7
 .
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 68.
-(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [6
-
-]
-<images/docker-cheat-sheet.pdf, id=105, 1027.84pt x 770.88pt>
-File: images/docker-cheat-sheet.pdf Graphic file (type pdf)
-<use images/docker-cheat-sheet.pdf>
-Package pdftex.def Info: images/docker-cheat-sheet.pdf  used on input line 73.
-(pdftex.def)             Requested size: 195.8607pt x 146.89218pt.
-<images/docker-compose-cheat-sheet.pdf, id=106, 1445.4pt x 813.0375pt>
-File: images/docker-compose-cheat-sheet.pdf Graphic file (type pdf)
-<use images/docker-compose-cheat-sheet.pdf>
-Package pdftex.def Info: images/docker-compose-cheat-sheet.pdf  used on input l
-ine 73.
-(pdftex.def)             Requested size: 195.8607pt x 110.16472pt.
+)
+<images/docker_arch_1.pdf, id=135, 174.5805pt x 178.34152pt>
+File: images/docker_arch_1.pdf Graphic file (type pdf)
+<use images/docker_arch_1.pdf>
+Package pdftex.def Info: images/docker_arch_1.pdf  used on input line 18.
+(pdftex.def)             Requested size: 65.28468pt x 66.69012pt.
+)
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
 Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 73.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [7
+ [10
 
- <./images/docker-cheat-sheet.pdf> <./images/docker-compose-cheat-sheet.pdf>])
-\tf@nav=\write8
-\openout8 = `introduction_encapsulation.nav'.
+ <./images/docker_arch_1.pdf>]
+(./introduction_encapsulation.vrb
+File: images/docker_arch_1.pdf Graphic file (type pdf)
+<use images/docker_arch_1.pdf>
+Package pdftex.def Info: images/docker_arch_1.pdf  used on input line 18.
+(pdftex.def)             Requested size: 65.28468pt x 66.69012pt.
+)
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 73.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [11
 
-\tf@toc=\write9
-\openout9 = `introduction_encapsulation.toc'.
+] (./introduction_encapsulation.vrb
+File: images/docker_arch_1.pdf Graphic file (type pdf)
+<use images/docker_arch_1.pdf>
+Package pdftex.def Info: images/docker_arch_1.pdf  used on input line 18.
+(pdftex.def)             Requested size: 65.28468pt x 66.69012pt.
+)
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 73.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 
-\tf@snm=\write10
-\openout10 = `introduction_encapsulation.snm'.
+[12
+
+] (./introduction_encapsulation.vrb
+File: images/docker_arch_1.pdf Graphic file (type pdf)
+<use images/docker_arch_1.pdf>
+Package pdftex.def Info: images/docker_arch_1.pdf  used on input line 18.
+(pdftex.def)             Requested size: 65.28468pt x 66.69012pt.
+)
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 73.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [13
+
+]
+<images/docker_arch_2.pdf, id=199, 533.31361pt x 380.13907pt>
+File: images/docker_arch_2.pdf Graphic file (type pdf)
+<use images/docker_arch_2.pdf>
+Package pdftex.def Info: images/docker_arch_2.pdf  used on input line 81.
+(pdftex.def)             Requested size: 261.15202pt x 186.15375pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 81.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [14
+
+ <./images/docker_arch_2.pdf>]
+File: images/docker_arch_2.pdf Graphic file (type pdf)
+<use images/docker_arch_2.pdf>
+Package pdftex.def Info: images/docker_arch_2.pdf  used on input line 81.
+(pdftex.def)             Requested size: 261.15202pt x 186.15375pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 81.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+
+[15
+
+]
+File: images/docker_arch_3.pdf Graphic file (type pdf)
+<use images/docker_arch_3.pdf>
+Package pdftex.def Info: images/docker_arch_3.pdf  used on input line 93.
+(pdftex.def)             Requested size: 326.43672pt x 170.69545pt.
+<images/docker_hub.png, id=217, 1835.85875pt x 831.105pt>
+File: images/docker_hub.png Graphic file (type png)
+<use images/docker_hub.png>
+Package pdftex.def Info: images/docker_hub.png  used on input line 93.
+(pdftex.def)             Requested size: 398.33684pt x 180.32002pt.
+
+Overfull \hbox (113.80928pt too wide) in paragraph at lines 93--93
+ [][] 
+ []
+
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 93.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[16
+
+ <./images/docker_hub.png>]
+File: images/docker_arch_3.pdf Graphic file (type pdf)
+<use images/docker_arch_3.pdf>
+Package pdftex.def Info: images/docker_arch_3.pdf  used on input line 93.
+(pdftex.def)             Requested size: 326.43672pt x 170.69545pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 93.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [17
+
+]
+File: images/docker_arch_3.pdf Graphic file (type pdf)
+<use images/docker_arch_3.pdf>
+Package pdftex.def Info: images/docker_arch_3.pdf  used on input line 93.
+(pdftex.def)             Requested size: 326.43672pt x 170.69545pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 93.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [18
+
+]
+\openout4 = `introduction_encapsulation.vrb'.
+
+ (./introduction_encapsulation.vrb)
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 112.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+
+[19
+
+] (./introduction_encapsulation.vrb)
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 112.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [20
+
+] (./introduction_encapsulation.vrb)
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 112.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[21
+
+] (./introduction_encapsulation.vrb)
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 112.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [22
+
+]
+<images/docker-cheat-sheet.pdf, id=276, 1027.84pt x 770.88pt>
+File: images/docker-cheat-sheet.pdf Graphic file (type pdf)
+<use images/docker-cheat-sheet.pdf>
+Package pdftex.def Info: images/docker-cheat-sheet.pdf  used on input line 117.
+
+(pdftex.def)             Requested size: 195.8607pt x 146.89218pt.
+<images/docker-compose-cheat-sheet.pdf, id=277, 1445.4pt x 813.0375pt>
+File: images/docker-compose-cheat-sheet.pdf Graphic file (type pdf)
+<use images/docker-compose-cheat-sheet.pdf>
+Package pdftex.def Info: images/docker-compose-cheat-sheet.pdf  used on input l
+ine 117.
+(pdftex.def)             Requested size: 217.62448pt x 122.40938pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 117.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [23
+
+ <./images/docker-cheat-sheet.pdf> <./images/docker-compose-cheat-sheet.pdf>]
+<images/singularity_logo.pdf, id=381, 271.0125pt x 271.0125pt>
+File: images/singularity_logo.pdf Graphic file (type pdf)
+<use images/singularity_logo.pdf>
+Package pdftex.def Info: images/singularity_logo.pdf  used on input line 131.
+(pdftex.def)             Requested size: 87.04846pt x 87.04831pt.
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 131.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [24
+
+ <./images/singularity_logo.pdf>]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 131.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [25
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 131.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [26
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 131.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [27
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 131.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [28
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 131.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [29
+
+]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 131.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [30
+
+]
+\openout4 = `introduction_encapsulation.vrb'.
+
+ (./introduction_encapsulation.vrb)
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 141.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [31
+
+]
+\openout4 = `introduction_encapsulation.vrb'.
 
 
-(./introduction_encapsulation.aux)
+(./introduction_encapsulation.vrb
+Overfull \hbox (147.49934pt too wide) in paragraph at lines 14--14
+[]\T1/lmtt/m/n/10 2022/10/06 10:50:41  info unpack layer: sha256:f606d8928ed378
+229f2460b94b504cca239fb906efc57acbdf9340bd298d5ddf[] 
+ []
+
+)
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 158.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [32
+
+])
+\tf@nav=\write6
+\openout6 = `introduction_encapsulation.nav'.
+
+\tf@toc=\write7
+\openout7 = `introduction_encapsulation.toc'.
+
+\tf@snm=\write8
+\openout8 = `introduction_encapsulation.snm'.
+
+ (./introduction_encapsulation.aux)
 Package rerunfilecheck Info: File `introduction_encapsulation.out' has not chan
 ged.
-(rerunfilecheck)             Checksum: 8CB2A26F09200BA240B28A890DDE5C26;292.
+(rerunfilecheck)             Checksum: D0008C4D63BE327804CDB0B6F8DFBC13;405.
  ) 
 Here is how much of TeX's memory you used:
- 30867 strings out of 478287
- 601460 string characters out of 5849289
- 929278 words of memory out of 5000000
- 48394 multiletter control sequences out of 15000+600000
- 505181 words of font info for 58 fonts, out of 8000000 for 9000
+ 28134 strings out of 478287
+ 540804 string characters out of 5849289
+ 829386 words of memory out of 5000000
+ 45645 multiletter control sequences out of 15000+600000
+ 507965 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,406b,688s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Navigation8} has been referenced but does not exi
-st, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/pu
-blic/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmtt10.pfb>
-Output written on introduction_encapsulation.pdf (7 pages, 3542686 bytes).
+ 128i,15n,122p,406b,741s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/
+public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
+Output written on introduction_encapsulation.pdf (32 pages, 3751538 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 145 compressed objects within 2 object streams
- 18 named destinations out of 1000 (max. 500000)
- 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 522 PDF objects out of 1000 (max. 8388607)
+ 372 compressed objects within 4 object streams
+ 68 named destinations out of 1000 (max. 500000)
+ 345 words of extra memory for PDF output out of 10000 (max. 10000000)
 

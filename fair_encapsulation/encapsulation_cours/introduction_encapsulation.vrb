@@ -1,15 +1,15 @@
-client-server architecture
-\begin{enumerate}
-\item Client talk to a daemon (docker background program)
-\begin{block}{Client}
-    \begin{verbatim}
-$ docker build [path][url]
-docker build https://github.com/docker/rootfs.git#container:docker
-$ docker pull [image\_name]
- docker pull biocontainers/samtools
-$ docker run [image\_name]
-docker run biocontainers/samtools
-    \end{verbatim}
+\frametitle{Singularity and Docker}
+\begin{block}{Singularity can use Docker images}
+\begin{verbatim}
+$ singularity pull docker://debian:latest
+INFO:    Converting OCI blobs to SIF format
+INFO:    Starting build...
+Getting image source signatures
+Copying blob f606d8928ed3 done
+Copying config 0311b76201 done
+Writing manifest to image destination
+Storing signatures
+2022/10/06 10:50:41  info unpack layer: sha256:f606d8928ed378229f2460b94b504cca239fb906efc57acbdf9340bd298d5ddf
+INFO:    Creating SIF file...
+\end{verbatim}
 \end{block}
-\end{enumerate}
-
