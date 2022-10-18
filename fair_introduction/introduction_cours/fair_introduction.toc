@@ -1,0 +1,4 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{A reproducibility crisis}{3}{0}{1}
+\beamer@sectionintoc {2}{Open science and FAIR}{7}{0}{2}
+\beamer@sectionintoc {3}{Training content}{12}{0}{3}

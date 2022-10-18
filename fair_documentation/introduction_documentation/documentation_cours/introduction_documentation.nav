@@ -48,8 +48,15 @@
 \headcommand {\beamer@framepages {56}{59}}
 \headcommand {\slideentry {2}{3}{6}{60/64}{Notebooks for bioinformatic}{0}}
 \headcommand {\beamer@framepages {60}{64}}
-\headcommand {\beamer@partpages {1}{64}}
-\headcommand {\beamer@subsectionpages {48}{64}}
 \headcommand {\beamer@sectionpages {24}{64}}
-\headcommand {\beamer@documentpages {64}}
-\headcommand {\gdef \inserttotalframenumber {18}}
+\headcommand {\beamer@subsectionpages {48}{64}}
+\headcommand {\sectionentry {3}{Practicial training}{65}{Practicial training}{0}}
+\headcommand {\beamer@subsectionpages {65}{64}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{65}{Build your own documentation}}
+\headcommand {\slideentry {3}{1}{1}{65/65}{Build your own documentation}{0}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\beamer@partpages {1}{65}}
+\headcommand {\beamer@subsectionpages {65}{65}}
+\headcommand {\beamer@sectionpages {65}{65}}
+\headcommand {\beamer@documentpages {65}}
+\headcommand {\gdef \inserttotalframenumber {19}}
