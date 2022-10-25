@@ -52,6 +52,12 @@
 \setbeamercolor{section in toc}{fg=grisuca}
 \setbeamercolor{normal text}{fg=grisuca}
 
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
 
 \newenvironment<>{varblock}[2][.9\textwidth]{%
   \setlength{\textwidth}{#1}
