@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.14)  25 OCT 2022 09:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.14)  25 OCT 2022 11:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1209,12 +1209,6 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 17.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 17.
-LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
-17.
-
-(/usr/share/texmf/tex/latex/lm/ts1lmss.fd
-File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 <images/logo_ifb.pdf, id=41, 1333.98375pt x 665.48625pt>
 File: images/logo_ifb.pdf Graphic file (type pdf)
 <use images/logo_ifb.pdf>
@@ -1248,7 +1242,7 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 17.
 pdfTeX warning: /usr/bin/pdflatex (file ./images/logoAuBi-2019.pdf): PDF inclus
 ion: multiple pdfs with page group included in a single page
 > <./images/mesocentre.png>]) (./01_introduction_objectif.tex
-<images/reproduce_crisis_paper.pdf, id=68, 523.9575pt x 483.85289pt>
+<images/reproduce_crisis_paper.pdf, id=67, 523.9575pt x 483.85289pt>
 File: images/reproduce_crisis_paper.pdf Graphic file (type pdf)
 <use images/reproduce_crisis_paper.pdf>
 Package pdftex.def Info: images/reproduce_crisis_paper.pdf  used on input line 
@@ -1268,7 +1262,7 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 15.
  [3
 
 ]
-<01_OS_and_FAIR_intro.pdf, id=98, page=4, 722.7pt x 406.51875pt>
+<01_OS_and_FAIR_intro.pdf, id=97, page=4, 722.7pt x 406.51875pt>
 File: 01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use 01_OS_and_FAIR_intro.pdf, page 4>
 Package pdftex.def Info: 01_OS_and_FAIR_intro.pdf , page4 used on input line 21
@@ -1281,7 +1275,7 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 21.
  [4
 
  <./01_OS_and_FAIR_intro.pdf>]
-<01_OS_and_FAIR_intro.pdf, id=141, page=5, 722.7pt x 406.51875pt>
+<01_OS_and_FAIR_intro.pdf, id=140, page=5, 722.7pt x 406.51875pt>
 File: 01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use 01_OS_and_FAIR_intro.pdf, page 5>
 Package pdftex.def Info: 01_OS_and_FAIR_intro.pdf , page5 used on input line 25
@@ -1294,7 +1288,7 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 25.
  [5
 
  <./01_OS_and_FAIR_intro.pdf>]
-<01_OS_and_FAIR_intro.pdf, id=161, page=6, 722.7pt x 406.51875pt>
+<01_OS_and_FAIR_intro.pdf, id=160, page=6, 722.7pt x 406.51875pt>
 File: 01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use 01_OS_and_FAIR_intro.pdf, page 6>
 Package pdftex.def Info: 01_OS_and_FAIR_intro.pdf , page6 used on input line 29
@@ -1307,7 +1301,7 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 29.
  [6
 
  <./01_OS_and_FAIR_intro.pdf>]
-<01_OS_and_FAIR_intro.pdf, id=194, page=7, 722.7pt x 406.51875pt>
+<01_OS_and_FAIR_intro.pdf, id=193, page=7, 722.7pt x 406.51875pt>
 File: 01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use 01_OS_and_FAIR_intro.pdf, page 7>
 Package pdftex.def Info: 01_OS_and_FAIR_intro.pdf , page7 used on input line 33
@@ -1340,7 +1334,7 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 48.
  [8
 
 ]
-<images/fair_paper_2016_crop.pdf, id=260, 597.49223pt x 388.0175pt>
+<images/fair_paper_2016_crop.pdf, id=259, 597.49223pt x 388.0175pt>
 File: images/fair_paper_2016_crop.pdf Graphic file (type pdf)
 <use images/fair_paper_2016_crop.pdf>
 Package pdftex.def Info: images/fair_paper_2016_crop.pdf  used on input line 52
@@ -1353,7 +1347,7 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 52.
  [9
 
  <./images/fair_paper_2016_crop.pdf>]
-<01_OS_and_FAIR_intro.pdf, id=280, page=8, 722.7pt x 406.51875pt>
+<01_OS_and_FAIR_intro.pdf, id=279, page=8, 722.7pt x 406.51875pt>
 File: 01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use 01_OS_and_FAIR_intro.pdf, page 8>
 Package pdftex.def Info: 01_OS_and_FAIR_intro.pdf , page8 used on input line 57
@@ -1373,7 +1367,7 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 68.
  [11
 
 ]
-<01_OS_and_FAIR_intro.pdf, id=336, page=9, 722.7pt x 406.51875pt>
+<01_OS_and_FAIR_intro.pdf, id=335, page=9, 722.7pt x 406.51875pt>
 File: 01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use 01_OS_and_FAIR_intro.pdf, page 9>
 Package pdftex.def Info: 01_OS_and_FAIR_intro.pdf , page9 used on input line 73
@@ -1393,7 +1387,7 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 84.
  [13
 
 ]
-<01_OS_and_FAIR_intro.pdf, id=394, page=10, 722.7pt x 406.51875pt>
+<01_OS_and_FAIR_intro.pdf, id=393, page=10, 722.7pt x 406.51875pt>
 File: 01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use 01_OS_and_FAIR_intro.pdf, page 10>
 Package pdftex.def Info: 01_OS_and_FAIR_intro.pdf , page10 used on input line 8
@@ -1413,7 +1407,7 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 99.
  [15
 
 ]
-<01_OS_and_FAIR_intro.pdf, id=454, page=11, 722.7pt x 406.51875pt>
+<01_OS_and_FAIR_intro.pdf, id=453, page=11, 722.7pt x 406.51875pt>
 File: 01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use 01_OS_and_FAIR_intro.pdf, page 11>
 Package pdftex.def Info: 01_OS_and_FAIR_intro.pdf , page11 used on input line 1
@@ -1435,7 +1429,7 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 115.
  [17
 
 ]
-<01_OS_and_FAIR_intro.pdf, id=519, page=12, 722.7pt x 406.51875pt>
+<01_OS_and_FAIR_intro.pdf, id=518, page=12, 722.7pt x 406.51875pt>
 File: 01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use 01_OS_and_FAIR_intro.pdf, page 12>
 Package pdftex.def Info: 01_OS_and_FAIR_intro.pdf , page12 used on input line 1
@@ -1452,65 +1446,59 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 119.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [18
 
- <./01_OS_and_FAIR_intro.pdf>]
-<01_OS_and_FAIR_intro.pdf, id=604, page=13, 722.7pt x 406.51875pt>
-File: 01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
-<use 01_OS_and_FAIR_intro.pdf, page 13>
-Package pdftex.def Info: 01_OS_and_FAIR_intro.pdf , page13 used on input line 1
-23.
-(pdftex.def)             Requested size: 433.62334pt x 243.91312pt.
-
-Overfull \vbox (9.28244pt too high) detected at line 123
- []
-
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 123.
-
-(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
-[19
-
  <./01_OS_and_FAIR_intro.pdf>]) (./02_introduction_fair_aubi.tex
+<images/tutorials_overview.png, id=603, 572.1375pt x 648.2619pt>
+File: images/tutorials_overview.png Graphic file (type png)
+<use images/tutorials_overview.png>
+Package pdftex.def Info: images/tutorials_overview.png  used on input line 4.
+(pdftex.def)             Requested size: 171.64256pt x 194.48007pt.
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 19.
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 4.
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [19
+
+ <./images/tutorials_overview.png>]
+File: images/ucabackground-16_9.png Graphic file (type png)
+<use images/ucabackground-16_9.png>
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 22.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [20
 
 ]
 LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on
- input line 44.
+ input line 48.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands0.fd)
 LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <10> not 
 available
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
-n input line 44.
+n input line 48.
 LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <9> not a
 vailable
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
-n input line 44.
-<images/conda_logo.pdf, id=653, 374.14781pt x 77.53969pt>
+n input line 48.
+<images/conda_logo.pdf, id=639, 374.14781pt x 77.53969pt>
 File: images/conda_logo.pdf Graphic file (type pdf)
 <use images/conda_logo.pdf>
-Package pdftex.def Info: images/conda_logo.pdf  used on input line 44.
+Package pdftex.def Info: images/conda_logo.pdf  used on input line 48.
 (pdftex.def)             Requested size: 26.19301pt x 5.42833pt.
-<images/snakemake_logo.png, id=654, 200.75pt x 200.75pt>
+<images/snakemake_logo.png, id=640, 200.75pt x 200.75pt>
 File: images/snakemake_logo.png Graphic file (type png)
 <use images/snakemake_logo.png>
-Package pdftex.def Info: images/snakemake_logo.png  used on input line 44.
+Package pdftex.def Info: images/snakemake_logo.png  used on input line 48.
 (pdftex.def)             Requested size: 10.03809pt x 10.03809pt.
 LaTeX Font Info:    Trying to load font information for U+fontawesomebrands1 on
- input line 44.
+ input line 48.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands1.fd)
 LaTeX Font Info:    Font shape `U/fontawesomebrands1/solid/n' in size <9> not a
 vailable
 (Font)              Font shape `U/fontawesomebrands1/regular/n' tried instead o
-n input line 44.
+n input line 48.
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 48.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 
 [21
@@ -1518,45 +1506,45 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
  <./images/conda_logo.pdf> <./images/snakemake_logo.png>]
 File: images/conda_logo.pdf Graphic file (type pdf)
 <use images/conda_logo.pdf>
-Package pdftex.def Info: images/conda_logo.pdf  used on input line 44.
+Package pdftex.def Info: images/conda_logo.pdf  used on input line 48.
 (pdftex.def)             Requested size: 26.19301pt x 5.42833pt.
 File: images/snakemake_logo.png Graphic file (type png)
 <use images/snakemake_logo.png>
-Package pdftex.def Info: images/snakemake_logo.png  used on input line 44.
+Package pdftex.def Info: images/snakemake_logo.png  used on input line 48.
 (pdftex.def)             Requested size: 10.03809pt x 10.03809pt.
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 48.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [22
 
 ]
 File: images/conda_logo.pdf Graphic file (type pdf)
 <use images/conda_logo.pdf>
-Package pdftex.def Info: images/conda_logo.pdf  used on input line 44.
+Package pdftex.def Info: images/conda_logo.pdf  used on input line 48.
 (pdftex.def)             Requested size: 26.19301pt x 5.42833pt.
 File: images/snakemake_logo.png Graphic file (type png)
 <use images/snakemake_logo.png>
-Package pdftex.def Info: images/snakemake_logo.png  used on input line 44.
+Package pdftex.def Info: images/snakemake_logo.png  used on input line 48.
 (pdftex.def)             Requested size: 10.03809pt x 10.03809pt.
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 48.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [23
 
 ]
 File: images/conda_logo.pdf Graphic file (type pdf)
 <use images/conda_logo.pdf>
-Package pdftex.def Info: images/conda_logo.pdf  used on input line 44.
+Package pdftex.def Info: images/conda_logo.pdf  used on input line 48.
 (pdftex.def)             Requested size: 26.19301pt x 5.42833pt.
 File: images/snakemake_logo.png Graphic file (type png)
 <use images/snakemake_logo.png>
-Package pdftex.def Info: images/snakemake_logo.png  used on input line 44.
+Package pdftex.def Info: images/snakemake_logo.png  used on input line 48.
 (pdftex.def)             Requested size: 10.03809pt x 10.03809pt.
 File: images/ucabackground-16_9.png Graphic file (type png)
 <use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 48.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [24
 
@@ -1576,26 +1564,25 @@ Package rerunfilecheck Info: File `fair_introduction.out' has not changed.
 (rerunfilecheck)             Checksum: 6054C585AAF93BA94E4A8FC93201AC06;452.
  ) 
 Here is how much of TeX's memory you used:
- 32342 strings out of 478287
- 631414 string characters out of 5849289
- 894290 words of memory out of 5000000
- 49821 multiletter control sequences out of 15000+600000
- 528411 words of font info for 79 fonts, out of 8000000 for 9000
+ 32327 strings out of 478287
+ 631158 string characters out of 5849289
+ 894270 words of memory out of 5000000
+ 49809 multiletter control sequences out of 15000+600000
+ 528041 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,122p,397b,791s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands1.enc}{/
 usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}{/usr/
-share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
-m-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome5/FontAw
-esome5Brands-Regular.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmtt8.pfb>
-Output written on fair_introduction.pdf (24 pages, 4394195 bytes).
+share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texlive/texmf-dist/fonts/t
+ype1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb>
+</usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmtt8.pfb>
+Output written on fair_introduction.pdf (24 pages, 4328183 bytes).
 PDF statistics:
- 801 PDF objects out of 1000 (max. 8388607)
- 542 compressed objects within 6 object streams
+ 784 PDF objects out of 1000 (max. 8388607)
+ 528 compressed objects within 6 object streams
  52 named destinations out of 1000 (max. 500000)
  600 words of extra memory for PDF output out of 10000 (max. 10000000)
 
