@@ -1,0 +1,86 @@
+---
+title: "RMarkdown practice"
+author: "Aubi"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: false
+    toc_float: false
+    code_folding: hide
+    fig_width: 14
+    fig_height: 7
+    fig_caption: true
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Objectives
+
++ Configure R to produce a repport on R
++ Execute R code on Rmarkdown
++ Integrate formated tables 
++ Integrate graphics from source code and from other source
+
+# Install and load a package on R
+
+```{r library}
+# install
+if (!require("knitr", quietly = TRUE))
+    install.packages("knitr")
+if (!require("ade4", quietly = TRUE))
+    install.packages("ade4")
+if (!require("kableExtra", quietly = TRUE))
+    install.packages("kableExtra")
+if (!require("adegraphics", quietly = TRUE))
+    install.packages("adegraphics")
+if (!require("gridExtra", quietly = TRUE))
+    install.packages("gridExtra")
+# load
+require(knitr)
+require(ade4)
+require(kableExtra)
+require(adegraphics)
+require(gridExtra)
+```
+
+# Load and check your data
+
+```{r data}
+data(doubs)
+str(doubs, max.level = 1)
+```
+
+# Analyses
+
+```{r acp}
+acp1 <- dudi.pca(doubs$env, scan =  FALSE)
+acp2 <- dudi.pca(doubs$fish, scan =  FALSE, scale = FALSE)
+```
+
+# Plot the results
+
+```{r acpGrap}
+g1 <- scatter(acp2, plot = FALSE)
+g2 <- s.value(doubs$xy, acp2$li[,1], plot = FALSE)
+ADEgS(c(g1, g2), layout = c(1, 2))
+```
+
+# Table
+
+## with the basic package
+
+```{r Table, results = 'asis'}
+kable(head(doubs$env))
+```
+
+## with kableExtra (highly recommended)
+
+A little more complex but much prettier.
+
+```{r TableExt, results = 'asis'}
+kable(head(doubs$env), booktabs = TRUE) %>%
+  kable_styling(font_size = 12)
+```
+
