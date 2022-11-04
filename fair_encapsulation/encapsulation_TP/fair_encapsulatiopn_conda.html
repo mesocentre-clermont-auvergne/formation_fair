@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>fair_2022_conda_TP(1)</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>fair_encapsulatiopn_conda</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -36,6 +36,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14559,12 +14560,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14640,16 +14641,22 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>1.</p>
-<div class="highlight"><pre><span></span>module load conda
-</pre></div>
-<p>2.</p>
-<div class="highlight"><pre><span></span>conda --version
-</pre></div>
-<p>3.</p>
-<div class="highlight"><pre><span></span>conda env list
-</pre></div>
+<details>
+  <summary>Load module solution</summary>
 
+1.
+```bash
+module load conda
+```
+2.
+```bash
+conda --version
+```
+3.
+```bash
+conda env list
+```
+</details>
 </div>
 </div>
 </div>
@@ -14698,20 +14705,25 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ol>
-<li><a href="https://anaconda.org/bioconda/samtools">https://anaconda.org/bioconda/samtools</a>
-2.</li>
-</ol>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> search samtools
+<details>
+  <summary> Package load solution</summary>
 
-<span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> search bioconda::samtools
-<span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> search bioconda::samtools<span class="o">=</span><span class="m">1</span>.10
-<span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> search conda-forge::samtools
-</pre></div>
-<p>3.</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> search --envs samtools
-</pre></div>
 
+1. https://anaconda.org/bioconda/samtools
+2.
+
+```bash
+[conda|mamba] search samtools
+
+[conda|mamba] search bioconda::samtools
+[conda|mamba] search bioconda::samtools=1.10
+[conda|mamba] search conda-forge::samtools
+```
+3.
+```bash
+[conda|mamba] search --envs samtools
+```
+</details>
 </div>
 </div>
 </div>
@@ -14729,23 +14741,21 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 3. Create an environement with python 2.7 and the last samtools version
 4. Create an environement with python 2.7 and samtools 1.16.1
 5. Create an environment from a .yaml file
-```bash
-environment_file.yml content :
 
 </code></pre>
-<p>name: rnaseq
-channels:</p>
+<div class="highlight"><pre><span></span>environment_file.yml content :
 
-<pre><code>- defaults
-- bioconda
-- conda-forge
-</code></pre>
-<p>dependencies:</p>
+name: rnaseq
+channels:
+    - defaults
+    - bioconda
+    - conda-forge
+dependencies:
+    - <span class="nv">fastqc</span><span class="o">=</span><span class="m">0</span>.11.6
+    - <span class="nv">samtools</span><span class="o">=</span><span class="m">1</span>.6
+</pre></div>
 
-<pre><code>- fastqc=0.11.6
-- samtools=1.6
-```
-6. Activate your environment
+<pre><code>6. Activate your environment
 7. Jump to another environment
 8. Deactivate all the environments</code></pre>
 
@@ -14770,31 +14780,41 @@ channels:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>1.</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> create -n<span class="p">|</span>--name <span class="o">[</span>choose_env_name<span class="o">]</span>
-</pre></div>
-<p>2.</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> create -n<span class="p">|</span>--name <span class="o">[</span>choose_env_name<span class="o">]</span> <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.6
-</pre></div>
-<p>3.</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> create -n<span class="p">|</span>--name <span class="o">[</span>choose_env_name<span class="o">]</span> <span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7 samtools -c bioconda
-</pre></div>
-<p>4.</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> create -n<span class="p">|</span>--name <span class="o">[</span>choose_env_name<span class="o">]</span> <span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7 <span class="nv">samtools</span><span class="o">=</span><span class="m">1</span>.16 -c bioconda
-</pre></div>
-<p>5.</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> env create -f <span class="o">[</span>environment_file.yml<span class="o">]</span>
-</pre></div>
-<p>6.</p>
-<div class="highlight"><pre><span></span>conda activate <span class="o">[</span>choose_env_name<span class="o">]</span>
-</pre></div>
-<p>7.</p>
-<div class="highlight"><pre><span></span>conda activate <span class="o">[</span>choose_env_name<span class="o">]</span>
-</pre></div>
-<p>8.</p>
-<div class="highlight"><pre><span></span>conda deactivate
-</pre></div>
-
+<details>
+  <summary> Conda env solution</summary>
+1.
+```bash
+[conda|mamba] create -n|--name [choose_env_name]
+```
+2.
+```bash
+[conda|mamba] create -n|--name [choose_env_name] python=3.6
+```
+3.
+```bash
+[conda|mamba] create -n|--name [choose_env_name] python=2.7 samtools -c bioconda
+```
+4.
+```bash
+[conda|mamba] create -n|--name [choose_env_name] python=2.7 samtools=1.16 -c bioconda
+```
+5.
+```bash
+[conda|mamba] env create -f [environment_file.yml]
+```
+6.
+```bash
+conda activate [choose_env_name]
+```
+7.
+```bash
+conda activate [choose_env_name]
+```
+8.
+```bash
+conda deactivate
+```
+</details>
 </div>
 </div>
 </div>
@@ -14817,7 +14837,7 @@ channels:</p>
 4. Change only the bwa version to 0.6.2 with mamba 
 5. Create another environment and activate it
 6. Install the tools with a specific version
-    - samtools: 1.11[
+    - samtools: 1.11
     - fastp: 0.17.0
     - bwa: 0.17.2
     - shovill: 1.1.0
@@ -14850,72 +14870,106 @@ channels:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>1.</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> create -n<span class="p">|</span>--name <span class="o">[</span>choose_env_name<span class="o">]</span>
-conda activate <span class="o">[</span>choose_env_name<span class="o">]</span>
-</pre></div>
-<p>2.</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> install <span class="o">[</span>-c bioconda<span class="o">]</span> samtools fastp bwa shovill
-</pre></div>
-<p>3.</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> list
-</pre></div>
-<p>4.</p>
-<div class="highlight"><pre><span></span>mamba install -c bioconda <span class="nv">bwa</span><span class="o">=</span><span class="m">0</span>.6.2
-</pre></div>
-<div class="highlight"><pre><span></span>Package              Version  Build           Channel                    Size
+<details>
+  <summary> Conda package solution</summary>
+
+1.
+```bash
+[conda|mamba] create -n|--name [choose_env_name]
+conda activate [choose_env_name]
+```
+2.
+```bash
+[conda|mamba] install [-c bioconda] samtools fastp bwa shovill
+```
+3.
+```bash
+[conda|mamba] list
+```
+4.
+```bash
+mamba install -c bioconda bwa=0.6.2
+```
+```bash
+Package              Version  Build           Channel                    Size
 ─────────────────────────────────────────────────────────────────────────────────
   Upgrade:
 ─────────────────────────────────────────────────────────────────────────────────
 
-  - ca-certificates  <span class="m">2022</span>.6.15  ha878542_0      conda-forge                    
-  + ca-certificates  <span class="m">2022</span>.9.24  ha878542_0      conda-forge/linux-64      154kB
-  - certifi          <span class="m">2022</span>.6.15  py37h89c1867_0  conda-forge                    
-  + certifi          <span class="m">2022</span>.9.24  pyhd8ed1ab_0    conda-forge/noarch        159kB
-  - openssl             <span class="m">1</span>.1.1o  h166bdaf_0      conda-forge                    
-  + openssl             <span class="m">1</span>.1.1q  h166bdaf_0      conda-forge/linux-64        2MB
+  - ca-certificates  2022.6.15  ha878542_0      conda-forge                    
+  + ca-certificates  2022.9.24  ha878542_0      conda-forge/linux-64      154kB
+  - certifi          2022.6.15  py37h89c1867_0  conda-forge                    
+  + certifi          2022.9.24  pyhd8ed1ab_0    conda-forge/noarch        159kB
+  - openssl             1.1.1o  h166bdaf_0      conda-forge                    
+  + openssl             1.1.1q  h166bdaf_0      conda-forge/linux-64        2MB
 
   Downgrade:
 ─────────────────────────────────────────────────────────────────────────────────
 
-  - bwa                 <span class="m">0</span>.7.17  h7132678_9      bioconda                       
-  + bwa                  <span class="m">0</span>.6.2  ha92aebf_2      bioconda/linux-64         334kB
-  - shovill              <span class="m">1</span>.1.0  hdfd78af_1      bioconda                       
-  + shovill              <span class="m">0</span>.9.0  <span class="m">1</span>               bioconda/linux-64        Cached
+  - bwa                 0.7.17  h7132678_9      bioconda                       
+  + bwa                  0.6.2  ha92aebf_2      bioconda/linux-64         334kB
+  - shovill              1.1.0  hdfd78af_1      bioconda                       
+  + shovill              0.9.0  1               bioconda/linux-64        Cached
 
   Summary:
 
-  Upgrade: <span class="m">3</span> packages
-  Downgrade: <span class="m">2</span> packages
-</pre></div>
-<p>5.</p>
-<div class="highlight"><pre><span></span>conda deactivate 
-<span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> create -n<span class="p">|</span>--name <span class="o">[</span>choose_new_env_name<span class="o">]</span>
-</pre></div>
-<p>6.</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> install -c bioconda <span class="nv">samtool</span><span class="o">=</span><span class="m">1</span>.11 <span class="nv">fastp</span><span class="o">=</span><span class="m">0</span>.17.0 <span class="nv">bwa</span><span class="o">=</span><span class="m">0</span>.17.2 <span class="nv">shovill</span><span class="o">=</span><span class="m">1</span>.1.0
-</pre></div>
-<p>7.</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> env <span class="nb">export</span> -n<span class="p">|</span>--name <span class="o">[</span>choose_new_env_name<span class="o">]</span> &gt; choose_new_env_name.yml
-<span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> compare -n <span class="o">[</span>choose_env_name<span class="o">]</span> ./choose_new_env_name.yml
-</pre></div>
-<p>8.</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> install -c bioconda <span class="nv">samtool</span><span class="o">=</span><span class="m">1</span>.11 <span class="nv">fastp</span><span class="o">=</span><span class="m">0</span>.17.0 <span class="nv">bwa</span><span class="o">=</span><span class="m">0</span>.6.2 <span class="nv">shovill</span><span class="o">=</span><span class="m">1</span>.1.0
-</pre></div>
-<div class="highlight"><pre><span></span>Problem: package shovill-1.1.0-0 requires bwa &gt;<span class="o">=</span><span class="m">0</span>.7.17, but none of the providers can be installed
-</pre></div>
-<p>9.</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> create -n plasflow_env <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.5.1 plasflow -c bioconda
-</pre></div>
-<div class="highlight"><pre><span></span>Encountered problems <span class="k">while</span> solving.
-Problem: nothing provides r <span class="m">3</span>.2.2* needed by rpy2-2.7.6-py27r3.2.2_0
-</pre></div>
-<div class="highlight"><pre><span></span><span class="o">[</span>conda<span class="p">|</span>mamba<span class="o">]</span> create -n plasflow_env <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.5.2 plasflow -c bioconda
+  Upgrade: 3 packages
+  Downgrade: 2 packages
+```
+
+5.
+```bash
+conda deactivate 
+[conda|mamba] create -n|--name [choose_new_env_name]
+```
+6.
+```bash
+[conda|mamba] install -c bioconda samtool=1.11 fastp=0.17.0 bwa=0.17.2 shovill=1.1.0
+```
+7.
+```bash
+[conda|mamba] env export -n|--name [choose_new_env_name] > choose_new_env_name.yml
+[conda|mamba] compare -n [choose_env_name] ./choose_new_env_name.yml
+```
+8.
+```bash
+[conda|mamba] install -c bioconda samtool=1.11 fastp=0.17.0 bwa=0.6.2 shovill=1.1.0
+```
+```bash
+ Problem: package shovill-1.1.0-0 requires bwa >=0.7.17, but none of the providers can be installed
+```
+
+9.
+```bash
+[conda|mamba] create -n plasflow_env python=3.5.1 plasflow -c bioconda
+```
+```bash
+Encountered problems while solving.
+Problem: nothing provides r 3.2.2* needed by rpy2-2.7.6-py27r3.2.2_0
+```
+```bash
+[conda|mamba] create -n plasflow_env python=3.5.2 plasflow -c bioconda
+```
+</details>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
+     </div>
 </div>
 </div>
 </div>
+
 </div>
 </body>
 
