@@ -1,6 +1,6 @@
 ---
 title: "Rmarkdow"
-author: "Philippe Ruiz"
+author: "AUbi"
 date: "2022-11-04"
 output: html_document
 ---
