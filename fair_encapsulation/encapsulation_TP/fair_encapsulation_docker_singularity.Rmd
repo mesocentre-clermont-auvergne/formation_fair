@@ -1,9 +1,75 @@
 ---
 title: "Image Docker Singularity"
+author: "Philippe Ruiz"
+date: "`r Sys.Date()`"
 output: html_notebook
 ---
 
 Ici nous allons voir comment creer une image docker d'une instalation de R
-avec quelques paquets specifiques pour ensuite l'utiliser avec docker et Singularity.
+avec quelques paquets specifiques pour ensuite l'utiliser avec `Docker` et `Singularity`.
 
-1 - Verifier que Docker et Singularity sont bien installés.
+1 - Verifier que `Docker` et `Singularity` sont bien installes sur vos machines:
+```
+$ docker --version
+$ singularity --version
+```
+
+2 - Ecrire une recette `Docker`. La recette est le fichier qui va permettre de creer l'image `Docker` ont installant les librairies Linux et les outils necessaires aux analyses. Completer les fichier Dockerfile pour avoir dans l'image la derniere 
+version de `R` (4.4.1) les libraries `R` necessaires a l'utilisation du package `mixOmics` (http://mixomics.org/).
+
+La recette consiste en an fichier `Dockerfile` contenant les instructions necessaire
+a l'instlation des differents outils.
+Completer le fichier caneva pour installer les packages `R` : 
+
+- `devtools`
+- `BiocManager`
+- `mixOmics`
+
+Attention, tout ces packages ne sont pas disponible sur les mêmes depots...
+
+3 - construire l'image docker.
+La commande pour construire une image Docker commance par :
+```
+$ docker build ...
+```
+
+Une fois l'image cree, exportons la sous la forme d'une archive.
+Elle peut alors être mise sur une autre machine
+```
+$ docker save ...
+```
+et verifier que tout c'est bien passe
+```
+$ ls -lah .
+```
+On peut alors charger l'image docker cree
+```
+$ docker load ...
+```
+Et l'utiliser
+```
+$ docker run ...
+```
+
+Passons a `Singularity` pour utiliser l'image cree
+sur le cluster.
+
+Creer l'image `Singularity` à partr de l'image
+`Docker` precedante. La c'est un peu plus complique
+```
+$ docker run -v /var/run/docker.sock:/var/run/docker.sock -v ~/Projets/16spipeline:/output --privileged -t --rm quay.io/singularity/docker2singularity \ [...]
+```
+
+Essayons l'image creee
+```
+$ singularity exec [...].sif R
+```
+ou
+```
+$ singularity run [...].sif
+```
+
+et pour terminer, on peut directement utiliser un script R source pour realiser des analyses directement sur le cluster, en mettant cette ligne de code dans un fichier slurm
+```
+$ singularity exec [...].sif R --slave -e "source('demo.R')"
+```
