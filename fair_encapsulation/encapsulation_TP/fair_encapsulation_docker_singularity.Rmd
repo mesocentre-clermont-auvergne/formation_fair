@@ -1,0 +1,9 @@
+---
+title: "Image Docker Singularity"
+output: html_notebook
+---
+
+Ici nous allons voir comment creer une image docker d'une instalation de R
+avec quelques paquets specifiques pour ensuite l'utiliser avec docker et Singularity.
+
+1 - Verifier que Docker et Singularity sont bien installés.
