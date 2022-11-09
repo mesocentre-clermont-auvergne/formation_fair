@@ -29,7 +29,7 @@ Le dépôt se structure selon les 3 thématiques développées :
 3. [fair_documentation](fair_documentation) contient :
     - Le [cours](fair_documentation/introduction_documentation/documentation_cours/introduction_documentation.pdf)
     - Le [TP jupyter](fair_documentation/TP_jupyter/00_encapsulation_jupyter.ipynb)
-    - Le [TP rmarkdown](fair_documentation/rmarkdown_TP/Rmarkdown_TP.nb.html)
+    - Le [TP rmarkdown](fair_documentation/rmarkdown_TP/Rmarkdown_TP.Rmd)
 
   
 ```
