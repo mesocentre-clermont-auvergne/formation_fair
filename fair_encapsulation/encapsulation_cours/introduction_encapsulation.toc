@@ -1,0 +1,4 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{A second level, the containers}{1}{0}{1}
+\beamer@subsectionintoc {1}{1}{Docker}{7}{0}{1}
+\beamer@subsectionintoc {1}{2}{Singularity}{24}{0}{1}
