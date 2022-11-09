@@ -1,0 +1,23 @@
+# Docker
+
+1- build
+$ docker build --no-cache --file Dockerfile -t mixomics .
+2 - save
+$ docker save -o RDockermixOmics.tar mixomics
+3 - check
+$ ls -lah .
+4 - load
+$ docker load -i RDockmixOmics.tar
+5 - run
+$ docker run -ti mixomics
+
+# Singularity
+
+1- create image
+$ docker run -v /var/run/docker.sock:/var/run/docker.sock -v ~/Projets:/output \
+--privileged -t --rm quay.io/singularity/docker2singularity \ mixomics
+2 - test
+singularity exec mixomics-2022-11-06-ef89063c62be.sif R
+3 - run on cluster
+$ singularity mixomics-2022-11-06-ef89063c62be.sif R --slave -e "source('demo.R')"
+
