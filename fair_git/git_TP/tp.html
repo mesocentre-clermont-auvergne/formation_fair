@@ -163,8 +163,8 @@
 versioning with git</h1>
 <p>Mateo Hiriart<br />
 2022-11-14</p>
-<p>Dans ce TP nous allons voir les bases de git afin de creer un projet
-et de versionné sont code pour garder une trace des modifications faite
+<p>Dans ce TP nous allons voir les bases de git afin de créer un projet
+et de versionner sont code pour garder une trace des modifications faite
 dans le temps.</p>
 <p>Lien et commande pour vous aidé:<br />
    Documentation:<a
@@ -182,22 +182,22 @@ href="https://gitlab.com">gitlab</a></li>
 <h2 id="ii-premier-test-en-local">II/ Premier test en local</h2>
 <ol type="1">
 <li>Initialiser votre premier repo git en local et naviguer dans
-l’arboresence de votre projet. Utiliser <code>git status</code> et/ou
+l’arborescence de votre projet. Utiliser <code>git status</code> et/ou
 <code>git log</code> pour verifier la creation de votre repository
 git.</li>
-<li>Faire un premier commit avec commentaire en creant un fichier .txt
-de test, utilisez <code>git status</code> pour vous aidez.</li>
-<li>Modifier votre fichier pour faire un deuxieme commit et utilisé
-<code>git log</code> pour voir l’arboresence de votre projet.</li>
+<li>Faire un premier commit avec commentaire en créant un fichier .txt
+de test, utilisez <code>git status</code> pour vous aider.</li>
+<li>Modifier votre fichier pour faire un deuxième commit et utilisé
+<code>git log</code> pour voir l’arborescence de votre projet.</li>
 <li>Vous pouvez maintenant supprimer le projet en supprimant le
-repertoire qui contient le dossier .git.</li>
+repertoire qui contient le dossier .git</li>
 </ol>
 <h2 id="iii-projet-partagé-sur-githubgitlab">III/ Projet partagé sur
 github/gitlab</h2>
-<h4 id="a-partir-de-maintenant-choisissez-un-binome.">A partir de
+<h4 id="à-partir-de-maintenant-choisissez-un-binome.">À partir de
 maintenant choisissez un binome.</h4>
 <ol type="1">
-<li>Creer un repertoire sur github.com et inviter votre binome a
+<li>Créer un repertoire sur github.com et inviter votre binome à
 collaborer dans <code>Settings</code></li>
 <li>Cloner chacun le projet en local avec
 <code>git clone &lt;url_projet&gt;</code> vous trouverez l’url pour
@@ -208,18 +208,25 @@ avec la commande <code>git push</code>.</li>
 <code>git pull</code></li>
 </ol>
 <h2 id="iv-les-conflits">IV/ Les conflits</h2>
-<h4 id="continuer-a-utiliser-le-repo-de-github-en-binome.">Continuer a
+<h4 id="continuer-à-utiliser-le-repo-de-github-en-binome.">Continuer à
 utiliser le repo de github en binome.</h4>
 <ol type="1">
-<li>Effectuez tout deux des modifications sur le meme fichier et ensuite
+<li>Effectuez tous deux des modifications sur le meme fichier et ensuite
 utilisez <code>git commit</code> et <code>git push</code> pour appliquer
-les modification sur github. Une erreur devrait survenir pour la
-derniere personne a avoir push.</li>
-<li></li>
+la modification sur github. Une erreur devrait survenir pour la dernière
+personne à avoir push.</li>
+<li>Utiliser <code>git fetch</code> et <code>git rebase</code> pour
+régler le problème ou <code>git pull --rebase</code></li>
 </ol>
 <h2 id="v-les-branches">V/ Les branches</h2>
 <ol type="1">
-<li>Creer un nouvelle branche dans le projet</li>
+<li>Créer chacun une nouvelle branche dans le projet avec
+<code>git branch</code></li>
+<li>Faite du development sur cette nouvelle branche et utiliser
+<code>git commit</code> et <code>git push</code></li>
+<li>Merge la nouvelle branche de development sur la branche master avec
+<code>git merge</code>, et utiliser si besoin <code>git fetch</code> et
+<code>git rebase</code> pour mettre à jour votre branche avant.</li>
 </ol>
 </body>
 </html>
