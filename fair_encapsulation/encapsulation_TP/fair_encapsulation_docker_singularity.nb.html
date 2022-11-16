@@ -11,7 +11,7 @@
 
 <meta name="author" content="Philippe Ruiz" />
 
-<meta name="date" content="2022-11-06" />
+<meta name="date" content="2022-11-15" />
 
 <title>Image Docker Singularity</title>
 
@@ -1759,64 +1759,82 @@ pre code {
 
 <h1 class="title toc-ignore">Image Docker Singularity</h1>
 <h4 class="author">Philippe Ruiz</h4>
-<h4 class="date">2022-11-06</h4>
+<h4 class="date">2022-11-15</h4>
 
 </div>
 
 
 <!-- rnb-text-begin -->
-<p>Ici nous allons voir comment creer une image docker d’une instalation
-de R avec quelques paquets specifiques pour ensuite l’utiliser avec
+<p>Ici nous allons voir comment créer une image docker d’une instalation
+de R avec quelques paquets spécifiques pour ensuite l’utiliser avec
 <code>Docker</code> et <code>Singularity</code>.</p>
-<p>1 - Verifier que <code>Docker</code> et <code>Singularity</code> sont
-bien installes sur vos machines:</p>
+<div id="docker-et-singularity" class="section level1">
+<h1>Docker et Singularity</h1>
+<p>1 - Verifiez que <code>Docker</code> et <code>Singularity</code> sont
+bien installés sur vos machines:</p>
 <pre><code>$ docker --version
 $ singularity --version</code></pre>
-<p>2 - Ecrire une recette <code>Docker</code>. La recette est le fichier
-qui va permettre de creer l’image <code>Docker</code> ont installant les
-librairies Linux et les outils necessaires aux analyses. Completer les
-fichier Dockerfile pour avoir dans l’image la derniere version de
-<code>R</code> (4.4.1) les libraries <code>R</code> necessaires a
-l’utilisation du package <code>mixOmics</code> (<a href="http://mixomics.org/" class="uri">http://mixomics.org/</a>).</p>
-<p>La recette consiste en an fichier <code>Dockerfile</code> contenant
-les instructions necessaire a l’instlation des differents outils.
-Completer le fichier caneva pour installer les packages <code>R</code>
-:</p>
+</div>
+<div id="recette-docker" class="section level1">
+<h1>Recette Docker</h1>
+<p>La recette est le fichier qui va permettre de créer l’image
+<code>Docker</code> en installant les librairies Linux et les outils
+nécessaires aux analyses. Il s’agit surtout d’un script de lignes de
+commandes compilé dans un format spécifique.</p>
+<p>2 - Ecrire une recette <code>Docker</code>. (voir le fichier
+<code>canevaDockerfile</code>) en complétant le fichier
+<code>canevaDockerfile</code> pour avoir dans l’image : la derniere
+version de <code>R</code> (4.4.1), les librairies <code>R</code>
+nécessaires à l’utilisation du package <code>mixOmics</code> (<a href="http://mixomics.org/" class="uri">http://mixomics.org/</a>). Le
+fichier doit être renomé <code>Dockerfile</code>.</p>
+<p>Plus précisément, la recette consiste en un fichier
+<code>Dockerfile</code> contenant les instructions necessaire a
+l’instlation des differents outils.</p>
+<p>Les packages <code>R</code> qui doivent être installés sont :</p>
 <ul>
 <li><code>devtools</code></li>
 <li><code>BiocManager</code></li>
 <li><code>mixOmics</code></li>
 </ul>
-<p>Attention, tout ces packages ne sont pas disponible sur les mêmes
-depots…</p>
-<p>3 - construire l’image docker. La commande pour construire une image
-Docker commance par :</p>
+<p>Attention, tous ces packages ne sont pas forcément disponible sur les
+mêmes dépots…</p>
+</div>
+<div id="construction-de-limage-docker" class="section level1">
+<h1>Construction de l’image Docker</h1>
+<p>La commande pour construire une image Docker commance par :</p>
 <pre><code>$ docker build ...</code></pre>
-<p>Une fois l’image cree, exportons la sous la forme d’une archive. Elle
-peut alors être mise sur une autre machine</p>
+<p>3 - construire l’image docker.</p>
+<p>Une fois l’image créée, exportons la sous la forme d’une archive.
+Elle peut alors être mise sur une autre machine ou un dépot.</p>
 <pre><code>$ docker save ...</code></pre>
-<p>et verifier que tout c’est bien passe</p>
+<p>et vérifier que tout s’est bien passé :</p>
 <pre><code>$ ls -lah .</code></pre>
-<p>On peut alors charger l’image docker cree</p>
+<p>On peut alors charger l’image docker créée :</p>
 <pre><code>$ docker load ...</code></pre>
-<p>Et l’utiliser</p>
+<p>Et l’utiliser :</p>
 <pre><code>$ docker run ...</code></pre>
-<p>Passons a <code>Singularity</code> pour utiliser l’image cree sur le
+</div>
+<div id="de-docker-à-singularity" class="section level1">
+<h1>De Docker à Singularity</h1>
+<p>Passons à <code>Singularity</code> pour utiliser l’image créée sur le
 cluster.</p>
-<p>Creer l’image <code>Singularity</code> à partr de l’image
-<code>Docker</code> precedante. La c’est un peu plus complique</p>
+<p>Il faut d’abord creéér l’image <code>Singularity</code> à partr de
+l’image <code>Docker</code> précédante. Là, c’est un peu plus compliqué.
+On va directement voir dans la doc.</p>
 <pre><code>$ docker run -v /var/run/docker.sock:/var/run/docker.sock -v ~/Projets/16spipeline:/output --privileged -t --rm quay.io/singularity/docker2singularity \ [...]</code></pre>
-<p>Essayons l’image creee</p>
+<p>Essayons ensuite cette nouvelle image</p>
 <pre><code>$ singularity exec [...].sif R</code></pre>
 <p>ou</p>
 <pre><code>$ singularity run [...].sif</code></pre>
 <p>et pour terminer, on peut directement utiliser un script R source
-pour realiser des analyses directement sur le cluster, en mettant cette
-ligne de code dans un fichier slurm</p>
+pour réaliser des analyses directement sur le cluster, en mettant cette
+ligne de code dans un fichier slurm celui-ci executera votre script R à
+l’intérieur d’une image Singularity.</p>
 <pre><code>$ singularity exec [...].sif R --slave -e &quot;source(&#39;demo.R&#39;)&quot;</code></pre>
 <!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiSW1hZ2UgRG9ja2VyIFNpbmd1bGFyaXR5IgphdXRob3I6ICJQaGlsaXBwZSBSdWl6IgpkYXRlOiAiYHIgU3lzLkRhdGUoKWAiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCkljaSBub3VzIGFsbG9ucyB2b2lyIGNvbW1lbnQgY3JlZXIgdW5lIGltYWdlIGRvY2tlciBkJ3VuZSBpbnN0YWxhdGlvbiBkZSBSCmF2ZWMgcXVlbHF1ZXMgcGFxdWV0cyBzcGVjaWZpcXVlcyBwb3VyIGVuc3VpdGUgbCd1dGlsaXNlciBhdmVjIGBEb2NrZXJgIGV0IGBTaW5ndWxhcml0eWAuCgoxIC0gVmVyaWZpZXIgcXVlIGBEb2NrZXJgIGV0IGBTaW5ndWxhcml0eWAgc29udCBiaWVuIGluc3RhbGxlcyBzdXIgdm9zIG1hY2hpbmVzOgpgYGAKJCBkb2NrZXIgLS12ZXJzaW9uCiQgc2luZ3VsYXJpdHkgLS12ZXJzaW9uCmBgYAoKMiAtIEVjcmlyZSB1bmUgcmVjZXR0ZSBgRG9ja2VyYC4gTGEgcmVjZXR0ZSBlc3QgbGUgZmljaGllciBxdWkgdmEgcGVybWV0dHJlIGRlIGNyZWVyIGwnaW1hZ2UgYERvY2tlcmAgb250IGluc3RhbGxhbnQgbGVzIGxpYnJhaXJpZXMgTGludXggZXQgbGVzIG91dGlscyBuZWNlc3NhaXJlcyBhdXggYW5hbHlzZXMuIENvbXBsZXRlciBsZXMgZmljaGllciBEb2NrZXJmaWxlIHBvdXIgYXZvaXIgZGFucyBsJ2ltYWdlIGxhIGRlcm5pZXJlIAp2ZXJzaW9uIGRlIGBSYCAoNC40LjEpIGxlcyBsaWJyYXJpZXMgYFJgIG5lY2Vzc2FpcmVzIGEgbCd1dGlsaXNhdGlvbiBkdSBwYWNrYWdlIGBtaXhPbWljc2AgKGh0dHA6Ly9taXhvbWljcy5vcmcvKS4KCkxhIHJlY2V0dGUgY29uc2lzdGUgZW4gYW4gZmljaGllciBgRG9ja2VyZmlsZWAgY29udGVuYW50IGxlcyBpbnN0cnVjdGlvbnMgbmVjZXNzYWlyZQphIGwnaW5zdGxhdGlvbiBkZXMgZGlmZmVyZW50cyBvdXRpbHMuCkNvbXBsZXRlciBsZSBmaWNoaWVyIGNhbmV2YSBwb3VyIGluc3RhbGxlciBsZXMgcGFja2FnZXMgYFJgIDogCgotIGBkZXZ0b29sc2AKLSBgQmlvY01hbmFnZXJgCi0gYG1peE9taWNzYAoKQXR0ZW50aW9uLCB0b3V0IGNlcyBwYWNrYWdlcyBuZSBzb250IHBhcyBkaXNwb25pYmxlIHN1ciBsZXMgbcOqbWVzIGRlcG90cy4uLgoKMyAtIGNvbnN0cnVpcmUgbCdpbWFnZSBkb2NrZXIuCkxhIGNvbW1hbmRlIHBvdXIgY29uc3RydWlyZSB1bmUgaW1hZ2UgRG9ja2VyIGNvbW1hbmNlIHBhciA6CmBgYAokIGRvY2tlciBidWlsZCAuLi4KYGBgCgpVbmUgZm9pcyBsJ2ltYWdlIGNyZWUsIGV4cG9ydG9ucyBsYSBzb3VzIGxhIGZvcm1lIGQndW5lIGFyY2hpdmUuCkVsbGUgcGV1dCBhbG9ycyDDqnRyZSBtaXNlIHN1ciB1bmUgYXV0cmUgbWFjaGluZQpgYGAKJCBkb2NrZXIgc2F2ZSAuLi4KYGBgCmV0IHZlcmlmaWVyIHF1ZSB0b3V0IGMnZXN0IGJpZW4gcGFzc2UKYGBgCiQgbHMgLWxhaCAuCmBgYApPbiBwZXV0IGFsb3JzIGNoYXJnZXIgbCdpbWFnZSBkb2NrZXIgY3JlZQpgYGAKJCBkb2NrZXIgbG9hZCAuLi4KYGBgCkV0IGwndXRpbGlzZXIKYGBgCiQgZG9ja2VyIHJ1biAuLi4KYGBgCgpQYXNzb25zIGEgYFNpbmd1bGFyaXR5YCBwb3VyIHV0aWxpc2VyIGwnaW1hZ2UgY3JlZQpzdXIgbGUgY2x1c3Rlci4KCkNyZWVyIGwnaW1hZ2UgYFNpbmd1bGFyaXR5YCDDoCBwYXJ0ciBkZSBsJ2ltYWdlCmBEb2NrZXJgIHByZWNlZGFudGUuIExhIGMnZXN0IHVuIHBldSBwbHVzIGNvbXBsaXF1ZQpgYGAKJCBkb2NrZXIgcnVuIC12IC92YXIvcnVuL2RvY2tlci5zb2NrOi92YXIvcnVuL2RvY2tlci5zb2NrIC12IH4vUHJvamV0cy8xNnNwaXBlbGluZTovb3V0cHV0IC0tcHJpdmlsZWdlZCAtdCAtLXJtIHF1YXkuaW8vc2luZ3VsYXJpdHkvZG9ja2VyMnNpbmd1bGFyaXR5IFwgWy4uLl0KYGBgCgpFc3NheW9ucyBsJ2ltYWdlIGNyZWVlCmBgYAokIHNpbmd1bGFyaXR5IGV4ZWMgWy4uLl0uc2lmIFIKYGBgCm91CmBgYAokIHNpbmd1bGFyaXR5IHJ1biBbLi4uXS5zaWYKYGBgCgpldCBwb3VyIHRlcm1pbmVyLCBvbiBwZXV0IGRpcmVjdGVtZW50IHV0aWxpc2VyIHVuIHNjcmlwdCBSIHNvdXJjZSBwb3VyIHJlYWxpc2VyIGRlcyBhbmFseXNlcyBkaXJlY3RlbWVudCBzdXIgbGUgY2x1c3RlciwgZW4gbWV0dGFudCBjZXR0ZSBsaWduZSBkZSBjb2RlIGRhbnMgdW4gZmljaGllciBzbHVybQpgYGAKJCBzaW5ndWxhcml0eSBleGVjIFsuLi5dLnNpZiBSIC0tc2xhdmUgLWUgInNvdXJjZSgnZGVtby5SJykiCmBgYAo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiSW1hZ2UgRG9ja2VyIFNpbmd1bGFyaXR5IgphdXRob3I6ICJQaGlsaXBwZSBSdWl6IgpkYXRlOiAiYHIgU3lzLkRhdGUoKWAiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCkljaSBub3VzIGFsbG9ucyB2b2lyIGNvbW1lbnQgY3LDqWVyIHVuZSBpbWFnZSBkb2NrZXIgZCd1bmUgaW5zdGFsYXRpb24gZGUgUgphdmVjIHF1ZWxxdWVzIHBhcXVldHMgc3DDqWNpZmlxdWVzIHBvdXIgZW5zdWl0ZSBsJ3V0aWxpc2VyIGF2ZWMgYERvY2tlcmAgZXQgYFNpbmd1bGFyaXR5YC4KCiMgRG9ja2VyIGV0IFNpbmd1bGFyaXR5CgoxIC0gVmVyaWZpZXogcXVlIGBEb2NrZXJgIGV0IGBTaW5ndWxhcml0eWAgc29udCBiaWVuIGluc3RhbGzDqXMgc3VyIHZvcyBtYWNoaW5lczoKYGBgCiQgZG9ja2VyIC0tdmVyc2lvbgokIHNpbmd1bGFyaXR5IC0tdmVyc2lvbgpgYGAKCiMgUmVjZXR0ZSBEb2NrZXIKCkxhIHJlY2V0dGUgZXN0IGxlIGZpY2hpZXIgcXVpIHZhIHBlcm1ldHRyZSBkZSBjcsOpZXIgbCdpbWFnZSBgRG9ja2VyYCBlbiAKaW5zdGFsbGFudCBsZXMgbGlicmFpcmllcyBMaW51eCBldCBsZXMgb3V0aWxzIG7DqWNlc3NhaXJlcyBhdXggYW5hbHlzZXMuIElsIHMnYWdpdCAKc3VydG91dCBkJ3VuIHNjcmlwdCBkZSBsaWduZXMgZGUgY29tbWFuZGVzIGNvbXBpbMOpIGRhbnMgdW4gZm9ybWF0IHNww6ljaWZpcXVlLgoKMiAtIEVjcmlyZSB1bmUgcmVjZXR0ZSBgRG9ja2VyYC4gKHZvaXIgbGUgZmljaGllciBgY2FuZXZhRG9ja2VyZmlsZWApIGVuIGNvbXBsw6l0YW50CmxlIGZpY2hpZXIgYGNhbmV2YURvY2tlcmZpbGVgIHBvdXIgYXZvaXIgZGFucyBsJ2ltYWdlIDogbGEgZGVybmllcmUgCnZlcnNpb24gZGUgYFJgICg0LjQuMSksIGxlcyBsaWJyYWlyaWVzIGBSYCBuw6ljZXNzYWlyZXMgw6AgbCd1dGlsaXNhdGlvbiBkdSAKcGFja2FnZSBgbWl4T21pY3NgIChodHRwOi8vbWl4b21pY3Mub3JnLykuIExlIGZpY2hpZXIgZG9pdCDDqnRyZSByZW5vbcOpIGBEb2NrZXJmaWxlYC4KClBsdXMgcHLDqWNpc8OpbWVudCwgbGEgcmVjZXR0ZSBjb25zaXN0ZSBlbiB1biBmaWNoaWVyIGBEb2NrZXJmaWxlYCAKY29udGVuYW50IGxlcyBpbnN0cnVjdGlvbnMgbmVjZXNzYWlyZQphIGwnaW5zdGxhdGlvbiBkZXMgZGlmZmVyZW50cyBvdXRpbHMuCgpMZXMgcGFja2FnZXMgYFJgIHF1aSBkb2l2ZW50IMOqdHJlIGluc3RhbGzDqXMgc29udCA6IAoKLSBgZGV2dG9vbHNgCi0gYEJpb2NNYW5hZ2VyYAotIGBtaXhPbWljc2AKCkF0dGVudGlvbiwgdG91cyBjZXMgcGFja2FnZXMgbmUgc29udCBwYXMgZm9yY8OpbWVudCBkaXNwb25pYmxlIHN1ciBsZXMgbcOqbWVzIGTDqXBvdHMuLi4KCiMgQ29uc3RydWN0aW9uIGRlIGwnaW1hZ2UgRG9ja2VyCgpMYSBjb21tYW5kZSBwb3VyIGNvbnN0cnVpcmUgdW5lIGltYWdlIERvY2tlciBjb21tYW5jZSBwYXIgOgpgYGAKJCBkb2NrZXIgYnVpbGQgLi4uCmBgYAoKMyAtIGNvbnN0cnVpcmUgbCdpbWFnZSBkb2NrZXIuCgpVbmUgZm9pcyBsJ2ltYWdlIGNyw6nDqWUsIGV4cG9ydG9ucyBsYSBzb3VzIGxhIGZvcm1lIGQndW5lIGFyY2hpdmUuCkVsbGUgcGV1dCBhbG9ycyDDqnRyZSBtaXNlIHN1ciB1bmUgYXV0cmUgbWFjaGluZSBvdSB1biBkw6lwb3QuCmBgYAokIGRvY2tlciBzYXZlIC4uLgpgYGAKZXQgdsOpcmlmaWVyIHF1ZSB0b3V0IHMnZXN0IGJpZW4gcGFzc8OpIDoKYGBgCiQgbHMgLWxhaCAuCmBgYApPbiBwZXV0IGFsb3JzIGNoYXJnZXIgbCdpbWFnZSBkb2NrZXIgY3LDqcOpZSA6CmBgYAokIGRvY2tlciBsb2FkIC4uLgpgYGAKRXQgbCd1dGlsaXNlciA6CmBgYAokIGRvY2tlciBydW4gLi4uCmBgYAoKIyBEZSBEb2NrZXIgw6AgU2luZ3VsYXJpdHkKClBhc3NvbnMgw6AgYFNpbmd1bGFyaXR5YCBwb3VyIHV0aWxpc2VyIGwnaW1hZ2UgY3LDqcOpZQpzdXIgbGUgY2x1c3Rlci4KCklsIGZhdXQgZCdhYm9yZCBjcmXDqcOpciBsJ2ltYWdlIGBTaW5ndWxhcml0eWAgw6AgcGFydHIgZGUgbCdpbWFnZQpgRG9ja2VyYCBwcsOpY8OpZGFudGUuIEzDoCwgYydlc3QgdW4gcGV1IHBsdXMgY29tcGxpcXXDqS4gT24gdmEgZGlyZWN0ZW1lbnQgdm9pciBkYW5zIGxhIGRvYy4KYGBgCiQgZG9ja2VyIHJ1biAtdiAvdmFyL3J1bi9kb2NrZXIuc29jazovdmFyL3J1bi9kb2NrZXIuc29jayAtdiB+L1Byb2pldHMvMTZzcGlwZWxpbmU6L291dHB1dCAtLXByaXZpbGVnZWQgLXQgLS1ybSBxdWF5LmlvL3Npbmd1bGFyaXR5L2RvY2tlcjJzaW5ndWxhcml0eSBcIFsuLi5dCmBgYAoKRXNzYXlvbnMgZW5zdWl0ZSBjZXR0ZSBub3V2ZWxsZSBpbWFnZQpgYGAKJCBzaW5ndWxhcml0eSBleGVjIFsuLi5dLnNpZiBSCmBgYApvdQpgYGAKJCBzaW5ndWxhcml0eSBydW4gWy4uLl0uc2lmCmBgYAoKZXQgcG91ciB0ZXJtaW5lciwgb24gcGV1dCBkaXJlY3RlbWVudCB1dGlsaXNlciB1biBzY3JpcHQgUiBzb3VyY2UgcG91ciByw6lhbGlzZXIgCmRlcyBhbmFseXNlcyBkaXJlY3RlbWVudCBzdXIgbGUgY2x1c3RlciwgZW4gbWV0dGFudCBjZXR0ZSBsaWduZSBkZSBjb2RlIGRhbnMgdW4gZmljaGllciBzbHVybQpjZWx1aS1jaSBleGVjdXRlcmEgdm90cmUgc2NyaXB0IFIgw6AgbCdpbnTDqXJpZXVyIGQndW5lIGltYWdlIFNpbmd1bGFyaXR5LgpgYGAKJCBzaW5ndWxhcml0eSBleGVjIFsuLi5dLnNpZiBSIC0tc2xhdmUgLWUgInNvdXJjZSgnZGVtby5SJykiCmBgYA==</div>
 
 
 

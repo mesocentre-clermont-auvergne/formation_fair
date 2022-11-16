@@ -5,11 +5,11 @@ date: "`r Sys.Date()`"
 output: html_notebook
 ---
 
-Caneva de fichier Rmd
+# L'en-tête
 
-Analyser les diferentes parties du fichier `caneva.Rmd`.
+0 - Analyser les différentes parties du fichier `caneva.Rmd`.
 
-La premiere partie comprend les informations generales 
+La premiere partie comprend les informations générales 
 du document, titre, auteur, date, format...
 ````
 ---
@@ -20,20 +20,22 @@ output: html_document
 ---
 ````
 
-Le premier `chunck` comporte generalement les options minimales pour 
-executer l'ensemble du code present dans le document, 
-chargement des packages, chargement des donnees...
+# Le premier chunck
 
-Dans un fichier RMarkdown pour que du code soit execute il doit etre encapsule
-dans un `chunk`. Voici a quoi cela ressemble :
+Le premier `chunck` comporte généralement les options minimales pour 
+exécuter l'ensemble du code présent dans le document, 
+chargement des packages, chargement des données...
+
+Dans un fichier RMarkdown, pour que du code soit exécuté correctement il doit être encapsulé
+dans un `chunk`. Voici à quoi cela ressemble :
 ````
 ```{r, eval = TRUE}`r ''`
 1 + 1
 ```
 ````
 
-1 - Ecrivez le chunk permetant verifier la presence des paquets necessaires
-et de les charger pour l'analyse :
+1 - Ecrivez le chunk permettant de vérifier la présence des paquets nécessaires
+et de les installer pour l'analyse si nécessaire :
 ````
 if (!require("knitr", quietly = TRUE))
   install.packages("knitr", quiet = TRUE)
@@ -49,7 +51,7 @@ if (!require("dplyr", quietly = TRUE))
   install.packages("dplyr", quiet = TRUE)
 ````
 
-on peut alors charge les paquets :
+on peut alors charger les paquets R :
 ````
 require(knitr)
 require(ade4)
@@ -58,48 +60,57 @@ require(adegraphics)
 require(gridExtra)
 ````
 
-Chargement des donnees 
-a present que toutes les librairies sont bien chargees dans notre environement 
-R chargons les donnees qui seront utilisees dans l'exercice. Il s'agit de donnees
-disponible dans le package ade4 :
+# Chargement des donnees 
+
+À present que toutes les librairies sont bien chargées dans notre environement 
+R chargeons les donnees qui seront utilisées dans l'exercice. Il s'agit de données
+disponibles dans le package ade4 :
 ````
 data(doubs)
 ````
 
-2 - Chargez les donnees (du package ade4) et realisez une acp sur le tableau 
-contenant les donnees environementales (env) et une acp normee sur les donnees de bio (fish).
-Ces deux analyses doivent etre dans un nouveau chunk.
+2 - Chargez les donnees (du package `ade4`)
+
+# Première analyse directement dans un chunk
+
+3 - réalisez une ACP sur le tableau  contenant les données environementales (env) 
+et une acp normée sur les données de bio (fish). Ces deux analyses doivent être 
+dans un nouveau chunk.
 ````
 acp1 <- dudi.pca(doubs$env, scan =  FALSE)
 acp2 <- dudi.pca(doubs$fish, scan =  FALSE, scale = FALSE)
 ````
 
-a present on souhaite afficher le biplot, lignes et colonnes de l'analyse sur
-les individus sous
-forme graphique. la fonction est scatter.
+À present on souhaite afficher le biplot, lignes et colonnes de l'analyse sur
+les individus sous forme graphique. Avec `ade4` la fonction à utiliser est `scatter`.
 ```` 
 scatter(acp2, plot = FALSE)
 ````
 
-Comme les coordonnees geographiques des echantillonages sont egalement presentes
-dans le jeu de donneespourquoi ne pas s'en servir pour representer le gradient 
-geographique sur les donnees morphologiques.
+Comme les coordonnées géographiques des échantillonages sont également présentes
+dans le jeu de donnees on peut s'en servir pour représenter le gradient 
+géographique sur les données morphologiques.
 ````
-#'s.value(doubs$xy, acp2$li[,1], plot = FALSE)
+s.value(doubs$xy, acp2$li[,1])
 ````
 
-3 - Affichez dans un nouveau chunk ces 2 representations graphiques cote a cote
-a l'aide de la fonction : ADEgS(c(g1, g2), layout = c(1, 2))
+3 - Affichez dans un nouveau chunk ces 2 représentations graphiques côte à côte
+à l'aide de la fonction :
+````
+ADEgS(c(g1, g2), layout = c(1, 2))
+````
 
-Passons aux tableaux. Il existe plusieurs facon de representer des tableaux 
-de donnees sous Rmarkdown, plus ou moins jolis...
+# Les tableaux
+
+Il existe plusieurs façons de représenter des tableaux 
+de données avec Rmarkdown, plus ou moins jolies ...
 La forme basique et de directement afficher l'objet :
 ````
 head(doubs$env)
 ````
 
-Heureusement il est possible d'obtenir des tableaux plus travailles grace aux 
-options des chunk comme results = 'asis' qui mais direcement en forme la sortie
+Heureusement, il est possible d'obtenir des tableaux plus travaillés grâce aux 
+options des chunk comme `results = 'asis'` qui met direcement en forme la sortie
 du chunk sous forme de tableau.
 ````
 ```{r, eval = TRUE, results = 'asis'}`r ''`
@@ -107,50 +118,55 @@ head(doubs$env)
 ```
 ````
 
-Enfin il existe aussi des packages specifiques pour generer des tableaux a l'aide
-knit et knitr, avec beaucoup d'option mais tres modulables.
-Le meilleur exemple est probablement kableExtra
+Enfin, il existe aussi des packages spécifiques pour générer des tableaux à l'aide
+du package `knitr`. Beaucoup d'options sont disponibles et il est très modulable.
+Le meilleur exemple est probablement le package `kableExtra`.
 
 ````
 kable(head(doubs$env), booktabs = TRUE) %>%
 kable_styling(font_size = 12)
 ````
 
-4 - Testez aferents modeles de tableaux et leur rendu graphique.
-Vous pouvez egalement vous inspirer d'autre type de modele graphique disponible
-avec d'autres package en cherchant sur internet.
+4 - Testez les différents modèles de tableaux et leur rendu graphique.
+Vous pouvez également vous inspirer d'autres types de modèles graphiques disponibles
+avec d'autres packages en cherchant sur internet.
 
-Apprendre a gerer les warning, messages d'erreur et information
-Beucoup de fonctions sdous R produisent des messages informatif à l'utilisateur.
-Il existe trois niveaux : message, warning, error.
-Cependant on ne souhaite pas forcement voir apparaitre ces messages sur le document
-final. C'est pourquoi il existe aferentes options pour les chunks permettant 
-de gerer leur affichage.
+# Les messages de compilation
+
+Apprendre à gérer les warning, messages d'erreur et d'information et important pour avoir un rendu 
+final correct.
+Beaucoup de fonctions sous R produisent des messages informatifs à l'utilisateur.
+Il existe trois niveaux : `message`, `warning`, `error`.
+Cependant on ne souhaite pas forcément les voir apparaitre sur le document
+final. C'est pourquoi il existe différentes options pour des chunks permettant 
+de les gérer.
 ````
 ```{r, message = TRUE, warning = TRUE, error = TRUE}`r ''`
 head(doubs$env)
 ```
 ````
 
-Derniere partie : ameliorer la navigation dans le document creer (html)
-Le document creer peut parfois etre long et comporter plusieurs parties.
-Il peut alors etre interessant d'optimiser sa hierchisation en ajoutant
-un menu flottant (table des matiere) ou de mettre les resultats dans plusieurs
+# Le décorum
+
+Dernière partie : améliorer la navigation dans le document créé (html)
+Le document créé peut parfois être long et comporter plusieurs parties.
+Il peut alors être intéressant d'optimiser sa hiérarchisation en ajoutant
+un menu flottant (table des matières) ou de mettre les résultats dans plusieurs
 onglets.
-Ceci est possible grace aux options renseignees en tete de document (voir debut du TP),
-ou en l'indiquant a Rmarkdown quelles parties seront mise sous forme d'onglets.
+Ceci est possible grâce aux options renseignées en tête de document (voir début du TP),
+ou en l'indiquant a `Rmarkdown` directement dans les titres.
 
 5 - Creer un menu flottant pour votre document en ajoutant les options suivantes au
-bon endroit dans l'objet de tete:
+bon endroit dans l'objet d'en-tête:
 ````
 toc: true
 toc_float: true
 code_folding: hide
 ````
 
-6 - Creer de niveau de titre / sous titre, par exemple pour les aferentes formes
-de tableaux et creer des onglets pour chacune des sous parties
-a l'aide de la montion :
+6 - Créez un niveau de titre / sous titre, par exemple pour les différentes formes
+de tableaux et créez des onglets pour chacune des sous parties
+a l'aide de la mention :
 ````
 {.tabset}
 ````

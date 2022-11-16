@@ -5,62 +5,79 @@ date: "`r Sys.Date()`"
 output: html_notebook
 ---
 
-Ici nous allons voir comment creer une image docker d'une instalation de R
-avec quelques paquets specifiques pour ensuite l'utiliser avec `Docker` et `Singularity`.
+Ici nous allons voir comment créer une image docker d'une instalation de R
+avec quelques paquets spécifiques pour ensuite l'utiliser avec `Docker` et `Singularity`.
 
-1 - Verifier que `Docker` et `Singularity` sont bien installes sur vos machines:
+# Docker et Singularity
+
+1 - Verifiez que `Docker` et `Singularity` sont bien installés sur vos machines:
 ```
 $ docker --version
 $ singularity --version
 ```
 
-2 - Ecrire une recette `Docker`. La recette est le fichier qui va permettre de creer l'image `Docker` ont installant les librairies Linux et les outils necessaires aux analyses. Completer les fichier Dockerfile pour avoir dans l'image la derniere 
-version de `R` (4.4.1) les libraries `R` necessaires a l'utilisation du package `mixOmics` (http://mixomics.org/).
+# Recette Docker
 
-La recette consiste en an fichier `Dockerfile` contenant les instructions necessaire
+La recette est le fichier qui va permettre de créer l'image `Docker` en 
+installant les librairies Linux et les outils nécessaires aux analyses. Il s'agit 
+surtout d'un script de lignes de commandes compilé dans un format spécifique.
+
+2 - Ecrire une recette `Docker`. (voir le fichier `canevaDockerfile`) en complétant
+le fichier `canevaDockerfile` pour avoir dans l'image : la derniere 
+version de `R` (4.4.1), les librairies `R` nécessaires à l'utilisation du 
+package `mixOmics` (http://mixomics.org/). Le fichier doit être renomé `Dockerfile`.
+
+Plus précisément, la recette consiste en un fichier `Dockerfile` 
+contenant les instructions necessaire
 a l'instlation des differents outils.
-Completer le fichier caneva pour installer les packages `R` : 
+
+Les packages `R` qui doivent être installés sont : 
 
 - `devtools`
 - `BiocManager`
 - `mixOmics`
 
-Attention, tout ces packages ne sont pas disponible sur les mêmes depots...
+Attention, tous ces packages ne sont pas forcément disponible sur les mêmes dépots...
 
-3 - construire l'image docker.
+# Construction de l'image Docker
+
 La commande pour construire une image Docker commance par :
 ```
 $ docker build ...
 ```
 
-Une fois l'image cree, exportons la sous la forme d'une archive.
-Elle peut alors être mise sur une autre machine
+3 - construire l'image docker.
+
+Une fois l'image créée, exportons la sous la forme d'une archive.
+Elle peut alors être mise sur une autre machine ou un dépot.
 ```
 $ docker save ...
 ```
-et verifier que tout c'est bien passe
+et vérifier que tout s'est bien passé :
 ```
 $ ls -lah .
 ```
-On peut alors charger l'image docker cree
+On peut alors charger l'image docker créée :
 ```
 $ docker load ...
 ```
-Et l'utiliser
+Et l'utiliser :
 ```
 $ docker run ...
 ```
 
-Passons a `Singularity` pour utiliser l'image cree
+# De Docker à Singularity
+
+Passons à `Singularity` pour utiliser l'image créée
 sur le cluster.
 
-Creer l'image `Singularity` à partr de l'image
-`Docker` precedante. La c'est un peu plus complique
+Il faut d'abord creéér l'image `Singularity` à partr de l'image
+`Docker` précédante. Là, c'est un peu plus compliqué. On va directement voir dans la doc.
 ```
 $ docker run -v /var/run/docker.sock:/var/run/docker.sock -v ~/Projets/16spipeline:/output --privileged -t --rm quay.io/singularity/docker2singularity \ [...]
 ```
 
-Essayons l'image creee
+Essayons ensuite cette nouvelle image
 ```
 $ singularity exec [...].sif R
 ```
@@ -69,7 +86,9 @@ ou
 $ singularity run [...].sif
 ```
 
-et pour terminer, on peut directement utiliser un script R source pour realiser des analyses directement sur le cluster, en mettant cette ligne de code dans un fichier slurm
+et pour terminer, on peut directement utiliser un script R source pour réaliser 
+des analyses directement sur le cluster, en mettant cette ligne de code dans un fichier slurm
+celui-ci executera votre script R à l'intérieur d'une image Singularity.
 ```
 $ singularity exec [...].sif R --slave -e "source('demo.R')"
 ```
