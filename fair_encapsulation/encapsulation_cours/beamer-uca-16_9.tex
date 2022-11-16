@@ -10,7 +10,7 @@
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{xcolor}
-
+\usepackage{multicol}
 \usepackage[absolute,overlay]{textpos}
 \setbeamertemplate{navigation symbols}{}
 \useoutertheme{infolines}
@@ -50,7 +50,12 @@
 \setbeamercolor{item projected}{bg=uca03}
 \setbeamercolor{section in toc}{fg=grisuca}
 \setbeamercolor{normal text}{fg=grisuca}
-
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
 
 \newenvironment<>{varblock}[2][.9\textwidth]{%
   \setlength{\textwidth}{#1}
