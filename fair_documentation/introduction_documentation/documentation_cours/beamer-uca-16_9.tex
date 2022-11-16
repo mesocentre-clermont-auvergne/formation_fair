@@ -47,4 +47,11 @@
 \setbeamercolor{item projected}{bg=uca03}
 \setbeamercolor{section in toc}{fg=grisuca}
 \setbeamercolor{normal text}{fg=grisuca}
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
 
