@@ -18,7 +18,7 @@ height="3cm"}
 5cm(11cm,4.3cm) ![image](images/mesocentre.png){width="3cm"
 height="3cm"}
 
-### Sommaire
+### Contents
 
 The laboratory notebook
 =======================
