@@ -1,8 +1,8 @@
-# Soluce: Introduction to code versioning with git
+# Conseils: Introduction au versionnement du code avec git
 Mateo Hiriart  
 2022-11-14
 
-Lien et commande pour vous aidé:  
+Lien et commande pour vous aider:  
 &nbsp;&nbsp; Documentation: https://docs.github.com/en  
 &nbsp;&nbsp; Equivalent man: https://git-scm.com/doc  
 &nbsp;&nbsp; `git help`
