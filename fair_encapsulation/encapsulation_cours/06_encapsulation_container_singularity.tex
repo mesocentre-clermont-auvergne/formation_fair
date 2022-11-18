@@ -10,7 +10,7 @@ Solomon Hykes was inspirated by container port in the world travel \newline
 Docker is an open source project, a community and a private company 
 \end{frame}
 
-\begin{frame}[<+->]
+\begin{frame}
 \begin{itemize}
 \item Born in 2010
 \item First public release in 2013
@@ -20,11 +20,11 @@ Docker is an open source project, a community and a private company
 \end{itemize}
 \end{frame}
 
-\subsection{Docker}[<+->]{Term definitions}
+\subsection{Docker}{Term definitions}
 \begin{frame}
 \begin{columns}
 \column{.48\textwidth}
-\begin{itemize}
+\begin{itemize}[<1->]
 \item Docker image --> "snapshot" immutable file
 	\begin{itemize}
 	\item Set of libraries, functions
@@ -34,7 +34,7 @@ Docker is an open source project, a community and a private company
 	\end{itemize}
 \end{itemize}
 \column{.48\textwidth}
-\begin{itemize}
+\begin{itemize}[<2->]
 \item Docker container --> instance of an image
 	\begin{itemize}
 	\item Result of the image activation
@@ -51,11 +51,11 @@ client-server architecture \\
 \centering\includegraphics[width=0.8\textwidth]{images/docker_arch_3.pdf}
 \end{frame}
 
-\begin{frame}[<+->][fragile]{Docker client}
+\begin{frame}[fragile]{Docker client}
 \begin{enumerate}
-\item The user way to interact with Docker
-\item Client talk to a daemon (Docker background program)
-\item API based --> can communicate with several deamons
+\item<1-> The user way to interact with Docker
+\item<2-> Client talk to a daemon (Docker background program)
+\item<3-> API based --> can communicate with several deamons
 \begin{block}{Client}
 \begin{verbatim}
 $ docker build [path][url] 
@@ -67,6 +67,7 @@ $ docker run [image_name]
 \end{verbatim}
 \end{block}
 \end{enumerate}
+
 \begin{center}
 \includegraphics[width=0.15\textwidth]{images/docker_arch_1.pdf}
 \end{center}
@@ -112,8 +113,11 @@ Status: Downloaded newer image for debian:latest
 \end{frame}
 
 \begin{frame}
-\includegraphics[width=0.45\textwidth]{images/docker-cheat-sheet.pdf}
-\includegraphics[width=0.5\textwidth]{images/docker-compose-cheat-sheet.pdf}
+\centering\includegraphics[width=0.9\textwidth]{images/docker-cheat-sheet.pdf}
+\end{frame}
+
+\begin{frame}
+\centering\includegraphics[width=0.9\textwidth]{images/docker-compose-cheat-sheet.pdf}
 \end{frame}
 
 \subsection{Singularity}
