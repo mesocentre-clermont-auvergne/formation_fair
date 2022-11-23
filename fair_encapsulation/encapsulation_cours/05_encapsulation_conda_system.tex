@@ -86,12 +86,15 @@ The tools are packaged and available on several \textbf{channels}
 \end{block}}
 \end{columns}
 \end{frame}
+
 \begin{frame}{Environment resolution}
-Conda also manage your environment to install compatible tools in the same environment
-\begin{itemize}[<2->]
-\item time to solve the environement installation plan
-\item could be locked and don't install a tool
-\end{itemize}
-\onslide<3->{\centering\includegraphics[width=0.7\textwidth]{images/conda_use.png}}
+\only<1>{
+Conda also manage environments to keep compatible
+\begin{itemize}
+\item Long time to solve environment resolution
+\item Can fail and doesn't install
+\end{itemize}}
+\only<2>{\centering\includegraphics[width=0.7\textwidth]{images/conda_use.pdf}
+\blfootnote{Modified from \url{https://www.recursion.com/news/how-recursion-invests-in-developer-experience}}}
 \end{frame}
 

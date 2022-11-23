@@ -53,9 +53,8 @@ client-server architecture \\
 
 \begin{frame}[fragile]{Docker client}
 \begin{enumerate}
-\item<1-> The user way to interact with Docker
-\item<2-> Client talk to a daemon (Docker background program)
-\item<3-> API based --> can communicate with several deamons
+\item<1-> Client to interact with Docker
+\item<2-> Client talk to the daemons (Docker background programs)
 \begin{block}{Client}
 \begin{verbatim}
 $ docker build [path][url] 
@@ -75,8 +74,8 @@ $ docker run [image_name]
 
 \begin{frame}[<+->]{Docker daemon}
 \begin{enumerate}
-\item listen API requests
-\item manage Dockers images, containers...
+\item Listen client requests
+\item Manage Dockers images, containers...
 \end{enumerate}
 \centering\includegraphics[width=0.6\textwidth]{images/docker_arch_2.pdf}
 \end{frame}
@@ -84,7 +83,7 @@ $ docker run [image_name]
 \begin{frame}[<+->]{Docker registries}
 \begin{enumerate}
 \item Store Docker images
-\item Docker hub is a publix registry
+\item Docker hub is a public registry
 \item You can run your own registry
 \end{enumerate}
 \onslide<2->{\centering\includegraphics[width=0.75\textwidth]{images/docker_arch_3.pdf}}
@@ -93,7 +92,15 @@ $ docker run [image_name]
 \end{textblock*}
 \end{frame}
 
-\begin{frame}[<+->][fragile]{Image layers}
+\begin{frame}[fragile]{Image layers}
+Focus on image building
+\begin{itemize}[<+->]
+\item Layers building
+\item Several layers to one image
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Image layers}
 Focus on image building
 \begin{itemize}
 \item Layers building
@@ -126,9 +133,8 @@ Status: Downloaded newer image for debian:latest
 \item Also a container manager as Docker
 \item Open-source project
 \item Release in 2015
-\item More adopted in Academic institutions
 \item Fork project in 2020 with now AppTainer (linux foundation) and SingularityCE
-\item HPC compatible, no root whrite, integrate ressource managers (slurm)
+\item HPC compatible, no root write, integrate ressource managers (slurm)
 \item Could use Docker images
 \end{itemize}
 \only<1>{\centering\includegraphics[width=0.2\textwidth]{images/singularity_logo.pdf}}

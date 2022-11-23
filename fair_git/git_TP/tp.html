@@ -6,227 +6,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>tp</title>
   <style>
-    html {
-      line-height: 1.5;
-      font-family: Georgia, serif;
-      font-size: 20px;
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 1em;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
-      font-size: 85%;
-      margin: 0;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
-<h1 id="introduction-to-code-versioning-with-git">Introduction to code
-versioning with git</h1>
+<h1 id="introduction-to-code-versioning-with-git">Introduction to code versioning with git</h1>
 <p>Mateo Hiriart<br />
 2022-11-14</p>
-<p>Dans ce TP nous allons voir les bases de git afin de créer un projet
-et de versionner sont code pour garder une trace des modifications faite
-dans le temps.</p>
-<p>Lien et commande pour vous aidé:<br />
-   Documentation:<a
-href="https://docs.github.com/fr">https://docs.github.com/fr</a><br />
-   Equivalent man: <a
-href="https://git-scm.com/doc">https://git-scm.com/doc</a><br />
+<p>Dans ce TP nous allons voir les bases de git afin de créer un projet et de versionner notre code pour garder une trace des modifications faites dans le temps.</p>
+<p>Liens et commandes pour vous aider:<br />
+   Documentation:<a href="https://docs.github.com/fr">https://docs.github.com/fr</a><br />
+   Equivalent man: <a href="https://git-scm.com/doc">https://git-scm.com/doc</a><br />
    <code>git help</code></p>
 <h2 id="i-configuration">I/ Configuration</h2>
 <ol type="1">
-<li>Creer un compte sur <a href="https://github.com/">github</a> ou <a
-href="https://gitlab.com">gitlab</a></li>
-<li>A l’aide de la documentation configurer votre environnement avec
-<code>git config</code></li>
+<li>Créez un compte sur <a href="https://github.com/">github</a> ou <a href="https://gitlab.com">gitlab</a></li>
+<li>A l’aide de la documentation configurez votre environnement avec la commande <code>git config</code></li>
 </ol>
 <h2 id="ii-premier-test-en-local">II/ Premier test en local</h2>
 <ol type="1">
-<li>Initialiser votre premier repo git en local et naviguer dans
-l’arborescence de votre projet. Utiliser <code>git status</code> et/ou
-<code>git log</code> pour verifier la creation de votre repository
-git.</li>
-<li>Faire un premier commit avec commentaire en créant un fichier .txt
-de test, utilisez <code>git status</code> pour vous aider.</li>
-<li>Modifier votre fichier pour faire un deuxième commit et utilisé
-<code>git log</code> pour voir l’arborescence de votre projet.</li>
-<li>Vous pouvez maintenant supprimer le projet en supprimant le
-repertoire qui contient le dossier .git</li>
+<li>Initialisez votre premier dépôt git en local et naviguez dans l’arborescence de votre projet. Utilisez <code>git status</code> et/ou <code>git log</code> pour vérifier la création de votre dépôt git.</li>
+<li>Faites un premier <code>commit</code> avec commentaires en créant un fichier .txt de test, utilisez la commande <code>git status</code> pour vous aider.</li>
+<li>Modifiez votre fichier pour faire un deuxième commit et utiliser <code>git log</code> pour voir l’arborescence de votre projet.</li>
+<li>Vous pouvez maintenant supprimer le projet en supprimant le répertoire qui contient le dossier .git</li>
 </ol>
-<h2 id="iii-projet-partagé-sur-githubgitlab">III/ Projet partagé sur
-github/gitlab</h2>
-<h4 id="à-partir-de-maintenant-choisissez-un-binome.">À partir de
-maintenant choisissez un binome.</h4>
+<h2 id="iii-projet-partagé-sur-githubgitlab">III/ Projet partagé sur github/gitlab</h2>
+<h4 id="à-partir-de-maintenant-choisissez-un-binôme.">À partir de maintenant choisissez un binôme.</h4>
 <ol type="1">
-<li>Créer un repertoire sur github.com et inviter votre binome à
-collaborer dans <code>Settings</code></li>
-<li>Cloner chacun le projet en local avec
-<code>git clone &lt;url_projet&gt;</code> vous trouverez l’url pour
-cloner dans la page sur github sous <code>&lt;&gt;code</code></li>
-<li>Faire un seul commit et push ce commit sur le repo distant (github)
-avec la commande <code>git push</code>.</li>
-<li>Ensuite amener ce commit sur le local du binome qui ne l’a pas avec
-<code>git pull</code></li>
+<li>Créez un répertoire sur github.com et invitez votre binôme à collaborer en l’ajoutant à vos collaborateurs depuis l’onglet <code>Settings</code></li>
+<li>Clonez chacun le projet en local avec la commande <code>git clone &lt;url_projet&gt;</code>. Vous trouverez l’url pour cloner le répertoire depuis la page github sous <code>&lt;&gt;code</code></li>
+<li>Faites un seul <code>commit</code> et mettez à jour le répertoire distant (github) avec ce commit en utilisant la commande <code>git push</code>.</li>
+<li>Ensuite envoyez ce <code>commit</code> sur le local de votre binôme qui ne l’a pas avec la commande <code>git pull</code></li>
 </ol>
 <h2 id="iv-les-conflits">IV/ Les conflits</h2>
-<h4 id="continuer-à-utiliser-le-repo-de-github-en-binome.">Continuer à
-utiliser le repo de github en binome.</h4>
+<h4 id="continuez-à-utiliser-le-repo-de-github-en-binôme.">Continuez à utiliser le repo de github en binôme.</h4>
 <ol type="1">
-<li>Effectuez tous deux des modifications sur le meme fichier et ensuite
-utilisez <code>git commit</code> et <code>git push</code> pour appliquer
-la modification sur github. Une erreur devrait survenir pour la dernière
-personne à avoir push.</li>
-<li>Utiliser <code>git fetch</code> et <code>git rebase</code> pour
-régler le problème ou <code>git pull --rebase</code></li>
+<li>Effectuez tous les deux des modifications sur le même fichier et ensuite utilisez les commandes <code>git commit</code> et <code>git push</code> pour appliquer la modification sur le répertoire distant github. Une erreur devrait survenir pour la dernière personne qui exécute la commande <code>push</code>.</li>
+<li>Utilisez <code>git fetch</code> et <code>git rebase</code> pour régler le problème ou <code>git pull --rebase</code></li>
 </ol>
 <h2 id="v-les-branches">V/ Les branches</h2>
 <ol type="1">
-<li>Créer chacun une nouvelle branche dans le projet avec
-<code>git branch</code></li>
-<li>Faite du development sur cette nouvelle branche et utiliser
-<code>git commit</code> et <code>git push</code></li>
-<li>Merge la nouvelle branche de development sur la branche master avec
-<code>git merge</code>, et utiliser si besoin <code>git fetch</code> et
-<code>git rebase</code> pour mettre à jour votre branche avant.</li>
+<li>Créez chacun une nouvelle branche dans le projet avec <code>git branch</code></li>
+<li>Faites du développement sur cette nouvelle branche et utilisez à nouveau les commandes <code>git commit</code> et <code>git push</code></li>
+<li>Fusionnez la nouvelle branche de développement sur la branche main avec la commande <code>git merge</code>, et utilisez si besoin <code>git fetch</code> et <code>git rebase</code> pour mettre à jour votre branche avant.</li>
 </ol>
 </body>
 </html>
