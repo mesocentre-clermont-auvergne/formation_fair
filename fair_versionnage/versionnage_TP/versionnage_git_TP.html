@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>tp</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<h1 id="introduction-to-code-versioning-with-git">Introduction to code versioning with git</h1>
+<p>Mateo Hiriart<br />
+2022-11-14</p>
+<p>Dans ce TP nous allons voir les bases de git afin de créer un projet et de versionner notre code pour garder une trace des modifications faites dans le temps.</p>
+<p>Liens et commandes pour vous aider:<br />
+   Documentation:<a href="https://docs.github.com/fr">https://docs.github.com/fr</a><br />
+   Equivalent man: <a href="https://git-scm.com/doc">https://git-scm.com/doc</a><br />
+   <code>git help</code></p>
+<h2 id="i-configuration">I/ Configuration</h2>
+<ol type="1">
+<li>Créez un compte sur <a href="https://github.com/">github</a> ou <a href="https://gitlab.com">gitlab</a></li>
+<li>A l’aide de la documentation configurez votre environnement avec la commande <code>git config</code></li>
+</ol>
+<h2 id="ii-premier-test-en-local">II/ Premier test en local</h2>
+<ol type="1">
+<li>Initialisez votre premier dépôt git en local et naviguez dans l’arborescence de votre projet. Utilisez <code>git status</code> et/ou <code>git log</code> pour vérifier la création de votre dépôt git.</li>
+<li>Faites un premier <code>commit</code> avec commentaires en créant un fichier .txt de test, utilisez la commande <code>git status</code> pour vous aider.</li>
+<li>Modifiez votre fichier pour faire un deuxième commit et utiliser <code>git log</code> pour voir l’arborescence de votre projet.</li>
+<li>Vous pouvez maintenant supprimer le projet en supprimant le répertoire qui contient le dossier .git</li>
+</ol>
+<h2 id="iii-projet-partagé-sur-githubgitlab">III/ Projet partagé sur github/gitlab</h2>
+<h4 id="à-partir-de-maintenant-choisissez-un-binôme.">À partir de maintenant choisissez un binôme.</h4>
+<ol type="1">
+<li>Créez un répertoire sur github.com et invitez votre binôme à collaborer en l’ajoutant à vos collaborateurs depuis l’onglet <code>Settings</code></li>
+<li>Clonez chacun le projet en local avec la commande <code>git clone &lt;url_projet&gt;</code>. Vous trouverez l’url pour cloner le répertoire depuis la page github sous <code>&lt;&gt;code</code></li>
+<li>Faites un seul <code>commit</code> et mettez à jour le répertoire distant (github) avec ce commit en utilisant la commande <code>git push</code>.</li>
+<li>Ensuite envoyez ce <code>commit</code> sur le local de votre binôme qui ne l’a pas avec la commande <code>git pull</code></li>
+</ol>
+<h2 id="iv-les-conflits">IV/ Les conflits</h2>
+<h4 id="continuez-à-utiliser-le-repo-de-github-en-binôme.">Continuez à utiliser le repo de github en binôme.</h4>
+<ol type="1">
+<li>Effectuez tous les deux des modifications sur le même fichier et ensuite utilisez les commandes <code>git commit</code> et <code>git push</code> pour appliquer la modification sur le répertoire distant github. Une erreur devrait survenir pour la dernière personne qui exécute la commande <code>push</code>.</li>
+<li>Utilisez <code>git fetch</code> et <code>git rebase</code> pour régler le problème ou <code>git pull --rebase</code></li>
+</ol>
+<h2 id="v-les-branches">V/ Les branches</h2>
+<ol type="1">
+<li>Créez chacun une nouvelle branche dans le projet avec <code>git branch</code></li>
+<li>Faites du développement sur cette nouvelle branche et utilisez à nouveau les commandes <code>git commit</code> et <code>git push</code></li>
+<li>Fusionnez la nouvelle branche de développement sur la branche main avec la commande <code>git merge</code>, et utilisez si besoin <code>git fetch</code> et <code>git rebase</code> pour mettre à jour votre branche avant.</li>
+</ol>
+</body>
+</html>
