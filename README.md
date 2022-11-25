@@ -3,19 +3,22 @@
 
 Construction d'un projet de formation aux pratiques FAIR
 
-## Programme prévisionnel sur 3 axes
+## Programme prévisionnel sur 4 axes
+1. Introduction aux pratiques FAIR
+    > - In
+    > -
 1. Notion de versionnage et pérénnité du code
   - Introduction à Git
     > - Récupérer du code depuis github, gitlab
-    > - créer un dépôt git
-    > - créer des commit
-    > - ajouter des fichier 
-    > mettre à son jour depôt
+    > - Créer un dépôt git
+    > - Créer des commit
+    > - Ajouter des fichier
+    > - Mettre à son jour un depôt
 
  2. Gestion de l'environnement de travail
     > - Utilisation de conda et des environnements de travail
-    > - utilisation de conteneur avec singularity
-    > - gestionnaire de workflow avec snakemake
+    > - Utilisation de conteneur avec singularity
+    > - Gestionnaire de workflow avec snakemake
 
 3. Documentation du code
     > - Introduction à Rmarkdown
@@ -31,7 +34,7 @@ Le dépôt se structure selon les 3 thématiques développées :
     - Le [TP jupyter](fair_documentation/TP_jupyter/00_encapsulation_jupyter.ipynb)
     - Le [TP rmarkdown](fair_documentation/rmarkdown_TP/Rmarkdown_TP.Rmd)
 
-  
+
 ```
 .
 ├── fair_documentation
