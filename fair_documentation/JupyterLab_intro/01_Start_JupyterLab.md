@@ -2,13 +2,17 @@
 
 ## Start the JupyterLab Server
 
-As we wanted everyone to start owith the same installation base, we use a **Docker image for JupyterLab**. If you don't know what Docker is, you will learn more on the second day of the course.
+As we wanted everyone to start with the same installation base, we use a **Docker image for JupyterLab**.
 
 We chose a minimal image (jupyter/minimal-notebook:lab-3.4.2), but other possibilities are available:
 https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html
 
 
 To start the JupyterLab server, open a Terminal, navigate to the folder of your choice and use this command :
+If you are not familiar with command line interface, you may try one of this 2 options:
+- from your file system, got to the folder from where you want to start working and do a right-click and "open a terminal"
+- else, open a terminal and use the command `cd ~/Documents/where/I/want/to/go`, cd means "change directory".
+
 ```
 docker run --rm -v ${PWD}:/home/jovyan/ -w /home/jovyan/ --user "$(id -u):$(id -g)" -p 8888:8888 jupyter/minimal-notebook:lab-3.4.2
 ```
@@ -20,7 +24,7 @@ docker run --rm -v ${PWD}:/home/jovyan/work -w /home/jovyan/work -p 8888:8888 ju
 
 In order to open the interface, look at the last lines of information displayed below the command you just typed. You should be able to see a URL similar to this one (but don't use this one!) : http://127.0.0.1:8888/lab?token=3b29983bfee5fdc5e51cdf93ab7d138e87c7c2582b02d894 
 
-You now have an instance with no memory of modifications of the server. If you want to extend this installation with aditional functionalities, you will need to create a Dockerfile with installation commands. We will see this tomorrow during the Docker practical session.
+You now have an instance with no memory of modifications of the server. If you want to extend this installation with aditional functionalities, you will need to create a Dockerfile with installation commands. 
 
 
 ## Use JupyterLab online
