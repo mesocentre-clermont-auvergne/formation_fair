@@ -53,7 +53,6 @@ Le dépôt se structure selon les 4 thématiques développées :
 ├── fair_documentation
 │   ├── documentation_TP
 │   ├── introduction_documentation
-│   ├── JupyterLab_intro
 │   ├── rmarkdown_cheatsheet_V2.pdf
 │   └── rmarkdown_reference_guide.pdf
 ├── fair_encapsulation
@@ -67,7 +66,6 @@ Le dépôt se structure selon les 4 thématiques développées :
 ├── fair_versionnage
 │   ├── versionnage_cours
 │   └── versionnage_TP
-├── fiche descript formation a completer.docx
 └── README.md
 
 ```
