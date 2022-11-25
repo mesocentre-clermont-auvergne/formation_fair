@@ -8,14 +8,14 @@ Construction d'un projet de formation aux pratiques FAIR
   - Introduction à Git
     > - Récupérer du code depuis github, gitlab
     > - créer un dépôt git
-    > - créer des commit
-    > - ajouter des fichier 
-    > mettre à son jour depôt
+    > - créer des commits
+    > - ajouter des fichiers 
+    > mettre à son jour dépôt
 
  2. Gestion de l'environnement de travail
     > - Utilisation de conda et des environnements de travail
-    > - utilisation de conteneur avec singularity
-    > - gestionnaire de workflow avec snakemake
+    > - utilisation de conteneurs avec singularity
+    > - gestionnaire de workflows avec snakemake
 
 3. Documentation du code
     > - Introduction à Rmarkdown
