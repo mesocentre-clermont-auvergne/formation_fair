@@ -38,7 +38,7 @@ Le dépôt se structure selon les 4 thématiques développées :
    - Le [cours](fair_encapsulation/encapsulation_cours/introduction_encapsulation.pdf)
    - Les [TP](fair_encapsulation/encapsulation_TP) pour [conda](fair_encapsulation/encapsulation_TP/fair_encapsulatiopn_conda.html) et [singularity](fair_encapsulation/encapsulation_TP/fair_encapsulation_docker_singularity.nb.html)
 
-   
+
 [fair_environnement](fair_environnement) contient :
    - Le cours de gestion des workflows avec [snakemake](fair_environnement/snakemake_cours)
    - Le TP snakemake
@@ -51,24 +51,25 @@ Le dépôt se structure selon les 4 thématiques développées :
 ```
 .
 ├── fair_documentation
+│   ├── documentation_TP
 │   ├── introduction_documentation
 │   ├── JupyterLab_intro
 │   ├── rmarkdown_cheatsheet_V2.pdf
-│   ├── rmarkdown_reference_guide.pdf
-│   ├── rmarkdown_TP
-│   └── TP_jupyter
+│   └── rmarkdown_reference_guide.pdf
 ├── fair_encapsulation
 │   ├── conda_sheet_4.12.pdf
 │   ├── encapsulation_cours
-│   ├── encapsulation_TP
-│   └── introduction_encapsulation.pdf
+│   └── encapsulation_TP
+├── fair_environnement
+│   └── snakemake_cours
 ├── fair_introduction
-│   └── introduction_cours
-└── support_enseignement
-    ├── documentation
-    ├── introduction
-    ├── packaging
-    └── versionnage
+│   └── introduction_fair_cours
+├── fair_versionnage
+│   ├── versionnage_cours
+│   └── versionnage_TP
+├── fiche descript formation a completer.docx
+└── README.md
+
 ```
 
 15 directories, 6 files
