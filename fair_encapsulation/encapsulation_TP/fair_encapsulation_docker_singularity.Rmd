@@ -8,19 +8,18 @@ output: html_notebook
 Ici nous allons voir comment créer une image docker d'une installation de R
 avec quelques paquets spécifiques pour ensuite l'utiliser avec `Docker` et `Singularity`.
 
- - Utilisez docker singularity sous biosphere
- - Trouvez la bonne image biosphere contenant `Docker`
+ - Utilisez docker et singularity sous [Biosphère](https://biosphere.france-bioinformatique.fr/)
+ - Trouvez l'"Appliance" Biosphère contenant `Docker`
 
 # Docker
 
 ## Recette Docker
 
 La recette est le fichier qui va permettre de créer l'image `Docker` en 
-installant les librairies Linux et les outils nécessaires aux analyses. Il s'agit 
+installant les librairies Linux et les outils nécessaires aux analyses souhaitées. Il s'agit 
 surtout d'un script de lignes de commandes compilé dans un format spécifique.
 
-`Docker` ne fonctionne pas sur le cluster. Il faut le faire soit sur une machine locale
-soit sur une VM de l'IFB ([Biosphère](https://biosphere.france-bioinformatique.fr/)).
+`Docker` ne fonctionne pas sur un cluster de calcul dont l'administration système est gérée par un informaticien. Il faut l'utiliser soit sur une machine locale soit sur une machine virtuelle (VM) du Cloud Biosphère de l'IFB.
 
 1 - Vérifiez la version de `Docker` installée
 ```
@@ -28,9 +27,9 @@ $ docker --version
 ```
 
 2 - Ecrire une recette `Docker`. (voir le fichier `canevaDockerfile`) en complétant
-le fichier `canevaDockerfile` pour avoir dans l'image : la dernieèère 
+le fichier `canevaDockerfile` pour avoir dans l'image : la dernière 
 version de `R` (4.4.1), les librairies `R` nécessaires à l'utilisation du 
-package `mixOmics` (http://mixomics.org/). Le fichier doit être renomé `Dockerfile`.
+package `mixOmics` (http://mixomics.org/). Le fichier doit être renommé `Dockerfile`.
 
 Plus précisément, la recette consiste en un fichier `Dockerfile` 
 contenant les instructions nécessaires à l'instalation des différents outils.
@@ -43,7 +42,7 @@ Les packages `R` qui doivent être installés sont :
 
 Attention, tous ces packages ne sont pas forcément disponibles sur les mêmes dépots...
 
-## Construction de l'image Docker (sur le cloud de l'IFB)
+## Construction de l'image Docker sur le cloud de l'IFB
 
 La commande pour construire une image Docker commence par :
 
@@ -53,7 +52,7 @@ $ docker build ...
 
 3 - construire l'image docker.
 
-Une fois l'image créée, exportons la sous la forme d'une archive.
+Une fois l'image créée, exportons-la sous la forme d'une archive.
 Elle peut alors être mise sur une autre machine ou un dépot.
 ```
 $ docker save ...
@@ -80,7 +79,7 @@ Passons à `Singularity` pour utiliser l'image créée sur le cluster.
 
 ## Téléchargement d'une image `Docker` existante via `Singularity`
 
-4 - Verifiez que `Singularity` est bien installés sur vos machines:
+4 - Vérifiez que `Singularity` est bien installé sur vos machines:
 ```
 $ singularity --version
 ```
@@ -111,7 +110,7 @@ $ singularity run [...].sif
 ```
 
 et pour terminer, on peut directement utiliser un script R source pour réaliser 
-des analyses directement sur le cluster, en mettant cette ligne de code dans un fichier `slurm`
+des analyses directement sur le cluster de calcul du Mésocentre, en mettant cette ligne de code dans un fichier `slurm`
 celui-ci executera votre script R à l'intérieur d'une image `Singularity`.
 ```
 $ singularity exec [...].sif R --slave -e "source('demo.R')"
