@@ -37,7 +37,7 @@ Le dépôt se structure selon les 4 thématiques développées :
 3. [fair_encapsulation](fair_encapsulation) contient :
    - Le [cours](fair_encapsulation/encapsulation_cours/introduction_encapsulation.pdf)
    - Les [TP](fair_encapsulation/encapsulation_TP) pour [conda](fair_encapsulation/encapsulation_TP/fair_encapsulatiopn_conda.html) et [singularity](fair_encapsulation/encapsulation_TP/fair_encapsulation_docker_singularity.nb.html)
-3bis. [fair_environnement](fair_environnement) contient :
+3. [fair_environnement](fair_environnement) contient :
    - Le cours de gestion des workflows avec [snakemake](fair_environnement/snakemake_cours)
    - Le TP snakemake
 4. [fair_documentation](fair_documentation) contient :
