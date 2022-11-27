@@ -32,7 +32,7 @@ Construction d'un projet de formation aux pratiques FAIR
 Le dépôt se structure selon les 4 thématiques développées :
 1. [fair_introduction](fair_introduction/introduction_fair_cours) contient le cours d'introduction du module [FAIR](fair_introduction/introduction_fair_cours/fair_introduction.pdf)
 2. [fair_versionnage](fair_versionnage) contient :
-  - Le cours sur le versionnage avec [Git](fair_versionnage/versionnage_cours/cours.odp)
+  - Le cours sur le versionnage avec [Git](fair_versionnage/versionnage_cours/introduction_versionage_git.pdf)
   - Le [TP_Git](fair_versionnage/versionnage_TP/versionnage_git_TP.html)
 3. [fair_encapsulation](fair_encapsulation) contient :
    - Le [cours](fair_encapsulation/encapsulation_cours/introduction_encapsulation.pdf)
