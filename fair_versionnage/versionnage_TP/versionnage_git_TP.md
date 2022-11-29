@@ -61,7 +61,7 @@ Il est toujours possible d'utiliser `git stash` pour temorairement stocké vos m
 2) Faites du développement sur cette nouvelle branche et utilisez à nouveau les commandes `git commit` et `git push`. Puis executer la commande proposer par git.
 Aller sur gitlab pour verifier si votre nouvelle branche apparait et comparer le dernier commit avec la branche main.
 
-3)Rebascullez sur la branche main et fusionnez la nouvelle branche de développement sur la branche main avec la commande `git merge <branch_name>`, et utilisez si besoin  `git fetch` et `git rebase` pour mettre à jour votre branche avant.
+3) Rebascullez sur la branche main et fusionnez la nouvelle branche de développement sur la branche main avec la commande `git merge <branch_name>`, et utilisez si besoin  `git fetch` et `git rebase` pour mettre à jour votre branche avant.
 
 
 ## VI/ Issue et merge/pull request
