@@ -18,9 +18,9 @@ Liens et commandes pour vous aider:
 
 ## II/ Premier test en local
 
-1) Créer un nouveau répertoire 'test' par exemple. Vous déplacer dedans et faire un `git init`
+1) Créer un nouveau répertoire 'test' par exemple. Vous déplacer dedans.
 
-2) Initialisez votre premier dépôt git en local et naviguez dans l'arborescence de votre projet.
+2) Initialisez votre premier dépôt git en local en tapant et naviguez dans l'arborescence de votre projet.
 Utilisez ``git status`` et/ou ``git log`` pour vérifier la création de votre dépôt git.
 
 3) Faites un premier `commit` avec commentaires en créant un fichier .txt de test, utilisez la commande `git status` pour vous aider.
