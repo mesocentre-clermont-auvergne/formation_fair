@@ -18,15 +18,17 @@ Liens et commandes pour vous aider:
 
 ## II/ Premier test en local
 
-1) Initialisez votre premier dépôt git en local et naviguez dans l'arborescence de votre projet.
+1) Créer un nouveau répertoire 'test' par exemple. Vous déplacer dedans.
+
+2) Initialisez votre premier dépôt git en local en tapant et naviguez dans l'arborescence de votre projet.
 Utilisez ``git status`` et/ou ``git log`` pour vérifier la création de votre dépôt git.
 
-2) Faites un premier `commit` avec commentaires en créant un fichier .txt de test, utilisez la commande `git status` pour vous aider.
+3) Faites un premier `commit` avec commentaires en créant un fichier .txt de test, utilisez la commande `git status` pour vous aider.
 
-3) Modifiez votre fichier pour faire un deuxième commit et utiliser `git log` pour voir l'arborescence
+4) Modifiez votre fichier pour faire un deuxième commit et utiliser `git log` pour voir l'arborescence
 de votre projet.
 
-4) Vous pouvez maintenant supprimer le projet en supprimant le répertoire qui contient le dossier .git
+5) Vous pouvez maintenant supprimer le projet en supprimant le répertoire qui contient le dossier .git
 
 
 ## III/ Projet partagé sur github/gitlab
