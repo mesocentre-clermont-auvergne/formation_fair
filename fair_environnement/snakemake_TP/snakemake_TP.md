@@ -27,10 +27,11 @@ Note : Replace "my.IP" by the IP address provided on your biosphere VM
 2-2 I. The architecture of your working directory 
 Create directories to get this architecture:
 
-├── envs
+
 ├── logs
 ├── results
 ├── snakemake
+    ├── envs
 └── data -> /ifb/data
 
 Note: On Ubuntu, `mkdir` command does the job.

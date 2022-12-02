@@ -4,11 +4,9 @@
 <p class="has-line-data" data-line-start="3" data-line-end="5">Official documentation: <a href="https://snakemake.readthedocs.io/en/stable/">https://snakemake.readthedocs.io/en/stable/</a><br>
 To date (2022/11/28, more than 100 standardized workflows are available: <a href="https://snakemake.github.io/snakemake-workflow-catalog/">https://snakemake.github.io/snakemake-workflow-catalog/</a></p>
 <h2 class="code-line" data-line-start=6 data-line-end=7><a id="Prerequisites_6"></a>Pre-requisites</h2>
-<p class="has-line-data" data-line-start="7" data-line-end="9">1- Data<br>
-Input data to run the workflow example are reduced RNASeq reads files from Ostreococcus tauri green algae ((with a focus on chr18) from runs SRR3099585-87 &amp; SRR3105697-99, Bioproject PRJNA304086). To download data from zenodo <a href="https://zenodo.org/record/3997237#.Y4Tfo9LMJkg">here</a>, the easiest way is to click on the download icon, but it would download data on our local computer. However, we wish to use these data on Cloud. So we just collect the link to data by doing a right-click. The link is &quot;<a href="https://zenodo.org/record/3997237/files/FAIR_Bioinfo_data.tar.gz?download=1">https://zenodo.org/record/3997237/files/FAIR_Bioinfo_data.tar.gz?download=1</a>&quot;</p>
-<p class="has-line-data" data-line-start="10" data-line-end="12">2- Snakemake<br>
-For the run of snakemake, deploy a BioPipes VM from Biosphere IFB Cloud (<a href="https://biosphere.france-bioinformatique.fr/cloud/">https://biosphere.france-bioinformatique.fr/cloud/</a>)</p>
-<pre><code>$ ssh <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="88fdeafde6fcfdc8e5f1a6c1d8">[email&#160;protected]</a>
+<p class="has-line-data" data-line-start="7" data-line-end="8">1- Data: input data to run the workflow example are reduced RNASeq reads files from Ostreococcus tauri green algae ((with a focus on chr18) from runs SRR3099585-87 &amp; SRR3105697-99, Bioproject PRJNA304086). To download data from zenodo <a href="https://zenodo.org/record/3997237#.Y4Tfo9LMJkg">here</a>, the easiest way is to click on the download icon, but it would download data on our local computer. However, we wish to use these data on Cloud. So we just collect the link to data by doing a right-click. The link is &quot;<a href="https://zenodo.org/record/3997237/files/FAIR_Bioinfo_data.tar.gz?download=1">https://zenodo.org/record/3997237/files/FAIR_Bioinfo_data.tar.gz?download=1</a>&quot;</p>
+<p class="has-line-data" data-line-start="9" data-line-end="10">2- Snakemake: for the run of snakemake, deploy a BioPipes VM from Biosphere IFB Cloud (<a href="https://biosphere.france-bioinformatique.fr/cloud/">https://biosphere.france-bioinformatique.fr/cloud/</a>)</p>
+<pre><code>$ ssh <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5a2f382f342e2f1a372374130a">[email&#160;protected]</a>
 The authenticity of host '193.49.167.73 (193.49.167.73)' can't be established.
 ED25519 key fingerprint is SHA256:ek4Sqedg2Uhlict4wBE9WmsoqRBuxVTirRm2lEaMGrY.
 This key is not known by any other names
@@ -16,43 +14,41 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 Type &quot;yes&quot;
 </code></pre>
-<p class="has-line-data" data-line-start="20" data-line-end="21">Note : Replace “my.IP” by the IP address provided on your biosphere VM</p>
-<p class="has-line-data" data-line-start="22" data-line-end="23">2-1 Activate the environment to use Snakemake and check that the ‘snakemake’ program works by asking for the version used.</p>
+<p class="has-line-data" data-line-start="18" data-line-end="19">Note : Replace “my.IP” by the IP address provided on your biosphere VM</p>
+<p class="has-line-data" data-line-start="20" data-line-end="21">2-1 Activate the environment to use Snakemake and check that the ‘snakemake’ program works by asking for the version used.</p>
 <pre><code>$ conda activate snakemake
 (snakemake)$ snakemake --version
 7.18.2
 </code></pre>
-<p class="has-line-data" data-line-start="28" data-line-end="30">2-2 I. The architecture of your working directory<br>
+<p class="has-line-data" data-line-start="26" data-line-end="28">2-2 I. The architecture of your working directory<br>
 Create directories to get this architecture:</p>
-<pre><code>    │── data -&gt; /ifb/data
-    │── envs
-    │── logs
-    │── results
-    │── snakemake
-</code></pre>
-<p class="has-line-data" data-line-start="38" data-line-end="39">Note: On Ubuntu, <code>mkdir</code> command does the job.</p>
-<p class="has-line-data" data-line-start="40" data-line-end="41">At the end of the practice, the architecture should look like this:</p>
-<pre><code>├── data-&gt; /ifb/data
-   ├── data
-        ├──  mydatalocal
-            ├──  Data
-            ├──   SRR3099585_chr18.fastq.gz
-            ├──   SRR3099586_chr18.fastq.gz
-            ├──   ...
-            ├──   SRR3105699_chr18.fastq.gz
-            ├──   O.tauri_annotation.gff
-            ├──   O.tauri_genome.fna
-        ├──  public
-├──  envs
-        ├──  qc.yaml
-├── logs
-├── results
-├── snakemake
-       ├──  Snakefile.ex1.smk
-       ├──  Snakefile.ex2.smk
-       ├──  ...
-</code></pre>
-<h2 class="code-line" data-line-start=63 data-line-end=64><a id="Conda_environment_based_on_the_qcyml_file_63"></a>Conda environment based on the qc.yml file:</h2>
+<p class="has-line-data" data-line-start="30" data-line-end="35">├── logs<br>
+├── results<br>
+├── snakemake<br>
+├── envs<br>
+└── data -&gt; /ifb/data</p>
+<p class="has-line-data" data-line-start="36" data-line-end="37">Note: On Ubuntu, <code>mkdir</code> command does the job.</p>
+<p class="has-line-data" data-line-start="38" data-line-end="39">At the end of the practice, the architecture should look like this:</p>
+<p class="has-line-data" data-line-start="41" data-line-end="60">├── logs<br>
+├── results<br>
+├── snakemake<br>
+      ├── Snakefile.ex1.smk<br>
+      ├── Snakefile.ex2.smk<br>
+      ├── …<br>
+├── envs<br>
+        ├── qc.yaml<br>
+├── data-&gt; /ifb/data<br>
+   ├── data<br>
+      ├── mydatalocal<br>
+            ├── Data<br>
+            ├── SRR3099585_chr18.fastq.gz<br>
+            ├── SRR3099586_chr18.fastq.gz<br>
+            ├── …<br>
+            ├── SRR3105699_chr18.fastq.gz<br>
+            ├── O.tauri_annotation.gff<br>
+            ├── O.tauri_genome.fna<br>
+├── public</p>
+<h2 class="code-line" data-line-start=61 data-line-end=62><a id="Conda_environment_based_on_the_qcyml_file_61"></a>Conda environment based on the qc.yml file:</h2>
 <pre><code>name: qc # conda environment name
 channels: 
     - bioconda
@@ -60,7 +56,7 @@ dependencies:
     - fastqc=0.11.9 # quality check of fastq data (java)
     - multiqc=1.13 # reports aggregation (R package)
 </code></pre>
-<h2 class="code-line" data-line-start=73 data-line-end=74><a id="Data_management_73"></a>Data management</h2>
+<h2 class="code-line" data-line-start=71 data-line-end=72><a id="Data_management_71"></a>Data management</h2>
 <pre><code># Go to data/mydatalocal
 $ cd ~/data/mydatalocal
 $ wget &quot;https://zenodo.org/record/3997237/files/FAIR_Bioinfo_data.tar.gz?download=1&quot;
@@ -70,33 +66,38 @@ $ ls Data
 O.tauri_annotation.gff  SRR3099585_chr18.fastq.gz  SRR3099587_chr18.fastq.gz  SRR3105698_chr18.fastq.gz
 O.tauri_genome.fna      SRR3099586_chr18.fastq.gz  SRR3105697_chr18.fastq.gz  SRR3105699_chr18.fastq.gz
 </code></pre>
-<h2 class="code-line" data-line-start=84 data-line-end=85><a id="Workflow_definition_84"></a>Workflow definition</h2>
-<h4 class="code-line" data-line-start=86 data-line-end=87><a id="The_Snakefile_example_86"></a>The Snakefile example</h4>
-<p class="has-line-data" data-line-start="88" data-line-end="90">The final objective is to create a snakefile to manage a small workflow with 2 steps: i) fastqc ii) multiqc.<br>
-These two tools belonging to the bioinformatics domain allow to check the quality of high throughput sequence data. They are accessible via a Conda environment, qc.yml</p>
-<p class="has-line-data" data-line-start="91" data-line-end="93">Hint:<br>
-If you have already run this notebook, you may need to run:</p>
-<pre><code>$ rm -Rf results/FastQC results/multiqc/multiqc_report.html
-</code></pre>
-<h4 class="code-line" data-line-start=97 data-line-end=98><a id="Objective_1_The_rule_concept_97"></a>Objective 1: The rule concept</h4>
-<p class="has-line-data" data-line-start="99" data-line-end="100">Create a Snakefile named Snakefile.ex1.smk including the first step of the RNAseq workflow (the reads quality checking thank to the fastqc tool) on one of the RNAseq files.</p>
-<p class="has-line-data" data-line-start="101" data-line-end="106">fastqc access: through a conda environment (see prerequisites on top)<br>
-fastqc command: <code>fastqc --outdir results/FastQC inputFileName</code><br>
-inputFileName: SRR3099585_chr18.fastq.gz in the Data directory<br>
+<h2 class="code-line" data-line-start=82 data-line-end=83><a id="Workflow_definition_82"></a>Workflow definition</h2>
+<ol>
+<li class="has-line-data" data-line-start="84" data-line-end="86">The Snakefile example</li>
+</ol>
+<p class="has-line-data" data-line-start="86" data-line-end="88">The final objective is to create a snakefile to manage a small workflow with 2 steps: i) fastqc ii) multiqc<br>
+These two tools belonging to the bioinformatics domain allow to check the quality of high throughput sequence data. They are accessible via a Conda environment, envfair.yml</p>
+<p class="has-line-data" data-line-start="89" data-line-end="92">note:<br>
+If you have already run this notebook, you may need to run:<br>
+$ rm -Rf results/FastQC results/multiqc_data results/multiqc_report.html</p>
+<ol start="2">
+<li class="has-line-data" data-line-start="94" data-line-end="96">Objective 1: The rule concept</li>
+</ol>
+<p class="has-line-data" data-line-start="96" data-line-end="97">Objective 1: Create a snakemake file named ex1.smk including the first step of the RNAseq workflow (the reads quality checking thank to the fastqc tool) on one of the RNAseq files</p>
+<p class="has-line-data" data-line-start="98" data-line-end="100">fastqc access: through a conda environment (see prerequisites on top)<br>
+fastqc command: fastqc --outdir results/FastQC inputFileName</p>
+<p class="has-line-data" data-line-start="101" data-line-end="104">inputFileName: SRR3099585_chr18.fastq.gz in the ${PWD}/Data directory<br>
 outputfiles produced in outdirectory:<br>
 The 2 result files (*_fastqc.zip &amp; *_fastqc.html) will be located in your outdir and named based on the prefix of input file (eg. SRR3099585_chr18_fastqc.zip)</p>
-<pre><code>$ cd ~/snakemake
+<p class="has-line-data" data-line-start="105" data-line-end="106">Create the Snakefile</p>
+<pre><code># got to snakemake directory and create a new file called `Snakefile_ex1.smk`
+$ cd ~/snakemake
 $ touch Snakefile
-</code></pre>
-<p class="has-line-data" data-line-start="110" data-line-end="111">Edit the file with <code>nano</code> editor for example:</p>
-<pre><code>rule fastqc:
+# edit the file with `nano` editor for example:
+
+rule fastqc:
     input:
         &quot;data/mydatalocal/Data/SRR3099585_chr18.fastq.gz&quot;
     output:
         &quot;results/FastQC/SRR3099585_chr18_fastqc.zip&quot;, 
         &quot;results/FastQC/SRR3099585_chr18_fastqc.html&quot;
     conda:
-        envs/qc.yaml
+        &quot;envs/qc.yaml&quot;
     shell: &quot;fastqc --outdir results/FastQC/ {input}&quot;
 </code></pre>
 <p class="has-line-data" data-line-start="122" data-line-end="123">Then execute snakemake:</p>
@@ -105,12 +106,15 @@ $ touch Snakefile
 $ snakemake --snakefile snakemake/Snakefile.ex1.smk --cores 1 --use-conda
 </code></pre>
 <p class="has-line-data" data-line-start="127" data-line-end="128">Building DAG of jobs…</p>
-<h4 class="code-line" data-line-start=129 data-line-end=130><a id="Objective_2_One_rule_2_input_files_129"></a>Objective 2: One rule, 2 input files</h4>
-<p class="has-line-data" data-line-start="131" data-line-end="132">Add a second input RNAseq file to the rule.</p>
+<ol start="3">
+<li class="has-line-data" data-line-start="129" data-line-end="131">Objective 2: One rule, 2 input files</li>
+</ol>
+<p class="has-line-data" data-line-start="131" data-line-end="132">Objective 2: Add a second input RNAseq file to the rule.</p>
 <p class="has-line-data" data-line-start="133" data-line-end="136">Hint:<br>
 second input file: Data/SRR3099586_chr18.fastq.gz<br>
-Don’t forget to add the cognate output files.</p>
-<p class="has-line-data" data-line-start="138" data-line-end="139">Create another Snakefile called Snakedile.ex2.smk:</p>
+don’t forget to add the cognate output files</p>
+<p class="has-line-data" data-line-start="137" data-line-end="139">Objective 2: Solution<br>
+Create another Snakefile called Snakedile.ex2.smk:</p>
 <pre><code>rule fastqc:
   output:
     &quot;FastQC/SRR3099585_chr18_fastqc.zip&quot;, 
@@ -127,13 +131,15 @@ Don’t forget to add the cognate output files.</p>
 /home/ubuntu
 $ snakemake --snakefile snakemake/Snakefile.ex2.smk --cores 1 --use-conda
 </code></pre>
-<h4 class="code-line" data-line-start=157 data-line-end=158><a id="Objective_3_Manage_all_the_RNAseq_files_157"></a>Objective 3: Manage all the RNAseq files</h4>
+<ol start="4">
+<li class="has-line-data" data-line-start="157" data-line-end="159">Objective 3: Manage all the RNAseq files</li>
+</ol>
 <p class="has-line-data" data-line-start="159" data-line-end="161">Boring with writing all input and output file names?<br>
 Use the expand() function to manage all the input RNAseq files at once.</p>
 <p class="has-line-data" data-line-start="162" data-line-end="166">Hint:<br>
 Create a Python list at the begining of the snakefile and containing all the basename of the input files (don’t include the .fastq.gz suffix).<br>
 Python list format: list_name = [“item1”, “item2”, …, “itemN”]<br>
-Replace the filename lists of the input and output directives by the expand() function.</p>
+replace the filename lists of the input and output directives by the expand() function</p>
 <p class="has-line-data" data-line-start="167" data-line-end="168">Create another Snakefile called Snakedile.ex3.smk:</p>
 <pre><code>SAMPLES=[&quot;SRR3099585_chr18&quot;,&quot;SRR3099586_chr18&quot;,&quot;SRR3099587_chr18&quot;, &quot;SRR3105697_chr18&quot;, &quot;SRR3105698_chr18&quot;, &quot;SRR3105699_chr18&quot;]
 
@@ -143,21 +149,25 @@ rule fastqc:
         expand(&quot;FastQC/{sample}_fastqc.html&quot;, sample=SAMPLES)
   input:
         expand(&quot;data/{sample}.fastq.gz&quot;, sample=SAMPLES)
+  conda:
+       &quot;envs/qc.yaml&quot;
   shell: &quot;fastqc --outdir FastQC {input}&quot;
 </code></pre>
-<p class="has-line-data" data-line-start="180" data-line-end="181">Then execute snakemake:</p>
+<p class="has-line-data" data-line-start="182" data-line-end="183">Then execute snakemake:</p>
 <pre><code>$ pwd
 /home/ubuntu
 $`snakemake --snakefile snakemake/Snakefile.ex3.smk --cores 1 --use-conda
 </code></pre>
-<h4 class="code-line" data-line-start=186 data-line-end=187><a id="Objective_4_Add_a_second_step_186"></a>Objective 4: Add a second step</h4>
-<p class="has-line-data" data-line-start="188" data-line-end="190">With a second tool, it is a “real” analysis workflow!<br>
+<ol start="5">
+<li class="has-line-data" data-line-start="188" data-line-end="190">Objective 4: Add a second step</li>
+</ol>
+<p class="has-line-data" data-line-start="190" data-line-end="192">With a second tool, it is a “real” analysis workflow!<br>
 The second tool multiqc will aggregate all the fastqc results.</p>
-<p class="has-line-data" data-line-start="191" data-line-end="195">Hint:<br>
+<p class="has-line-data" data-line-start="193" data-line-end="197">Hint:<br>
 multiqc command: multiqc *_fastqc.zip<br>
 multiqc inputs: the fastqc zip files<br>
 2 outputs of multiqc: a file multiqc_report.html &amp; a repository multiqc_data (to manage with directory(“multiqc_data”))</p>
-<p class="has-line-data" data-line-start="196" data-line-end="197">Create another Snakefile called Snakedile.ex4.smk:</p>
+<p class="has-line-data" data-line-start="198" data-line-end="199">Create another Snakefile called Snakedile.ex4.smk:</p>
 <pre><code>SAMPLES=[&quot;SRR3099585_chr18&quot;, &quot;SRR3099586_chr18&quot;, &quot;SRR3099587_chr18&quot;, &quot;SRR3105697_chr18&quot;, &quot;SRR3105698_chr18&quot;, &quot;SRR3105699_chr18&quot;]
 
 rule all:
@@ -185,14 +195,16 @@ rule multiqc:
     shell:
         &quot;multiqc --outdir results/multiqc {input}&quot;
 </code></pre>
-<p class="has-line-data" data-line-start="226" data-line-end="227">Then execute snakemake:</p>
+<p class="has-line-data" data-line-start="228" data-line-end="229">Then execute snakemake:</p>
 <pre><code>$ pwd
 /home/ubuntu
 $ snakemake --snakefile snakemake/Snakefile.ex4.smk --cores 1 --use-conda
 </code></pre>
-<h4 class="code-line" data-line-start=232 data-line-end=233><a id="Extra_objective_the_log_file_232"></a>Extra objective, the log file</h4>
-<p class="has-line-data" data-line-start="234" data-line-end="235">In Unix systems, the output of a command is usually sent to 2 separate streams: the expected output to Standard Out (stdout, or ”&gt;”), and the error messages to Standard Error (stderr, or ”2&gt;”). To integrate stderr and stdout into the same log, use ”&amp;&gt;” (use it with care because output files are often printed to stdout).</p>
-<p class="has-line-data" data-line-start="236" data-line-end="238">Hint:<br>
+<ol start="6">
+<li class="has-line-data" data-line-start="234" data-line-end="236">Extra objective, th log file</li>
+</ol>
+<p class="has-line-data" data-line-start="236" data-line-end="237">Objective 6: In Unix systems, the output of a command is usually sent to 2 separate streams: the expected output to Standard Out (stdout, or ”&gt;”), and the error messages to Standard Error (stderr, or ”2&gt;”). To integrate stderr and stdout into the same log, use ”&amp;&gt;” (use it with care because output files are often printed to stdout).</p>
+<p class="has-line-data" data-line-start="238" data-line-end="240">Hint:<br>
 Redirect the stdout and stderr streams of the fastqc and multiqc rules by adding a ”log:” directive with two variables, out and err to separately redirect each streams.</p>
 <pre><code>  log:
     std=&quot;Logs/{sample}_fastqc.std&quot;,
@@ -204,6 +216,5 @@ Redirect the stdout and stderr streams of the fastqc and multiqc rules by adding
     err=&quot;Logs/multiqc.err&quot;
   shell: &quot;multiqc {input} 1&gt;{log.std} 2&gt;{log.err}&quot; 
 </code></pre>
-<p class="has-line-data" data-line-start="249" data-line-end="250">A starting point is available in Snakefile.ex5.smk.</p>
-<p class="has-line-data" data-line-start="251" data-line-end="252">Enjoy !!</p>
+<p class="has-line-data" data-line-start="251" data-line-end="252">A starting point is available in Snakefile.ex5.smk.</p>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
