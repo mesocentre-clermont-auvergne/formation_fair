@@ -27,24 +27,26 @@ Note : Replace "my.IP" by the IP address provided on your biosphere VM
 2-2 I. The architecture of your working directory 
 Create directories to get this architecture:
 
-├── envs
+
 ├── logs
 ├── results
 ├── snakemake
+    ├── envs
 └── data -> /ifb/data
 
 Note: On Ubuntu, `mkdir` command does the job.
 
 At the end of the practice, the architecture should look like this:
 
-├──  envs
-         ├──  qc.yaml
+
 ├── logs
 ├── results
 ├── snakemake
        ├──  Snakefile.ex1.smk
        ├──  Snakefile.ex2.smk
        ├──  ...
+       ├──  envs
+             ├──  qc.yaml
 ├── data-> /ifb/data
    ├── data
         ├──  mydatalocal
@@ -115,7 +117,7 @@ Create the Snakefile
             "results/FastQC/SRR3099585_chr18_fastqc.zip", 
             "results/FastQC/SRR3099585_chr18_fastqc.html"
         conda:
-            envs/qc.yaml
+            "envs/qc.yaml"
         shell: "fastqc --outdir results/FastQC/ {input}"
   
 Then execute snakemake:
@@ -173,6 +175,8 @@ Create another Snakefile called Snakedile.ex3.smk:
             expand("FastQC/{sample}_fastqc.html", sample=SAMPLES)
       input:
             expand("data/{sample}.fastq.gz", sample=SAMPLES)
+      conda:
+           "envs/qc.yaml"
       shell: "fastqc --outdir FastQC {input}"
 
 
