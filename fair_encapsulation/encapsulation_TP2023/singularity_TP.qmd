@@ -84,7 +84,7 @@ quay.io/singularity/docker2singularity \
 rstudio/r-base:4.0-focal
 ```
 
-## utilisation d'une image `Singularity`
+## Utilisation d'une image `Singularity`
 
 Maintenant que l'on a une image `Singularity` on peut l'utiliser en local ou sur le cluster de calcul.
 
