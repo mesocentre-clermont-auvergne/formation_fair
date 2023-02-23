@@ -1,0 +1,118 @@
+---
+title: "Image Singularity"
+author: "Philippe Ruiz - Aubi"
+format: html
+editor: visual
+---
+
+## Récupération d'une image `Singularity`
+
+`Singularity` est un gestionnaire qui permet la création, la gestion et l'exécution de *container* sur une machine locale comme sur un serveur de calcul.
+
+Il existe 4 façons d'obtenir une image `Singularity` :
+
+- Télécharger une image existante depuis le dépot `Singularity` : [Sylabs Hub](https://cloud.sylabs.io/library) (remplace Singularity Hub qui n'est plus supporté depuis fin 2021)
+- Télecharger une image existante depuis le dépot `Docker` : [Docker Hub](https://hub.docker.com/) (recommandé)
+- Convertir une image `Docker` existante en image `Singularity`
+- Créer une image `Singularity`
+
+### Téléchargement à partir du Sylab
+
+C'est une des deux façons les plus simples d'obtenir une image `Singularity`
+On commence par vérifier que la bonne version de `Singularity` est installée :
+ 
+```{}
+$ singularity version
+```
+
+Puis on télécharge directement l'image :
+
+```{}
+$ singularity pull library://yuj25/rstudio/singularity-rstudio-v4.2.1
+```
+
+### Téléchargement à partir du Docker Hub
+
+C'est la méthode la plus simple. On commence par vérifier que la bonne version de `Docker`  est installée :
+
+```{}
+$ docker version
+```
+
+On va ensuite récupérer l'image Docker officielle de `R` sur le dépot de `rstudio` soit avec `Docker`, on obtiendra alors une image `Docker` qu'il faudra convertir en image `Singularity` :
+
+```{}
+$ docker pull rstudio/r-base:4.0-focal
+```
+
+On vérifie ensuite qu'elle est bien présente :
+
+```{}
+$ docker image ls
+```
+
+On peut aussi directement la télécharger avec `Singularity` :
+
+```{}
+$ singularity pull r-base.sif docker://rstudio/r-base:4.0-focal
+
+$ ls
+```
+
+Contrairement à `Docker` l'image est directement stockée dans le répertoire de travail.
+
+### Convertion d'une image `Docker` en `Singularity`
+
+La méthode la plus simple est la précédente. Cependant, dans le cas ou l'on 
+possède déjà une image `Docker` et que l'on souhaite la convertir en image 
+`Singularity` il faut utiliser l'outil [`docker2singularity`](https://github.com/singularityhub/docker2singularity) 
+développé par singularityhub et utiliser `Docker`.
+
+`docker2singularity` : c'est aussi une image `Docker` qu'il faut récupérer :
+
+```{}
+$ docker pull quay.io/singularity/docker2singularity
+
+$ docker image ls
+```
+
+On peut alors l'utiliser pour convertir notre image :
+
+```{}
+$ mkdir -p ~/output
+
+$ docker run -v /var/run/docker.sock:/var/run/docker.sock \
+-v ~/output:/output \
+--privileged -t --rm \
+quay.io/singularity/docker2singularity \
+rstudio/r-base:4.0-focal
+```
+
+## utilisation d'une image `Singularity`
+
+Maintenant que l'on a une image `Singularity` on peut l'utiliser en local ou sur le cluster de calcul.
+
+### Utilisation en local
+
+```
+$ singularity run r-base.sif 
+```
+
+### Utilisation sur le cluster de calcul
+
+On peut utiliser une image singularity dans un job executer sur le serveur
+en appelant directement singularity dans le script du job.
+
+Pour cela il faut au moins 3 fichiers dans le répertoire de travail du cluster de calcul :
+
+  - un script `slurm` pour executer le job : `demoSingularity.sh`
+  - un script `R` pour les calculs à faire : `demo.R`
+  - l'image `singularity` : `r-base.sif`
+  
+Il suffit d'une ligne dans le script `slurm` pour executer `R` 
+sur le cluster de calcul :
+
+```
+$ singularity exec r-base.sif R --slave -e "source('demo.R')"
+```
+
