@@ -1,0 +1,62 @@
+---
+title : "Création d'un rapport sous Rmarkdown / Quarto"
+author : "Philippe Ruiz - Aubi"
+editor : visual
+---
+
+## `Rmarkdown` et `Quarto`
+
+`Rmarkdown` est un programme orienté `R` qui permet de produire des documents `Word`, `pdf` ou `html` directement sous `R` en incluant des résultats d'analyses qui s'executent lors de la création du document.
+
+`Quarto` est la future génération de `Rmarkdown` qui se veut multi-language (`R`, `Python`, `Julia`, ...) et indépendant de `R`.
+
+## Les dépendances
+
+Sous `R` / `RStudio` le package `knitr` permettant la compilation du document doit être présent.
+
+``` r
+library(knitr)
+```
+
+`RStudio` permet de générer automatiquement un caneva de fichier `Rmardown` / `Quarto` : *File* \> *New File* \> *R Markdown*.
+
+## Les différentes partie d'un document
+
+### L'en-tête
+
+Il s'agit de la section contenant toutes les informations générales permettant la construcion du document : Titre, auteur, date, format, style (css), ...
+
+``` r
+---
+title : "Création d'un rapport sous Rmarkdown / Quarto"
+author : "Philippe Ruiz - Aubi"
+date: "`r Sys.Date()`"
+output : 
+  html_document :
+    css : style.css
+---
+```
+
+### Le *chunck* (code source)
+
+Le code a executer doit être encapsuler dans des balises. Celui-ci sera executé lors de la compilation du document :
+
+```` r
+```{name, options}
+1 + 1
+```
+````
+
+### Le texte
+
+- Il est bien sur possible d'ajouter du texte entre chaque *chunk*, avec le format souhaité :
+  - *italique* : *
+  - **gras** : **
+  - `code` : `
+  - [liens](https://rmarkdown.rstudio.com/) : \[ \]\(  \)
+
+- De gérer les titres, sous-titres ...
+
+- De gérer les équations, $E = mc^{2}$ : `$ $`
+
+## 
