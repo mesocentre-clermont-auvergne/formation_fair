@@ -12,3 +12,4 @@ RUN echo "options(repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.m
 # R packages to install
 RUN Rscript -e 'install.packages("targets", dependencies = TRUE)'
 
+# RUN Rscript -e 'install.packages("vegan", dependencies = TRUE)'
