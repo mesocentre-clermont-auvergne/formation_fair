@@ -20,20 +20,18 @@ library(knitr)
 
 `RStudio` permet de générer automatiquement un caneva de fichier `Rmardown` / `Quarto` : *File* \> *New File* \> *R Markdown*.
 
-## Les différentes partie d'un document
+## Les différentes parties d'un document
 
 ### L'en-tête
 
 Il s'agit de la section contenant toutes les informations générales permettant la construcion du document : Titre, auteur, date, format, style (css), ...
 
-``` r
+```markdown
 ---
 title : "Création d'un rapport sous Rmarkdown / Quarto"
 author : "Philippe Ruiz - Aubi"
 date: "`r Sys.Date()`"
-output : 
-  html_document :
-    css : style.css
+output : html_document 
 ---
 ```
 
@@ -64,6 +62,8 @@ Le code a executer doit être encapsuler dans des balises. Celui-ci sera execut�
 
 - De gérer les équations, $E = mc^{2}$ : `$ $`
 
+## Les analyses et leurs résulats
+
 ### Les figures
 
 - Une figure générée par un *chunk* pourra être directment insérée dans le document :
@@ -83,5 +83,68 @@ data(airquality)
 pairs(airquality, panel = panel.smooth, main = "airquality data")
 ```
 
-### Tableaux
-Il est également
+- Il est également possible d'insérer une figure enregistrer dans un fichier local en inserant directement un lien dans le document :
+
+````markdown
+![Figure 1](fig 2.png)
+````
+
+![Figure 1](fig 2.png)
+
+### Les tableaux
+
+Il est également possible d'afficher des tableaux générés avec `R` :
+
+````markdown
+```{{r}}
+head(airquality)
+```
+````
+
+```{r}
+#| label: second
+#| echo: false
+head(airquality)
+```
+
+Le problème est que l'on obtient une sortie graphique de `R` qui n'est pas très
+agréable. Pour améliorer ça il est nécessaire d'utiliser la fonction `kable` du package `knitr`.
+
+````markdown
+```{{r}}
+require(knitr)
+kable(head(airquality))
+```
+````
+
+```{r}
+#| label: third
+#| echo: false
+#| message: false
+require(knitr)
+kable(head(airquality))
+```
+
+## Les options avancés pour le documents
+
+Il est possible de fournir des spécificités globales pour le document : format, 
+affichage du code, présence d'une table des matières, taille des figures, style ...
+
+Toutes ces informations sont a renseigner dans l'en-tête du document :
+
+```markdown
+---
+title : "Création d'un rapport sous Rmarkdown / Quarto"
+author : "Philippe Ruiz - Aubi"
+date: "`r Sys.Date()`"
+output : 
+  html_document :
+    css : style.css
+    toc: true
+    toc_float: true
+    code_folding: hide
+    fig_width: 14
+    fig_height: 7
+    fig_caption: true
+---
+```

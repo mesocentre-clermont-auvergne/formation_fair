@@ -142,19 +142,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>RStudio</code> permet de générer automatiquement un caneva de fichier <code>Rmardown</code> / <code>Quarto</code> : <em>File</em> &gt; <em>New File</em> &gt; <em>R Markdown</em>.</p>
 </section>
-<section id="les-différentes-partie-dun-document" class="level2">
-<h2 class="anchored" data-anchor-id="les-différentes-partie-dun-document">Les différentes partie d’un document</h2>
+<section id="les-différentes-parties-dun-document" class="level2">
+<h2 class="anchored" data-anchor-id="les-différentes-parties-dun-document">Les différentes parties d’un document</h2>
 <section id="len-tête" class="level3">
 <h3 class="anchored" data-anchor-id="len-tête">L’en-tête</h3>
 <p>Il s’agit de la section contenant toutes les informations générales permettant la construcion du document : Titre, auteur, date, format, style (css), …</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>title <span class="sc">:</span> <span class="st">"Création d'un rapport sous Rmarkdown / Quarto"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>author <span class="sc">:</span> <span class="st">"Philippe Ruiz - Aubi"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">"2023-02-24"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>output <span class="sc">:</span> </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  html_document <span class="sc">:</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    css <span class="sc">:</span> style.css</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title :</span><span class="co"> "Création d'un rapport sous Rmarkdown / Quarto"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author :</span><span class="co"> "Philippe Ruiz - Aubi"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-02-24"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">output :</span><span class="co"> html_document </span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="le-chunck-code-source" class="level3">
 <h3 class="anchored" data-anchor-id="le-chunck-code-source">Le <em>chunck</em> (code source)</h3>
@@ -182,6 +180,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>De gérer les équations, <span class="math inline">\(E = mc^{2}\)</span> : <code>$ $</code></li>
 </ul>
 </section>
+</section>
+<section id="les-analyses-et-leurs-résulats" class="level2">
+<h2 class="anchored" data-anchor-id="les-analyses-et-leurs-résulats">Les analyses et leurs résulats</h2>
 <section id="les-figures" class="level3">
 <h3 class="anchored" data-anchor-id="les-figures">Les figures</h3>
 <ul>
@@ -197,11 +198,125 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="rmarkdown_TP_files/figure-html/first-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<ul>
+<li>Il est également possible d’insérer une figure enregistrer dans un fichier local en inserant directement un lien dans le document :</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Figure 1](fig 2.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig%202.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 1</figcaption><p></p>
+</figure>
+</div>
 </section>
-<section id="tableaux" class="level3">
-<h3 class="anchored" data-anchor-id="tableaux">Tableaux</h3>
-<p>Il est également</p>
+<section id="les-tableaux" class="level3">
+<h3 class="anchored" data-anchor-id="les-tableaux">Les tableaux</h3>
+<p>Il est également possible d’afficher des tableaux générés avec <code>R</code> :</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(airquality)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+3    12     149 12.6   74     5   3
+4    18     313 11.5   62     5   4
+5    NA      NA 14.3   56     5   5
+6    28      NA 14.9   66     5   6</code></pre>
+</div>
+</div>
+<p>Le problème est que l’on obtient une sortie graphique de <code>R</code> qui n’est pas très agréable. Pour améliorer ça il est nécessaire d’utiliser la fonction <code>kable</code> du package <code>knitr</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(knitr)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(airquality))</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Ozone</th>
+<th style="text-align: right;">Solar.R</th>
+<th style="text-align: right;">Wind</th>
+<th style="text-align: right;">Temp</th>
+<th style="text-align: right;">Month</th>
+<th style="text-align: right;">Day</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">190</td>
+<td style="text-align: right;">7.4</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">118</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">149</td>
+<td style="text-align: right;">12.6</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">313</td>
+<td style="text-align: right;">11.5</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">14.3</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">14.9</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
+</section>
+<section id="les-options-avancés-pour-le-documents" class="level2">
+<h2 class="anchored" data-anchor-id="les-options-avancés-pour-le-documents">Les options avancés pour le documents</h2>
+<p>Il est possible de fournir des spécificités globales pour le document : format, affichage du code, présence d’une table des matières, taille des figures, style …</p>
+<p>Toutes ces informations sont a renseigner dans l’en-tête du document :</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title :</span><span class="co"> "Création d'un rapport sous Rmarkdown / Quarto"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="an">author :</span><span class="co"> "Philippe Ruiz - Aubi"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-02-24"</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="an">output :</span><span class="co"> </span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html_document :</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">    css : style.css</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc_float: true</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code_folding: hide</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">    fig_width: 14</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">    fig_height: 7</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">    fig_caption: true</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
 </main>
