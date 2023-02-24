@@ -1,7 +1,8 @@
 ---
 title : "Création d'un rapport sous Rmarkdown / Quarto"
 author : "Philippe Ruiz - Aubi"
-editor : visual
+Rendering:
+  embed-resources: true
 ---
 
 ## `Rmarkdown` et `Quarto`
