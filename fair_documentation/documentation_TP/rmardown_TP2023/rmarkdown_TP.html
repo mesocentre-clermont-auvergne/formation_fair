@@ -150,7 +150,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>title <span class="sc">:</span> <span class="st">"Création d'un rapport sous Rmarkdown / Quarto"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>author <span class="sc">:</span> <span class="st">"Philippe Ruiz - Aubi"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">"`r Sys.Date()`"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">"2023-02-24"</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>output <span class="sc">:</span> </span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  html_document <span class="sc">:</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    css <span class="sc">:</span> style.css</span>
@@ -159,27 +159,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="le-chunck-code-source" class="level3">
 <h3 class="anchored" data-anchor-id="le-chunck-code-source">Le <em>chunck</em> (code source)</h3>
 <p>Le code a executer doit être encapsuler dans des balises. Celui-ci sera executé lors de la compilation du document :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{name, options}</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">1 + 1</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r name, options}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="le-texte" class="level3">
 <h3 class="anchored" data-anchor-id="le-texte">Le texte</h3>
 <ul>
-<li><p>Il est bien sur possible d’ajouter du texte entre chaque <em>chunk</em>, avec le format souhaité :</p>
+<li>Il est bien sur possible d’ajouter du texte entre chaque <em>chunk</em>, avec le format souhaité :
 <ul>
 <li><em>italique</em> : *</li>
 <li><strong>gras</strong> : **</li>
 <li><code>code</code> : `</li>
 <li><a href="https://rmarkdown.rstudio.com/">liens</a> : [ ]( )</li>
 </ul></li>
-<li><p>De gérer les titres, sous-titres …</p></li>
-<li><p>De gérer les équations, <span class="math inline">\(E = mc^{2}\)</span> : <code>$ $</code></p></li>
+<li>De gérer les titres, …</li>
+</ul>
+<pre><code># Titre 1
+
+## Titre 2</code></pre>
+<ul>
+<li>De gérer les équations, <span class="math inline">\(E = mc^{2}\)</span> : <code>$ $</code></li>
 </ul>
 </section>
+<section id="les-figures" class="level3">
+<h3 class="anchored" data-anchor-id="les-figures">Les figures</h3>
+<ul>
+<li>Une figure générée par un <em>chunk</em> pourra être directment insérée dans le document :</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r name, options}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(graphics)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(airquality)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(airquality, <span class="at">panel =</span> panel.smooth, <span class="at">main =</span> <span class="st">"airquality data"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="rmarkdown_TP_files/figure-html/first-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="tableaux" class="level3">
+<h3 class="anchored" data-anchor-id="tableaux">Tableaux</h3>
+<p>Il est également</p>
+</section>
 </section>
 
 </main>

@@ -41,8 +41,8 @@ output :
 
 Le code a executer doit être encapsuler dans des balises. Celui-ci sera executé lors de la compilation du document :
 
-```` r
-```{name, options}
+````markdown
+```{{r name, options}}
 1 + 1
 ```
 ````
@@ -55,8 +55,33 @@ Le code a executer doit être encapsuler dans des balises. Celui-ci sera execut�
   - `code` : `
   - [liens](https://rmarkdown.rstudio.com/) : \[ \]\(  \)
 
-- De gérer les titres, sous-titres ...
+- De gérer les titres, ...
+````
+# Titre 1
+
+## Titre 2
+````
 
 - De gérer les équations, $E = mc^{2}$ : `$ $`
 
-## 
+### Les figures
+
+- Une figure générée par un *chunk* pourra être directment insérée dans le document :
+
+````markdown
+```{{r name, options}}
+require(graphics)
+data(airquality)
+pairs(airquality, panel = panel.smooth, main = "airquality data")
+```
+````
+```{r}
+#| label: first
+#| echo: false
+require(graphics)
+data(airquality)
+pairs(airquality, panel = panel.smooth, main = "airquality data")
+```
+
+### Tableaux
+Il est également
