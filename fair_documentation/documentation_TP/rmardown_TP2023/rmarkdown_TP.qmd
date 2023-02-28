@@ -7,25 +7,32 @@ Rendering:
 
 ## `Rmarkdown` et `Quarto`
 
-`Rmarkdown` est un programme orienté `R` qui permet de produire des documents `Word`, `pdf` ou `html` directement sous `R` en incluant des résultats d'analyses qui s'executent lors de la création du document.
+`Rmarkdown` est un programme orienté `R` qui permet de produire des documents `Word`,
+`pdf` ou `html` directement sous `R` en incluant des résultats d'analyses qui
+s'executent lors de la création du document.
 
-`Quarto` est la future génération de `Rmarkdown` qui se veut multi-language (`R`, `Python`, `Julia`, ...) et indépendant de `R`.
+`Quarto` est la future génération de `Rmarkdown` qui se veut multi-language 
+(`R`, `Python`, `Julia`, ...) 
+et indépendant de `R` et `RStudio`. Il fonctionne aussi sous `VScode` ou sur le terminal.
 
 ## Les dépendances
 
-Sous `R` / `RStudio` le package `knitr` permettant la compilation du document doit être présent.
+Sous `R` / `RStudio` le package `knitr` permettant la compilation du document 
+doit être présent.
 
-``` r
-library(knitr)
+```r
+> library(knitr)
 ```
 
-`RStudio` permet de générer automatiquement un caneva de fichier `Rmardown` / `Quarto` : *File* \> *New File* \> *R Markdown*.
+`RStudio` permet de générer automatiquement un caneva de fichier `Rmardown` / `Quarto` : 
+*File* \> *New File* \> *R Markdown*.
 
 ## Les différentes parties d'un document
 
 ### L'en-tête
 
-Il s'agit de la section contenant toutes les informations générales permettant la construcion du document : Titre, auteur, date, format, style (css), ...
+Il s'agit de la section contenant toutes les informations générales permettant 
+la construcion du document : Titre, auteur, date, format, style (css), ...
 
 ```markdown
 ---
@@ -38,7 +45,8 @@ output : html_document
 
 ### Le *chunck* (code source)
 
-Le code a executer doit être encapsuler dans des balises. Celui-ci sera executé lors de la compilation du document :
+Le code a executer doit être encapsuler dans des balises. Celui-ci sera executé 
+lors de la compilation du document :
 
 ````markdown
 ```{{r name, options}}
@@ -48,7 +56,8 @@ Le code a executer doit être encapsuler dans des balises. Celui-ci sera execut�
 
 ### Le texte
 
-- Il est bien sur possible d'ajouter du texte entre chaque *chunk*, avec le format souhaité :
+- Il est bien sur possible d'ajouter du texte entre chaque *chunk*, avec le format 
+souhaité :
   - *italique* : *
   - **gras** : **
   - `code` : `
@@ -84,13 +93,14 @@ data(airquality)
 pairs(airquality, panel = panel.smooth, main = "airquality data")
 ```
 
-- Il est également possible d'insérer une figure enregistrer dans un fichier local en inserant directement un lien dans le document :
+- Il est également possible d'insérer une figure enregistrer dans un fichier 
+local en inserant directement un lien dans le document :
 
 ````markdown
-![Figure 1](fig 2.png)
+![Figure 1](fig2.png)
 ````
 
-![Figure 1](fig 2.png)
+![Figure 1](fig2.png)
 
 ### Les tableaux
 
@@ -109,7 +119,8 @@ head(airquality)
 ```
 
 Le problème est que l'on obtient une sortie graphique de `R` qui n'est pas très
-agréable. Pour améliorer ça il est nécessaire d'utiliser la fonction `kable` du package `knitr`.
+agréable. Pour améliorer ça il est nécessaire d'utiliser la fonction `kable` du 
+package `knitr`.
 
 ````markdown
 ```{{r}}
@@ -133,6 +144,8 @@ affichage du code, présence d'une table des matières, taille des figures, styl
 
 Toutes ces informations sont a renseigner dans l'en-tête du document :
 
+### Formats multiples 
+
 ```markdown
 ---
 title : "Création d'un rapport sous Rmarkdown / Quarto"
@@ -147,5 +160,106 @@ output :
     fig_width: 14
     fig_height: 7
     fig_caption: true
+  pdf_document :
+    fig_width: 14
+    fig_height: 7
+    fig_caption: true  
 ---
 ```
+
+### Les paneaux 
+
+Il est possble de créer facilement des onglets dans une section pour gagner
+en lisibilité :
+
+````
+# Titre 1 {.tabset}
+
+## Titre 1.1
+
+## Titre 1.2
+
+# Titre 2
+````
+
+Toutes les sections de niveau inférieur à `Titre 1 {.tabset}` seront organisés
+en onglets.
+
+## Bonus : Un peu de `Quarto` pour terminer
+
+La nomenclature de `Quarto` et relativement proche de celle de `Rmarkdown`. 
+Il faut installer la library `quarto` :
+
+```r
+> library(quarto)
+```
+
+Sous `RStudio` il est alors possible de créer un nouveau document avec un template `Quarto` :
+
+`RStudio` permet de générer automatiquement un caneva de fichier `Quarto` : 
+*File* \> *New File* \> *Quarto Document*.
+
+### Quelques differences pour rédiger l'en-tête
+
+D'une manière générale l'en-tête suit le même schéma que pour `Rmarkdown`, 
+quelques noms d'options changent,  il y a plus d'options pour gérer l'execution 
+du code:
+
+-   **output** -> **format**
+
+-   **html_document** -> **html**
+
+On peut gérer directement l'utilisation du cache :
+
+```markdown
+---
+title: "My Document"
+format: html
+execute: 
+  cache: true
+  feeze: auto
+---
+```
+
+### Les options des *chunks* changent de place
+
+````markdown
+```{{r}}
+#| label: name
+#| results: asis
+#| eval: true
+...
+````
+
+### Les sorties des tableaux sont plus tarvaillées
+
+````markdown
+```{{r}}
+head(airquality)
+```
+````
+
+```{r}
+#| label: fourth
+#| echo: false
+head(airquality)
+```
+
+### les balises des onglets s'écrivent différement
+
+D'une manière générale le rendu du document est supérieur sous `Quarto` à celui 
+de `Rmarkdown` par défaut.
+
+````
+# Titre 1
+
+::: {.panel-tabset}
+
+## Titre 1.1
+
+## Titre 1.2
+
+:::
+
+# Titre 2
+````
