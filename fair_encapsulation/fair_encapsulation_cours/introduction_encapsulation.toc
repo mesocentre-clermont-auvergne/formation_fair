@@ -1,0 +1,4 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{Containers structure and use}{1}{0}{1}
+\beamer@subsectionintoc {1}{1}{Docker}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Singularity}{21}{0}{1}

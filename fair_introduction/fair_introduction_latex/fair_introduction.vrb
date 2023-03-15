@@ -1,0 +1,15 @@
+\frametitle{SSH key use}
+\begin{verbatim}
+$ cat ~/.ssh/id_dsa_ga
+-----BEGIN DSA PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+DEK-Info: DES-EDE3-CBC,6ED59B013D8A361F
+
+pB5eHHpvXxoz6i1jFzlKANv9W6SeHw664PV/1A90acR/Mw/ERQvTQKo3TaLaFhkb
+…
+NwhQFyxZZty2hn6xrv5UIAGTpjk+P2+waRmSno1Vg1x0epCp45kvFRv9AiXsOpt4
+RgzPC5+a6kjPf8EtyozGoQ==
+-----END DSA PRIVATE KEY-----
+$ cat ~/.ssh/id_dsa_ga.pub
+ssh-dss AAAAB3NzaC1kc3MAAACBAJhbQcZK8lFMvpw7trbFj51Sqjd9nKBu2xkw/kvUAQlPQPaIRLOiq92fxp+
+\end{verbatim}

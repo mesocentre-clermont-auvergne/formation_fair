@@ -1,0 +1,10 @@
+{
+    "markdown.marp.themes": [
+        "./uca.css",
+        "../uca.css"
+    ],
+    "markdown.styles": [
+        "./uca.css",
+        "../uca.css"
+    ]
+}

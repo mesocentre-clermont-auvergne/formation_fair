@@ -3,7 +3,7 @@
 
 Construction d'un projet de formation aux pratiques FAIR
 
-## Programme prévisionnel sur 4 axes
+## Programme prévisionnel sur 5 axes
 1. Introduction aux pratiques FAIR
     > - Crise de la reproductibilité
     > - Définitions FAIR
@@ -22,6 +22,8 @@ Construction d'un projet de formation aux pratiques FAIR
   - Introduction à la gestion de son environnement
     > - Utilisation de conda et des environnements de travail
     > - Utilisation de conteneur avec singularity
+
+4. Gestion de workflow
     > - Gestionnaire de workflow avec snakemake
 
 4. Documentation du code

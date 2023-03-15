@@ -1,0 +1,303 @@
+/* @theme uca */
+
+
+@font-face {
+  font-family:'Merriweather Sans';
+  font-style:normal;
+  font-weight:400;
+  src:url("./fonts/MerriweatherSans.woff2") format("woff2")
+ }
+ @font-face {
+  font-family:'Signika';
+  font-style:normal;
+  font-weight:400;
+  src:url("./fonts/Signika.woff2") format("woff2")
+ }
+ @font-face {
+  font-family:'Material Icons';
+  font-style:normal;
+  font-weight:400;
+  src:url("./fonts/MaterialIcons.woff2") format("woff2")
+ }
+ .material-icons {
+  font-family:'Material Icons';
+  font-weight:normal;
+  font-style:normal;
+  font-size:24px;
+  line-height:1;
+  letter-spacing:normal;
+  text-transform:none;
+  display:inline-block;
+  white-space:nowrap;
+  word-wrap:normal;
+  direction:ltr;
+  -webkit-font-feature-settings:'liga';
+  -webkit-font-smoothing:antialiased
+ }
+
+code {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+  color: #095c9e;
+  background-color: #64B5F6;
+  border-color: #095c9e;
+
+}
+
+pre code {
+  font-size: 1em;
+  background-color: #efefef;
+  display: block;
+  line-height: 20px;
+  margin: 0px -15px;
+  padding: 10px;
+  box-shadow: 0 0 1px 0px #9c9c9c;
+  white-space: pre;
+  color: #5e5c5c;
+  text-align: left;
+  font-family: monospace;
+  font-weight: unset;
+}
+
+/* Typography */
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #003c58;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h1::before {
+  content: "bubble_chart";
+  content: "\E6DD";
+  font-family: "Material Icons";
+  color: #5fc6cc;
+  float: left;
+  padding: 3px;
+}
+
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  background-color: #00569f;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #003c74;
+  border-color: #003c74;
+}
+
+/* Lists */
+ul, ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+/* Code Blocks */
+pre {
+  font-size: 0.9rem;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9rem;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.75rem;
+  vertical-align: middle;
+  border-top: 1px solid #dee2e6;
+}
+
+th {
+  font-weight: 700;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Page Layout */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header */
+header {
+  background-color: #003c58;
+  color: #fff;
+  padding: 1rem;
+}
+
+header a {
+  color: #fff;
+}
+
+header a:hover {
+  color: #f8f9fa;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+header, .strip p {
+  height: 30px;
+  background: linear-gradient(to right, #5fc6cc 50%, #178F96 50%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+header {
+  display:block;
+  content:'';
+  background-color:#5FC6CC;
+  padding:1px
+ }
+
+
+/* Footer */
+
+footer {
+  position: relative; /* Set the position of the footer to relative */
+  height: 100px; /* Set the height of the footer */
+}
+
+.footer-strip {
+  position: fixed; /* Set the position of the strip to fixed */
+  bottom: 0; /* Set the distance of the strip from the bottom of the viewport */
+  left: 0; /* Set the distance of the strip from the left of the viewport */
+  width: 100%; /* Set the width of the strip to 100% */
+  height: 50px; /* Set the height of the strip */
+  background-color: #333; /* Set the background color of the strip */
+  color: #fff; /* Set the text color of the strip */
+  text-align: center; /* Center the text in the strip */
+  line-height: 50px; /* Set the line height to center the text vertically */
+}
+
+
+/* Titles */
+
+.title-slide {
+  display: flex; /* Use flexbox to center elements vertically and horizontally */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center elements vertically */
+  align-items: center; /* Center elements horizontally */
+  height: 100vh; /* Set the height to full viewport height */
+  background-color: #333; /* Set the background color */
+  color: #fff; /* Set the text color */
+}
+
+.title {
+  font-size: 48px; /* Set the font size */
+  font-weight: bold; /* Set the font weight to bold */
+  text-align: center; /* Center the text */
+  text-transform: uppercase; /* Convert the text to uppercase */
+  margin: 0; /* Remove any margin */
+}
+
+.author {
+  font-size: 24px; /* Set the font size */
+  margin: 0; /* Remove any margin */
+}
+
+.date {
+  font-size: 18px; /* Set the font size */
+  margin: 0; /* Remove any margin */
+}

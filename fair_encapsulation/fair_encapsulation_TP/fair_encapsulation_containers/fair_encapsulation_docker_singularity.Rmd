@@ -1,0 +1,125 @@
+---
+title: "Image Docker Singularity"
+author: "Philippe Ruiz"
+date: "`r Sys.Date()`"
+output: html_notebook
+---
+
+Ici nous allons voir comment créer une image docker avec quelques paquets spécifiques pour ensuite l'utiliser avec `Docker` et `Singularity`.
+
+ - Utilisez docker et singularity sous [Biosphère](https://biosphere.france-bioinformatique.fr/)
+ - Trouvez l'"Appliance" Biosphère contenant `Docker`
+
+# Docker
+
+## Recette Docker
+
+La recette est le fichier qui va permettre de créer l'image `Docker` en 
+installant les librairies Linux et les outils nécessaires aux analyses souhaitées.
+Il s'agit surtout d'un script de lignes de commandes compilé dans un format spécifique.
+
+`Docker` ne fonctionne pas sur un cluster de calcul dont l'administration système est gérée par un informaticien.
+Il faut l'utiliser soit sur une machine locale soit sur une machine virtuelle (VM) du Cloud Biosphère de l'IFB.
+
+1 - Vérifiez la version de `Docker` installée
+```
+$ docker --version
+```
+
+2 - Ecrire une recette `Docker`. (voir le fichier `canevaDockerfile`) en complétant
+le fichier `canevaDockerfile` pour avoir dans l'image : la dernière 
+version de `R` (4.4.1), les librairies `R` nécessaires à l'utilisation du 
+package `mixOmics` (http://mixomics.org/). Le fichier doit être renommé `Dockerfile`.
+
+Plus précisément, la recette consiste en un fichier `Dockerfile` 
+contenant les instructions nécessaires à l'instalation des différents outils.
+
+Les packages `R` qui doivent être installés sont : 
+
+- `devtools`
+- `BiocManager`
+- `mixOmics`
+
+Attention, tous ces packages ne sont pas forcément disponibles sur les mêmes dépots...
+
+## Construction de l'image Docker sur le cloud de l'IFB
+
+La commande pour construire une image Docker commence par :
+
+```
+$ docker build ...
+```
+
+3 - construire l'image docker.
+
+Une fois l'image créée, exportons-la sous la forme d'une archive.
+Elle peut alors être mise sur une autre machine ou un dépot.
+```
+$ docker save ...
+```
+et vérifier que tout s'est bien passé :
+```
+$ ls -lah .
+```
+
+## Utilisation de l'image docker
+
+On peut alors charger l'image docker créée :
+```
+$ docker load ...
+```
+Et l'utiliser :
+```
+$ docker run ...
+```
+
+# De Docker à Singularity
+
+Passons à `Singularity` pour utiliser l'image créée sur le cluster.
+
+## Téléchargement d'une image `Docker` existante via `Singularity`
+
+4 - Vérifiez que `Singularity` est bien installé sur vos machines:
+```
+$ singularity --version
+```
+
+Il est possible de récupérer une image `Docker` sur le dépot officiel via `Singularity`
+à l'aide de la commande: 
+
+```
+$ singularity pull [...]
+```
+
+## Création d'une image `Singularity` à partir de l'image `Docker`
+
+Il faut d'abord créer l'image `Singularity` à partir de l'image
+`Docker` précédente.
+Là, c'est un peu plus compliqué. On va directement voir dans la doc.
+```
+$ docker run -v /var/run/docker.sock:/var/run/docker.sock -v ~/[...]:/output --privileged -t --rm quay.io/singularity/docker2singularity \ [...]
+```
+
+5 - Essayons ensuite cette nouvelle image
+```
+$ singularity exec [...].sif R
+```
+ou
+```
+$ singularity run [...].sif
+```
+
+et pour terminer, on peut directement utiliser un script R source pour réaliser 
+des analyses directement sur le cluster de calcul du Mésocentre, en mettant cette ligne de code dans un fichier `slurm`
+celui-ci executera votre script R à l'intérieur d'une image `Singularity`.
+```
+$ singularity exec [...].sif R --slave -e "source('demo.R')"
+```
+
+ou en utilisant le code du TP sur `RMarkdown`
+
+```
+$ singularity exec [...].sif R --slave -e "rmarkdown::render(input = '../../fair_documentation/rmarkdown_TP/rmarkdown_Solution.Rmd', 
+output_dir = '../../fair_encapsulation/encapsulation_TP/', output_format = 'html_document')"
+```
+
