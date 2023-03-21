@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.14)  14 MAR 2023 12:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.14)  15 MAR 2023 15:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -770,6 +770,77 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemesplit.sty))
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box75
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen293
+\pgf@nodesepend=\dimen294
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen295
+\pgffor@skip=\dimen296
+\pgffor@stack=\toks48
+\pgffor@toks=\toks49
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count338
+\pgfplotmarksize=\dimen297
+)
+\tikz@lastx=\dimen298
+\tikz@lasty=\dimen299
+\tikz@lastxsaved=\dimen300
+\tikz@lastysaved=\dimen301
+\tikz@lastmovetox=\dimen302
+\tikz@lastmovetoy=\dimen303
+\tikzleveldistance=\dimen304
+\tikzsiblingdistance=\dimen305
+\tikz@figbox=\box76
+\tikz@figbox@bg=\box77
+\tikz@tempbox=\box78
+\tikz@tempbox@bg=\box79
+\tikztreelevel=\count339
+\tikznumberofchildren=\count340
+\tikznumberofcurrentchild=\count341
+\tikz@fig@count=\count342
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count343
+\pgfmatrixcurrentcolumn=\count344
+\pgf@matrix@numberofcolumns=\count345
+)
+\tikz@expandcount=\count346
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/wasysym.sty
 Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
 \symwasy=\mathgroup6
@@ -782,8 +853,8 @@ Package: expl3 2022-01-21 L3 programming layer (loader)
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count338
-\l__pdf_internal_box=\box75
+\l__color_backend_stack_int=\count347
+\l__pdf_internal_box=\box80
 ))
 Package: fontawesome5 2021/06/04 v5.15.3 Font Awesome 5
 
@@ -816,9 +887,9 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
-\c@svg@param@lastpage=\count339
-\svg@box=\box76
-\c@svg@param@currpage=\count340
+\c@svg@param@lastpage=\count348
+\svg@box=\box81
+\c@svg@param@currpage=\count349
 )
 (/usr/share/texlive/texmf-dist/tex/latex/transparent/transparent.sty
 Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
@@ -829,53 +900,53 @@ Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen293
-\ar@mcellbox=\box77
-\extrarowheight=\dimen294
-\NC@list=\toks48
+\col@sep=\dimen306
+\ar@mcellbox=\box82
+\extrarowheight=\dimen307
+\NC@list=\toks50
 \extratabsurround=\skip64
 \backup@length=\skip65
-\ar@cellbox=\box78
+\ar@cellbox=\box83
 )
-\TX@col@width=\dimen295
-\TX@old@table=\dimen296
-\TX@old@col=\dimen297
-\TX@target=\dimen298
-\TX@delta=\dimen299
-\TX@cols=\count341
-\TX@ftn=\toks49
+\TX@col@width=\dimen308
+\TX@old@table=\dimen309
+\TX@old@col=\dimen310
+\TX@target=\dimen311
+\TX@delta=\dimen312
+\TX@cols=\count350
+\TX@ftn=\toks51
 )
 (/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box79
-\UL@hyphenbox=\box80
+\UL@box=\box84
+\UL@hyphenbox=\box85
 \UL@skip=\skip66
-\UL@hook=\toks50
-\UL@height=\dimen300
-\UL@pe=\count342
-\UL@pixel=\dimen301
-\ULC@box=\box81
+\UL@hook=\toks52
+\UL@height=\dimen313
+\UL@pe=\count351
+\UL@pixel=\dimen314
+\ULC@box=\box86
 Package: ulem 2019/11/18
-\ULdepth=\dimen302
+\ULdepth=\dimen315
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count343
-\lst@gtempboxa=\box82
-\lst@token=\toks51
-\lst@length=\count344
-\lst@currlwidth=\dimen303
-\lst@column=\count345
-\lst@pos=\count346
-\lst@lostspace=\dimen304
-\lst@width=\dimen305
-\lst@newlines=\count347
-\lst@lineno=\count348
-\lst@maxwidth=\dimen306
+\lst@mode=\count352
+\lst@gtempboxa=\box87
+\lst@token=\toks53
+\lst@length=\count353
+\lst@currlwidth=\dimen316
+\lst@column=\count354
+\lst@pos=\count355
+\lst@lostspace=\dimen317
+\lst@width=\dimen318
+\lst@newlines=\count356
+\lst@lineno=\count357
+\lst@maxwidth=\dimen319
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count349
-\lst@skipnumbers=\count350
-\lst@framebox=\box83
+\c@lstnumber=\count358
+\lst@skipnumbers=\count359
+\lst@framebox=\box88
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
@@ -890,65 +961,60 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count351
-\calc@Bcount=\count352
-\calc@Adimen=\dimen307
-\calc@Bdimen=\dimen308
+\calc@Acount=\count360
+\calc@Bcount=\count361
+\calc@Adimen=\dimen320
+\calc@Bdimen=\dimen321
 \calc@Askip=\skip67
 \calc@Bskip=\skip68
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count353
+\calc@Ccount=\count362
 \calc@Cskip=\skip69
 )
 (/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
-\ESO@tempdima=\dimen309
-\ESO@tempdimb=\dimen310
+\ESO@tempdima=\dimen322
+\ESO@tempdimb=\dimen323
 )
-\AM@pagewidth=\dimen311
-\AM@pageheight=\dimen312
-\AM@fboxrule=\dimen313
+\AM@pagewidth=\dimen324
+\AM@pageheight=\dimen325
+\AM@fboxrule=\dimen326
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2022/01/29 v0.5u Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count354
-\AM@pagebox=\box84
-\AM@global@opts=\toks52
-\AM@pagecnt=\count355
-\AM@toc@title=\toks53
-\c@AM@survey=\count356
-\AM@templatesizebox=\box85
+\pdfpages@includegraphics@status=\count363
+\AM@pagebox=\box89
+\AM@global@opts=\toks54
+\AM@pagecnt=\count364
+\AM@toc@title=\toks55
+\c@AM@survey=\count365
+\AM@templatesizebox=\box90
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
-\c@tracingmulticols=\count357
-\mult@box=\box86
-\multicol@leftmargin=\dimen314
-\c@unbalance=\count358
-\c@collectmore=\count359
-\doublecol@number=\count360
-\multicoltolerance=\count361
-\multicolpretolerance=\count362
-\full@width=\dimen315
-\page@free=\dimen316
-\premulticols=\dimen317
-\postmulticols=\dimen318
+\c@tracingmulticols=\count366
+\mult@box=\box91
+\multicol@leftmargin=\dimen327
+\c@unbalance=\count367
+\c@collectmore=\count368
+\doublecol@number=\count369
+\multicoltolerance=\count370
+\multicolpretolerance=\count371
+\full@width=\dimen328
+\page@free=\dimen329
+\premulticols=\dimen330
+\postmulticols=\dimen331
 \multicolsep=\skip70
 \multicolbaselineskip=\skip71
-\partial@page=\box87
-\last@line=\box88
-\maxbalancingoverflow=\dimen319
-\mult@rightbox=\box89
-\mult@grightbox=\box90
-\mult@firstbox=\box91
-\mult@gfirstbox=\box92
-\@tempa=\box93
-\@tempa=\box94
-\@tempa=\box95
-\@tempa=\box96
-\@tempa=\box97
+\partial@page=\box92
+\last@line=\box93
+\maxbalancingoverflow=\dimen332
+\mult@rightbox=\box94
+\mult@grightbox=\box95
+\mult@firstbox=\box96
+\mult@gfirstbox=\box97
 \@tempa=\box98
 \@tempa=\box99
 \@tempa=\box100
@@ -980,32 +1046,37 @@ Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
 \@tempa=\box126
 \@tempa=\box127
 \@tempa=\box128
-\c@minrows=\count363
-\c@columnbadness=\count364
-\c@finalcolumnbadness=\count365
-\last@try=\dimen320
-\multicolovershoot=\dimen321
-\multicolundershoot=\dimen322
-\mult@nat@firstbox=\box129
-\colbreak@box=\box130
-\mc@col@check@num=\count366
+\@tempa=\box129
+\@tempa=\box130
+\@tempa=\box131
+\@tempa=\box132
+\@tempa=\box133
+\c@minrows=\count372
+\c@columnbadness=\count373
+\c@finalcolumnbadness=\count374
+\last@try=\dimen333
+\multicolovershoot=\dimen334
+\multicolundershoot=\dimen335
+\mult@nat@firstbox=\box134
+\colbreak@box=\box135
+\mc@col@check@num=\count375
 )
 (/usr/share/texlive/texmf-dist/tex/latex/textpos/textpos.sty
 Package: textpos 2020/09/26 v1.10
 
 Package: textpos 2020/09/26 1.10, absolute positioning of text on the page
 Package textpos Info: choosing support for LaTeX3 on input line 61.
-\TP@textbox=\box131
-\TP@holdbox=\box132
-\TPHorizModule=\dimen323
-\TPVertModule=\dimen324
-\TP@margin=\dimen325
-\TP@absmargin=\dimen326
+\TP@textbox=\box136
+\TP@holdbox=\box137
+\TPHorizModule=\dimen336
+\TPVertModule=\dimen337
+\TP@margin=\dimen338
+\TP@absmargin=\dimen339
 Grid set 16 x 16 = 28.45274pt x 16.00467pt
-\TPboxrulesize=\dimen327
-\TP@ox=\dimen328
-\TP@oy=\dimen329
-\TP@tbargs=\toks54
+\TPboxrulesize=\dimen340
+\TP@ox=\dimen341
+\TP@oy=\dimen342
+\TP@tbargs=\toks56
 TextBlockOrigin set to 0pt x 0pt
 ) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty
 )
@@ -1015,13 +1086,13 @@ Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen330
-\captionmargin@=\dimen331
-\captionwidth=\dimen332
-\caption@tempdima=\dimen333
-\caption@indent=\dimen334
-\caption@parindent=\dimen335
-\caption@hangindent=\dimen336
+\captionmargin=\dimen343
+\captionmargin@=\dimen344
+\captionwidth=\dimen345
+\caption@tempdima=\dimen346
+\caption@indent=\dimen347
+\caption@parindent=\dimen348
+\caption@hangindent=\dimen349
 Package caption Info: beamer document class detected.
 Package caption Info: french babel package is loaded.
 
@@ -1029,15 +1100,15 @@ Package caption Info: french babel package is loaded.
 File: caption-beamer.sto 2020/08/22 v2.0 Adaption of the caption package to the
  beamer document classes (AR)
 ))
-\c@caption@flags=\count367
-\c@continuedfloat=\count368
+\c@caption@flags=\count376
+\c@continuedfloat=\count377
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
 (caption)             because hyperref has stopped early.
 Package caption Info: listings package is loaded.
 )
 Package caption Info: Option `figurename' requires the `newfloat' package on in
-put line 24.
+put line 25.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newfloat/newfloat.sty
 Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
@@ -1256,17 +1327,17 @@ LaTeX Font Info:    ... okay on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count369
-\scratchdimen=\dimen337
-\scratchbox=\box133
-\nofMPsegments=\count370
-\nofMParguments=\count371
-\everyMPshowfont=\toks55
-\MPscratchCnt=\count372
-\MPscratchDim=\dimen338
-\MPnumerator=\count373
-\makeMPintoPDFobject=\count374
-\everyMPtoPDFconversion=\toks56
+\scratchcounter=\count378
+\scratchdimen=\dimen350
+\scratchbox=\box138
+\nofMPsegments=\count379
+\nofMParguments=\count380
+\everyMPshowfont=\toks57
+\MPscratchCnt=\count381
+\MPscratchDim=\dimen351
+\MPnumerator=\count382
+\makeMPintoPDFobject=\count383
+\everyMPtoPDFconversion=\toks58
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1287,7 +1358,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count375
+\c@section@level=\count384
 )
 LaTeX Info: Redefining \ref on input line 14.
 LaTeX Info: Redefining \pageref on input line 14.
@@ -1370,7 +1441,7 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \degres on input line 14.
 LaTeX Info: Redefining \up on input line 14.
-\c@lstlisting=\count376
+\c@lstlisting=\count385
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
@@ -1445,7 +1516,7 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/logo_ifb.pdf, id=49, 1333.98375pt x 665.48625pt>
+/images/logo_ifb.pdf, id=37, 1333.98375pt x 665.48625pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/logo_ifb.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1454,7 +1525,7 @@ Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/logo_ifb.pdf  used on input line 19.
 (pdftex.def)             Requested size: 65.44109pt x 36.98264pt.
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/i2bc.png, id=50, 225.84375pt x 184.43906pt>
+/images/i2bc.png, id=38, 225.84375pt x 184.43906pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/i2bc.png Graphic file (type png)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1463,7 +1534,7 @@ Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/i2bc.png  used on input line 19.
 (pdftex.def)             Requested size: 42.67642pt x 42.679pt.
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/logoAuBi-2019.pdf, id=52, 437.1841pt x 310.18314pt>
+/images/logoAuBi-2019.pdf, id=40, 437.1841pt x 310.18314pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/logoAuBi-2019.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1472,7 +1543,7 @@ Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/logoAuBi-2019.pdf  used on input line 19.
 (pdftex.def)             Requested size: 99.58295pt x 71.13235pt.
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/mesocentre.png, id=53, 143.15985pt x 123.08484pt>
+/images/mesocentre.png, id=41, 143.15985pt x 123.08484pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/mesocentre.png Graphic file (type png)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1481,7 +1552,7 @@ Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/mesocentre.png  used on input line 19.
 (pdftex.def)             Requested size: 99.58644pt x 85.36247pt.
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/medis_logo.png, id=54, 1033.9428pt x 377.7312pt>
+/images/medis_logo.png, id=42, 1033.9428pt x 377.7312pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/medis_logo.png Graphic file (type png)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1490,7 +1561,7 @@ Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/medis_logo.png  used on input line 19.
 (pdftex.def)             Requested size: 56.89069pt x 28.44965pt.
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/ucabackground-16_9.png, id=55, 4817.21016pt x 2709.53262pt>
+/images/ucabackground-16_9.png, id=43, 4817.21016pt x 2709.53262pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/ucabackground-16_9.png Graphic file (type png)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1515,7 +1586,7 @@ on/images/mesocentre.png> </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/format
 ion_fair/fair_introduction/images/medis_logo.png>])
 (./01_introduction_objectif.tex
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/reproduce_crisis_paper.pdf, id=78, 523.9575pt x 483.85289pt>
+/images/reproduce_crisis_paper.pdf, id=66, 523.9575pt x 483.85289pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/reproduce_crisis_paper.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1558,7 +1629,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 16.
 
 ]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/01_OS_and_FAIR_intro.pdf, id=110, page=4, 722.7pt x 406.51875pt>
+/images/01_OS_and_FAIR_intro.pdf, id=98, page=4, 722.7pt x 406.51875pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1579,7 +1650,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 23.
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/01_OS_and_FAIR_intro.pdf>]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/01_OS_and_FAIR_intro.pdf, id=154, page=5, 722.7pt x 406.51875pt>
+/images/01_OS_and_FAIR_intro.pdf, id=142, page=5, 722.7pt x 406.51875pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1600,7 +1671,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 28.
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/01_OS_and_FAIR_intro.pdf>]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/01_OS_and_FAIR_intro.pdf, id=176, page=6, 722.7pt x 406.51875pt>
+/images/01_OS_and_FAIR_intro.pdf, id=163, page=6, 722.7pt x 406.51875pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1621,7 +1692,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 33.
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/01_OS_and_FAIR_intro.pdf>]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/01_OS_and_FAIR_intro.pdf, id=209, page=7, 722.7pt x 406.51875pt>
+/images/01_OS_and_FAIR_intro.pdf, id=197, page=7, 722.7pt x 406.51875pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1653,7 +1724,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 52.
 
 ]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/fair_paper_2016_crop.pdf, id=274, 597.49223pt x 388.0175pt>
+/images/fair_paper_2016_crop.pdf, id=262, 597.49223pt x 388.0175pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/fair_paper_2016_crop.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1684,7 +1755,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 72.
 
 ]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/fair_data_introduction_datalife.pdf, id=316, 625.10027pt x 305.45149pt>
+/images/fair_data_introduction_datalife.pdf, id=303, 625.10027pt x 305.45149pt>
 
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/fair_data_introduction_datalife.pdf Graphic file (type pdf)
@@ -1706,7 +1777,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 79.
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/fair_data_introduction_datalife.pdf>]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/03_Organiser_son_projet_Juin_2022.pdf, id=708, page=4, 963.6pt x 542.02
+/images/03_Organiser_son_projet_Juin_2022.pdf, id=696, page=4, 963.6pt x 542.02
 5pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/03_Organiser_son_projet_Juin_2022.pdf Graphic file (type pdf)
@@ -1732,7 +1803,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 79.
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/03_Organiser_son_projet_Juin_2022.pdf>]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/ena_embl_growth.png, id=730, 552.0625pt x 401.5pt>
+/images/ena_embl_growth.png, id=718, 552.0625pt x 401.5pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/ena_embl_growth.png Graphic file (type png)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1752,7 +1823,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 84.
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/ena_embl_growth.png>]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/03_Organiser_son_projet_Juin_2022.pdf, id=741, page=14, 963.6pt x 542.0
+/images/03_Organiser_son_projet_Juin_2022.pdf, id=729, page=14, 963.6pt x 542.0
 25pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/03_Organiser_son_projet_Juin_2022.pdf Graphic file (type pdf)
@@ -1778,7 +1849,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 88.
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/03_Organiser_son_projet_Juin_2022.pdf>]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/Cost-Benefit-analysis-for-FAIR.pdf, id=786, page=1, 597.55246pt x 845.0
+/images/Cost-Benefit-analysis-for-FAIR.pdf, id=774, page=1, 597.55246pt x 845.0
 7718pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/Cost-Benefit-analysis-for-FAIR.pdf Graphic file (type pdf)
@@ -1815,7 +1886,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 110.
 
 ]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/01_OS_and_FAIR_intro.pdf, id=839, page=8, 722.7pt x 406.51875pt>
+/images/01_OS_and_FAIR_intro.pdf, id=827, page=8, 722.7pt x 406.51875pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1837,7 +1908,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 116.
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/01_OS_and_FAIR_intro.pdf>]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/404_error.png, id=875, 886.31125pt x 352.31625pt>
+/images/404_error.png, id=863, 886.31125pt x 352.31625pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/404_error.png Graphic file (type png)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1874,7 +1945,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 133.
 
 ]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/01_OS_and_FAIR_intro.pdf, id=904, page=9, 722.7pt x 406.51875pt>
+/images/01_OS_and_FAIR_intro.pdf, id=892, page=9, 722.7pt x 406.51875pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1908,7 +1979,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 149.
 
 ]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/01_OS_and_FAIR_intro.pdf, id=962, page=10, 722.7pt x 406.51875pt>
+/images/01_OS_and_FAIR_intro.pdf, id=949, page=10, 722.7pt x 406.51875pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1941,7 +2012,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 164.
 
 ]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/01_OS_and_FAIR_intro.pdf, id=1021, page=11, 722.7pt x 406.51875pt>
+/images/01_OS_and_FAIR_intro.pdf, id=1009, page=11, 722.7pt x 406.51875pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1974,7 +2045,7 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 180.
 
 ]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/01_OS_and_FAIR_intro.pdf, id=1087, page=12, 722.7pt x 406.51875pt>
+/images/01_OS_and_FAIR_intro.pdf, id=1075, page=12, 722.7pt x 406.51875pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/01_OS_and_FAIR_intro.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -1998,9 +2069,141 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 184.
 [26
 
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
-n/images/01_OS_and_FAIR_intro.pdf>]) (./02_introduction_fair_aubi.tex
+n/images/01_OS_and_FAIR_intro.pdf>]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/tutorials_overview.png, id=1173, 572.1375pt x 648.2619pt>
+/images/galaxylogo.pdf, id=1161, 419.20494pt x 97.86563pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
+ction/images/galaxylogo.pdf Graphic file (type pdf)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
+tion/images/galaxylogo.pdf>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/fair_introduction/images/galaxylogo.pdf  used on input line 189.
+(pdftex.def)             Requested size: 419.2039pt x 97.86537pt.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
+ction/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
+tion/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 189.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [27
+
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
+n/images/galaxylogo.pdf>]
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
+ction/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
+tion/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 201.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+ [28
+
+]
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
+/images/galaxy_screen1.png, id=1196, 1857.94125pt x 1037.8775pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
+ction/images/galaxy_screen1.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
+tion/images/galaxy_screen1.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/fair_introduction/images/galaxy_screen1.png  used on input line 209.
+(pdftex.def)             Requested size: 371.58167pt x 207.57182pt.
+
+Overfull \vbox (2.54121pt too high) detected at line 209
+ []
+
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
+ction/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
+tion/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 209.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[29
+
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
+n/images/galaxy_screen1.png>]
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
+/images/galaxy_screen2.png, id=1205, 1857.94125pt x 1037.8775pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
+ction/images/galaxy_screen2.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
+tion/images/galaxy_screen2.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/fair_introduction/images/galaxy_screen2.png  used on input line 209.
+(pdftex.def)             Requested size: 371.58167pt x 207.57182pt.
+
+Overfull \vbox (2.54121pt too high) detected at line 209
+ []
+
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
+ction/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
+tion/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 209.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[30
+
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
+n/images/galaxy_screen2.png>]
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
+/images/galaxy_screen3.png, id=1214, 1857.94125pt x 1037.8775pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
+ction/images/galaxy_screen3.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
+tion/images/galaxy_screen3.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/fair_introduction/images/galaxy_screen3.png  used on input line 209.
+(pdftex.def)             Requested size: 371.58167pt x 207.57182pt.
+
+Overfull \vbox (2.54121pt too high) detected at line 209
+ []
+
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
+ction/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
+tion/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 209.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[31
+
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
+n/images/galaxy_screen3.png>]
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
+/images/galaxy_screen4.png, id=1223, 1857.94125pt x 1037.8775pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
+ction/images/galaxy_screen4.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
+tion/images/galaxy_screen4.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/fair_introduction/images/galaxy_screen4.png  used on input line 209.
+(pdftex.def)             Requested size: 371.58167pt x 207.57182pt.
+
+Overfull \vbox (2.54121pt too high) detected at line 209
+ []
+
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
+ction/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
+tion/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 209.
+
+(pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
+[32
+
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
+n/images/galaxy_screen4.png>]) (./02_introduction_fair_aubi.tex
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
+/images/tutorials_overview.png, id=1232, 572.1375pt x 648.2619pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/tutorials_overview.png Graphic file (type png)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -2015,8 +2218,7 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 9.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
-
-[27
+ [33
 
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/tutorials_overview.png>]
@@ -2027,7 +2229,7 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 27.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [28
+ [34
 
 ]
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
@@ -2037,7 +2239,7 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 27.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [29
+ [35
 
 ]
 LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on
@@ -2053,7 +2255,7 @@ vailable
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
 n input line 53.
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/conda_logo.pdf, id=1217, 374.14781pt x 77.53969pt>
+/images/conda_logo.pdf, id=1277, 374.14781pt x 77.53969pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/conda_logo.pdf Graphic file (type pdf)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -2062,7 +2264,7 @@ Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/conda_logo.pdf  used on input line 53.
 (pdftex.def)             Requested size: 26.19301pt x 5.42833pt.
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/snakemake_logo.png, id=1218, 200.75pt x 200.75pt>
+/images/snakemake_logo.png, id=1278, 200.75pt x 200.75pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/snakemake_logo.png Graphic file (type png)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -2086,7 +2288,7 @@ Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 53.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 
-[30
+[36
 
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/conda_logo.pdf> </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formati
@@ -2112,7 +2314,7 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 53.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [31
+ [37
 
 ]
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
@@ -2136,7 +2338,7 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 53.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [32
+ [38
 
 ]
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
@@ -2160,7 +2362,7 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 53.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [33
+ [39
 
 ]
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
@@ -2171,11 +2373,11 @@ Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 65.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 
-[34
+[40
 
 ]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/Efficiency_of_jobs_on_used_RAM_per_account_1.pdf, id=1333, 1094.46379pt
+/images/Efficiency_of_jobs_on_used_RAM_per_account_1.pdf, id=1394, 1094.46379pt
  x 423.38579pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/Efficiency_of_jobs_on_used_RAM_per_account_1.pdf Graphic file (typ
@@ -2193,12 +2395,12 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 69.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [35
+ [41
 
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/Efficiency_of_jobs_on_used_RAM_per_account_1.pdf>]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/Efficiency_of_jobs_on_used_CPU_per_account_3.pdf, id=2372, 1086.74979pt
+/images/Efficiency_of_jobs_on_used_CPU_per_account_3.pdf, id=2433, 1086.74979pt
  x 421.81862pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/Efficiency_of_jobs_on_used_CPU_per_account_3.pdf Graphic file (typ
@@ -2216,13 +2418,13 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 69.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [36
+ [42
 
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/Efficiency_of_jobs_on_used_CPU_per_account_3.pdf>])
 (./03_introduction_fair_preparation.tex
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/biosphere_1.png, id=3127, 1842.885pt x 908.39375pt>
+/images/biosphere_1.png, id=3188, 1842.885pt x 908.39375pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/biosphere_1.png Graphic file (type png)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -2237,12 +2439,12 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 9.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [37
+ [43
 
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/biosphere_1.png>]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/biosphere_2.png, id=3137, 1842.885pt x 908.39375pt>
+/images/biosphere_2.png, id=3199, 1842.885pt x 908.39375pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/biosphere_2.png Graphic file (type png)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -2257,12 +2459,12 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 9.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [38
+ [44
 
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/biosphere_2.png>]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/biosphere_3.png, id=3146, 1842.885pt x 908.39375pt>
+/images/biosphere_3.png, id=3208, 1842.885pt x 908.39375pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/biosphere_3.png Graphic file (type png)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -2277,12 +2479,12 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 9.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [39
+ [45
 
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/biosphere_3.png>]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/biosphere_4.png, id=3155, 1842.885pt x 908.39375pt>
+/images/biosphere_4.png, id=3217, 1842.885pt x 908.39375pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/biosphere_4.png Graphic file (type png)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -2297,7 +2499,7 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 9.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [40
+ [46
 
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/biosphere_4.png>]
@@ -2311,11 +2513,11 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 31.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [41
+ [47
 
 ]
 </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction
-/images/ssh_system.png, id=3195, 798.985pt x 436.63126pt>
+/images/ssh_system.png, id=3258, 798.985pt x 436.63126pt>
 File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introdu
 ction/images/ssh_system.png Graphic file (type png)
 <use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduc
@@ -2334,7 +2536,7 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 35.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
-[42
+[48
 
  </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introductio
 n/images/ssh_system.png>]
@@ -2357,7 +2559,7 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 61.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
-[43
+[49
 
 ]
 \openout4 = `fair_introduction.vrb'.
@@ -2376,7 +2578,7 @@ tion/images/ucabackground-16_9.png>
 Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
 n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 78.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [44
+ [50
 
 ])
 \tf@nav=\write6
@@ -2389,14 +2591,20 @@ n_fair/fair_introduction/images/ucabackground-16_9.png  used on input line 78.
 \openout8 = `fair_introduction.snm'.
 
  (./fair_introduction.aux)
-Package rerunfilecheck Info: File `fair_introduction.out' has not changed.
-(rerunfilecheck)             Checksum: EB5BC460BEAA1A0923A76FCF339A1EA3;826.
+
+Package rerunfilecheck Warning: File `fair_introduction.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `fair_introduction.out':
+(rerunfilecheck)             Before: 501F8E5C1B8A85FBD2BD62135A66448C;326
+(rerunfilecheck)             After:  EB5BC460BEAA1A0923A76FCF339A1EA3;826.
  ) 
 Here is how much of TeX's memory you used:
- 32780 strings out of 478287
- 654527 string characters out of 5849289
- 901614 words of memory out of 5000000
- 50188 multiletter control sequences out of 15000+600000
+ 35883 strings out of 478287
+ 731514 string characters out of 5849289
+ 968134 words of memory out of 5000000
+ 53221 multiletter control sequences out of 15000+600000
  528466 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,122p,397b,789s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2409,10 +2617,10 @@ ype1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></usr/share/texmf/fonts
 /public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/
 share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/publ
 ic/lm/lmtt8.pfb>
-Output written on fair_introduction.pdf (44 pages, 7046135 bytes).
+Output written on fair_introduction.pdf (50 pages, 8002022 bytes).
 PDF statistics:
- 3283 PDF objects out of 3580 (max. 8388607)
- 2159 compressed objects within 22 object streams
- 94 named destinations out of 1000 (max. 500000)
- 896 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3349 PDF objects out of 3580 (max. 8388607)
+ 2201 compressed objects within 23 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 933 words of extra memory for PDF output out of 10000 (max. 10000000)
 

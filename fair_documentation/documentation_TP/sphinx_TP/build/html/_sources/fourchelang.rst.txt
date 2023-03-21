@@ -1,0 +1,4 @@
+Fourchelang
+===========
+
+.. autofunction:: fourchelang.translate

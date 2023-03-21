@@ -1,6 +1,6 @@
 \babel@toc {french}{}\relax 
 \beamer@sectionintoc {1}{A reproducibility crisis}{2}{0}{1}
 \beamer@sectionintoc {2}{Open science and FAIR}{8}{0}{2}
-\beamer@sectionintoc {3}{Training content}{30}{0}{3}
-\beamer@sectionintoc {4}{Side effect of good practices}{34}{0}{4}
-\beamer@sectionintoc {5}{Installing training items}{37}{0}{5}
+\beamer@sectionintoc {3}{Training content}{36}{0}{3}
+\beamer@sectionintoc {4}{Side effect of good practices}{40}{0}{4}
+\beamer@sectionintoc {5}{Installing training items}{43}{0}{5}

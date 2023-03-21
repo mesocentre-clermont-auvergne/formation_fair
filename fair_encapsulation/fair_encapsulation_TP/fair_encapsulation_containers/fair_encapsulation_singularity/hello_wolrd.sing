@@ -1,0 +1,16 @@
+Bootstrap: docker
+From: hello-world
+from: ubuntu:bionic
+
+%help
+Help me. I'm in the container.
+%labels
+    Maintainer "coco l'asticot"
+%environment
+    VADER=badguy
+    LUKE=goodguy
+    export VADER LUKE
+%post
+   echo  "hello"
+%runscript
+    echo  "Rooooar!"

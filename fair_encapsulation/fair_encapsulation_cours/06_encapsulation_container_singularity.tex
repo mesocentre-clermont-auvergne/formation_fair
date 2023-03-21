@@ -126,17 +126,64 @@ Status: Downloaded newer image for debian:latest
 $ docker pull [path/url/docker_name]
 
 $ docker pull hello-world
-\end{verbatim}
-\item Now run the hello-world image
-\begin{verbatim}
-$ docker image ls
-$ docker run[image_name/image_tag]
-$ docker run hello-world
+Using default tag: latest
+latest: Pulling from library/hello-world
+2db29710123e: Already exists 
+Digest: sha256:63421b18c1443a9a85139225293fae7541fb40b7832d9deff80b6a9a75ce3604
+Status: Downloaded newer image for hello-world:latest
+docker.io/library/hello-world:latest
+
 \end{verbatim}
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Build my own image}
+\begin{frame}[fragile]{Pull me Hello world !}
+\begin{itemize}
+\item Now run the hello-world image
+\begin{verbatim}
+$ docker image ls
+REPOSITORY              TAG       IMAGE ID       CREATED         SIZE
+hello-world             latest    feb5d9fea6a5   17 months ago   13.3kB
+assembly_conda          latest    5ea57e9c4563   4 hours ago     2.99GB
+assembly_raw            latest    dffe598c3a14   4 hours ago     990MB
+condaforge/mambaforge   latest    8562647c2abf   12 days ago     393MB
+ubuntu                  bionic    b89fba62bc15   2 weeks ago     63.1MB
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Pull me Hello world !}
+\begin{itemize}
+\item Now run the hello-world image
+\begin{verbatim}
+$ docker run[image_name/image_tag]
+$ docker run hello-world
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Build my own image}
+\begin{block}{The basic recipe of Dockerfile}
+\begin{itemize}
+\item \textbf{FROM} A basic framework (image) as a linux, microsoft for ex. 
+\item \textbf{RUN} A command to install a tool
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Build my own image}
 Some few docker specific commands
 \newline
 \newline
@@ -161,6 +208,38 @@ CMD & Exécuter une commande au démarrage du conteneur \\
 \end{tabular}
 \end{frame}
 
+\begin{frame}[fragile]{Build my own image}{Dockerfile skeleton}
+\begin{block}{The basic recipe of Dockerfile}
+\begin{itemize}
+\item \textbf{FROM} A basic framework (image) as a linux, microsoft for ex. 
+\item \textbf{RUN} A command to install a tool
+\end{itemize}
+\end{block}
+\begin{verbatim}
+FROM ubuntu:bionic
+ARG USER="Coco"
+LABEL maintainer.email="coco@lasticot.fr"
+RUN apt-get update
+RUN echo "HELLO WORLD !"
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Build command}
+\begin{verbatim}
+$ docker build [url/path] --tag [docker_name]
+special case with github url like :
+[url]\#[branch_name][file_path]
+$ docker build https://github.com/mesocentre-clermont-auvergne/formation_fair.git\#main:/fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_containers/fair_encapsulation_docker/docker_assembly_raw -t assembly_raw
+\end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Export docker image}
+\begin{verbatim}
+$ docker save [image_name/ID] > [image_name].tar
+\end{verbatim}
+\end{frame}
+
 \begin{frame}
 \centering\includegraphics[width=0.9\textwidth]{images/docker-cheat-sheet.pdf}
 \end{frame}
@@ -182,19 +261,39 @@ CMD & Exécuter une commande au démarrage du conteneur \\
 \only<1>{\centering\includegraphics[width=0.2\textwidth]{images/singularity_logo.pdf}}
 \end{frame}
 
-\begin{frame}[<+->][fragile]{Singularity commands}
-\begin{block}{classical commands}
+\begin{frame}[fragile]{Singularity commands}
+\begin{columns}
+\begin{column}{0.45\textwidth}
+\begin{block}<1->{Docker command}
+\begin{verbatim}
+$ docker search [image_name]
+$ docker pull [image_name]
+$ docker run [image_name]
+\end{verbatim}
+\end{block}
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{block}<2->{Singularity commands}
 \begin{verbatim}
 $ singularity search [image_name]
 $ singularity pull [image_name]
 $ singularity run [image_name]
 \end{verbatim}
 \end{block}
+\end{column}
+\end{columns}
 \end{frame}
 
-\begin{frame}[<+->][fragile]{Singularity and Docker}
+\begin{frame}[fragile]{Singularity and Docker}
 \begin{block}{Singularity can use Docker images}
+\begin{itemize}
+\item from docker hub
+\item from docker file
+\end{itemize}
+\end{block}
 \begin{verbatim}
+$ singularity build [new_image_name] docker-archive://[image_name].tar
+$ singularity run [new_image_name]
 $ singularity pull docker://debian:latest
 INFO:    Converting OCI blobs to SIF format
 INFO:    Starting build...
@@ -206,5 +305,39 @@ Storing signatures
 2022/10/06 10:50:41  info unpack layer: sha256:f606d8928ed378229f2460b94b504cca239fb906efc57acbdf9340bd298d5ddf
 INFO:    Creating SIF file...
 \end{verbatim}
-\end{block}
+\end{frame}
+
+\begin{frame}{Singularity recipe}
+\begin{tabular}{ll}
+Bootstrap &  base you want to use (e.g., docker, debootstrap, shub) \\
+From &  named container you want to use \\
+\%help & help text to the user\\
+\%setup & executed command on the host system outside the container\\
+\%files & allow to copy file to the containers \\
+\%labels & store metadata with your container, \\
+\%environment & environment variables sourced at runtime \\
+\%post setup & command of your container \\
+\%runscript & started when container is running \\
+\%test & command to test the image build \\
+\end{tabular}
+\end{frame}
+
+\begin{frame}[fragile]{Singularity recipe}
+\begin{verbatim}
+Bootstrap: docker
+From: ubuntu:bionic
+
+%help
+Help me. I'm in the container.
+%labels
+    Maintainer "coco l'asticot"
+%environment
+    VADER=badguy
+    LUKE=goodguy
+    export VADER LUKE
+%post
+    echo "Hello World !"
+%runscript
+    echo "Rooooar!"
+\end{verbatim}
 \end{frame}

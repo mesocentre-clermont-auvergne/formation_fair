@@ -1,30 +1,250 @@
-FROM condaforge/mambaforge
+##############################################################
+####################    STARTING IMAGE    ####################
+##############################################################
 
-MAINTAINER Coco l'asticot <coco@asticot.com>
+FROM ubuntu:bionic
 
-#########################################
-####   INSTALL FASTP TRIMMING TOOL   ####
-#########################################
+##############################################################
+####################    SOME ARGUMENTS    ####################
+##############################################################
 
-RUN mamba install \
-  --yes \
-  --channel conda-forge \
-  --channel bioconda \
-  --channel defaults \
-  fastp
+
+ARG FASTP_VER="0.23.2"
+# ephemeral environmental variables that go away after building the image
+ARG SHOVILL_VER="1.1.0"
+ARG SPADES_VER="3.15.5"
+ARG SEQTK_VER="1.3"
+ARG KMC_VER="3.1.1"
+ARG LIGHTER_VER="1.1.1"
+ARG TRIMMOMATIC_VER="0.39"
+ARG BWA_VER="0.7.17"
+# not sure if a more recent samtools is compatible or not, previously used samtools 1.10
+ARG SAMTOOLS_VER="1.16.1"
+ARG SKESA_VER="2.3.0"
+ARG MEGAHIT_VER="1.1.4"
+ARG VELVET_VER="1.2.10"
+ARG FLASH_VER="1.2.11"
+# also not sure if this upgraded pilon version is compatible, previously used 1.22
+ARG PILON_VER="1.24"
+
+##############################################################
+####################    SOME METADATA     ####################
+##############################################################
+
+
+LABEL base.image="ubuntu:bionic"
+LABEL dockerfile.version="1"
+LABEL software="Fastp"
+LABEL software.version=$FASTP_VER
+LABEL description="An ultra-fast all-in-one FASTQ preprocessor"
+LABEL website="https://github.com/OpenGene/fastp"
+LABEL license="https://github.com/OpenGene/fastp/blob/master/LICENSE"
+LABEL maintainer="Idowu Olawoye"
+LABEL maintainer.email="olawoyei0303@run.edu.ng"
+
+
+##############################################################
+###################    BASIC DEPENDANCIES    #################
+##############################################################
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  python \
+  wget \
+  ca-certificates \
+  pigz \
+  zlib1g-dev \
+  make \
+  gcc \
+  g++ \
+  libpthread-stubs0-dev \
+  openjdk-11-jre \
+  unzip \
+  bzip2 \
+  libncurses5-dev \
+  libbz2-dev \
+  liblzma-dev \
+  libcurl4-gnutls-dev \
+  libssl-dev \
+  libfindbin-libs-perl && \
+  apt-get clean && apt-get autoclean && \
+  rm -rfv /var/lib/apt/lists/*
+
+
+  ##############################################################
+  ####################    SHOVILL INSTALL    ###################
+  ##############################################################
+
+  # SPAdes
+  RUN wget https://github.com/ablab/spades/releases/download/v${SPADES_VER}/SPAdes-${SPADES_VER}-Linux.tar.gz && \
+    tar -xzf SPAdes-${SPADES_VER}-Linux.tar.gz && \
+    rm -v SPAdes-${SPADES_VER}-Linux.tar.gz
+
+  # Seqtk install
+  RUN mkdir -v seqtk && \
+    cd seqtk && \
+    wget https://github.com/lh3/seqtk/archive/v${SEQTK_VER}.tar.gz && \
+    tar -zxf v${SEQTK_VER}.tar.gz && \
+    rm -v v${SEQTK_VER}.tar.gz && \
+    cd seqtk-${SEQTK_VER}/ && \
+    make && \
+    make install
+
+  # kmc
+  RUN mkdir kmc && \
+    cd kmc && \
+    wget https://github.com/refresh-bio/KMC/releases/download/v${KMC_VER}/KMC${KMC_VER}.linux.tar.gz && \
+    tar -xzf KMC${KMC_VER}.linux.tar.gz && \
+    rm -v KMC${KMC_VER}.linux.tar.gz
+
+  # lighter
+  RUN wget https://github.com/mourisl/Lighter/archive/v${LIGHTER_VER}.tar.gz && \
+    tar -zxf v${LIGHTER_VER}.tar.gz && \
+    rm -rvf v${LIGHTER_VER}.tar.gz && \
+    cd Lighter-${LIGHTER_VER} && \
+    make
+
+  # trimmomatic
+  RUN mkdir trimmomatic && \
+    cd trimmomatic && \
+    wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-${TRIMMOMATIC_VER}.zip && \
+    unzip Trimmomatic-${TRIMMOMATIC_VER}.zip && \
+    rm -rf Trimmomatic-${TRIMMOMATIC_VER}.zip && \
+    chmod +x Trimmomatic-${TRIMMOMATIC_VER}/trimmomatic-${TRIMMOMATIC_VER}.jar && \
+    echo "#!/bin/bash" >> trimmomatic && \
+    echo "exec java -jar /trimmomatic/Trimmomatic-${TRIMMOMATIC_VER}/trimmomatic-${TRIMMOMATIC_VER}.jar """"$""@"""" " >> trimmomatic && \
+    chmod +x trimmomatic
+
+  # bwa (mem) install
+  RUN mkdir bwa && \
+    cd bwa && \
+    wget https://github.com/lh3/bwa/releases/download/v${BWA_VER}/bwa-${BWA_VER}.tar.bz2 && \
+    tar -xjf bwa-${BWA_VER}.tar.bz2 && \
+    rm bwa-${BWA_VER}.tar.bz2 && \
+    cd bwa-${BWA_VER} && \
+    make
+
+  # samtools install
+  RUN mkdir samtools && \
+    cd samtools && \
+    wget https://github.com/samtools/samtools/releases/download/${SAMTOOLS_VER}/samtools-${SAMTOOLS_VER}.tar.bz2 && \
+    tar -xjf samtools-${SAMTOOLS_VER}.tar.bz2 && \
+    rm samtools-${SAMTOOLS_VER}.tar.bz2 && \
+    cd samtools-${SAMTOOLS_VER} && \
+    ./configure && \
+    make && \
+    make install
+
+  # skesa 2.3.0 binary (skesa 2.4.0 binary works better on ubuntu:bionic, so not upgrading here)
+  RUN mkdir skesa && \
+    cd skesa && \
+    wget https://github.com/ncbi/SKESA/releases/download/v${SKESA_VER}/skesa.centos6.10 && \
+    mv skesa.centos6.10 skesa && \
+    chmod +x skesa
+
+  # MEGAHIT 1.1.4 binary (I'm pretty sure these are binaries at this point)
+  RUN mkdir megahit && \
+    cd megahit && \
+    wget https://github.com/voutcn/megahit/releases/download/v${MEGAHIT_VER}/megahit_v${MEGAHIT_VER}_LINUX_CPUONLY_x86_64-bin.tar.gz && \
+    tar -xzf megahit_v${MEGAHIT_VER}_LINUX_CPUONLY_x86_64-bin.tar.gz && \
+    rm megahit_v${MEGAHIT_VER}_LINUX_CPUONLY_x86_64-bin.tar.gz
+
+  # Velvet 1.2.10
+  RUN mkdir velvet && \
+    cd velvet && \
+    wget https://github.com/dzerbino/velvet/archive/v${VELVET_VER}.tar.gz && \
+    tar -xzf v${VELVET_VER}.tar.gz && \
+    rm -rf v${VELVET_VER}.tar.gz && \
+    cd velvet-${VELVET_VER} && \
+    make
+
+  # Flash 1.2.11
+  RUN mkdir flash && \
+    cd flash && \
+    wget https://sourceforge.net/projects/flashpage/files/FLASH-${FLASH_VER}.tar.gz && \
+    tar -zxf FLASH-${FLASH_VER}.tar.gz && \
+    rm -rf FLASH-${FLASH_VER}.tar.gz && \
+    cd FLASH-${FLASH_VER} && \
+    make
+
+  # pilon
+  RUN mkdir pilon && \
+    cd pilon && \
+    wget https://github.com/broadinstitute/pilon/releases/download/v${PILON_VER}/pilon-${PILON_VER}.jar && \
+    chmod +x pilon-${PILON_VER}.jar && \
+    echo "#!/bin/bash" >> pilon && \
+    echo "exec java -jar /pilon/pilon-${PILON_VER}.jar """"$""@"""" " >> pilon && \
+    chmod +x pilon
+
+  # Samclip (not going to pin a version, this is the recommended way of installing and there have not been updates since March 2020)
+  RUN mkdir samclip && \
+    cd samclip && \
+    wget https://raw.githubusercontent.com/tseemann/samclip/master/samclip && \
+    chmod +x samclip
+
+  # aaannnddd finally install shovill v1.1.0 itself
+  # extra perl module I had to install via apt-get: libfindbin-libs-perl
+  # create /data for working directory
+  RUN wget https://github.com/tseemann/shovill/archive/v${SHOVILL_VER}.tar.gz && \
+    tar -xzf v${SHOVILL_VER}.tar.gz && \
+    rm v${SHOVILL_VER}.tar.gz
+
+##############################################################
+####################     FASTP INSTALL     ###################
+##############################################################
+
+RUN mkdir fastp && \
+ cd fastp && \
+ wget http://opengene.org/fastp/fastp.${FASTP_VER} && \
+ mv fastp.${FASTP_VER} fastp && \
+ chmod a+x ./fastp && \
+ mkdir /data
+
+ ##############################################################
+ ####################      SET ENV PATH     ###################
+ ##############################################################
+# set $PATH's
+ENV PATH="${PATH}:\
+/SPAdes-${SPADES_VER}-Linux/bin:\
+/kmc:\
+/Lighter-${LIGHTER_VER}:\
+/trimmomatic:\
+/bwa/bwa-${BWA_VER}:\
+/skesa:\
+/megahit/megahit_v${MEGAHIT_VER}_LINUX_CPUONLY_x86_64-bin:\
+/velvet/velvet-${VELVET_VER}:\
+/flash/FLASH-${FLASH_VER}:\
+/shovill-${SHOVILL_VER}/bin:\
+/pilon:\
+/samclip:\
+/fastp/"\
+     LC_ALL=C
+
+##############################################################
+####################    TEST IMAGE BUILD   ###################
+##############################################################
+
 
 RUN fastp --help
+WORKDIR /data
 
-#########################################
-####  INSTALL SHOVILL ASSEMBLY TOOL  ####
-#########################################
+# downloading sars-cov-2 fastq test files
+RUN wget https://raw.githubusercontent.com/StaPH-B/docker-builds/master/tests/SARS-CoV-2/SRR13957123_1.fastq.gz
+RUN wget https://raw.githubusercontent.com/StaPH-B/docker-builds/master/tests/SARS-CoV-2/SRR13957123_2.fastq.gz
+RUN echo "/data contain : $(ls /data)"
 
+# running fastp on the files
+RUN fastp \
+        -i SRR13957123_1.fastq.gz \
+        -I SRR13957123_2.fastq.gz \
+        -o SRR13957123_PE1.fastq.gz \
+        -O SRR13957123_PE2.fastq.gz \
+        -h SRR13957123_fastp.html \
+        -j SRR13957123_fastp.json
 
-RUN mamba install \
-  --yes \
-  --channel conda-forge \
-  --channel bioconda \
-  --channel defaults \
-  shovill
-
-RUN shovill --help
+# reinstantiating variable so it's available for cd cmd below
+ARG SHOVILL_VER
+SHELL ["/bin/bash", "-c"]
+RUN echo "TESTING SHOVILL + SPADES" && \
+shovill --outdir out.spades --assembler spades --R1 SRR13957123_1.fastq.gz --R2 SRR13957123_2.fastq.gz --nostitch --noreadcorr --nocorr && \
+grep '>' out.spades/contigs.fa && \
+shovill --version
