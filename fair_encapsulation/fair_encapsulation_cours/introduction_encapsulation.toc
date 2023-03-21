@@ -1,7 +1,0 @@
-\babel@toc {french}{}\relax 
-\beamer@sectionintoc {1}{Containers structure and use}{1}{0}{1}
-\beamer@subsectionintoc {1}{1}{Docker}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Singularity}{27}{0}{1}
-\beamer@sectionintoc {2}{Conclusion about encapsulation}{38}{0}{2}
-\beamer@subsectionintoc {2}{1}{Integrative levels of encapsulation}{38}{0}{2}
-\beamer@subsectionintoc {2}{2}{Recommandations}{50}{0}{2}
