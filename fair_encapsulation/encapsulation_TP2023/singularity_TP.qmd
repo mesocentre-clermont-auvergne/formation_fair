@@ -116,8 +116,7 @@ $ docker image ls
 
 ### Creation d'une image `Docker` à partir d'une recette
 
-Il est possible de créer sa propre image `Docker`. Pour cela il faut un fichier
-spécifique (*recette*) qui va contenir les instructions nécessaire à la construction de l'image `Docker`.
+Il est possible de créer sa propre image `Docker`. Pour cela il faut un fichier spécifique (*recette*) qui va contenir les instructions nécessaire à la construction de l'image `Docker`.
 
 Il s'agit d'un fichier `Dockerfile` qui se présente comme suit :
 
@@ -136,16 +135,11 @@ $ docker build --file Dockerfile -t rbase:v2.0 .
 $ docker image ls
 ```
 
-Cette opération peut être plus ou moins longue suivant 
-la taille et le nombre de progammes / dépendances à installer. Cependant cette étape est parallélisée, donc plus il y a de processeur sur la machine, plus cette étape est rapide. Ici on va en utiliser 16.
+Cette opération peut être plus ou moins longue suivant la taille et le nombre de progammes / dépendances à installer. Cependant cette étape est parallélisée, donc plus il y a de processeur sur la machine, plus cette étape est rapide. Ici on va en utiliser 16.
 
 ### Mise à jour de l'image `Docker`
 
-Il est possible de mettre à jour une image `Docker` pour ajouter un programme
-ou un package supplémentaire simplement en moddifiant le fichier Dockerfile.
-Une nouvelle image sera construite à partir de l'ancienne.
-Comme `Docker` fonctionne avec un cache la construction de la nouvelle image est
-plus rapide.
+Il est possible de mettre à jour une image `Docker` pour ajouter un programme ou un package supplémentaire simplement en moddifiant le fichier Dockerfile. Une nouvelle image sera construite à partir de l'ancienne. Comme `Docker` fonctionne avec un cache la construction de la nouvelle image est plus rapide.
 
 ``` bash
 $ docker build --file Dockerfile -t rbase:v2.0 .
@@ -155,8 +149,7 @@ $ docker image ls
 
 Une nouvelle image est créer avec le tag de l'ancienne.
 
-`Docker` a son propre système de gestion des images.
-Pour supprimmer une image `Docker` il suffit de faire :
+`Docker` a son propre système de gestion des images. Pour supprimmer une image `Docker` il suffit de faire :
 
 ``` bash
 $ docker image rm -f IMAGE_ID
