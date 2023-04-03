@@ -1,15 +1,13 @@
 \section{Installing training items}
 
 \begin{frame}{Biosphere a virtual environment for training}
-\only<1>{\centering\includegraphics[scale=0.22]{/home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction/images/biosphere_1.png}}
-\only<2>{\centering\includegraphics[scale=0.22]{/home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction/images/biosphere_2.png}}
-\only<3>{\centering\includegraphics[scale=0.22]{/home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction/images/biosphere_3.png}}
-\only<4>{\centering\includegraphics[scale=0.22]{/home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction/images/biosphere_4.png}}
-
+\only<1>{\centering\includegraphics[scale=0.22]{biosphere_1.png}}
+\only<2>{\centering\includegraphics[scale=0.22]{biosphere_2.png}}
+\only<3>{\centering\includegraphics[scale=0.22]{biosphere_3.png}}
+\only<4>{\centering\includegraphics[scale=0.22]{biosphere_4.png}}
 \end{frame}
 
 \begin{frame}[fragile]{SSH key use}
-
 \begin{block}{The principle}
 \begin{itemize}
 \item Secure Shell (SSH)
@@ -27,14 +25,23 @@
 \item A private key for myself (never share)
 \end{itemize}
 \end{block}
+\end{frame}
+
+
+\begin{frame}{Installing a bash terminal}{Git bash for non unix user}
+\centering\includegraphics[scale=0.5]{git_bash_1.png}
 
 \end{frame}
 
 \begin{frame}{SSH key use}
-\centering\includegraphics[scale=0.5]{/home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_introduction/images/ssh_system.png}
+\centering\includegraphics[scale=0.5]{ssh_system.png}
 \end{frame}
 
 \begin{frame}[fragile]{SSH key use}
+\begin{block}{}
+ssh-keygen -t dsa
+\end{block}
+\pause
 \begin{verbatim}
 $ ssh-keygen -t dsa
 	Generating public/private dsa key pair.
@@ -61,17 +68,24 @@ $ ssh-keygen -t dsa
 \end{frame}
 
 \begin{frame}[fragile]{SSH key use}
+\begin{block}{}
+cat /home/pierre/.ssh/id{\_}dsa{\_}ga
+\end{block}
+\pause
 \begin{verbatim}
 $ cat ~/.ssh/id_dsa_ga
 -----BEGIN DSA PRIVATE KEY-----
 Proc-Type: 4,ENCRYPTED
 DEK-Info: DES-EDE3-CBC,6ED59B013D8A361F
-
 pB5eHHpvXxoz6i1jFzlKANv9W6SeHw664PV/1A90acR/Mw/ERQvTQKo3TaLaFhkb
-…
 NwhQFyxZZty2hn6xrv5UIAGTpjk+P2+waRmSno1Vg1x0epCp45kvFRv9AiXsOpt4
 RgzPC5+a6kjPf8EtyozGoQ==
 -----END DSA PRIVATE KEY-----
+\end{verbatim}
+\begin{block}{}
+cat /home/pierre/.ssh/id{\_}dsa{\_}ga.pub
+\end{block}
+\begin{verbatim}
 $ cat ~/.ssh/id_dsa_ga.pub
 ssh-dss AAAAB3NzaC1kc3MAAACBAJhbQcZK8lFMvpw7trbFj51Sqjd9nKBu2xkw/kvUAQlPQPaIRLOiq92fxp+
 \end{verbatim}

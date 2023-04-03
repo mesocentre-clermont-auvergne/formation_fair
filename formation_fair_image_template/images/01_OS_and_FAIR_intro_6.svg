@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg14918"
+   width="960"
+   height="540"
+   viewBox="0 0 960 540"
+   sodipodi:docname="01_OS_and_FAIR_intro_6.svg"
+   inkscape:version="1.2.2 (1:1.2.2+202212051552+b0a8486541)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs14922">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath14934">
+      <path
+         d="M 0,0 H 365760 V 205740 H 0 Z"
+         id="path14932" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview14920"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.5989583"
+     inkscape:cx="480.3127"
+     inkscape:cy="270.4886"
+     inkscape:window-width="1846"
+     inkscape:window-height="1016"
+     inkscape:window-x="74"
+     inkscape:window-y="1107"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g14924" />
+  <g
+     id="g14924"
+     inkscape:groupmode="layer"
+     inkscape:label="01_OS_and_FAIR_intro3"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,540)">
+    <g
+       id="g14926"
+       transform="matrix(1,0,0,-1,0,405)">
+      <g
+         id="g14928"
+         transform="scale(0.0019685)">
+        <g
+           id="g14930"
+           clip-path="url(#clipPath14934)">
+          <g
+             id="g14936">
+            <g
+               id="g14938">
+              <path
+                 d="M 0,0 H 365760 V 205740 H 0 Z"
+                 style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
+                 id="path14940" />
+            </g>
+          </g>
+          <g
+             id="g14942">
+            <g
+               id="g14944">
+              <path
+                 d="m 0,201828 h 365760 v 3912 H 0 Z"
+                 style="fill:#63d297;fill-opacity:1;fill-rule:evenodd;stroke:none"
+                 id="path14946" />
+            </g>
+          </g>
+          <g
+             id="g14948">
+            <g
+               id="g14950">
+              <g
+                 id="g14952">
+                <path
+                   d="M 12468,17801 H 353292 V 40709 H 12468 Z"
+                   style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:none"
+                   id="path14954" />
+              </g>
+            </g>
+          </g>
+          <g
+             id="g14956"
+             transform="scale(381)">
+            <g
+               id="g14958"
+               transform="translate(32.72441,46.721786)">
+              <g
+                 id="g14960">
+                <text
+                   xml:space="preserve"
+                   transform="translate(9,41.255997)"
+                   style="font-variant:normal;font-weight:normal;font-size:33.6px;font-family:ProximaNova;-inkscape-font-specification:ProximaNova-Regular;writing-mode:lr-tb;fill:#202729;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                   id="text14964"><tspan
+                     x="0 16.464001 35.683201 54.1968 73.4832 82.152 92.030403 110.9472 122.0352 149.18401 157.8528 176.36639 195.2832 214.5696 232.27679 242.1552 249.71519 266.1792 285.09601 293.7648 301.3248 328.4736 347.69281 365.39999 382.03201 391.9104 400.57919 419.7984 429.30719 437.97601 449.064 467.9808 477.85919 488.9472 506.65439 523.28638 533.16479 552.0816 571.40161 580.07037 599.28961 616.99683 636.216 655.13281 666.22083"
+                     y="0"
+                     sodipodi:role="line"
+                     id="tspan14962">Long term negative impact of retracted papers</tspan></text>
+              </g>
+            </g>
+          </g>
+          <g
+             id="g14966"
+             transform="scale(381)" />
+          <g
+             id="g14968">
+            <g
+               id="g14970">
+              <path
+                 d="M 14469,49115 H 164709 V 74717 H 14469 Z"
+                 style="fill:#63d297;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 id="path14972" />
+            </g>
+            <g
+               id="g14974">
+              <path
+                 d="m 164709,49115 h 30772 v 25602 h -30772 z"
+                 style="fill:#63d297;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 id="path14976" />
+            </g>
+            <g
+               id="g14978">
+              <path
+                 d="m 195481,49115 h 46183 v 25602 h -46183 z"
+                 style="fill:#63d297;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 id="path14980" />
+            </g>
+            <g
+               id="g14982">
+              <path
+                 d="m 241664,49115 h 46524 v 25602 h -46524 z"
+                 style="fill:#63d297;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 id="path14984" />
+            </g>
+            <g
+               id="g14986">
+              <path
+                 d="m 288188,49115 h 54096 v 25602 h -54096 z"
+                 style="fill:#63d297;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 id="path14988" />
+            </g>
+            <g
+               id="g14990"
+               transform="scale(381)">
+              <g
+                 id="g14992"
+                 transform="translate(37.97638,128.91077)">
+                <g
+                   id="g14994">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(176.42474,21.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text14998"><tspan
+                       x="0 9.6266661 14.813333 19.253332 22.946667 30.359999 34.053333"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan14996">Article</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15000"
+                 transform="translate(432.3071,128.91077)">
+                <g
+                   id="g15002">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(18.158936,21.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15006"><tspan
+                       x="0 8.1466665 15.559999 22.973333 28.16 31.853333 39.986664 44.426666"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15004">Year of </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9.646484,37.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15010"><tspan
+                       x="0 5.1866665 12.599999 17.039999 22.226665 29.639999 37.053333 41.493332 45.186665 53.32"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15008">retraction</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15012"
+                 transform="translate(513.0735,128.91077)">
+                <g
+                   id="g15014">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(15.680557,21.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15018"><tspan
+                       x="0 9.6266661 13.32 17.76 21.453333 29.586666 37.719997 40.919998 50.546665 55.733334 60.173332 63.866665 71.279999 74.973335 82.386665 89.799995"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15016">Citing Articles </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(40.241203,37.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15022"><tspan
+                       x="0 8.1333332 15.546666 19.986666 28.119999 33.306667 40.719997"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15020">before </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(29.870895,53.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15026"><tspan
+                       x="0 5.1866665 12.599999 17.039999 22.226665 29.639999 37.053333 41.493332 45.186665 53.32"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15024">retraction</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15028"
+                 transform="translate(634.2887,128.91077)">
+                <g
+                   id="g15030">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(16.128063,21.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15034"><tspan
+                       x="0 9.6266661 13.32 17.76 21.453333 29.586666 37.719997 40.919998 50.546665 55.733334 60.173332 63.866665 71.279999 74.973335 82.386665 89.799995"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15032">Citing Articles </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(14.022671,37.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15038"><tspan
+                       x="0 7.4133329 11.853333 16.293333 23.706667 28.893333 32.586666 37.773331 45.186665 49.626667 54.813332 62.226665 69.639999 74.080002 77.773331 85.906662"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15036">after retraction</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15040"
+                 transform="translate(756.3989,128.91077)">
+                <g
+                   id="g15042">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(38.527756,21.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15046"><tspan
+                       x="0 7.1466665 15.28 19.719999 27.133333 30.826666 34.52 41.933331 45.626667 50.066666 57.48 64.893333"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15044">Total cites </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(15.818314,37.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15050"><tspan
+                       x="0 4.4400001 8.1333332 16.266666 24.4 29.586666 37.719997 45.133331 48.826664 56.239998 59.933331 63.626663 71.759995 79.893333 87.306664 94.720001 102.13333 110.26666"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15048">(journals indexed </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(10.013344,53.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15054"><tspan
+                       x="0 8.1333332 15.546666 19.24 31.573332 38.986664 47.119999 50.813332 58.946667 63.386665 67.080002 75.959999 83.373329 87.066666 94.479996 102.61333 110.02666 117.43999"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15052">by Web of Science)</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15056"
+                 transform="translate(37.97638,196.1076)">
+                <g
+                   id="g15058">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15062"><tspan
+                       x="0 7.4133329 11.106667 14.799999 23.68 28.119999 31.08 42.186665 49.599998 54.039997 60.706665 64.400002 73.279999 77.720001 85.133331 91.799995 99.213333 106.62666 110.32 113.28 120.69333 128.10666 131.8 139.21333 142.90666 146.59999 156.22667 163.64 168.08 175.49333 178.45332 185.86667 192.53333 199.94666 206.61333 213.28 220.69333 223.65332 231.06667 235.50667 239.2 248.82666 251.78667 258.45334 265.86667 273.28 279.94666 287.35999 291.05331 300.67999 303.63998 307.33331 314.74667 318.44 325.85333"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15060">1. Primary Prevention of Cardiovascular Disease with a </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9,37.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15066"><tspan
+                       x="0 11.106667 18.52 25.933332 28.893333 32.586666 40 44.439999 48.879997 56.293331 63.706665 71.119995 78.533333 85.946663 89.639999 99.266663 102.22666 109.64 113.33333 117.02666 120.71999 130.34666 134.03999 142.92 152.54666 162.90666 169.82666 173.51999 180.18666 183.87999 194.98666 203.86667 213.49333 217.18666 220.14667 229.02666 237.90666 247.53333"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15064">Mediterranean Diet. N ENGL J MED; APR </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(260.34683,37.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15070"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15068">2013</tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(289.99673,37.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15074"><tspan
+                       x="0 3.6933331 7.3866663 16.266666 22.933332 26.626665 31.066666 38.48 45.146664 52.559998 56.25333 65.879997 69.573334 73.266663 80.68 84.373329"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15072">. Estruch R, et </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9,53.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15078"><tspan
+                       x="0 7.4133329 10.373333"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15076">al.</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15080"
+                 transform="translate(432.3071,196.1076)">
+                <g
+                   id="g15082">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(25.55825,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15086"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15084">2018</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15088"
+                 transform="translate(513.0735,196.1076)">
+                <g
+                   id="g15090">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(45.78266,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15094"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15092">1919</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15096"
+                 transform="translate(634.2887,196.1076)">
+                <g
+                   id="g15098">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(49.936405,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15102"><tspan
+                       x="0 7.4133329 14.826666"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15100">816</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15104"
+                 transform="translate(756.3989,196.1076)">
+                <g
+                   id="g15106">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(56.167175,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15110"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15108">2735</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15112"
+                 transform="translate(37.97638,263.30447)">
+                <g
+                   id="g15114">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15118"><tspan
+                       x="0 7.4133329 11.106667 14.799999 18.493334 21.453333 28.866667 36.279999 39.239998 43.68 46.639999 53.306664 64.41333 71.826668 79.239998 86.653328 89.613335 97.026665 101.46667 108.88 116.29333 123.70667 131.12 134.08 141.49333 145.93333 149.62666 157.03999 163.70667 171.12 178.53333 182.97333 190.38666 193.34666 200.75999 207.42667 210.38666 217.79999 221.49333 225.18666 232.59999 240.01332 247.42667 251.86665 258.53333 265.94666 273.35999 280.02667 282.98666 286.67999 289.63998 296.30667 300 306.66666 314.07999 317.03998 320 323.69333 326.65332 333.31998 337.01334 340.70667 348.12 355.53333 362.94666"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15116">2. Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9,37.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15122"><tspan
+                       x="0 7.4133329 14.826666 19.266666 25.933332 33.346664 40.013332 42.973331 49.639999 57.053333 60.746666 68.159996 75.573334 82.239998 89.653328 92.613335 100.02666 107.43999 118.54666 125.96 133.37334 137.06667 144.48 147.44 151.13333 158.54666 161.50667 168.17332 175.58665 180.02666 187.44 194.85333 199.29333 202.98666 205.94666 213.36 217.05333 223.72 231.13333 234.09332 237.05333 244.46666 248.90666 256.32001 263.73334 267.42667 271.12 278.53333 287.41333 297.03998 306.66666 315.54666 322.21332 325.90665 329.60001 337.73334 346.61331 355.49332 359.18665 366.59998 374.01334"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15120">pervasive developmental disorder in children. LANCET; FEB 28 </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9,53.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15126"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15124">1998</tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(38.649902,53.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15130"><tspan
+                       x="0 3.6933331 7.3866663 19.466665 26.879999 33.546665 40.959999 44.653332 47.613331 55.026665 57.986664 65.400002 68.360001 77.239998 83.906662 87.599998 91.293327 98.706665 102.39999 106.09333 113.50666 116.46667"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15128">. Wakefield AJ, et al.</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15132"
+                 transform="translate(432.3071,263.30447)">
+                <g
+                   id="g15134">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(25.55825,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15138"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15136">2010</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15140"
+                 transform="translate(513.0735,263.30447)">
+                <g
+                   id="g15142">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(49.4889,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15146"><tspan
+                       x="0 7.4133329 14.826666"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15144">642</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15148"
+                 transform="translate(634.2887,263.30447)">
+                <g
+                   id="g15150">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(49.936405,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15154"><tspan
+                       x="0 7.4133329 14.826666"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15152">867</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15156"
+                 transform="translate(756.3989,263.30447)">
+                <g
+                   id="g15158">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(56.167175,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15162"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15160">1509</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15164"
+                 transform="translate(37.97638,330.5013)">
+                <g
+                   id="g15166">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15170"><tspan
+                       x="0 7.4133329 11.106667 14.799999 23.439999 26.4 33.066666 36.759998 44.173332 47.866665 50.826664 58.239998 61.933331 64.893333 73.040001 76.73333 84.146667 88.586662 96 99.693329 107.10667 110.06667 117.48 121.17333 127.84 135.25333 141.92 146.36 153.77333 157.46666 164.87999 172.29333 175.98666 183.39999 190.06667 193.75999 200.42667 203.38666 210.05333 216.72 224.13333 228.57333 235.98666 238.94666 242.64 246.33333 253.74666 257.44 261.13333 264.82666 272.23999 279.65332 283.34665 287.03998 298.14667 301.10666 312.21332 315.17334 321.84 328.50665 332.19998 335.89331 343.30667 350.72"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15168">3. Visfatin: A protein secreted by visceral fat that mimics the </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9,37.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15174"><tspan
+                       x="0 7.4133329 10.866667 14.559999 21.973333 28.639999 32.333332 39 42.693333 50.106667 53.799999 57.493332 60.453331 67.866669 74.533333 81.946663 84.906662 87.866661 95.279999 98.973328 102.66666 111.54666 121.17333 124.86666 133.74666 143.37334 153 161.87999 165.57333 169.26666 175.93333 184.81332 194.44"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15172">effects of insulin. SCIENCE; JAN </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(207.26897,37.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15178"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15176">2005</tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(236.91887,37.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15182"><tspan
+                       x="0 3.6933331 7.3866663 15.52 22.933332 29.599998 37.013332 44.426666 51.84 56.279999 63.693333 66.653328 75.533333 79.226662 82.919998 90.333328 94.026665 97.720001 105.13333 108.09333"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15180">. Fukuhara A, et al.</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15184"
+                 transform="translate(432.3071,330.5013)">
+                <g
+                   id="g15186">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(25.55825,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15190"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15188">2007</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15192"
+                 transform="translate(513.0735,330.5013)">
+                <g
+                   id="g15194">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(49.4889,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15198"><tspan
+                       x="0 7.4133329 14.826666"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15196">232</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15200"
+                 transform="translate(634.2887,330.5013)">
+                <g
+                   id="g15202">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(46.724957,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15206"><tspan
+                       x="0 6.4266667 13.839999 21.253332"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15204">1192</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15208"
+                 transform="translate(756.3989,330.5013)">
+                <g
+                   id="g15210">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(56.167175,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15214"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15212">1424</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15216"
+                 transform="translate(37.97638,381.69815)">
+                <g
+                   id="g15218">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15222"><tspan
+                       x="0 7.4133329 11.106667 14.066667 22.946667 30.359999 34.053333 41.466667 48.879997 56.293331 63.706665 71.119995 77.786667 85.199997 92.613335 96.306664 100 104.43999 111.85333 119.26666 125.93333 128.89333 136.30666 143.72 147.41333 151.10666 158.51999 165.18666 172.59999 177.03999 184.45332 191.12 197.78667 200.74666 208.15999 215.57333 219.26666 225.93333 232.59999 239.26666 242.95999 250.37332 261.47998 265.17334 268.13333 275.54666 279.23999 286.65332 289.61331 297.02667 304.44 308.13333 314.79999 318.49332 325.90665 333.31998 339.98666 347.39999 354.81332 358.50665 365.91998 373.33331"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15220">4. An enhanced transient expression system in plants based on </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9,37.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15226"><tspan
+                       x="0 6.6666665 14.08 21.493332 28.906666 33.346664 40.759998 47.426666 54.09333 57.053333 64.466667 71.879997 75.573334 82.986664 86.68 90.373329 97.786667 105.2 112.61333 120.02666 123.71999 130.38666 133.34666 136.30666 143.72 151.13333 157.8 160.75999 168.17332 175.58665 179.28 186.69333 193.36 197.05333 200.74666 208.15999 215.57333 219.26666 226.67999 234.09332 241.50667 245.2 252.61333 257.05331 264.46667 268.16 275.57333 278.53333 285.94666 289.63998 297.05331 300.74667 304.44 308.13333 315.54666 326.65332 334.06665 337.75998 345.17334"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15224">suppression of gene silencing by the p19 protein of tomato </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9,53.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15230"><tspan
+                       x="0 7.4133329 14.826666 21.493332 28.906666 35.573334 39.266666 45.933331 49.626667 57.039997 64.453331 68.146667 71.839996 78.506668 81.466667 85.906662 93.32 99.986664 103.68 107.37333 116.25333 123.66666 132.54666 142.17332 150.06667 153.75999 160.42667 164.12 167.81332 178.92 187.79999 197.42667"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15228">bushy stunt virus. PLANT J; MAR </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(210.22351,53.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15234"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15232">2003</tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(239.87341,53.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15238"><tspan
+                       x="0 3.6933331 7.3866663 15.533333 22.946667 25.906666 33.32 40.733334 48.146664 51.84 55.533333 65.893333 69.586662 73.279999 80.693329 84.386665 88.079994 95.493332 98.453331"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15236">. Voinnet O, et al.</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15240"
+                 transform="translate(432.3071,381.69815)">
+                <g
+                   id="g15242">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(25.55825,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15246"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15244">2015</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15248"
+                 transform="translate(513.0735,381.69815)">
+                <g
+                   id="g15250">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(49.4889,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15254"><tspan
+                       x="0 7.4133329 14.826666"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15252">896</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15256"
+                 transform="translate(634.2887,381.69815)">
+                <g
+                   id="g15258">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(49.936405,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15262"><tspan
+                       x="0 7.4133329 14.826666"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15260">375</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15264"
+                 transform="translate(756.3989,381.69815)">
+                <g
+                   id="g15266">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(56.167175,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15270"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15268">1271</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15272"
+                 transform="translate(37.97638,448.89502)">
+                <g
+                   id="g15274">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15278"><tspan
+                       x="0 7.4133329 11.106667 14.799999 21.719999 28.386665 35.053333 41.719997 44.68 48.373333 55.786667 62.453331 65.41333 72.826668 80.239998 86.906662 94.32 98.013329 100.97333 107.64 111.33333 118.74667 125.41333 132.08 139.49333 146.90666 150.59999 153.56 160.97333 163.93333 167.62666 171.31999 178.73332 183.17332 186.86667 194.28 200.94666 208.36 215.77333 222.43999 225.39999 232.81332 237.25333 240.21333 247.62666 255.03999 262.45334 269.12 276.53333 283.94666 287.63998 298.74667 306.16 309.85333 317.26666 323.93332 327.62665 335.03998 341.70667 344.66666 351.33331 355.02667"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15276">5. Lysyl oxidase is essential for hypoxia-induced metastasis. </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(9,37.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15282"><tspan
+                       x="0 9.6266661 17.52 25.653332 35.279999 44.906666 53.786667 57.48 60.439999 69.32 78.199997 87.826668"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15280">NATURE; APR </tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(100.5847,37.8)"
+                     style="font-variant:normal;font-weight:bold;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:Arial-BoldMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15286"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15284">2006</tspan></text>
+                  <text
+                     xml:space="preserve"
+                     transform="translate(130.2346,37.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15290"><tspan
+                       x="0 3.6933331 7.3866663 16.266666 20.706667 23.666666 31.08 35.52 39.213333 45.879997 52.546665 56.239998 59.933331 67.346664 71.040001 74.73333 82.146667 85.106667"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15288">. Erler JT, et al.</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15292"
+                 transform="translate(432.3071,448.89502)">
+                <g
+                   id="g15294">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(25.55825,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15298"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15296">2020</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15300"
+                 transform="translate(513.0735,448.89502)">
+                <g
+                   id="g15302">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(49.4889,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15306"><tspan
+                       x="0 7.4133329 14.826666"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15304">977</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15308"
+                 transform="translate(634.2887,448.89502)">
+                <g
+                   id="g15310">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(53.642643,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15314"><tspan
+                       x="0 7.4133329"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15312">81</tspan></text>
+                </g>
+              </g>
+              <g
+                 id="g15316"
+                 transform="translate(756.3989,448.89502)">
+                <g
+                   id="g15318">
+                  <text
+                     xml:space="preserve"
+                     transform="translate(56.167175,21.8)"
+                     style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="text15322"><tspan
+                       x="0 7.4133329 14.826666 22.24"
+                       y="0"
+                       sodipodi:role="line"
+                       id="tspan15320">1058</tspan></text>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g
+             id="g15324">
+            <g
+               id="g15326">
+              <g
+                 id="g15328">
+                <path
+                   d="m 152812,185177 h 199332 v 17244 H 152812 Z"
+                   style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:none"
+                   id="path15330" />
+              </g>
+            </g>
+          </g>
+          <g
+             id="g15332"
+             transform="scale(381)">
+            <g
+               id="g15334"
+               transform="translate(401.08136,486.02887)">
+              <g
+                 id="g15336">
+                <text
+                   xml:space="preserve"
+                   transform="translate(226.32352,19.24)"
+                   style="font-variant:normal;font-weight:normal;font-size:10.6667px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                   id="text15340"><tspan
+                     x="0 7.7013335 13.632 16.586668 20.138668 26.069334 31.402668 34.357334 36.725334 42.656002 48.58667 51.541336 61.205334 67.136002 70.090668 75.424004 81.354668 84.309334 87.264 90.026672 95.360001 101.29067 107.22134 110.176 116.10667 122.03734 127.94667 136.832 142.76266 148.09601 151.05067 154.00534 159.936 162.304 168.23466 174.16534 176.53334 181.86667 184.82133 190.15468 192.52267 195.47734 201.408 207.33867 210.29333 213.84534 219.776 222.73067 226.28267 232.21333 237.54668 240.50134 246.43201 252.36267 255.31734 261.24802 267.17868 273.10934 279.04001 282.59201 287.92535"
+                     y="0"
+                     sodipodi:role="line"
+                     id="tspan15338">Retraction Watch : Top 10 most highly cited retracted papers </tspan></text>
+                <text
+                   xml:space="preserve"
+                   transform="translate(27.333984,32.04)"
+                   style="font-variant:normal;font-weight:normal;font-size:10.6667px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                   id="text15344"><tspan
+                     x="0 5.9306669 8.885334 11.84 17.770668 23.104 26.058668 29.013334 31.968 35.52 41.450668 44.405334 47.957336 53.888 59.221336 62.176003 64.543999 70.47467 76.405334 84.106667 90.037338 92.992004 98.325333 104.256 107.21067 112.54401 118.47467 127.36 130.31467 133.26933 139.2 145.13068 148.68268 152.23466 158.16534 161.12001 164.67201 170.60268 175.936 178.89067 181.25867 187.18935 193.12001 196.67201 204.37334 210.304 213.25867 218.59201 224.52267 228.07468 230.44267 236.37334 242.304 248.23468 254.16534 257.71735 263.64801 269.57867 275.50934 279.06134 284.992 287.94669 290.90134 296.832 302.76266 306.31467 312.24533 318.17599 321.728 330.61334 336.54401 341.87735 344.832 348.384 354.31467 356.68268 362.61334 368.54401 370.91202 376.24533 379.79733 385.13068 387.49869 390.45334 396.384 402.31467 405.86667 409.41867 415.34933 418.30402 421.85602 427.78668 433.12003 436.07468 442.00534 447.936 451.48801 457.41867 463.34933 469.28003 475.21069 478.7627 484.09601"
+                     y="0"
+                     sodipodi:role="line"
+                     id="tspan15342">https://retractionwatch.com/the-retraction-watch-leaderboard/top-10-most-highly-cited-retracted-papers/</tspan></text>
+              </g>
+            </g>
+          </g>
+          <g
+             id="g15346"
+             transform="scale(381)" />
+          <g
+             id="g15348">
+            <g
+               id="g15350">
+              <g
+                 id="g15352">
+                <path
+                   d="m 338898.3,186528.67 h 21948 v 15744 h -21948 z"
+                   style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:none"
+                   id="path15354" />
+              </g>
+            </g>
+          </g>
+          <g
+             id="g15356"
+             transform="scale(381)">
+            <g
+               id="g15358"
+               transform="translate(889.4969,489.57657)">
+              <g
+                 id="g15360">
+                <text
+                   xml:space="preserve"
+                   transform="translate(40.72941,25.461418)"
+                   style="font-variant:normal;font-weight:normal;font-size:13.3333px;font-family:ProximaNova;-inkscape-font-specification:ProximaNova-Regular;writing-mode:lr-tb;fill:#202729;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                   id="text15364"><tspan
+                     x="0"
+                     y="0"
+                     id="tspan15362">6</tspan></text>
+              </g>
+            </g>
+          </g>
+          <g
+             id="g15366"
+             transform="scale(381)" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

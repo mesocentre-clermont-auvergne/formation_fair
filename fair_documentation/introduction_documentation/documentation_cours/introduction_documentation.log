@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.14)  21 MAR 2023 11:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.14)  3 APR 2023 10:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -678,7 +678,8 @@ Package: amsthm 2020/05/29 v2.20.6
 \beamer@dimb=\dimen283
 )
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty)))
-(./beamer-uca-16_9.tex
+(/home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/template_latex_uca/beamer-uca-16_9.tex
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
@@ -770,49 +771,313 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemesplit.sty))
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box75
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen293
+\pgf@nodesepend=\dimen294
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen295
+\pgffor@skip=\dimen296
+\pgffor@stack=\toks48
+\pgffor@toks=\toks49
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count338
+\pgfplotmarksize=\dimen297
+)
+\tikz@lastx=\dimen298
+\tikz@lasty=\dimen299
+\tikz@lastxsaved=\dimen300
+\tikz@lastysaved=\dimen301
+\tikz@lastmovetox=\dimen302
+\tikz@lastmovetoy=\dimen303
+\tikzleveldistance=\dimen304
+\tikzsiblingdistance=\dimen305
+\tikz@figbox=\box76
+\tikz@figbox@bg=\box77
+\tikz@tempbox=\box78
+\tikz@tempbox@bg=\box79
+\tikztreelevel=\count339
+\tikznumberofchildren=\count340
+\tikznumberofcurrentchild=\count341
+\tikz@fig@count=\count342
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count343
+\pgfmatrixcurrentcolumn=\count344
+\pgf@matrix@numberofcolumns=\count345
+)
+\tikz@expandcount=\count346
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/wasysym.sty
 Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
 \symwasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 (Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/fontawesome5.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-01-21 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count347
+\l__pdf_internal_box=\box80
+))
+Package: fontawesome5 2021/06/04 v5.15.3 Font Awesome 5
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2022-01-12 L3 Experimental document command parser
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/fontawesome5-generic-help
+er.sty
+Package: fontawesome5-generic-helper 2021/06/04 v5.15.3 non-uTeX helper for fon
+tawesome5
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/fontawesome5-mapping.def)
+)) (/usr/share/texlive/texmf-dist/tex/latex/svg/svg.sty
+Package: svg 2020/11/26 v2.02k (include SVG pictures)
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2021/11/13 v3.35 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 368.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+\c@svg@param@lastpage=\count348
+\svg@box=\box81
+\c@svg@param@currpage=\count349
+)
+(/usr/share/texlive/texmf-dist/tex/latex/transparent/transparent.sty
+Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
+
+)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen293
-\ar@mcellbox=\box75
-\extrarowheight=\dimen294
-\NC@list=\toks48
+\col@sep=\dimen306
+\ar@mcellbox=\box82
+\extrarowheight=\dimen307
+\NC@list=\toks50
 \extratabsurround=\skip64
 \backup@length=\skip65
-\ar@cellbox=\box76
+\ar@cellbox=\box83
 )
-\TX@col@width=\dimen295
-\TX@old@table=\dimen296
-\TX@old@col=\dimen297
-\TX@target=\dimen298
-\TX@delta=\dimen299
-\TX@cols=\count338
-\TX@ftn=\toks49
+\TX@col@width=\dimen308
+\TX@old@table=\dimen309
+\TX@old@col=\dimen310
+\TX@target=\dimen311
+\TX@delta=\dimen312
+\TX@cols=\count350
+\TX@ftn=\toks51
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box84
+\UL@hyphenbox=\box85
+\UL@skip=\skip66
+\UL@hook=\toks52
+\UL@height=\dimen313
+\UL@pe=\count351
+\UL@pixel=\dimen314
+\ULC@box=\box86
+Package: ulem 2019/11/18
+\ULdepth=\dimen315
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count352
+\lst@gtempboxa=\box87
+\lst@token=\toks53
+\lst@length=\count353
+\lst@currlwidth=\dimen316
+\lst@column=\count354
+\lst@pos=\count355
+\lst@lostspace=\dimen317
+\lst@width=\dimen318
+\lst@newlines=\count356
+\lst@lineno=\count357
+\lst@maxwidth=\dimen319
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count358
+\lst@skipnumbers=\count359
+\lst@framebox=\box88
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2022/01/29 v0.5u Insert pages of external PDF documents (AM)
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count360
+\calc@Bcount=\count361
+\calc@Adimen=\dimen320
+\calc@Bdimen=\dimen321
+\calc@Askip=\skip67
+\calc@Bskip=\skip68
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count362
+\calc@Cskip=\skip69
+)
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen322
+\ESO@tempdimb=\dimen323
+)
+\AM@pagewidth=\dimen324
+\AM@pageheight=\dimen325
+\AM@fboxrule=\dimen326
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2022/01/29 v0.5u Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count363
+\AM@pagebox=\box89
+\AM@global@opts=\toks54
+\AM@pagecnt=\count364
+\AM@toc@title=\toks55
+\c@AM@survey=\count365
+\AM@templatesizebox=\box90
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
+\c@tracingmulticols=\count366
+\mult@box=\box91
+\multicol@leftmargin=\dimen327
+\c@unbalance=\count367
+\c@collectmore=\count368
+\doublecol@number=\count369
+\multicoltolerance=\count370
+\multicolpretolerance=\count371
+\full@width=\dimen328
+\page@free=\dimen329
+\premulticols=\dimen330
+\postmulticols=\dimen331
+\multicolsep=\skip70
+\multicolbaselineskip=\skip71
+\partial@page=\box92
+\last@line=\box93
+\maxbalancingoverflow=\dimen332
+\mult@rightbox=\box94
+\mult@grightbox=\box95
+\mult@firstbox=\box96
+\mult@gfirstbox=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\@tempa=\box120
+\@tempa=\box121
+\@tempa=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\@tempa=\box127
+\@tempa=\box128
+\@tempa=\box129
+\@tempa=\box130
+\@tempa=\box131
+\@tempa=\box132
+\@tempa=\box133
+\c@minrows=\count372
+\c@columnbadness=\count373
+\c@finalcolumnbadness=\count374
+\last@try=\dimen333
+\multicolovershoot=\dimen334
+\multicolundershoot=\dimen335
+\mult@nat@firstbox=\box134
+\colbreak@box=\box135
+\mc@col@check@num=\count375
 )
 (/usr/share/texlive/texmf-dist/tex/latex/textpos/textpos.sty
 Package: textpos 2020/09/26 v1.10
 
 Package: textpos 2020/09/26 1.10, absolute positioning of text on the page
 Package textpos Info: choosing support for LaTeX3 on input line 61.
-\TP@textbox=\box77
-\TP@holdbox=\box78
-\TPHorizModule=\dimen300
-\TPVertModule=\dimen301
-\TP@margin=\dimen302
-\TP@absmargin=\dimen303
+\TP@textbox=\box136
+\TP@holdbox=\box137
+\TPHorizModule=\dimen336
+\TPVertModule=\dimen337
+\TP@margin=\dimen338
+\TP@absmargin=\dimen339
 Grid set 16 x 16 = 28.45274pt x 16.00467pt
-\TPboxrulesize=\dimen304
-\TP@ox=\dimen305
-\TP@oy=\dimen306
-\TP@tbargs=\toks50
+\TPboxrulesize=\dimen340
+\TP@ox=\dimen341
+\TP@oy=\dimen342
+\TP@tbargs=\toks56
 TextBlockOrigin set to 0pt x 0pt
 ) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty
 )
@@ -822,13 +1087,13 @@ Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen307
-\captionmargin@=\dimen308
-\captionwidth=\dimen309
-\caption@tempdima=\dimen310
-\caption@indent=\dimen311
-\caption@parindent=\dimen312
-\caption@hangindent=\dimen313
+\captionmargin=\dimen343
+\captionmargin@=\dimen344
+\captionwidth=\dimen345
+\caption@tempdima=\dimen346
+\caption@indent=\dimen347
+\caption@parindent=\dimen348
+\caption@hangindent=\dimen349
 Package caption Info: beamer document class detected.
 Package caption Info: french babel package is loaded.
 
@@ -836,14 +1101,15 @@ Package caption Info: french babel package is loaded.
 File: caption-beamer.sto 2020/08/22 v2.0 Adaption of the caption package to the
  beamer document classes (AR)
 ))
-\c@caption@flags=\count339
-\c@continuedfloat=\count340
+\c@caption@flags=\count376
+\c@continuedfloat=\count377
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
 (caption)             because hyperref has stopped early.
+Package caption Info: listings package is loaded.
 )
 Package caption Info: Option `figurename' requires the `newfloat' package on in
-put line 16.
+put line 25.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newfloat/newfloat.sty
 Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
@@ -890,6 +1156,98 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@A' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@Acount' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@B' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@Bcount' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\aftergroup' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@B' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@A' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\aftergroup' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@B' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@A' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\afterassignment' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<def>-command' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@next' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@next' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@A' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\global' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@A' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@B' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\endgroup' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\global' on input line 25.
 
 
@@ -902,19 +1260,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\calc@B' on input line 25.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\endgroup' on input line 25.
 
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
 5.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count341
-\l__pdf_internal_box=\box79
-)
-(./introduction_documentation.aux)
+) (./introduction_documentation.aux)
 \openout1 = `introduction_documentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -972,17 +1328,17 @@ LaTeX Font Info:    ... okay on input line 25.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count342
-\scratchdimen=\dimen314
-\scratchbox=\box80
-\nofMPsegments=\count343
-\nofMParguments=\count344
-\everyMPshowfont=\toks51
-\MPscratchCnt=\count345
-\MPscratchDim=\dimen315
-\MPnumerator=\count346
-\makeMPintoPDFobject=\count347
-\everyMPtoPDFconversion=\toks52
+\scratchcounter=\count378
+\scratchdimen=\dimen350
+\scratchbox=\box138
+\nofMPsegments=\count379
+\nofMParguments=\count380
+\everyMPshowfont=\toks57
+\MPscratchCnt=\count381
+\MPscratchDim=\dimen351
+\MPnumerator=\count382
+\makeMPintoPDFobject=\count383
+\everyMPtoPDFconversion=\toks58
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1003,7 +1359,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count348
+\c@section@level=\count384
 )
 LaTeX Info: Redefining \ref on input line 25.
 LaTeX Info: Redefining \pageref on input line 25.
@@ -1086,9 +1442,20 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \degres on input line 25.
 LaTeX Info: Redefining \up on input line 25.
+\c@lstlisting=\count385
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- (./introduction_documentation.nav) (./00_documentation.tex
+
+(./introduction_documentation.nav) (./00_documentation.tex
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
 18.
 
@@ -1149,257 +1516,432 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<images/logo_ifb.pdf, id=61, 1333.98375pt x 665.48625pt>
-File: images/logo_ifb.pdf Graphic file (type pdf)
-<use images/logo_ifb.pdf>
-Package pdftex.def Info: images/logo_ifb.pdf  used on input line 18.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/logo_ifb.pdf, id=61, 1333.98375pt x 665.48625pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/logo_ifb.pdf Graphic file (type pdf)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/logo_ifb.pdf>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/logo_ifb.pdf  used on input line 18
+.
 (pdftex.def)             Requested size: 65.44109pt x 36.98264pt.
-<images/i2bc.png, id=62, 225.84375pt x 184.43906pt>
-File: images/i2bc.png Graphic file (type png)
-<use images/i2bc.png>
-Package pdftex.def Info: images/i2bc.png  used on input line 18.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/i2bc.png, id=62, 225.84375pt x 184.43906pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/i2bc.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/i2bc.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/i2bc.png  used on input line 18.
 (pdftex.def)             Requested size: 42.67642pt x 42.679pt.
-<images/logoAuBi-2019.pdf, id=64, 437.1841pt x 310.18314pt>
-File: images/logoAuBi-2019.pdf Graphic file (type pdf)
-<use images/logoAuBi-2019.pdf>
-Package pdftex.def Info: images/logoAuBi-2019.pdf  used on input line 18.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/logoAuBi-2019.pdf, id=64, 437.1841pt x 310.18314pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/logoAuBi-2019.pdf Graphic file (type pdf)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/logoAuBi-2019.pdf>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/logoAuBi-2019.pdf  used on input li
+ne 18.
 (pdftex.def)             Requested size: 99.58295pt x 71.13235pt.
-<images/mesocentre.png, id=65, 143.15985pt x 123.08484pt>
-File: images/mesocentre.png Graphic file (type png)
-<use images/mesocentre.png>
-Package pdftex.def Info: images/mesocentre.png  used on input line 18.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/mesocentre.png, id=65, 143.15985pt x 123.08484pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/mesocentre.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/mesocentre.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/mesocentre.png  used on input line 
+18.
 (pdftex.def)             Requested size: 99.58644pt x 85.36247pt.
-<images/medis_logo.png, id=66, 1033.9428pt x 377.7312pt>
-File: images/medis_logo.png Graphic file (type png)
-<use images/medis_logo.png>
-Package pdftex.def Info: images/medis_logo.png  used on input line 18.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/medis_logo.png, id=66, 1033.9428pt x 377.7312pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/medis_logo.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/medis_logo.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/medis_logo.png  used on input line 
+18.
 (pdftex.def)             Requested size: 56.89069pt x 28.44965pt.
-<images/ucabackground-16_9.png, id=67, 4817.21016pt x 2709.53262pt>
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 18.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/ucabackground-16_9.png, id=67, 4817.21016pt x 2709.53262pt>
+
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 18.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/ucabackground-16_
-9.png> <./images/logo_ifb.pdf> <./images/i2bc.png> <./images/logoAuBi-2019.pdf
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/pierre/Seafile/ABROM
+ICS_IFB/projet_aubi/formation_fair/formation_fair_image_template/images/ucaback
+ground-16_9.png> </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/
+formation_fair_image_template/images/logo_ifb.pdf> </home/pierre/Seafile/ABROMI
+CS_IFB/projet_aubi/formation_fair/formation_fair_image_template/images/i2bc.png
+> </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_
+image_template/images/logoAuBi-2019.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./images/logoAuBi-2019.pdf): PDF inclus
-ion: multiple pdfs with page group included in a single page
-> <./images/mesocentre.png> <./images/medis_logo.png>]
+pdfTeX warning: /usr/bin/pdflatex (file /home/pierre/Seafile/ABROMICS_IFB/proje
+t_aubi/formation_fair/formation_fair_image_template/images/logoAuBi-2019.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+> </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_
+image_template/images/mesocentre.png> </home/pierre/Seafile/ABROMICS_IFB/projet
+_aubi/formation_fair/formation_fair_image_template/images/medis_logo.png>]
 (./introduction_documentation.toc)
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 22.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 22.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [2
 
 ]) (./01_documentation.tex
-<images/cahierlabo.png, id=108, 628.3475pt x 432.61626pt>
-File: images/cahierlabo.png Graphic file (type png)
-<use images/cahierlabo.png>
-Package pdftex.def Info: images/cahierlabo.png  used on input line 22.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/cahierlabo.png, id=108, 628.3475pt x 432.61626pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/cahierlabo.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/cahierlabo.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/cahierlabo.png  used on input line 
+22.
 (pdftex.def)             Requested size: 199.16733pt x 142.26212pt.
-<images/cahier2.pdf, id=109, 1405.25pt x 965.6075pt>
-File: images/cahier2.pdf Graphic file (type pdf)
-<use images/cahier2.pdf>
-Package pdftex.def Info: images/cahier2.pdf  used on input line 22.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/cahier2.pdf, id=109, 1405.25pt x 965.6075pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/cahier2.pdf Graphic file (type pdf)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/cahier2.pdf>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/cahier2.pdf  used on input line 22.
+
 (pdftex.def)             Requested size: 199.15665pt x 142.25642pt.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 22.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 22.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [3
 
- <./images/cahierlabo.png> <./images/cahier2.pdf>]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 22.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/cahierlabo.png> </home/pierre/Seafile/ABROMICS_IFB/projet_
+aubi/formation_fair/formation_fair_image_template/images/cahier2.pdf>]
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 22.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [4
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 22.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 22.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [5
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 22.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 22.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [6
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 22.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 22.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [7
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 44.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [8
+
+[8
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 44.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [9
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 44.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [10
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 44.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [11
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 44.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
-
-[12
+ [12
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 44.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [13
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 44.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [14
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 44.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [15
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 44.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [16
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 44.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 44.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [17
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 63.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 63.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [18
 
 ]
-<images/elabftw-logo.png, id=246, 433.62pt x 131.49126pt>
-File: images/elabftw-logo.png Graphic file (type png)
-<use images/elabftw-logo.png>
-Package pdftex.def Info: images/elabftw-logo.png  used on input line 63.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/elabftw-logo.png, id=246, 433.62pt x 131.49126pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/elabftw-logo.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/elabftw-logo.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/elabftw-logo.png  used on input lin
+e 63.
 (pdftex.def)             Requested size: 87.04846pt x 26.39609pt.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 63.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 63.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [19
 
- <./images/elabftw-logo.png>]
-<images/elabftw1.jpg, id=257, 1709.38625pt x 905.3825pt>
-File: images/elabftw1.jpg Graphic file (type jpg)
-<use images/elabftw1.jpg>
-Package pdftex.def Info: images/elabftw1.jpg  used on input line 63.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/elabftw-logo.png>]
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/elabftw1.jpg, id=257, 1709.38625pt x 905.3825pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/elabftw1.jpg Graphic file (type jpg)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/elabftw1.jpg>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/elabftw1.jpg  used on input line 63
+.
 (pdftex.def)             Requested size: 391.7214pt x 207.47377pt.
 
 Overfull \vbox (93.3876pt too high) detected at line 63
  []
 
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 63.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 63.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [20
 
- <./images/elabftw1.jpg>]
-<images/elabftw2.jpg, id=266, 1738.495pt x 924.45375pt>
-File: images/elabftw2.jpg Graphic file (type jpg)
-<use images/elabftw2.jpg>
-Package pdftex.def Info: images/elabftw2.jpg  used on input line 63.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/elabftw1.jpg>]
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/elabftw2.jpg, id=266, 1738.495pt x 924.45375pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/elabftw2.jpg Graphic file (type jpg)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/elabftw2.jpg>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/elabftw2.jpg  used on input line 63
+.
 (pdftex.def)             Requested size: 391.7214pt x 208.28934pt.
 
 Overfull \vbox (94.20317pt too high) detected at line 63
  []
 
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 63.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 63.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [21
 
- <./images/elabftw2.jpg>]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 63.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/elabftw2.jpg>]
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 63.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [22
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 63.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 63.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [23
 
 ]
-<images/gt_eln.png, id=292, 1359.0775pt x 843.15pt>
-File: images/gt_eln.png Graphic file (type png)
-<use images/gt_eln.png>
-Package pdftex.def Info: images/gt_eln.png  used on input line 68.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/gt_eln.png, id=292, 1359.0775pt x 843.15pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/gt_eln.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/gt_eln.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/gt_eln.png  used on input line 68.
 (pdftex.def)             Requested size: 284.52298pt x 199.16951pt.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 68.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 68.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [24
 
- <./images/gt_eln.png>]
-<images/gt_eln_temp.png, id=302, 1203.49625pt x 673.51625pt>
-File: images/gt_eln_temp.png Graphic file (type png)
-<use images/gt_eln_temp.png>
-Package pdftex.def Info: images/gt_eln_temp.png  used on input line 68.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/gt_eln.png>]
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/gt_eln_temp.png, id=302, 1203.49625pt x 673.51625pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/gt_eln_temp.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/gt_eln_temp.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/gt_eln_temp.png  used on input line
+ 68.
 (pdftex.def)             Requested size: 284.5295pt x 199.16858pt.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 68.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 68.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [25
 
- <./images/gt_eln_temp.png>]) (./02_documentation.tex
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/gt_eln_temp.png>]) (./02_documentation.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 18.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1408,461 +1950,716 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 18.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 18.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 18.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 18.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [26
+
+[26
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 18.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 18.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [27
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 18.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 18.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [28
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 36.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 36.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [29
 
 ]
-<images/jupyter_example.png, id=349, 1803.73875pt x 768.8725pt>
-File: images/jupyter_example.png Graphic file (type png)
-<use images/jupyter_example.png>
-Package pdftex.def Info: images/jupyter_example.png  used on input line 36.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/jupyter_example.png, id=348, 1803.73875pt x 768.8725pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/jupyter_example.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/jupyter_example.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/jupyter_example.png  used on input 
+line 36.
 (pdftex.def)             Requested size: 512.1483pt x 218.3097pt.
 
 Overfull \hbox (85.35696pt too wide) in paragraph at lines 36--36
  [][] 
  []
 
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 36.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 36.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [30
 
- <./images/jupyter_example.png>]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 36.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/jupyter_example.png>]
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 36.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [31
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 36.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 36.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [32
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 46.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 46.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [33
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 46.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 46.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [34
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 46.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 46.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [35
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 46.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 46.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [36
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 66.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 66.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
- [37
+
+[37
 
 ]
-<images/colomoto_github.png, id=420, 1831.84375pt x 919.435pt>
-File: images/colomoto_github.png Graphic file (type png)
-<use images/colomoto_github.png>
-Package pdftex.def Info: images/colomoto_github.png  used on input line 66.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/colomoto_github.png, id=419, 1831.84375pt x 919.435pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/colomoto_github.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/colomoto_github.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/colomoto_github.png  used on input 
+line 66.
 (pdftex.def)             Requested size: 426.79373pt x 256.0792pt.
 
 Overfull \vbox (104.643pt too high) detected at line 66
  []
 
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 66.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 66.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [38
 
- <./images/colomoto_github.png>]
-<images/colomoto_jupyter.png, id=432, 1831.84375pt x 919.435pt>
-File: images/colomoto_jupyter.png Graphic file (type png)
-<use images/colomoto_jupyter.png>
-Package pdftex.def Info: images/colomoto_jupyter.png  used on input line 66.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/colomoto_github.png>]
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/colomoto_jupyter.png, id=431, 1831.84375pt x 919.435pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/colomoto_jupyter.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/colomoto_jupyter.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/colomoto_jupyter.png  used on input
+ line 66.
 (pdftex.def)             Requested size: 426.79373pt x 256.0792pt.
 
 Overfull \vbox (104.643pt too high) detected at line 66
  []
 
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 66.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 66.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [39
 
- <./images/colomoto_jupyter.png>]
-<images/colomoto_paper.png, id=443, 1157.32375pt x 917.4275pt>
-File: images/colomoto_paper.png Graphic file (type png)
-<use images/colomoto_paper.png>
-Package pdftex.def Info: images/colomoto_paper.png  used on input line 66.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/colomoto_jupyter.png>]
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/colomoto_paper.png, id=442, 1157.32375pt x 917.4275pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/colomoto_paper.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/colomoto_paper.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/colomoto_paper.png  used on input l
+ine 66.
 (pdftex.def)             Requested size: 341.4252pt x 256.08002pt.
 
 Overfull \vbox (104.64383pt too high) detected at line 66
  []
 
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 66.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 66.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [40
 
- <./images/colomoto_paper.png>]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 78.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/colomoto_paper.png>]
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 78.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [41
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 78.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 78.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [42
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 78.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 78.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [43
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 78.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 78.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [44
 
 ]
-<images/Markdown-mark.pdf, id=486, 156.585pt x 96.36pt>
-File: images/Markdown-mark.pdf Graphic file (type pdf)
-<use images/Markdown-mark.pdf>
-Package pdftex.def Info: images/Markdown-mark.pdf  used on input line 101.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/Markdown-mark.pdf, id=485, 156.585pt x 96.36pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/Markdown-mark.pdf Graphic file (type pdf)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/Markdown-mark.pdf>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/Markdown-mark.pdf  used on input li
+ne 101.
 (pdftex.def)             Requested size: 65.44269pt x 36.98769pt.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 101.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 101.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [45
 
- <./images/Markdown-mark.pdf>]
-File: images/Markdown-mark.pdf Graphic file (type pdf)
-<use images/Markdown-mark.pdf>
-Package pdftex.def Info: images/Markdown-mark.pdf  used on input line 101.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/Markdown-mark.pdf>]
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/Markdown-mark.pdf Graphic file (type pdf)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/Markdown-mark.pdf>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/Markdown-mark.pdf  used on input li
+ne 101.
 (pdftex.def)             Requested size: 65.44269pt x 36.98769pt.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 101.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 101.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [46
 
 ]
-File: images/Markdown-mark.pdf Graphic file (type pdf)
-<use images/Markdown-mark.pdf>
-Package pdftex.def Info: images/Markdown-mark.pdf  used on input line 101.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/Markdown-mark.pdf Graphic file (type pdf)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/Markdown-mark.pdf>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/Markdown-mark.pdf  used on input li
+ne 101.
 (pdftex.def)             Requested size: 65.44269pt x 36.98769pt.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 101.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 101.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [47
 
 ]
-File: images/Markdown-mark.pdf Graphic file (type pdf)
-<use images/Markdown-mark.pdf>
-Package pdftex.def Info: images/Markdown-mark.pdf  used on input line 101.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/Markdown-mark.pdf Graphic file (type pdf)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/Markdown-mark.pdf>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/Markdown-mark.pdf  used on input li
+ne 101.
 (pdftex.def)             Requested size: 65.44269pt x 36.98769pt.
-<images/markdown_syntax.png, id=512, 280.04625pt x 310.15875pt>
-File: images/markdown_syntax.png Graphic file (type png)
-<use images/markdown_syntax.png>
-Package pdftex.def Info: images/markdown_syntax.png  used on input line 101.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/markdown_syntax.png, id=511, 280.04625pt x 310.15875pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/markdown_syntax.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/markdown_syntax.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/markdown_syntax.png  used on input 
+line 101.
 (pdftex.def)             Requested size: 113.81123pt x 113.81041pt.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 101.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 101.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [48
 
- <./images/markdown_syntax.png>]
-File: images/Markdown-mark.pdf Graphic file (type pdf)
-<use images/Markdown-mark.pdf>
-Package pdftex.def Info: images/Markdown-mark.pdf  used on input line 101.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/markdown_syntax.png>]
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/Markdown-mark.pdf Graphic file (type pdf)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/Markdown-mark.pdf>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/Markdown-mark.pdf  used on input li
+ne 101.
 (pdftex.def)             Requested size: 65.44269pt x 36.98769pt.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 101.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 101.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [49
 
 ]
-LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 108.
-
-<images/R-vs-Python.jpg, id=531, 614.295pt x 291.0875pt>
-File: images/R-vs-Python.jpg Graphic file (type jpg)
-<use images/R-vs-Python.jpg>
-Package pdftex.def Info: images/R-vs-Python.jpg  used on input line 108.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/R-vs-Python.jpg, id=530, 614.295pt x 291.0875pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/R-vs-Python.jpg Graphic file (type jpg)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/R-vs-Python.jpg>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/R-vs-Python.jpg  used on input line
+ 108.
 (pdftex.def)             Requested size: 341.43454pt x 142.26546pt.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 108.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 108.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [50
 
- <./images/R-vs-Python.jpg>]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 120.
-
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/R-vs-Python.jpg>]
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 120.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [51
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 120.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 120.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [52
 
 ]
-<images/rmarkdown.png, id=559, 115.632pt x 133.4586pt>
-File: images/rmarkdown.png Graphic file (type png)
-<use images/rmarkdown.png>
-Package pdftex.def Info: images/rmarkdown.png  used on input line 135.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/rmarkdown.png, id=557, 115.632pt x 133.4586pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/rmarkdown.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/rmarkdown.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/rmarkdown.png  used on input line 1
+35.
 (pdftex.def)             Requested size: 56.90543pt x 56.90547pt.
-<images/rmarkdownflow.png, id=560, 711.65875pt x 120.45pt>
-File: images/rmarkdownflow.png Graphic file (type png)
-<use images/rmarkdownflow.png>
-Package pdftex.def Info: images/rmarkdownflow.png  used on input line 135.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/rmarkdownflow.png, id=558, 711.65875pt x 120.45pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/rmarkdownflow.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/rmarkdownflow.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/rmarkdownflow.png  used on input li
+ne 135.
 (pdftex.def)             Requested size: 284.51729pt x 56.90556pt.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 135.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 135.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [53
 
- <./images/rmarkdownflow.png> <./images/rmarkdown.png>]
-File: images/rmarkdownflow.png Graphic file (type png)
-<use images/rmarkdownflow.png>
-Package pdftex.def Info: images/rmarkdownflow.png  used on input line 135.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/rmarkdownflow.png> </home/pierre/Seafile/ABROMICS_IFB/proj
+et_aubi/formation_fair/formation_fair_image_template/images/rmarkdown.png>]
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/rmarkdownflow.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/rmarkdownflow.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/rmarkdownflow.png  used on input li
+ne 135.
 (pdftex.def)             Requested size: 284.51729pt x 56.90556pt.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 135.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 135.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [54
 
 ]
-File: images/rmarkdownflow.png Graphic file (type png)
-<use images/rmarkdownflow.png>
-Package pdftex.def Info: images/rmarkdownflow.png  used on input line 135.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/rmarkdownflow.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/rmarkdownflow.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/rmarkdownflow.png  used on input li
+ne 135.
 (pdftex.def)             Requested size: 284.51729pt x 56.90556pt.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 135.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 135.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [55
 
 ]
-<images/rmarkdown_example1.png, id=588, 1321.93875pt x 699.61375pt>
-File: images/rmarkdown_example1.png Graphic file (type png)
-<use images/rmarkdown_example1.png>
-Package pdftex.def Info: images/rmarkdown_example1.png  used on input line 140.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/rmarkdown_example1.png, id=586, 1321.93875pt x 699.61375pt>
 
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/rmarkdown_example1.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/rmarkdown_example1.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/rmarkdown_example1.png  used on inp
+ut line 140.
 (pdftex.def)             Requested size: 398.33958pt x 227.61731pt.
 
 Overfull \vbox (12.08672pt too high) detected at line 140
  []
 
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 140.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 140.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [56
 
- <./images/rmarkdown_example1.png>]
-<images/rmarkdown_example2.png, id=598, 1201.48875pt x 932.48375pt>
-File: images/rmarkdown_example2.png Graphic file (type png)
-<use images/rmarkdown_example2.png>
-Package pdftex.def Info: images/rmarkdown_example2.png  used on input line 140.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/rmarkdown_example1.png>]
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/rmarkdown_example2.png, id=596, 1201.48875pt x 932.48375pt>
 
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/rmarkdown_example2.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/rmarkdown_example2.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/rmarkdown_example2.png  used on inp
+ut line 140.
 (pdftex.def)             Requested size: 341.43787pt x 227.61392pt.
 
 Overfull \vbox (12.08333pt too high) detected at line 140
  []
 
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 140.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 140.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [57
 
- <./images/rmarkdown_example2.png>]
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/rmarkdown_example2.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 152.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 152.
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 152.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 152.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [58
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 152.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 152.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [59
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 152.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 152.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [60
 
 ]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 152.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 152.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [61
 
 ]
-<images/jupyterlab1.png, id=641, 1383.66937pt x 670.75594pt>
-File: images/jupyterlab1.png Graphic file (type png)
-<use images/jupyterlab1.png>
-Package pdftex.def Info: images/jupyterlab1.png  used on input line 168.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/jupyterlab1.png, id=639, 1383.66937pt x 670.75594pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/jupyterlab1.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/jupyterlab1.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/jupyterlab1.png  used on input line
+ 168.
 (pdftex.def)             Requested size: 426.77954pt x 199.16087pt.
 
 Overfull \vbox (46.5747pt too high) detected at line 168
  []
 
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 168.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 168.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [62
 
- <./images/jupyterlab1.png (PNG copy)>]
-File: images/jupyterlab1.png Graphic file (type png)
-<use images/jupyterlab1.png>
-Package pdftex.def Info: images/jupyterlab1.png  used on input line 168.
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/jupyterlab1.png (PNG copy)>]
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/jupyterlab1.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/jupyterlab1.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/jupyterlab1.png  used on input line
+ 168.
 (pdftex.def)             Requested size: 426.77954pt x 199.16087pt.
 
 Overfull \vbox (46.5747pt too high) detected at line 168
  []
 
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 168.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 168.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [63
 
 ]
-File: images/jupyterlab1.png Graphic file (type png)
-<use images/jupyterlab1.png>
-Package pdftex.def Info: images/jupyterlab1.png  used on input line 168.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/jupyterlab1.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/jupyterlab1.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/jupyterlab1.png  used on input line
+ 168.
 (pdftex.def)             Requested size: 426.77954pt x 199.16087pt.
 
 Overfull \vbox (46.5747pt too high) detected at line 168
  []
 
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 168.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 168.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [64
 
 ]
-File: images/jupyterlab1.png Graphic file (type png)
-<use images/jupyterlab1.png>
-Package pdftex.def Info: images/jupyterlab1.png  used on input line 168.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/jupyterlab1.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/jupyterlab1.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/jupyterlab1.png  used on input line
+ 168.
 (pdftex.def)             Requested size: 426.77954pt x 199.16087pt.
 
 Overfull \vbox (46.5747pt too high) detected at line 168
  []
 
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 168.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 168.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [65
 
 ]
-File: images/jupyterlab1.png Graphic file (type png)
-<use images/jupyterlab1.png>
-Package pdftex.def Info: images/jupyterlab1.png  used on input line 168.
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/jupyterlab1.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/jupyterlab1.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/jupyterlab1.png  used on input line
+ 168.
 (pdftex.def)             Requested size: 426.77954pt x 199.16087pt.
-<images/jupyterlab2.png, id=675, 1849.91125pt x 900.36375pt>
-File: images/jupyterlab2.png Graphic file (type png)
-<use images/jupyterlab2.png>
-Package pdftex.def Info: images/jupyterlab2.png  used on input line 168.
+</home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_im
+age_template/images/jupyterlab2.png, id=673, 1849.91125pt x 900.36375pt>
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/jupyterlab2.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/jupyterlab2.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/jupyterlab2.png  used on input line
+ 168.
 (pdftex.def)             Requested size: 369.8628pt x 184.93295pt.
 
 Overfull \hbox (85.33524pt too wide) in paragraph at lines 168--168
@@ -1873,18 +2670,25 @@ Overfull \hbox (85.33524pt too wide) in paragraph at lines 168--168
 Overfull \vbox (46.5747pt too high) detected at line 168
  []
 
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 168.
-
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 168.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
 [66
 
- <./images/jupyterlab2.png>]
-File: images/ucabackground-16_9.png Graphic file (type png)
-<use images/ucabackground-16_9.png>
-Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 179.
-
+ </home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fair_i
+mage_template/images/jupyterlab2.png>]
+File: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fa
+ir_image_template/images/ucabackground-16_9.png Graphic file (type png)
+<use /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/formation_fai
+r_image_template/images/ucabackground-16_9.png>
+Package pdftex.def Info: /home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formatio
+n_fair/formation_fair_image_template/images/ucabackground-16_9.png  used on inp
+ut line 179.
 (pdftex.def)             Requested size: 455.21408pt x 256.04391pt.
  [67
 
@@ -1898,30 +2702,30 @@ Package pdftex.def Info: images/ucabackground-16_9.png  used on input line 179.
 \tf@snm=\write8
 \openout8 = `introduction_documentation.snm'.
 
- (./introduction_documentation.aux)
+
+(./introduction_documentation.aux)
 Package rerunfilecheck Info: File `introduction_documentation.out' has not chan
 ged.
 (rerunfilecheck)             Checksum: F7B5A8C0B7754E60C4EDC087D0401FD2;1229.
  ) 
 Here is how much of TeX's memory you used:
- 26455 strings out of 478287
- 512864 string characters out of 5849289
- 766844 words of memory out of 5000000
- 43903 multiletter control sequences out of 15000+600000
- 539850 words of font info for 85 fonts, out of 8000000 for 9000
+ 35877 strings out of 478287
+ 726243 string characters out of 5849289
+ 983917 words of memory out of 5000000
+ 53189 multiletter control sequences out of 15000+600000
+ 537154 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,406b,659s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 128i,15n,122p,520b,666s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/
 public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbo10.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmtt8.pfb>
-Output written on introduction_documentation.pdf (67 pages, 3964292 bytes).
+/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmtt8.pfb>
+Output written on introduction_documentation.pdf (67 pages, 3931293 bytes).
 PDF statistics:
- 783 PDF objects out of 1000 (max. 8388607)
- 621 compressed objects within 7 object streams
+ 773 PDF objects out of 1000 (max. 8388607)
+ 615 compressed objects within 7 object streams
  143 named destinations out of 1000 (max. 500000)
  339 words of extra memory for PDF output out of 10000 (max. 10000000)
 
