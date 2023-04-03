@@ -130,6 +130,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<section id="image-docker" class="level2">
+<h2 class="anchored" data-anchor-id="image-docker">Image <code>Docker</code></h2>
+<section id="téléchargement-à-partir-du-docker-hub" class="level3">
+<h3 class="anchored" data-anchor-id="téléchargement-à-partir-du-docker-hub">Téléchargement à partir du Docker Hub</h3>
+<p>C’est la méthode la plus simple. On commence par vérifier que la bonne version de <code>Docker</code> est installée :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On va ensuite récupérer l’image <code>Docker</code> officielle de <code>R</code> sur le dépot de <code>rstudio</code> avec <code>pull</code>, on obtiendra alors une image <code>Docker</code> utilisable sur notre machine :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker pull rstudio/r-base:4.0-focal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On vérifie ensuite qu’elle est bien présente. <code>Docker</code> a son propre système de gestion des images.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="creation-dune-image-docker-à-partir-dune-recette" class="level3">
+<h3 class="anchored" data-anchor-id="creation-dune-image-docker-à-partir-dune-recette">Creation d’une image <code>Docker</code> à partir d’une recette</h3>
+<p>Il est possible de créer sa propre image <code>Docker</code>. Pour cela il faut un fichier spécifique (<em>recette</em>) qui va contenir les instructions nécessaires à la construction de l’image <code>Docker</code>.</p>
+<p>Il s’agit d’un fichier <code>Dockerfile</code> qui se présente comme suit :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">FROM</span> ... <span class="co"># permet de récupérer une image de base nécessaire à la construction</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> apt-get install ... <span class="co"># permet d'installer les dépendances de l'OS nécessaire</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> Rscript <span class="at">-e</span> <span class="st">'install.packages(...)'</span> <span class="co"># permet d'installer le ou les packages</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># utilisés</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Une version complète du fichier <code>Dockerfile</code> est présente dans le répertoire <em>encapsulation TP</em> du dépot git.</p>
+<p>Une fois le fichier complété il ne reste plus qu’a construire l’image <code>Docker</code> avec :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker build <span class="at">--file</span> Dockerfile <span class="at">-t</span> rbase:v2.0 .</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Cette opération peut être plus ou moins longue suivant la taille et le nombre de progammes / dépendances à installer. Cependant cette étape est parallélisée, donc plus il y a de processeur sur la machine, plus elle est rapide. Ici on va en utiliser 8.</p>
+</section>
+<section id="mise-à-jour-de-limage-docker" class="level3">
+<h3 class="anchored" data-anchor-id="mise-à-jour-de-limage-docker">Mise à jour de l’image <code>Docker</code></h3>
+<p>Il est possible de mettre à jour une image <code>Docker</code> pour ajouter un programme ou un package supplémentaire simplement en modifiant le fichier <code>Dockerfile</code>. Une nouvelle image sera construite à partir de l’ancienne. Comme <code>Docker</code> fonctionne avec un cache la construction de la nouvelle image est plus rapide.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker build <span class="at">--file</span> Dockerfile <span class="at">-t</span> rbase:v2.0 .</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Une nouvelle image est créée avec le tag de l’ancienne.</p>
+</section>
+<section id="utilisation-de-limage-docker" class="level3">
+<h3 class="anchored" data-anchor-id="utilisation-de-limage-docker">Utilisation de l’image <code>Docker</code></h3>
+<p>Il y a principalement 2 façons d’utiliser une image <code>Docker</code> :</p>
+<ul>
+<li>Directement en interactif (<code>-i</code>) dans un pseudo-terminal (<code>-t</code>) :</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker run <span class="at">-ti</span> rbase:v2.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>En executant un script qui retourne directement le resultat :</li>
+</ul>
+<p>Pour supprimmer une image <code>Docker</code> il suffit de faire :</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image rm <span class="at">-f</span> IMAGE_ID</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
 <section id="image-singularity" class="level2">
 <h2 class="anchored" data-anchor-id="image-singularity">Image <code>Singularity</code></h2>
 <p><code>Singularity</code> est un gestionnaire qui permet la création, la gestion et l’exécution de <em>container</em> sur une machine locale comme sur un serveur de calcul.</p>
@@ -142,41 +190,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <section id="téléchargement-à-partir-du-sylab" class="level3">
 <h3 class="anchored" data-anchor-id="téléchargement-à-partir-du-sylab">Téléchargement à partir du Sylab</h3>
-<p>C’est une des deux façons les plus simples d’obtenir une image <code>Singularity</code> On commence par vérifier que la bonne version de <code>Singularity</code> est installée :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>C’est une des deux façons les plus simples d’obtenir une image <code>Singularity</code>. On commence par vérifier que la bonne version de <code>Singularity</code> est installée :</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Puis on télécharge directement l’image :</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity pull library://yuj25/rstudio/singularity-rstudio-v4.2.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity pull library://yuj25/rstudio/singularity-rstudio-v4.2.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="téléchargement-à-partir-du-docker-hub" class="level3">
-<h3 class="anchored" data-anchor-id="téléchargement-à-partir-du-docker-hub">Téléchargement à partir du Docker Hub</h3>
+<section id="téléchargement-à-partir-du-docker-hub-1" class="level3">
+<h3 class="anchored" data-anchor-id="téléchargement-à-partir-du-docker-hub-1">Téléchargement à partir du Docker Hub</h3>
 <p>On peut directement la télécharger avec <code>Singularity</code> :</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity pull r-base.sif docker://rstudio/r-base:4.0-focal</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity pull r-base.sif docker://rstudio/r-base:4.0-focal</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Contrairement à <code>Docker</code> l’image est directement stockée dans le répertoire de travail.</p>
 </section>
 <section id="convertion-dune-image-docker-en-singularity" class="level3">
 <h3 class="anchored" data-anchor-id="convertion-dune-image-docker-en-singularity">Convertion d’une image <code>Docker</code> en <code>Singularity</code></h3>
-<p>La méthode la plus simple est la précédente. Cependant, dans le cas ou l’on possède déjà une image <code>Docker</code> et que l’on souhaite la convertir en image <code>Singularity</code> il faut utiliser l’outil <a href="https://github.com/singularityhub/docker2singularity"><code>docker2singularity</code></a> développé par singularityhub et utiliser <code>Docker</code>.</p>
-<p><code>docker2singularity</code> : c’est aussi une image <code>Docker</code> qu’il faut récupérer :</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker pull quay.io/singularity/docker2singularity</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>On peut alors l’utiliser pour convertir notre image :</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> ~/output</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker run <span class="at">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="dt">\</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>-v ~/output:/output <span class="dt">\</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>--privileged <span class="at">-t</span> <span class="at">--rm</span> <span class="dt">\</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>quay.io/singularity/docker2singularity <span class="dt">\</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>rstudio/r-base:4.0-focal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La méthode la plus simple est de créer une archive <code>.tar</code> de l’image <code>Docker</code> que l’on souhaite utiliser et d’utiliser <code>Singularity</code> pour construire la nouvelle image.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker save <span class="at">-o</span> rbase.tar rbase:v2.0 </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity build rbase.sif docker-archive://rbase.tar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="utilisation-dune-image-singularity" class="level3">
 <h3 class="anchored" data-anchor-id="utilisation-dune-image-singularity">Utilisation d’une image <code>Singularity</code></h3>
 <p>Maintenant que l’on a une image <code>Singularity</code> on peut l’utiliser en local ou sur le cluster de calcul.</p>
 <section id="utilisation-en-local" class="level4">
 <h4 class="anchored" data-anchor-id="utilisation-en-local">Utilisation en local</h4>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity run r-base.sif </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity run r-base.sif </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="utilisation-sur-le-cluster-de-calcul" class="level4">
 <h4 class="anchored" data-anchor-id="utilisation-sur-le-cluster-de-calcul">Utilisation sur le cluster de calcul</h4>
@@ -188,49 +227,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>l’image <code>singularity</code> : <code>r-base.sif</code></li>
 </ul>
 <p>Il suffit d’une ligne dans le script <code>slurm</code> pour executer <code>R</code> sur le cluster de calcul :</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity exec r-base.sif R <span class="at">--slave</span> <span class="at">-e</span> <span class="st">"source('demo.R')"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity exec r-base.sif R <span class="at">--slave</span> <span class="at">-e</span> <span class="st">"source('demo.R')"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
-</section>
-<section id="image-docker" class="level2">
-<h2 class="anchored" data-anchor-id="image-docker">Image <code>Docker</code></h2>
-<section id="téléchargement-à-partir-du-docker-hub-1" class="level3">
-<h3 class="anchored" data-anchor-id="téléchargement-à-partir-du-docker-hub-1">Téléchargement à partir du Docker Hub</h3>
-<p>C’est la méthode la plus simple. On commence par vérifier que la bonne version de <code>Docker</code> est installée :</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>On va ensuite récupérer l’image Docker officielle de <code>R</code> sur le dépot de <code>rstudio</code> avec <code>Docker</code>, on obtiendra alors une image <code>Docker</code> qu’il faudra convertir en image <code>Singularity</code> :</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker pull rstudio/r-base:4.0-focal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>On vérifie ensuite qu’elle est bien présente :</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="creation-dune-image-docker-à-partir-dune-recette" class="level3">
-<h3 class="anchored" data-anchor-id="creation-dune-image-docker-à-partir-dune-recette">Creation d’une image <code>Docker</code> à partir d’une recette</h3>
-<p>Il est possible de créer sa propre image <code>Docker</code>. Pour cela il faut un fichier spécifique (<em>recette</em>) qui va contenir les instructions nécessaire à la construction de l’image <code>Docker</code>.</p>
-<p>Il s’agit d’un fichier <code>Dockerfile</code> qui se présente comme suit :</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">FROM</span> ... <span class="co"># permet de récupérer une image de base nécessaire à la construction</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> apt-get install ... <span class="co"># permet d'installer les dépendances de l'OS nécessaire</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> Rscript <span class="at">-e</span> <span class="st">'install.packages(...)'</span> <span class="co"># permet d'installer le ou les packages</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># utilisés</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Il ne reste plus qu’a construire l’image <code>Docker</code> avec :</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker build <span class="at">--file</span> Dockerfile <span class="at">-t</span> rbase:v2.0 .</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Cette opération peut être plus ou moins longue suivant la taille et le nombre de progammes / dépendances à installer. Cependant cette étape est parallélisée, donc plus il y a de processeur sur la machine, plus cette étape est rapide. Ici on va en utiliser 16.</p>
-</section>
-<section id="mise-à-jour-de-limage-docker" class="level3">
-<h3 class="anchored" data-anchor-id="mise-à-jour-de-limage-docker">Mise à jour de l’image <code>Docker</code></h3>
-<p>Il est possible de mettre à jour une image <code>Docker</code> pour ajouter un programme ou un package supplémentaire simplement en moddifiant le fichier Dockerfile. Une nouvelle image sera construite à partir de l’ancienne. Comme <code>Docker</code> fonctionne avec un cache la construction de la nouvelle image est plus rapide.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker build <span class="at">--file</span> Dockerfile <span class="at">-t</span> rbase:v2.0 .</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Une nouvelle image est créer avec le tag de l’ancienne.</p>
-<p><code>Docker</code> a son propre système de gestion des images. Pour supprimmer une image <code>Docker</code> il suffit de faire :</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image rm <span class="at">-f</span> IMAGE_ID</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="utilisation-de-limage-docker" class="level3">
-<h3 class="anchored" data-anchor-id="utilisation-de-limage-docker">Utilisation de l’image <code>Docker</code></h3>
-<p>On peut maintenant utiliser l’image créée en local avec :</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker run <span class="at">-ti</span> rbase:v2.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 

@@ -6,10 +6,10 @@ RUN apt-get update && apt-get install -y libxml2-dev libcurl4-openssl-dev libssl
 libzmq3-dev && rm -rf /var/lib/apt/lists/*
 
 # specific options to install R packages
-RUN echo "options(repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.method = 'libcurl', Ncpus = 16)" >> \
+RUN echo "options(repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.method = 'libcurl', Ncpus = 8)" >> \
 /usr/local/lib/R/etc/Rprofile.site
 
 # R packages to install
 
 RUN Rscript -e 'install.packages("vegan", dependencies = TRUE)'
-RUN Rscript -e 'install.packages("mgcv", dependencies = TRUE)'
+# RUN Rscript -e 'install.packages("mgcv", dependencies = TRUE)'

@@ -1,19 +1,19 @@
 #!/bin/bash
-#SBATCH --time=01:00:00
+#SBATCH --time=00:01:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=8G
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=1G
 #SBATCH -o slurmjob-%j
 #SBATCH --job-name=demo
-#SBATCH --partition=normal
+#SBATCH --partition=debug
 #SBATCH --mail-user=philippe.ruiz@inrae.fr
 #SBATCH --mail-type=ALL
 
 # Run the program
 echo "Start job:"`date` >&2
 
-cd /home/phiruiz/FormationFAIR/
+cd /home/phiruiz/FormationFAIR/ # replace by your home path
 
 singularity exec r-base.sif R --slave -e "source('demo.R')"
 
