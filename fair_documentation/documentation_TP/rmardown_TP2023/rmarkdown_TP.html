@@ -8,7 +8,7 @@
 
 <meta name="author" content="Philippe Ruiz - Aubi">
 
-<title>Création d’un rapport sous Rmarkdown / Quarto</title>
+<title>Création d’un rapport sous Rmarkdown</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Création d’un rapport sous Rmarkdown / Quarto</h1>
+<h1 class="title">Création d’un rapport sous Rmarkdown</h1>
 </div>
 
 
@@ -131,16 +131,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="rmarkdown-et-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="rmarkdown-et-quarto"><code>Rmarkdown</code> et <code>Quarto</code></h2>
+<section id="rmarkdown" class="level2">
+<h2 class="anchored" data-anchor-id="rmarkdown"><code>Rmarkdown</code></h2>
 <p><code>Rmarkdown</code> est un programme orienté <code>R</code> qui permet de produire des documents <code>Word</code>, <code>pdf</code> ou <code>html</code> directement sous <code>R</code> en incluant des résultats d’analyses qui s’executent lors de la création du document.</p>
-<p><code>Quarto</code> est la future génération de <code>Rmarkdown</code> qui se veut multi-language (<code>R</code>, <code>Python</code>, <code>Julia</code>, …) et indépendant de <code>R</code> et <code>RStudio</code>. Il fonctionne aussi sous <code>VScode</code> ou sur le terminal.</p>
 </section>
 <section id="les-dépendances" class="level2">
 <h2 class="anchored" data-anchor-id="les-dépendances">Les dépendances</h2>
 <p>Sous <code>R</code> / <code>RStudio</code> le package <code>knitr</code> permettant la compilation du document doit être présent.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(knitr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>RStudio</code> permet de générer automatiquement un caneva de fichier <code>Rmardown</code> / <code>Quarto</code> : <em>File</em> &gt; <em>New File</em> &gt; <em>R Markdown</em>.</p>
+<p><code>RStudio</code> permet de générer automatiquement un caneva de fichier <code>Rmardown</code> : <em>File</em> &gt; <em>New File</em> &gt; <em>R Markdown</em>.</p>
 </section>
 <section id="les-différentes-parties-dun-document" class="level2">
 <h2 class="anchored" data-anchor-id="les-différentes-parties-dun-document">Les différentes parties d’un document</h2>
@@ -148,15 +147,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="len-tête">L’en-tête</h3>
 <p>Il s’agit de la section contenant toutes les informations générales permettant la construcion du document : Titre, auteur, date, format, style (css), …</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title :</span><span class="co"> "Création d'un rapport sous Rmarkdown / Quarto"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title :</span><span class="co"> "Création d'un rapport sous Rmarkdown"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author :</span><span class="co"> "Philippe Ruiz - Aubi"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-02-28"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-04-03"</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">output :</span><span class="co"> html_document </span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="le-chunck-code-source" class="level3">
 <h3 class="anchored" data-anchor-id="le-chunck-code-source">Le <em>chunck</em> (code source)</h3>
-<p>Le code a executer doit être encapsuler dans des balises. Celui-ci sera executé lors de la compilation du document :</p>
+<p>Le code à executer doit être encapsulé dans des balises. Celui-ci sera executé lors de la compilation du document :</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r name, options}</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -199,7 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <ul>
-<li>Il est également possible d’insérer une figure enregistrer dans un fichier local en inserant directement un lien dans le document :</li>
+<li>Il est également possible d’insérer une figure enregistrée dans un fichier local en insérant directement un lien dans le document :</li>
 </ul>
 <div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Figure 1](fig2.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
@@ -226,7 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 6    28      NA 14.9   66     5   6</code></pre>
 </div>
 </div>
-<p>Le problème est que l’on obtient une sortie graphique de <code>R</code> qui n’est pas très agréable. Pour améliorer ça il est nécessaire d’utiliser la fonction <code>kable</code> du package <code>knitr</code>.</p>
+<p>Le problème est que l’on obtient une sortie graphique de <code>R</code> qui n’est pas très agréable. Pour améliorer ça il est préférable d’utiliser la fonction <code>kable</code> du package <code>knitr</code>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(knitr)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(airquality))</span>
@@ -299,16 +298,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section>
 </section>
-<section id="les-options-avancés-pour-le-documents" class="level2">
-<h2 class="anchored" data-anchor-id="les-options-avancés-pour-le-documents">Les options avancés pour le documents</h2>
+<section id="les-options-avancées-pour-le-documents" class="level2">
+<h2 class="anchored" data-anchor-id="les-options-avancées-pour-le-documents">Les options avancées pour le documents</h2>
 <p>Il est possible de fournir des spécificités globales pour le document : format, affichage du code, présence d’une table des matières, taille des figures, style …</p>
-<p>Toutes ces informations sont a renseigner dans l’en-tête du document :</p>
+<p>Toutes ces informations sont à renseigner dans l’en-tête du document :</p>
 <section id="formats-multiples" class="level3">
 <h3 class="anchored" data-anchor-id="formats-multiples">Formats multiples</h3>
 <div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title :</span><span class="co"> "Création d'un rapport sous Rmarkdown / Quarto"</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="an">author :</span><span class="co"> "Philippe Ruiz - Aubi"</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-02-28"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-04-03"</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="an">output :</span><span class="co"> </span></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html_document :</span></span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">    css : style.css</span></span>
@@ -334,12 +333,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Titre 1.2
 
 # Titre 2</code></pre>
-<p>Toutes les sections de niveau inférieur à <code>Titre 1 {.tabset}</code> seront organisés en onglets.</p>
+<p>Toutes les sections de niveau inférieur à <code>Titre 1 {.tabset}</code> seront organisées en onglets.</p>
 </section>
 </section>
 <section id="bonus-un-peu-de-quarto-pour-terminer" class="level2">
 <h2 class="anchored" data-anchor-id="bonus-un-peu-de-quarto-pour-terminer">Bonus : Un peu de <code>Quarto</code> pour terminer</h2>
-<p>La nomenclature de <code>Quarto</code> et relativement proche de celle de <code>Rmarkdown</code>. Il faut installer la library <code>quarto</code> :</p>
+<p><code>Quarto</code> est la future génération de <code>Rmarkdown</code> qui se veut multi-language (<code>R</code>, <code>Python</code>, <code>Julia</code>, …) et indépendant de <code>R</code> et <code>RStudio</code>. Il fonctionne aussi sous <code>VScode</code> ou sur le terminal.</p>
+<p>La nomenclature de <code>Quarto</code> et relativement proche de celle de <code>Rmarkdown</code>. Il faut cependant installer la library <code>quarto</code> :</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(quarto)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Sous <code>RStudio</code> il est alors possible de créer un nouveau document avec un template <code>Quarto</code> :</p>
 <p><code>RStudio</code> permet de générer automatiquement un caneva de fichier <code>Quarto</code> : <em>File</em> &gt; <em>New File</em> &gt; <em>Quarto Document</em>.</p>

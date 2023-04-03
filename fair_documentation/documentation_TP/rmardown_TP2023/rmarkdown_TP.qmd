@@ -1,19 +1,15 @@
 ---
-title : "Création d'un rapport sous Rmarkdown / Quarto"
+title : "Création d'un rapport sous Rmarkdown"
 author : "Philippe Ruiz - Aubi"
 Rendering:
   embed-resources: true
 ---
 
-## `Rmarkdown` et `Quarto`
+## `Rmarkdown`
 
-`Rmarkdown` est un programme orienté `R` qui permet de produire des documents `Word`,
-`pdf` ou `html` directement sous `R` en incluant des résultats d'analyses qui
+`Rmarkdown` est un programme orienté `R` qui permet de produire des documents `.docx`,
+`.pptx`, `.pdf` ou `.html` directement sous `R` en incluant des résultats d'analyses qui
 s'executent lors de la création du document.
-
-`Quarto` est la future génération de `Rmarkdown` qui se veut multi-language 
-(`R`, `Python`, `Julia`, ...) 
-et indépendant de `R` et `RStudio`. Il fonctionne aussi sous `VScode` ou sur le terminal.
 
 ## Les dépendances
 
@@ -24,7 +20,7 @@ doit être présent.
 > library(knitr)
 ```
 
-`RStudio` permet de générer automatiquement un caneva de fichier `Rmardown` / `Quarto` : 
+`RStudio` permet de générer automatiquement un caneva de fichier `Rmardown` : 
 *File* \> *New File* \> *R Markdown*.
 
 ## Les différentes parties d'un document
@@ -36,7 +32,7 @@ la construcion du document : Titre, auteur, date, format, style (css), ...
 
 ```markdown
 ---
-title : "Création d'un rapport sous Rmarkdown / Quarto"
+title : "Création d'un rapport sous Rmarkdown"
 author : "Philippe Ruiz - Aubi"
 date: "`r Sys.Date()`"
 output : html_document 
@@ -45,7 +41,7 @@ output : html_document
 
 ### Le *chunck* (code source)
 
-Le code a executer doit être encapsuler dans des balises. Celui-ci sera executé 
+Le code à executer doit être encapsulé dans des balises. Celui-ci sera executé 
 lors de la compilation du document :
 
 ````markdown
@@ -93,8 +89,8 @@ data(airquality)
 pairs(airquality, panel = panel.smooth, main = "airquality data")
 ```
 
-- Il est également possible d'insérer une figure enregistrer dans un fichier 
-local en inserant directement un lien dans le document :
+- Il est également possible d'insérer une figure enregistrée dans un fichier 
+local en insérant directement un lien dans le document :
 
 ````markdown
 ![Figure 1](fig2.png)
@@ -119,7 +115,7 @@ head(airquality)
 ```
 
 Le problème est que l'on obtient une sortie graphique de `R` qui n'est pas très
-agréable. Pour améliorer ça il est nécessaire d'utiliser la fonction `kable` du 
+agréable. Pour améliorer ça il est préférable d'utiliser la fonction `kable` du 
 package `knitr`.
 
 ````markdown
@@ -137,12 +133,12 @@ require(knitr)
 kable(head(airquality))
 ```
 
-## Les options avancés pour le documents
+## Les options avancées pour le documents
 
 Il est possible de fournir des spécificités globales pour le document : format, 
 affichage du code, présence d'une table des matières, taille des figures, style ...
 
-Toutes ces informations sont a renseigner dans l'en-tête du document :
+Toutes ces informations sont à renseigner dans l'en-tête du document :
 
 ### Formats multiples 
 
@@ -182,13 +178,17 @@ en lisibilité :
 # Titre 2
 ````
 
-Toutes les sections de niveau inférieur à `Titre 1 {.tabset}` seront organisés
+Toutes les sections de niveau inférieur à `Titre 1 {.tabset}` seront organisées
 en onglets.
 
 ## Bonus : Un peu de `Quarto` pour terminer
 
+`Quarto` est la future génération de `Rmarkdown` qui se veut multi-language 
+(`R`, `Python`, `Julia`, ...) et indépendant de `R` et `RStudio`. 
+Il fonctionne aussi sous `VScode` ou sur le terminal.
+
 La nomenclature de `Quarto` et relativement proche de celle de `Rmarkdown`. 
-Il faut installer la library `quarto` :
+Il faut cependant installer la library `quarto` :
 
 ```r
 > library(quarto)
