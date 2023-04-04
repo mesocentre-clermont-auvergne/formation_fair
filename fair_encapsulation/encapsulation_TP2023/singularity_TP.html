@@ -136,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="téléchargement-à-partir-du-docker-hub">Téléchargement à partir du Docker Hub</h3>
 <p>C’est la méthode la plus simple. On commence par vérifier que la bonne version de <code>Docker</code> est installée :</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>On va ensuite récupérer l’image <code>Docker</code> officielle de <code>R</code> sur le dépot de <code>rstudio</code> avec <code>pull</code>, on obtiendra alors une image <code>Docker</code> utilisable sur notre machine :</p>
+<p>On va ensuite récupérer l’image <code>Docker</code> officielle de <code>R</code> sur le <a href="https://hub.docker.com/r/rstudio/r-base">dépot</a> de <code>rstudio</code> avec <code>pull</code>, on obtiendra alors une image <code>Docker</code> utilisable sur notre machine :</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker pull rstudio/r-base:4.0-focal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>On vérifie ensuite qu’elle est bien présente. <code>Docker</code> a son propre système de gestion des images.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -150,11 +150,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> Rscript <span class="at">-e</span> <span class="st">'install.packages(...)'</span> <span class="co"># permet d'installer le ou les packages</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># utilisés</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Une version complète du fichier <code>Dockerfile</code> est présente dans le répertoire <em>encapsulation TP</em> du dépot git.</p>
-<p>Une fois le fichier complété il ne reste plus qu’a construire l’image <code>Docker</code> avec :</p>
+<p>Une fois le fichier complété, il ne reste plus qu’à construire l’image <code>Docker</code> avec :</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker build <span class="at">--file</span> Dockerfile <span class="at">-t</span> rbase:v2.0 .</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Cette opération peut être plus ou moins longue suivant la taille et le nombre de progammes / dépendances à installer. Cependant cette étape est parallélisée, donc plus il y a de processeur sur la machine, plus elle est rapide. Ici on va en utiliser 8.</p>
+<p>Cette opération peut être plus ou moins longue suivant la taille et le nombre de progammes / dépendances à installer. Cependant cette étape peut être parallélisée, donc plus il y a de processeur sur la machine, plus elle est rapide. Ici on va en utiliser 8.</p>
 </section>
 <section id="mise-à-jour-de-limage-docker" class="level3">
 <h3 class="anchored" data-anchor-id="mise-à-jour-de-limage-docker">Mise à jour de l’image <code>Docker</code></h3>
@@ -174,38 +174,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>En executant un script qui retourne directement le resultat :</li>
 </ul>
-<p>Pour supprimmer une image <code>Docker</code> il suffit de faire :</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image rm <span class="at">-f</span> IMAGE_ID</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker exec ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Enfin, pour supprimer une image <code>Docker</code> il suffit de faire :</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image rm <span class="at">-f</span> IMAGE_ID</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="image-singularity" class="level2">
 <h2 class="anchored" data-anchor-id="image-singularity">Image <code>Singularity</code></h2>
 <p><code>Singularity</code> est un gestionnaire qui permet la création, la gestion et l’exécution de <em>container</em> sur une machine locale comme sur un serveur de calcul.</p>
-<p>Il existe plusieurs façons d’obtenir une image <code>Singularity</code> :</p>
+<p>Il existe principalement 2 façons d’obtenir une image <code>Singularity</code> :</p>
 <ul>
-<li>Télécharger une image existante depuis le dépot <code>Singularity</code> : <a href="https://cloud.sylabs.io/library">Sylabs Hub</a> (remplace Singularity Hub qui n’est plus supporté depuis fin 2021)</li>
 <li>Télecharger une image existante depuis le dépot <code>Docker</code> : <a href="https://hub.docker.com/">Docker Hub</a> (recommandé)</li>
 <li>Convertir une image <code>Docker</code> existante en image <code>Singularity</code></li>
-<li>Créer une image <code>Docker</code> et la convertir en <code>Singularity</code></li>
 </ul>
-<section id="téléchargement-à-partir-du-sylab" class="level3">
-<h3 class="anchored" data-anchor-id="téléchargement-à-partir-du-sylab">Téléchargement à partir du Sylab</h3>
-<p>C’est une des deux façons les plus simples d’obtenir une image <code>Singularity</code>. On commence par vérifier que la bonne version de <code>Singularity</code> est installée :</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Puis on télécharge directement l’image :</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity pull library://yuj25/rstudio/singularity-rstudio-v4.2.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
 <section id="téléchargement-à-partir-du-docker-hub-1" class="level3">
 <h3 class="anchored" data-anchor-id="téléchargement-à-partir-du-docker-hub-1">Téléchargement à partir du Docker Hub</h3>
-<p>On peut directement la télécharger avec <code>Singularity</code> :</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity pull r-base.sif docker://rstudio/r-base:4.0-focal</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On peut directement la télécharger avec <code>Singularity</code>. C’est la méthode la plus simple et celle qui contien le plus grand nombre d’images disponible.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity pull r-base.sif docker://rstudio/r-base:4.0-focal</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Contrairement à <code>Docker</code> l’image est directement stockée dans le répertoire de travail.</p>
+<p>Il existe d’autre hub que Docker Hub pour trouver des images <code>Singularity</code> comme le dépot <a href="https://cloud.sylabs.io/library">Sylabs</a>.</p>
+<p>Pour utiliser ce dépot il suffit de faire :</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity pull library://ronaldo/ronaldo/r-base</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="convertion-dune-image-docker-en-singularity" class="level3">
 <h3 class="anchored" data-anchor-id="convertion-dune-image-docker-en-singularity">Convertion d’une image <code>Docker</code> en <code>Singularity</code></h3>
-<p>La méthode la plus simple est de créer une archive <code>.tar</code> de l’image <code>Docker</code> que l’on souhaite utiliser et d’utiliser <code>Singularity</code> pour construire la nouvelle image.</p>
+<p>La méthode la plus simple est de créer une archive <code>.tar</code> de l’image <code>Docker</code> que l’on souhaite utiliser. <code>Singularity</code> pourra lire cette archive pour construire la nouvelle image.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker save <span class="at">-o</span> rbase.tar rbase:v2.0 </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity build rbase.sif docker-archive://rbase.tar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -213,21 +208,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="utilisation-dune-image-singularity" class="level3">
 <h3 class="anchored" data-anchor-id="utilisation-dune-image-singularity">Utilisation d’une image <code>Singularity</code></h3>
 <p>Maintenant que l’on a une image <code>Singularity</code> on peut l’utiliser en local ou sur le cluster de calcul.</p>
-<section id="utilisation-en-local" class="level4">
-<h4 class="anchored" data-anchor-id="utilisation-en-local">Utilisation en local</h4>
+<section id="utilisation-en-local-et-en-mode-interactif" class="level4">
+<h4 class="anchored" data-anchor-id="utilisation-en-local-et-en-mode-interactif">Utilisation en local et en mode interactif</h4>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity run r-base.sif </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="utilisation-sur-le-cluster-de-calcul" class="level4">
-<h4 class="anchored" data-anchor-id="utilisation-sur-le-cluster-de-calcul">Utilisation sur le cluster de calcul</h4>
+<section id="utilisation-en-mode-autonome" class="level4">
+<h4 class="anchored" data-anchor-id="utilisation-en-mode-autonome">Utilisation en mode autonome</h4>
+<p>Cette methode est utile pour utiliser un script s’executant seul (par exemple sur un cluster de calcul).</p>
 <p>On peut utiliser une image singularity dans un job executé sur le serveur en appelant directement singularity dans le script du job.</p>
-<p>Pour cela il faut au moins 3 fichiers dans le répertoire de travail du cluster de calcul :</p>
+<p>Pour cela il suffit d’executer la commande :</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity exec r-base.sif R <span class="at">--slave</span> <span class="at">-e</span> <span class="st">"source('demo.R')"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Où <code>r-base.sif</code> est le nom de l’image à utiliser et <code>demo.R</code> le script que l’on souhaite utiliser.</p>
+</section>
+<section id="bonus" class="level4">
+<h4 class="anchored" data-anchor-id="bonus">Bonus</h4>
+<p>Si l’on souhaite utiliser notre image <code>Singularity</code> sur le cluster de calcul il faut au moins 3 fichiers dans le répertoire de travail :</p>
 <ul>
 <li>un script <code>slurm</code> pour executer le job : <code>demoSingularity.sh</code></li>
 <li>un script <code>R</code> pour les calculs à faire : <code>demo.R</code></li>
 <li>l’image <code>singularity</code> : <code>r-base.sif</code></li>
 </ul>
-<p>Il suffit d’une ligne dans le script <code>slurm</code> pour executer <code>R</code> sur le cluster de calcul :</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> singularity exec r-base.sif R <span class="at">--slave</span> <span class="at">-e</span> <span class="st">"source('demo.R')"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Il suffit d’utiliser la ligne de commande précédante dans le script <code>slurm</code> pour executer <code>R</code> et toutes les analyses sur le cluster.</p>
 </section>
 </section>
 </section>
