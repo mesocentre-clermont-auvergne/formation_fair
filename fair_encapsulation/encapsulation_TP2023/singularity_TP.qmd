@@ -90,7 +90,8 @@ $ docker run -ti rbase:v2.0
 - En executant un script qui retourne directement le resultat :
 
 ``` bash
-$ docker exec ...
+$ docker run --name mycontainer -d -ti rbase:v2.0 /bin/sh
+
 ```
 
 Enfin, pour supprimer une image  `Docker` il suffit de faire :
@@ -134,7 +135,8 @@ $ singularity pull library://ronaldo/ronaldo/r-base
 ### Convertion d'une image `Docker` en `Singularity`
 
 La méthode la plus simple est de créer une archive `.tar` de l'image `Docker`
-que l'on souhaite utiliser. `Singularity` pourra lire cette archive pour construire la nouvelle image.
+que l'on souhaite utiliser. `Singularity` pourra lire cette archive pour 
+construire la nouvelle image.
 
 ``` bash
 $ docker save -o rbase.tar rbase:v2.0 
