@@ -121,7 +121,7 @@ Status: Downloaded newer image for debian:latest
 
 \begin{frame}[fragile]{Pull me Hello world !}
 \begin{itemize}
-\item Try to pull you first image from docker hub
+\item Try and pull your first image from docker hub
 \begin{verbatim}
 $ docker pull [path/url/docker_name]
 
@@ -185,6 +185,7 @@ To generate this message, Docker took the following steps:
 
 \begin{frame}{Build my own image}
 Some few docker specific commands
+AJOUTER UN LIEN DOCKER POUR LE SITTTTTTEEEE
 \newline
 \newline
 \centering
@@ -226,10 +227,14 @@ RUN echo "HELLO WORLD !"
 
 \begin{frame}[fragile]{Build command}
 \begin{verbatim}
+AJOUTER UN SOUS TITRE POUR EXPLCICITE RLE CAS DE GITHUB
+AJOUTER code gras pour les commandes
 $ docker build [url/path] --tag [docker_name]
 special case with github url like :
 [url]\#[branch_name][file_path]
-$ docker build https://github.com/mesocentre-clermont-auvergne/formation_fair.git\#main:/fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_containers/fair_encapsulation_docker/docker_assembly_raw -t assembly_raw
+$ docker build https://github.com/mesocentre-clermont-auvergne/formation_fair.git \
+\#main:/fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_containers/fair_encapsulation_docker/docker_assembly_raw 
+-t assembly_raw
 \end{verbatim}
 \end{frame}
 
