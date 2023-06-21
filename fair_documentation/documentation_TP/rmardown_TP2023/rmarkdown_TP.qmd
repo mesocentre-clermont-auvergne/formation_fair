@@ -57,7 +57,7 @@ souhaité :
   - *italique* : *
   - **gras** : **
   - `code` : `
-  - [liens](https://rmarkdown.rstudio.com/) : \[ \]\(  \)
+  - [liens](https://rmarkdown.rstudio.com/) : \[ \]\(https://...  \)
 
 - De gérer les titres, ...
 ````
@@ -220,6 +220,14 @@ execute:
   feeze: auto
 ---
 ```
+Il existe plusieurs formats de présentation (type powerpoint) mais un peut être
+particulièrement interessant :
+[`revealjs`](https://quarto.org/docs/presentations/revealjs/).
+
+Il permet d'obtenir des slides en html / javascript  de très bonne qualité.
+Pour les personnes INRAe il existe même un format spécifique respectant 
+la charte graphique de l'institut `inrae-revealjs` disponible dans le package 
+[`InraeThemes`](https://github.com/davidcarayon/InraeThemes). 
 
 ### Les options des *chunks* changent de place
 

@@ -133,7 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="rmarkdown" class="level2">
 <h2 class="anchored" data-anchor-id="rmarkdown"><code>Rmarkdown</code></h2>
-<p><code>Rmarkdown</code> est un programme orienté <code>R</code> qui permet de produire des documents <code>Word</code>, <code>pdf</code> ou <code>html</code> directement sous <code>R</code> en incluant des résultats d’analyses qui s’executent lors de la création du document.</p>
+<p><code>Rmarkdown</code> est un programme orienté <code>R</code> qui permet de produire des documents <code>.docx</code>, <code>.pptx</code>, <code>.pdf</code> ou <code>.html</code> directement sous <code>R</code> en incluant des résultats d’analyses qui s’executent lors de la création du document.</p>
 </section>
 <section id="les-dépendances" class="level2">
 <h2 class="anchored" data-anchor-id="les-dépendances">Les dépendances</h2>
@@ -149,7 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title :</span><span class="co"> "Création d'un rapport sous Rmarkdown"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author :</span><span class="co"> "Philippe Ruiz - Aubi"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-04-03"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-06-21"</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">output :</span><span class="co"> html_document </span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
@@ -168,7 +168,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><em>italique</em> : *</li>
 <li><strong>gras</strong> : **</li>
 <li><code>code</code> : `</li>
-<li><a href="https://rmarkdown.rstudio.com/">liens</a> : [ ]( )</li>
+<li><a href="https://rmarkdown.rstudio.com/">liens</a> : [ ](https://… )</li>
 </ul></li>
 <li>De gérer les titres, …</li>
 </ul>
@@ -307,7 +307,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title :</span><span class="co"> "Création d'un rapport sous Rmarkdown / Quarto"</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="an">author :</span><span class="co"> "Philippe Ruiz - Aubi"</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-04-03"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-06-21"</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="an">output :</span><span class="co"> </span></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html_document :</span></span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">    css : style.css</span></span>
@@ -358,6 +358,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">  cache: true</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">  feeze: auto</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Il existe plusieurs formats de présentation (type powerpoint) mais un peut être particulièrement interessant : <a href="https://quarto.org/docs/presentations/revealjs/"><code>revealjs</code></a>.</p>
+<p>Il permet d’obtenir des slides en html / javascript de très bonne qualité. Pour les personnes INRAe il existe même un format spécifique respectant la charte graphique de l’institut <code>inrae-revealjs</code> disponible dans le package <a href="https://github.com/davidcarayon/InraeThemes"><code>InraeThemes</code></a>.</p>
 </section>
 <section id="les-options-des-chunks-changent-de-place" class="level3">
 <h3 class="anchored" data-anchor-id="les-options-des-chunks-changent-de-place">Les options des <em>chunks</em> changent de place</h3>
