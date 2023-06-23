@@ -72,7 +72,7 @@ souhaité :
 
 ### Les figures
 
-- Une figure générée par un *chunk* pourra être directment insérée dans le document :
+- Une figure générée par un *chunk* pourra être directement insérée dans le document :
 
 ````markdown
 ```{{r name, options}}
@@ -142,6 +142,8 @@ Toutes ces informations sont à renseigner dans l'en-tête du document :
 
 ### Formats multiples 
 
+- Sortie html
+
 ```markdown
 ---
 title : "Création d'un rapport sous Rmarkdown / Quarto"
@@ -156,6 +158,21 @@ output :
     fig_width: 14
     fig_height: 7
     fig_caption: true
+  pdf_document :
+    fig_width: 14
+    fig_height: 7
+    fig_caption: true  
+---
+```
+
+- Sortie pdf
+
+```markdown
+---
+title : "Création d'un rapport sous Rmarkdown / Quarto"
+author : "Philippe Ruiz - Aubi"
+date: "`r Sys.Date()`"
+output : 
   pdf_document :
     fig_width: 14
     fig_height: 7
@@ -191,6 +208,7 @@ La nomenclature de `Quarto` et relativement proche de celle de `Rmarkdown`.
 Il faut cependant installer la library `quarto` :
 
 ```r
+> install.packages(quarto)
 > library(quarto)
 ```
 
@@ -199,7 +217,7 @@ Sous `RStudio` il est alors possible de créer un nouveau document avec un templ
 `RStudio` permet de générer automatiquement un caneva de fichier `Quarto` : 
 *File* \> *New File* \> *Quarto Document*.
 
-### Quelques differences pour rédiger l'en-tête
+### Quelques différences pour rédiger l'en-tête
 
 D'une manière générale l'en-tête suit le même schéma que pour `Rmarkdown`, 
 quelques noms d'options changent,  il y a plus d'options pour gérer l'execution 
@@ -229,6 +247,22 @@ Pour les personnes INRAe il existe même un format spécifique respectant
 la charte graphique de l'institut `inrae-revealjs` disponible dans le package 
 [`InraeThemes`](https://github.com/davidcarayon/InraeThemes). 
 
+```markdown
+---
+title: "My Document"
+author: "Philippe Ruiz"
+date: "`r Sys.Date()`"
+format:
+  inrae-revealjs:
+    toc: false
+    fig-width: 14
+    fig-height: 7
+    embed-resources: true
+    footer: "My Document 2023"
+editor: visual    
+---
+```
+
 ### Les options des *chunks* changent de place
 
 ````markdown
@@ -239,7 +273,7 @@ la charte graphique de l'institut `inrae-revealjs` disponible dans le package
 ...
 ````
 
-### Les sorties des tableaux sont plus tarvaillées
+### Les sorties des tableaux sont plus travaillées
 
 ````markdown
 ```{{r}}
