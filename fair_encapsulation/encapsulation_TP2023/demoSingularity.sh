@@ -17,4 +17,6 @@ cd /home/phiruiz/FormationFAIR/ # replace by your home path
 
 singularity exec r-base.sif R --slave -e "source('demo.R')"
 
+sleep 60s
+
 echo "Stop job: "`date` >&2
