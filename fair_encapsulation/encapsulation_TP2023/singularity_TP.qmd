@@ -1,6 +1,6 @@
 ---
 title: "Images Docker / Singularity"
-author: "Philippe Ruiz - Aubi"
+author: "Philippe Ruiz - Pierre Marin - Aubi"
 format: html
 editor: visual
 ---
@@ -62,11 +62,7 @@ $ docker build --file Dockerfile -t rbase:v2.0 .
 $ docker image ls
 ```
 
-Une nouvelle image est créée avec le tag de l'ancienne.
-On peut également modifier le tag (numéro de version ex: v3.0). Dans ce cas `Docker`
-construira une nouvelle image tout er concervant l'ancienne.
-
-
+Une nouvelle image est créée avec le tag de l'ancienne. On peut également modifier le tag (numéro de version ex: v3.0). Dans ce cas `Docker` construira une nouvelle image tout er concervant l'ancienne.
 
 ### Utilisation de l'image `Docker`
 
@@ -75,14 +71,23 @@ Il y a principalement 2 façons d'utiliser une image `Docker` :
 -   Directement en interactif (`-i`) dans un pseudo-terminal (`-t`) :
 
 ``` bash
-$ docker run rbase:v2.0 
+$ docker run -ti rbase:v2.0 
 ```
 
--   En executant un script qui retourne directement le resultat :
+-   En executant un script en arrière plan qui retourne directement le resultat :
+Voici un exemple utilisant `fastqc` :
 
 ``` bash
-$ docker run --name rbase:v2.0 -v -d -ti rbase:v2.0 /bin/sh
+$ docker pull staphb/fastqc
+
+$ docker image ls
+
+$ mkdir fastqc_output    
+
+$ docker run -v $(pwd):/in -w /in staphb/fastqc fastqc SRR13957123_1.fastq.gz --outdir fastqc_output
 ```
+
+Les resultats sont disponible dans le répertoire de travail.
 
 Enfin, pour supprimer une image `Docker` il suffit de faire :
 
