@@ -1,0 +1,22 @@
+body {
+  font-family: AvenirNextLTPro;
+  margin: auto;
+}
+
+h1 {
+  font-family: Raleway;
+  color: #008c8e;
+  margin: auto;
+}
+
+h2 {
+  font-family: Raleway;
+  font-style: italic;
+  color: #66c1bf;
+  margin: auto;
+}
+
+h3 {
+  font-family: Raleway;
+  margin: auto;
+}
