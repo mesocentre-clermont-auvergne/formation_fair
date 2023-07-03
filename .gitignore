@@ -18,3 +18,7 @@
 **/*.synctex.gz
 **/*__pycache__
 **/*.pyc
+.Rproj.user
+fig_coplot.pdf
+fig_pair.pdf
+summary_data.txt
