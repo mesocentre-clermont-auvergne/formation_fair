@@ -1,6 +1,0 @@
-\babel@toc {french}{}\relax 
-\beamer@sectionintoc {1}{The laboratory notebook}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{The aim}{3}{0}{1}
-\beamer@sectionintoc {2}{Notebook in bioinformatic}{26}{0}{2}
-\beamer@sectionintoc {3}{Practicial training}{67}{0}{3}
-\beamer@subsectionintoc {3}{1}{Build your own documentation}{67}{0}{3}
