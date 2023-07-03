@@ -38,7 +38,7 @@ Le dépôt se structure selon les 4 thématiques développées :
   - Le [TP_Git](fair_versionnage/fair_versionnage_TP/fair_versionnage_git_TP.md)
 3. [fair_encapsulation](fair_encapsulation) contient :
    - Le [cours](fair_encapsulation/fair_encapsulation_cours/fair_introduction_encapsulation_cours.pdf)
-   - Les [TP](fair_encapsulation/fair_encapsulation_TP) pour [conda](fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_conda/fair_encapsulation_conda.html) et [singularity](fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_containers/fair_singularity_TP.html)
+   - Les [TP](fair_encapsulation/fair_encapsulation_TP) pour [conda](fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_conda/fair_encapsulation_conda.ipynb) et [singularity](fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_containers/fair_singularity_TP.html)
 
 
 [fair_workflow](fair_workflow) contient :
@@ -47,7 +47,7 @@ Le dépôt se structure selon les 4 thématiques développées :
 4. [fair_documentation](fair_documentation) contient :
     - Le [cours](fair_documentation/fair_documentation_cours/fair_introduction_documentation.pdf)
     - Le [TP jupyter](fair_documentation/fair_documentation_TP/fair_documentation_jupyter_TP/00_encapsulation_jupyter.ipynb)
-    - Le [TP rmarkdown](fair_documentation/documentation_TP/fair_documentation_rmardown_TP/rmarkdown_TP.html)
+    - Le [TP rmarkdown](fair_documentation/fair_documentation_TP/fair_documentation_rmardown_TP/rmarkdown_TP)
 
 
 ```
