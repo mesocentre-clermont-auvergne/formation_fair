@@ -1,0 +1,13 @@
+{
+	"n_targets": 1488,
+	"n_bootstraps": 100,
+	"n_processed": 744,
+	"n_pseudoaligned": 0,
+	"n_unique": 0,
+	"p_pseudoaligned": 0.0,
+	"p_unique": 0.0,
+	"kallisto_version": "0.48.0",
+	"index_version": 10,
+	"start_time": "Mon Jul  3 15:19:01 2023",
+	"call": "kallisto quant -i test_files/hg38_transcripts.fa -b 100 -o test_files/kallisto_output test_files/hg38_F.fq.gz test_files/hg38_R.fq.gz"
+}
