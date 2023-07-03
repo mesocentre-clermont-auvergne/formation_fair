@@ -1,0 +1,208 @@
+<!doctype html>
+<html >
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--[if lt IE 9]>
+                <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="template.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/template.css" />
+
+    <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- <script type='text/javascript' src='menu/js/jquery.cookie.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.hoverIntent.minified.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.dcjqaccordion.2.7.min.js'></script> -->
+
+    <!-- <link href="menu/css/skins/blue.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/graphite.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/grey.css" rel="stylesheet" type="text/css" /> -->
+  
+    <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+        
+  
+    <!-- <script src="script.js"></script> -->
+  
+    <!-- <script src="jquery.sticky-kit.js "></script> -->
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.cookie.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.hoverIntent.minified.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.dcjqaccordion.2.7.min.js'></script>
+
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/blue.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/graphite.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/grey.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/ryangrose/easy-pandoc-templates@948e28e5/css/elegant_bootstrap.css" rel="stylesheet" type="text/css" />
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/jquery.sticky-kit.js"></script>
+    <meta name="generator" content="pandoc" />
+  <title>versionnage_git_TP</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+
+    
+    <div class="container">
+    <div class="row">
+            <div id="TOC" class="span3">
+        <div class="well toc">
+
+        <ul>
+        <li><a
+        href="#introduction-to-code-versioning-with-git">Introduction to
+        code versioning with git</a>
+        <ul>
+        <li><a href="#i-configuration">I/ Configuration</a></li>
+        <li><a href="#ii-premier-test-en-local">II/ Premier test en
+        local</a></li>
+        <li><a href="#iii-projet-partagé-sur-githubgitlab">III/ Projet
+        partagé sur github/gitlab</a></li>
+        <li><a href="#iv-les-conflits">IV/ Les conflits</a></li>
+        <li><a href="#v-les-branches">V/ Les branches</a></li>
+        <li><a href="#vi-issue-et-mergepull-request">VI/ Issue et
+        merge/pull request</a></li>
+        <li><a href="#vii-licence-et-autre">VII/ Licence et
+        autre</a></li>
+        </ul></li>
+        </ul>
+
+        </div>
+      </div>
+            <div class="span9">
+
+      
+      <h1 id="introduction-to-code-versioning-with-git">Introduction to
+code versioning with git</h1>
+<p>Mateo Hiriart<br />
+2023-07-10</p>
+<p>Dans ce TP nous allons voir les bases de git afin de créer un projet
+et de versionner notre code pour garder une trace des modifications
+faites dans le temps.</p>
+<p>Liens et commandes pour vous aider:<br />
+   Documentation:<a
+href="https://docs.github.com/fr">https://docs.github.com/fr</a><br />
+   Equivalent man: <a
+href="https://git-scm.com/doc">https://git-scm.com/doc</a><br />
+   <code>git help</code></p>
+<h2 id="i-configuration">I/ Configuration</h2>
+<ol type="1">
+<li><p>Créer un compte sur <a href="https://github.com/">github</a> ou
+<a href="https://gitlab.com">gitlab</a></p></li>
+<li><p>A l’aide de la documentation configurez votre environnement avec
+la commande <code>git config</code> and ssh</p></li>
+</ol>
+<h2 id="ii-premier-test-en-local">II/ Premier test en local</h2>
+<ol type="1">
+<li><p>Créer un nouveau répertoire ‘test’ par exemple et déplacez-vous
+dedans.</p></li>
+<li><p>Initialiser votre premier dépôt git en local en et naviguez dans
+l’arborescence de votre projet. Utilisez <code>git status</code> et/ou
+<code>git log</code> pour vérifier la création de votre dépôt
+git.</p></li>
+<li><p>Faire un premier <code>commit</code> avec un commentaire. Pour
+cela commencer par créer un fichier texte dans le répertoire courant,
+ensuite utilisez la commande <code>git status</code> pour vous
+aider.</p></li>
+<li><p>Modifiez votre fichier pour faire un deuxième commit et utiliser
+<code>git log</code> pour voir l’arborescence de votre projet.</p></li>
+</ol>
+<h2 id="iii-projet-partagé-sur-githubgitlab">III/ Projet partagé sur
+github/gitlab</h2>
+<h4 id="à-partir-de-maintenant-choisissez-un-binôme.">À partir de
+maintenant choisissez un binôme.</h4>
+<ol type="1">
+<li><p>Créez un répertoire privé sur gitlab sans LICENCE mais avec un
+README et invitez votre binôme à collaborer en l’ajoutant à votre projet
+depuis l’onglet <code>Settings</code>, profitez-en pour tester les
+droits par utilisateur.</p></li>
+<li><p>Clonez chacun le répertoire dans un autre dossier pour avoir une
+copie en local avec la commande
+<code>git clone &lt;url_projet&gt;</code>. Vous trouverez l’url pour
+cloner le répertoire depuis la page github sous
+<code>&lt;&gt;code</code>. Utiliser <code>git remote -v</code> pour voir
+le lien entre votre dépôt local et le dépôt distant sur gitlab.</p></li>
+<li><p>Faites un <code>commit</code> avec un nouveau fichier ne pas
+utiliser le même nom de fichier et mettez à jour le répertoire distant
+avec ce commit en utilisant la commande <code>git push</code>.</p></li>
+<li><p>Ensuite récupérez le commit de votre binôme avec la commande
+<code>git pull</code>.</p></li>
+</ol>
+<h2 id="iv-les-conflits">IV/ Les conflits</h2>
+<h4
+id="continuez-à-utiliser-le-repertoire-de-gitlab-en-binôme.">Continuez à
+utiliser le repertoire de gitlab en binôme.</h4>
+<ol type="1">
+<li><p>Effectuez tous les deux des modifications différentes sur le même
+fichier et ensuite utilisez les commandes <code>git commit</code> et
+<code>git push</code> pour appliquer la modification sur le répertoire
+distant github. Une erreur devrait survenir pour la dernière personne
+qui exécute la commande <code>push</code>.</p></li>
+<li><p>Utilisez <code>git fetch</code> et <code>git rebase</code> pour
+importer les modifications et régler les problèmes de conflits.</p></li>
+<li><p>Refaire le même processus mais en échanger l’ordre pour que
+chaque binôme est besoin de “rebase” leur répertoire local.</p></li>
+</ol>
+<h2 id="v-les-branches">V/ Les branches</h2>
+<ol type="1">
+<li><p>Créez chacun une nouvelle branche dans le projet avec
+<code>git branch</code>.</p></li>
+<li><p>Faites du développement sur cette nouvelle branche et utilisez à
+nouveau les commandes <code>git commit</code> et <code>git push</code>.
+Puis exécuter la commande proposer par git. Aller sur gitlab pour
+vérifier si votre nouvelle branche apparaît et comparer le dernier
+commit avec la branche main.</p></li>
+<li><p>Rebasculez sur la branche main et fusionnez la nouvelle branche
+de développement sur la branche main avec la commande
+<code>git merge &lt;branch_name&gt;</code>, et utilisez si besoin
+<code>git fetch</code> et <code>git rebase</code> pour mettre à jour
+votre branche avant.</p></li>
+<li><p>(Optionel) Si vous avez des modification non ajouter avec
+<code>git add</code> il est possible de sauvegarder c’est modification
+dans un “stash” temporairement avec <code>git stash</code> et
+réappliquer plus tard avec <code>git apply</code>.</p></li>
+</ol>
+<h2 id="vi-issue-et-mergepull-request">VI/ Issue et merge/pull
+request</h2>
+<ol type="1">
+<li><p>Allez sur gitlab et créez une issue pour se plaindre du readme
+sans intérêt.</p></li>
+<li><p>Créez ensuite un merge request depuis l’interface de l’issue de
+votre binôme et retourner sur l’issue pour voir le file d’activité. Vous
+pouvez aussi tester les commentaires par la même occasion pour discuter
+avec votre binôme directement dans l’issue.</p></li>
+<li><p>Retournez sur votre répertoire local et importez les nouvelles
+branches <code>git pull</code> ou <code>git fetch</code>. Faites un
+nouveau commit qui résout l’issue créée par votre binôme.</p></li>
+<li><p>Retournez à nouveau sur la page du merge request et appliquez vos
+modifications sur la branche main en validant le merge request. L’issue
+se fermeras automatiquement aussi les modifications seront appliquées
+sur la branche main. Bien évidement si votre branche n’est plus à jour
+avec la master il faut utiliser <code>git rebase</code> avant de
+merge.</p></li>
+</ol>
+<h2 id="vii-licence-et-autre">VII/ Licence et autre</h2>
+<ol type="1">
+<li><p>Dernière étape ajoutez une licence à votre projet, vous pouvez
+utilise la même que sur le répertoire de cette formation. Assurez-vous
+bien que le nom du fichier est “LICENCE” pour que gitlab ou github
+puissent la reconnaître.</p></li>
+<li><p>Explorer github ou gitlab pour voir les autres fonctionnalités et
+regarder d’autre projets plus important.</p></li>
+<li><p>Optionnel pour finir publier votre projet ou le
+supprimer.</p></li>
+</ol>
+            </div>
+    </div>
+  </div>
+  <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+
+</body>
+</html>

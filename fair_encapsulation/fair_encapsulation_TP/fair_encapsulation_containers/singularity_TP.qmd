@@ -1,0 +1,169 @@
+---
+title: "Images Docker / Singularity"
+author: "Philippe Ruiz - Pierre Marin - Aubi"
+format: html
+editor: visual
+---
+
+## Image `Docker`
+
+### Téléchargement à partir du Docker Hub
+
+C'est la méthode la plus simple. On commence par vérifier que la bonne version de `Docker` est installée :
+
+``` bash
+$ docker version
+```
+
+On va ensuite récupérer l'image `Docker` officielle de `R` sur le [dépot](https://hub.docker.com/r/rstudio/r-base) de `rstudio` avec `pull`, on obtiendra alors une image `Docker` utilisable sur notre machine :
+
+``` bash
+$ docker pull rstudio/r-base:4.0-focal
+```
+
+On vérifie ensuite qu'elle est bien présente. `Docker` a son propre système de gestion des images.
+
+``` bash
+$ docker image ls
+```
+
+### Creation d'une image `Docker` à partir d'une recette
+
+Il est possible de créer sa propre image `Docker`. Pour cela il faut un fichier spécifique (*recette*) qui va contenir les instructions nécessaires à la construction de l'image `Docker`.
+
+Il s'agit d'un fichier `Dockerfile` qui se présente comme suit :
+
+``` bash
+FROM ... # permet de récupérer une image de base nécessaire à la construction
+RUN apt-get install ... # permet d'installer les dépendances de l'OS nécessaire
+RUN Rscript -e 'install.packages(...)' # permet d'installer le ou les packages
+  # utilisés
+```
+
+Une version complète du fichier `Dockerfile` est présente dans le répertoire *encapsulation TP* du dépot git.
+
+Une fois le fichier complété, il ne reste plus qu'à construire l'image `Docker` avec :
+
+``` bash
+$ docker build --file Dockerfile -t rbase:v2.0 .
+
+$ docker image ls
+```
+
+Cette opération peut être plus ou moins longue suivant la taille et le nombre de progammes / dépendances à installer. Cependant cette étape peut être parallélisée, donc plus il y a de processeur sur la machine, plus elle est rapide. Ici on va en utiliser 8.
+
+### Mise à jour de l'image `Docker`
+
+Il est possible de mettre à jour une image `Docker` pour ajouter un programme ou un package supplémentaire simplement en modifiant le fichier `Dockerfile`. Une nouvelle image sera construite à partir de l'ancienne. Comme `Docker` fonctionne avec un cache la construction de la nouvelle image est plus rapide.
+
+``` bash
+$ docker build --file Dockerfile -t rbase:v2.0 .
+
+$ docker image ls
+```
+
+Une nouvelle image est créée avec le tag de l'ancienne. On peut également modifier le tag (numéro de version ex: v3.0). Dans ce cas `Docker` construira une nouvelle image tout er concervant l'ancienne.
+
+### Utilisation de l'image `Docker`
+
+Il y a principalement 2 façons d'utiliser une image `Docker` :
+
+-   Directement en interactif (`-i`) dans un pseudo-terminal (`-t`) :
+
+``` bash
+$ docker run -ti rbase:v2.0 
+```
+
+-   En executant un script en arrière plan qui retourne directement le resultat :
+Voici un exemple utilisant `fastqc` :
+
+``` bash
+$ docker pull staphb/fastqc
+
+$ docker image ls
+
+$ mkdir fastqc_output    
+
+$ docker run -v $(pwd):/in -w /in staphb/fastqc fastqc SRR13957123_1.fastq.gz --outdir fastqc_output
+```
+
+Les resultats sont disponible dans le répertoire de travail.
+
+Enfin, pour supprimer une image `Docker` il suffit de faire :
+
+``` bash
+$ docker image rm -f IMAGE_ID
+```
+
+## Image `Singularity`
+
+`Singularity` est un gestionnaire qui permet la création, la gestion et l'exécution de *container* sur une machine locale comme sur un serveur de calcul.
+
+Il existe principalement 2 façons d'obtenir une image `Singularity` :
+
+-   Télecharger une image existante depuis le dépot `Docker` : [Docker Hub](https://hub.docker.com/) (recommandé)
+-   Convertir une image `Docker` existante en image `Singularity`
+
+### Téléchargement à partir du Docker Hub
+
+On peut directement la télécharger avec `Singularity`. C'est la méthode la plus simple et celle qui contien le plus grand nombre d'images disponible.
+
+``` bash
+$ singularity pull r-base.sif docker://rstudio/r-base:4.0-focal
+
+$ ls
+```
+
+Contrairement à `Docker` l'image est directement stockée dans le répertoire de travail.
+
+Il existe d'autre hub que Docker Hub pour trouver des images `Singularity` comme le dépot [Sylabs](https://cloud.sylabs.io/library).
+
+Pour utiliser ce dépot il suffit de faire :
+
+``` bash
+$ singularity pull library://ronaldo/ronaldo/r-base
+```
+
+### Convertion d'une image `Docker` en `Singularity`
+
+La méthode la plus simple est de créer une archive `.tar` de l'image `Docker` que l'on souhaite utiliser. `Singularity` pourra lire cette archive pour construire la nouvelle image.
+
+``` bash
+$ docker save -o rbase.tar rbase:v2.0 
+
+$ singularity build rbase.sif docker-archive://rbase.tar
+```
+
+### Utilisation d'une image `Singularity`
+
+Maintenant que l'on a une image `Singularity` on peut l'utiliser en local ou sur le cluster de calcul.
+
+#### Utilisation en local et en mode interactif
+
+``` bash
+$ singularity run r-base.sif 
+```
+
+#### Utilisation en mode autonome
+
+Cette methode est utile pour utiliser un script s'executant seul (par exemple sur un cluster de calcul).
+
+On peut utiliser une image singularity dans un job executé sur le serveur en appelant directement singularity dans le script du job.
+
+Pour cela il suffit d'executer la commande :
+
+``` bash
+$ singularity exec r-base.sif R --slave -e "source('demo.R')"
+```
+
+Où `r-base.sif` est le nom de l'image à utiliser et `demo.R` le script que l'on souhaite utiliser.
+
+#### Bonus
+
+Si l'on souhaite utiliser notre image `Singularity` sur le cluster de calcul il faut au moins 3 fichiers dans le répertoire de travail :
+
+-   un script `slurm` pour executer le job : `demoSingularity.sh`
+-   un script `R` pour les calculs à faire : `demo.R`
+-   l'image `singularity` : `r-base.sif`
+
+Il suffit d'utiliser la ligne de commande précédante dans le script `slurm` pour executer `R` et toutes les analyses sur le cluster.

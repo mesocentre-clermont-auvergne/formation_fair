@@ -1,0 +1,6 @@
+name: qc # conda environment name
+channels: 
+  - bioconda
+dependencies:
+  - fastqc=0.11.9 # quality check of fastq data (java)
+  - multiqc=1.13 # reports aggregation (R package)
