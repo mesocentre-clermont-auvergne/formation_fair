@@ -1,3 +1,5 @@
+**/*.*
+**/*.~lock*
 **/*.Rproj.user
 **/*.Rhistory
 **/*.RData
@@ -22,3 +24,4 @@
 fig_coplot.pdf
 fig_pair.pdf
 summary_data.txt
+**/*.tmp

@@ -1,23 +1,28 @@
+# demo.R
 
-# load library
-require(knitr)
-require(ade4)
-require(kableExtra)
-require(adegraphics)
-require(gridExtra)
+# packages
+require(graphics)
+data(mtcars)
 
-# Load and check your data
+# save plots
+pdf("./fig_pair.pdf")
+pairs(mtcars, main = "mtcars data", gap = 1/4)
+dev.off()
 
-data(doubs)
+pdf("./fig_coplot.pdf")
+coplot(mpg ~ disp | as.factor(cyl), data = mtcars,
+       panel = panel.smooth, rows = 1)
+dev.off()
 
-# Analyses
+## possibly more meaningful, e.g., for summary() or bivariate plots:
 
-acp1 <- dudi.pca(doubs$env, scan =  FALSE)
-acp2 <- dudi.pca(doubs$fish, scan =  FALSE, scale = FALSE)
+mtcars2 <- within(mtcars, {
+  vs <- factor(vs, labels = c("V", "S"))
+  am <- factor(am, labels = c("automatic", "manual"))
+  cyl  <- ordered(cyl)
+  gear <- ordered(gear)
+  carb <- ordered(carb)
+})
 
-# Plot the results
+capture.output(summary(mtcars2), file = "summary_data.txt")
 
-g1 <- scatter(acp2, plot = FALSE)
-g2 <- s.value(doubs$xy, acp2$li[,1], plot = FALSE)
-
-save(g1, file = "g1.Rdata")
