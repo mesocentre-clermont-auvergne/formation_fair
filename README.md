@@ -32,13 +32,13 @@ Construction d'un projet de formation aux pratiques FAIR
     > - Introduction à jupyter et jupyterlab
 
 Le dépôt se structure selon les 4 thématiques développées :
-1. [fair_introduction](fair_introduction/fair_introduction_latex_cours) contient le cours d'introduction du module [FAIR](fair_introduction/fair_introduction_latex_cours/fair_introduction.pdf)
+1. [fair_introduction](fair_introduction) contient le cours d'introduction du module [FAIR](fair_introduction/fair_introduction_latex_cours/fair_introduction.pdf)
 2. [fair_versionnage](fair_versionnage) contient :
   - Le cours sur le versionnage avec [Git](fair_versionnage/fair_versionnage_cours/introduction_versionage_git.pdf)
-  - Le [TP_Git](fair_versionnage/fair_versionnage_TP/fair_versionnage_git_TP.html)
+  - Le [TP_Git](fair_versionnage/fair_versionnage_TP/fair_versionnage_git_TP.md)
 3. [fair_encapsulation](fair_encapsulation) contient :
    - Le [cours](fair_encapsulation/fair_encapsulation_cours/fair_introduction_encapsulation_cours.pdf)
-   - Les [TP](fair_encapsulation/fair_encapsulation_TP) pour [conda](fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_conda/fair_encapsulation_conda.html) et [singularity](fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_containers//home/pierre/Seafile/ABROMICS_IFB/projet_aubi/formation_fair/fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_containers/fair_singularity_TP.html)
+   - Les [TP](fair_encapsulation/fair_encapsulation_TP) pour [conda](fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_conda/fair_encapsulation_conda.html) et [singularity](fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_containers/fair_singularity_TP.html)
 
 
 [fair_workflow](fair_workflow) contient :
