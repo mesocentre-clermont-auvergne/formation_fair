@@ -2,10 +2,10 @@
 
 ## Memo
 Official documentation: https://snakemake.readthedocs.io/en/stable/
-To date (2022/11/28, more than 100 standardized workflows are available: https://snakemake.github.io/snakemake-workflow-catalog/
+To date (2023/07/04, 170 standardized workflows are available: https://snakemake.github.io/snakemake-workflow-catalog/), in average over the last 6 months, 10 standardized workflows are added per month.
 
 ## Pre-requisites
-1- Data: input data to run the workflow example are reduced RNASeq reads files from Ostreococcus tauri green algae ((with a focus on chr18) from runs SRR3099585-87 & SRR3105697-99, Bioproject PRJNA304086). To download data from zenodo [here](https://zenodo.org/record/3997237#.Y4Tfo9LMJkg), the easiest way is to click on the download icon, but it would download data on our local computer. However, we wish to use these data on Cloud. So we just collect the link to data by doing a right-click. The link is "https://zenodo.org/record/3997237/files/FAIR_Bioinfo_data.tar.gz?download=1"
+1- Data: input data to run the workflow example are reduced RNASeq reads files from *Ostreococcus tauri* green algae ((with a focus on chr18) from runs SRR3099585-87 & SRR3105697-99, Bioproject PRJNA304086). To download data from zenodo [here](https://zenodo.org/record/3997237#.Y4Tfo9LMJkg), the easiest way is to click on the download icon, but it would download data on our local computer. However, we wish to use these data on Cloud. So we just collect the link to data by doing a right-click. The link is "https://zenodo.org/record/3997237/files/FAIR_Bioinfo_data.tar.gz?download=1"
 
 2- Snakemake: for the run of snakemake, deploy a BioPipes VM from Biosphere IFB Cloud (https://biosphere.france-bioinformatique.fr/cloud/) 
 

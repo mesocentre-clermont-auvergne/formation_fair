@@ -1,0 +1,241 @@
+<!doctype html>
+<html >
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--[if lt IE 9]>
+                <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="template.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/template.css" />
+
+    <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- <script type='text/javascript' src='menu/js/jquery.cookie.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.hoverIntent.minified.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.dcjqaccordion.2.7.min.js'></script> -->
+
+    <!-- <link href="menu/css/skins/blue.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/graphite.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/grey.css" rel="stylesheet" type="text/css" /> -->
+  
+    <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+        
+  
+    <!-- <script src="script.js"></script> -->
+  
+    <!-- <script src="jquery.sticky-kit.js "></script> -->
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.cookie.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.hoverIntent.minified.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.dcjqaccordion.2.7.min.js'></script>
+
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/blue.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/graphite.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/grey.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/ryangrose/easy-pandoc-templates@948e28e5/css/elegant_bootstrap.css" rel="stylesheet" type="text/css" />
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/jquery.sticky-kit.js"></script>
+    <meta name="generator" content="pandoc" />
+  <title>snakemake_TP</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+
+    
+    <div class="container">
+    <div class="row">
+            <div id="TOC" class="span3">
+        <div class="well toc">
+
+        <ul>
+        <li><a href="#introduction-to-workflow-with-snakemake">Introduction to workflow with Snakemake</a>
+        <ul>
+        <li><a href="#memo">Memo</a></li>
+        <li><a href="#pre-requisites">Pre-requisites</a></li>
+        <li><a href="#conda-environment-based-on-the-qc.yml-file">Conda environment based on the qc.yml file:</a></li>
+        <li><a href="#data-management">Data management</a></li>
+        <li><a href="#workflow-definition">Workflow definition</a></li>
+        </ul></li>
+        </ul>
+
+        </div>
+      </div>
+            <div class="span9">
+
+      
+      <h1 id="introduction-to-workflow-with-snakemake">Introduction to workflow with Snakemake</h1>
+<h2 id="memo">Memo</h2>
+<p>Official documentation: https://snakemake.readthedocs.io/en/stable/ To date (2023/07/04, 170 standardized workflows are available: https://snakemake.github.io/snakemake-workflow-catalog/), in average over the last 6 months, 10 standardized workflows are added per month.</p>
+<h2 id="pre-requisites">Pre-requisites</h2>
+<p>1- Data: input data to run the workflow example are reduced RNASeq reads files from <em>Ostreococcus tauri</em> green algae ((with a focus on chr18) from runs SRR3099585-87 &amp; SRR3105697-99, Bioproject PRJNA304086). To download data from zenodo <a href="https://zenodo.org/record/3997237#.Y4Tfo9LMJkg">here</a>, the easiest way is to click on the download icon, but it would download data on our local computer. However, we wish to use these data on Cloud. So we just collect the link to data by doing a right-click. The link is “https://zenodo.org/record/3997237/files/FAIR_Bioinfo_data.tar.gz?download=1”</p>
+<p>2- Snakemake: for the run of snakemake, deploy a BioPipes VM from Biosphere IFB Cloud (https://biosphere.france-bioinformatique.fr/cloud/)</p>
+<pre><code>$ ssh ubuntu@my.IP
+The authenticity of host &#39;193.49.167.73 (193.49.167.73)&#39; can&#39;t be established.
+ED25519 key fingerprint is SHA256:ek4Sqedg2Uhlict4wBE9WmsoqRBuxVTirRm2lEaMGrY.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+
+Type &quot;yes&quot;</code></pre>
+<p>Note : Replace “my.IP” by the IP address provided on your biosphere VM</p>
+<p>2-1 Activate the environment to use Snakemake and check that the ‘snakemake’ program works by asking for the version used.</p>
+<pre><code>$ conda activate snakemake
+(snakemake)$ snakemake --version
+7.18.2</code></pre>
+<p>2-2 I. The architecture of your working directory Create directories to get this architecture:</p>
+<p>├── envs ├── logs ├── results ├── snakemake └── data -&gt; /ifb/data</p>
+<p>Note: On Ubuntu, <code>mkdir</code> command does the job.</p>
+<p>At the end of the practice, the architecture should look like this:</p>
+<p>├── envs         ├── qc.yaml ├── logs ├── results ├── snakemake       ├── Snakefile.ex1.smk       ├── Snakefile.ex2.smk       ├── … ├── data-&gt; /ifb/data    ├── data       ├── mydatalocal             ├── Data             ├── SRR3099585_chr18.fastq.gz             ├── SRR3099586_chr18.fastq.gz             ├── …             ├── SRR3105699_chr18.fastq.gz             ├── O.tauri_annotation.gff             ├── O.tauri_genome.fna ├── public</p>
+<h2 id="conda-environment-based-on-the-qc.yml-file">Conda environment based on the qc.yml file:</h2>
+<pre><code>name: qc # conda environment name
+channels: 
+    - bioconda
+dependencies:
+    - fastqc=0.11.9 # quality check of fastq data (java)
+    - multiqc=1.13 # reports aggregation (R package)</code></pre>
+<h2 id="data-management">Data management</h2>
+<pre><code># Go to data/mydatalocal
+$ cd ~/data/mydatalocal
+$ wget &quot;https://zenodo.org/record/3997237/files/FAIR_Bioinfo_data.tar.gz?download=1&quot;
+$ mv &#39;FAIR_Bioinfo_data.tar.gz?download=1&#39; FAIR_Bioinfo_data.tar.gz
+$ tar xvzf FAIR_Bioinfo_data.tar.gz
+$ ls Data
+O.tauri_annotation.gff  SRR3099585_chr18.fastq.gz  SRR3099587_chr18.fastq.gz  SRR3105698_chr18.fastq.gz
+O.tauri_genome.fna      SRR3099586_chr18.fastq.gz  SRR3105697_chr18.fastq.gz  SRR3105699_chr18.fastq.gz</code></pre>
+<h2 id="workflow-definition">Workflow definition</h2>
+<ol type="1">
+<li>The Snakefile example</li>
+</ol>
+<p>The final objective is to create a snakefile to manage a small workflow with 2 steps: i) fastqc ii) multiqc These two tools belonging to the bioinformatics domain allow to check the quality of high throughput sequence data. They are accessible via a Conda environment, envfair.yml</p>
+<p>note: If you have already run this notebook, you may need to run: $ rm -Rf results/FastQC results/multiqc_data results/multiqc_report.html</p>
+<ol start="2" type="1">
+<li>Objective 1: The rule concept</li>
+</ol>
+<p>Objective 1: Create a snakemake file named ex1.smk including the first step of the RNAseq workflow (the reads quality checking thank to the fastqc tool) on one of the RNAseq files</p>
+<p>fastqc access: through a conda environment (see prerequisites on top) fastqc command: fastqc –outdir results/FastQC inputFileName</p>
+<p>inputFileName: SRR3099585_chr18.fastq.gz in the ${PWD}/Data directory outputfiles produced in outdirectory: The 2 result files (*_fastqc.zip &amp; *_fastqc.html) will be located in your outdir and named based on the prefix of input file (eg. SRR3099585_chr18_fastqc.zip)</p>
+<p>Create the Snakefile</p>
+<pre><code># got to snakemake directory and create a new file called `Snakefile_ex1.smk`
+$ cd ~/snakemake
+$ touch Snakefile
+# edit the file with `nano` editor for example:
+
+rule fastqc:
+    input:
+        &quot;data/mydatalocal/Data/SRR3099585_chr18.fastq.gz&quot;
+    output:
+        &quot;results/FastQC/SRR3099585_chr18_fastqc.zip&quot;, 
+        &quot;results/FastQC/SRR3099585_chr18_fastqc.html&quot;
+    conda:
+        envs/qc.yaml
+    shell: &quot;fastqc --outdir results/FastQC/ {input}&quot;</code></pre>
+<p>Then execute snakemake:</p>
+<pre><code>$ pwd
+/home/ubuntu
+$ snakemake --snakefile snakemake/Snakefile.ex1.smk --cores 1 --use-conda</code></pre>
+<p>Building DAG of jobs…</p>
+<ol start="3" type="1">
+<li>Objective 2: One rule, 2 input files</li>
+</ol>
+<p>Objective 2: Add a second input RNAseq file to the rule.</p>
+<p>Hint: second input file: Data/SRR3099586_chr18.fastq.gz don’t forget to add the cognate output files</p>
+<p>Objective 2: Solution Create another Snakefile called Snakedile.ex2.smk:</p>
+<pre><code>rule fastqc:
+  output:
+    &quot;FastQC/SRR3099585_chr18_fastqc.zip&quot;, 
+    &quot;FastQC/SRR3099585_chr18_fastqc.html&quot;,
+    &quot;FastQC/SRR3099586_chr18_fastqc.zip&quot;, 
+    &quot;FastQC/SRR3099586_chr18_fastqc.html&quot;
+  input:
+    &quot;Data/SRR3099585_chr18.fastq.gz&quot;,
+    &quot;Data/SRR3099586_chr18.fastq.gz&quot;
+  shell: &quot;fastqc --outdir FastQC/ {input}&quot;</code></pre>
+<p>Then execute snakemake:</p>
+<pre><code>$ pwd
+/home/ubuntu
+$ snakemake --snakefile snakemake/Snakefile.ex2.smk --cores 1 --use-conda</code></pre>
+<ol start="4" type="1">
+<li>Objective 3: Manage all the RNAseq files</li>
+</ol>
+<p>Boring with writing all input and output file names? Use the expand() function to manage all the input RNAseq files at once.</p>
+<p>Hint: Create a Python list at the begining of the snakefile and containing all the basename of the input files (don’t include the .fastq.gz suffix). Python list format: list_name = [“item1”, “item2”, …, “itemN”] replace the filename lists of the input and output directives by the expand() function</p>
+<p>Create another Snakefile called Snakedile.ex3.smk:</p>
+<pre><code>SAMPLES=[&quot;SRR3099585_chr18&quot;,&quot;SRR3099586_chr18&quot;,&quot;SRR3099587_chr18&quot;, &quot;SRR3105697_chr18&quot;, &quot;SRR3105698_chr18&quot;, &quot;SRR3105699_chr18&quot;]
+
+rule fastqc:
+  output:
+        expand(&quot;FastQC/{sample}_fastqc.zip&quot;, sample=SAMPLES),
+        expand(&quot;FastQC/{sample}_fastqc.html&quot;, sample=SAMPLES)
+  input:
+        expand(&quot;data/{sample}.fastq.gz&quot;, sample=SAMPLES)
+  shell: &quot;fastqc --outdir FastQC {input}&quot;</code></pre>
+<p>Then execute snakemake:</p>
+<pre><code>$ pwd
+/home/ubuntu
+$`snakemake --snakefile snakemake/Snakefile.ex3.smk --cores 1 --use-conda</code></pre>
+<ol start="5" type="1">
+<li>Objective 4: Add a second step</li>
+</ol>
+<p>With a second tool, it is a “real” analysis workflow! The second tool multiqc will aggregate all the fastqc results.</p>
+<p>Hint: multiqc command: multiqc *_fastqc.zip multiqc inputs: the fastqc zip files 2 outputs of multiqc: a file multiqc_report.html &amp; a repository multiqc_data (to manage with directory(“multiqc_data”))</p>
+<p>Create another Snakefile called Snakedile.ex4.smk:</p>
+<pre><code>SAMPLES=[&quot;SRR3099585_chr18&quot;, &quot;SRR3099586_chr18&quot;, &quot;SRR3099587_chr18&quot;, &quot;SRR3105697_chr18&quot;, &quot;SRR3105698_chr18&quot;, &quot;SRR3105699_chr18&quot;]
+
+rule all:
+    input:
+       expand(&quot;results/FastQC/{sample}_fastqc.html&quot;, sample=SAMPLES),
+       &quot;results/multiqc/multiqc_report.html&quot;
+
+rule fastqc:
+   input:
+         expand(&quot;data/mydatalocal/Data/{sample}.fastq.gz&quot;, sample=SAMPLES)
+   output:
+         expand(&quot;results/FastQC/{sample}_fastqc.zip&quot;, sample=SAMPLES),
+         expand(&quot;results/FastQC/{sample}_fastqc.html&quot;, sample=SAMPLES)
+   conda:
+        &quot;envs/qc.yaml&quot;
+    shell: &quot;fastqc --outdir results/FastQC/ {input}&quot;
+
+rule multiqc:
+   input:
+       expand(&quot;results/FastQC/{sample}_fastqc.zip&quot;, sample = SAMPLES)
+   output:
+        &quot;results/multiqc/multiqc_report.html&quot;
+   conda:
+        &quot;envs/qc.yaml&quot;
+    shell:
+        &quot;multiqc --outdir results/multiqc {input}&quot;</code></pre>
+<p>Then execute snakemake:</p>
+<pre><code>$ pwd
+/home/ubuntu
+$ snakemake --snakefile snakemake/Snakefile.ex4.smk --cores 1 --use-conda</code></pre>
+<ol start="6" type="1">
+<li>Extra objective, th log file</li>
+</ol>
+<p>Objective 6: In Unix systems, the output of a command is usually sent to 2 separate streams: the expected output to Standard Out (stdout, or ”&gt;”), and the error messages to Standard Error (stderr, or ”2&gt;”). To integrate stderr and stdout into the same log, use ”&amp;&gt;” (use it with care because output files are often printed to stdout).</p>
+<p>Hint: Redirect the stdout and stderr streams of the fastqc and multiqc rules by adding a ”log:” directive with two variables, out and err to separately redirect each streams.</p>
+<pre><code>  log:
+    std=&quot;Logs/{sample}_fastqc.std&quot;,
+    err=&quot;Logs/{sample}_fastqc.err&quot;
+  shell: &quot;fastqc --outdir FastQC/ {input} 1&gt;{log.std} 2&gt;{log.err}&quot;
+
+  log:
+    std=&quot;Logs/multiqc.std&quot;,
+    err=&quot;Logs/multiqc.err&quot;
+  shell: &quot;multiqc {input} 1&gt;{log.std} 2&gt;{log.err}&quot; </code></pre>
+<p>A starting point is available in Snakefile.ex5.smk.</p>
+            </div>
+    </div>
+  </div>
+  <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+
+</body>
+</html>
