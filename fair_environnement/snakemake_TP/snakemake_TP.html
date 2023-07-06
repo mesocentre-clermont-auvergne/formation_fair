@@ -46,6 +46,70 @@
     <meta name="generator" content="pandoc" />
   <title>snakemake_TP</title>
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
 </head>
 <body>
 
@@ -62,7 +126,15 @@
         <li><a href="#pre-requisites">Pre-requisites</a></li>
         <li><a href="#conda-environment-based-on-the-qc.yml-file">Conda environment based on the qc.yml file:</a></li>
         <li><a href="#data-management">Data management</a></li>
-        <li><a href="#workflow-definition">Workflow definition</a></li>
+        <li><a href="#workflow-definition">Workflow definition</a>
+        <ul>
+        <li><a href="#the-snakefile-example">1. The Snakefile example</a></li>
+        <li><a href="#objective-1-understanding-the-rule-concept">2. Objective 1: Understanding the rule concept</a></li>
+        <li><a href="#objective-2-one-rule-2-input-files">3. Objective 2: One rule, 2 input files</a></li>
+        <li><a href="#objective-3-manage-all-the-rnaseq-files">4. Objective 3: Manage all the RNAseq files</a></li>
+        <li><a href="#objective-4-add-a-second-step">5. Objective 4: Add a second step</a></li>
+        <li><a href="#extra-objective-the-log-file">6. Extra objective, the log file</a></li>
+        </ul></li>
         </ul></li>
         </ul>
 
@@ -73,7 +145,9 @@
       
       <h1 id="introduction-to-workflow-with-snakemake">Introduction to workflow with Snakemake</h1>
 <h2 id="memo">Memo</h2>
-<p>Official documentation: https://snakemake.readthedocs.io/en/stable/ To date (2023/07/04, 170 standardized workflows are available: https://snakemake.github.io/snakemake-workflow-catalog/), in average over the last 6 months, 10 standardized workflows are added per month.</p>
+<p>Official documentation: https://snakemake.readthedocs.io/en/stable/</p>
+<p>To date (2023/07/04, 170 standardized workflows are available: https://snakemake.github.io/snakemake-workflow-catalog/), in average over the last 6 months, 10 standardized workflows are added per month.</p>
+<p>Have a look there to be <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/deployment.html#distribution-and-reproducibility">FAIR !</a></p>
 <h2 id="pre-requisites">Pre-requisites</h2>
 <p>1- Data: input data to run the workflow example are reduced RNASeq reads files from <em>Ostreococcus tauri</em> green algae ((with a focus on chr18) from runs SRR3099585-87 &amp; SRR3105697-99, Bioproject PRJNA304086). To download data from zenodo <a href="https://zenodo.org/record/3997237#.Y4Tfo9LMJkg">here</a>, the easiest way is to click on the download icon, but it would download data on our local computer. However, we wish to use these data on Cloud. So we just collect the link to data by doing a right-click. The link is “https://zenodo.org/record/3997237/files/FAIR_Bioinfo_data.tar.gz?download=1”</p>
 <p>2- Snakemake: for the run of snakemake, deploy a BioPipes VM from Biosphere IFB Cloud (https://biosphere.france-bioinformatique.fr/cloud/)</p>
@@ -86,49 +160,74 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 Type &quot;yes&quot;</code></pre>
 <p>Note : Replace “my.IP” by the IP address provided on your biosphere VM</p>
 <p>2-1 Activate the environment to use Snakemake and check that the ‘snakemake’ program works by asking for the version used.</p>
-<pre><code>$ conda activate snakemake
-(snakemake)$ snakemake --version
-7.18.2</code></pre>
-<p>2-2 I. The architecture of your working directory Create directories to get this architecture:</p>
-<p>├── envs ├── logs ├── results ├── snakemake └── data -&gt; /ifb/data</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>$ <span class="ex">conda</span> activate snakemake</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="ex">snakemake</span> --version</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="ex">7.30.1</span></span></code></pre></div>
+<p>2-2 I. The architecture of your working directory</p>
+<p>Create directories to get this architecture:</p>
+<pre><code>├── data -&gt; /ifb/data
+├── logs
+├── results
+└── workflow</code></pre>
 <p>Note: On Ubuntu, <code>mkdir</code> command does the job.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="fu">mkdir</span> logs results workflow</span></code></pre></div>
 <p>At the end of the practice, the architecture should look like this:</p>
-<p>├── envs         ├── qc.yaml ├── logs ├── results ├── snakemake       ├── Snakefile.ex1.smk       ├── Snakefile.ex2.smk       ├── … ├── data-&gt; /ifb/data    ├── data       ├── mydatalocal             ├── Data             ├── SRR3099585_chr18.fastq.gz             ├── SRR3099586_chr18.fastq.gz             ├── …             ├── SRR3105699_chr18.fastq.gz             ├── O.tauri_annotation.gff             ├── O.tauri_genome.fna ├── public</p>
+<pre><code>├── data-&gt; /ifb/data
+       ├──  mydatalocal
+             ├──  Data
+                 ├──   SRR3099585_chr18.fastq.gz
+                 ├──   SRR3099586_chr18.fastq.gz
+                 ├──   ...
+                 ├──   SRR3105699_chr18.fastq.gz
+                 ├──   O.tauri_annotation.gff
+                 ├──   O.tauri_genome.fna
+        ├──  public
+├── logs
+├── results
+├── workflow
+       ├──  envs
+            ├──  qc.yaml
+       ├──  Snakefile.ex1.smk
+       ├──  Snakefile.ex2.smk
+       ├──  ...</code></pre>
 <h2 id="conda-environment-based-on-the-qc.yml-file">Conda environment based on the qc.yml file:</h2>
+<p>Create a new file in workflow directory as follow,</p>
 <pre><code>name: qc # conda environment name
 channels: 
+    - defaults
     - bioconda
+    - conda-forge
 dependencies:
     - fastqc=0.11.9 # quality check of fastq data (java)
     - multiqc=1.13 # reports aggregation (R package)</code></pre>
 <h2 id="data-management">Data management</h2>
-<pre><code># Go to data/mydatalocal
-$ cd ~/data/mydatalocal
-$ wget &quot;https://zenodo.org/record/3997237/files/FAIR_Bioinfo_data.tar.gz?download=1&quot;
-$ mv &#39;FAIR_Bioinfo_data.tar.gz?download=1&#39; FAIR_Bioinfo_data.tar.gz
-$ tar xvzf FAIR_Bioinfo_data.tar.gz
-$ ls Data
-O.tauri_annotation.gff  SRR3099585_chr18.fastq.gz  SRR3099587_chr18.fastq.gz  SRR3105698_chr18.fastq.gz
-O.tauri_genome.fna      SRR3099586_chr18.fastq.gz  SRR3105697_chr18.fastq.gz  SRR3105699_chr18.fastq.gz</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co"># Go to data/mydatalocal</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="bu">cd</span> ~/data/mydatalocal</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="fu">wget</span> <span class="st">&quot;https://zenodo.org/record/3997237/files/FAIR_Bioinfo_data.tar.gz?download=1&quot;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="fu">mv</span> <span class="st">&#39;FAIR_Bioinfo_data.tar.gz?download=1&#39;</span> FAIR_Bioinfo_data.tar.gz</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="fu">tar</span> xvzf FAIR_Bioinfo_data.tar.gz</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="fu">ls</span> Data</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a><span class="ex">O.tauri_annotation.gff</span>  SRR3099585_chr18.fastq.gz  SRR3099587_chr18.fastq.gz  SRR3105698_chr18.fastq.gz</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a><span class="ex">O.tauri_genome.fna</span>      SRR3099586_chr18.fastq.gz  SRR3105697_chr18.fastq.gz  SRR3105699_chr18.fastq.gz</span></code></pre></div>
 <h2 id="workflow-definition">Workflow definition</h2>
-<ol type="1">
-<li>The Snakefile example</li>
-</ol>
-<p>The final objective is to create a snakefile to manage a small workflow with 2 steps: i) fastqc ii) multiqc These two tools belonging to the bioinformatics domain allow to check the quality of high throughput sequence data. They are accessible via a Conda environment, envfair.yml</p>
-<p>note: If you have already run this notebook, you may need to run: $ rm -Rf results/FastQC results/multiqc_data results/multiqc_report.html</p>
-<ol start="2" type="1">
-<li>Objective 1: The rule concept</li>
-</ol>
-<p>Objective 1: Create a snakemake file named ex1.smk including the first step of the RNAseq workflow (the reads quality checking thank to the fastqc tool) on one of the RNAseq files</p>
-<p>fastqc access: through a conda environment (see prerequisites on top) fastqc command: fastqc –outdir results/FastQC inputFileName</p>
-<p>inputFileName: SRR3099585_chr18.fastq.gz in the ${PWD}/Data directory outputfiles produced in outdirectory: The 2 result files (*_fastqc.zip &amp; *_fastqc.html) will be located in your outdir and named based on the prefix of input file (eg. SRR3099585_chr18_fastqc.zip)</p>
+<h3 id="the-snakefile-example">1. The Snakefile example</h3>
+<p>The final objective is to create a <code>Snakefile</code> to manage a small workflow with 2 steps: i) fastqc ii) multiqc</p>
+<p>These two tools belonging to the bioinformatics domain allow to check the quality of high throughput sequence data. They are accessible via a Conda environment, <code>qc.yml</code></p>
+<p>note: If you have already run this notebook, you may need to run:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="fu">rm</span> -Rf results/FastQC results/multiqc_data results/multiqc_report.html</span></code></pre></div>
+<h3 id="objective-1-understanding-the-rule-concept">2. Objective 1: Understanding the rule concept</h3>
+<p>Create a snakemake file named <code>Snakefile.ex1.smk</code> including the first step of the RNAseq workflow (the reads quality checking thank to the fastqc tool) on one of the RNAseq files</p>
+<p>fastqc access: through a conda environment (see prerequisites on top)</p>
+<pre><code>fastqc command line: fastqc --outdir results/FastQC inputFileName
+inputFileName: SRR3099585_chr18.fastq.gz in the ${PWD}/Data directory
+outputfiles produced in outdir:
+The 2 result files (*_fastqc.zip &amp; *_fastqc.html) will be located in your outdirectory and named based on the prefix of input file (eg. SRR3099585_chr18_fastqc.zip)</code></pre>
 <p>Create the Snakefile</p>
-<pre><code># got to snakemake directory and create a new file called `Snakefile_ex1.smk`
-$ cd ~/snakemake
-$ touch Snakefile
-# edit the file with `nano` editor for example:
-
-rule fastqc:
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="co"># Go to workflow directory and create a new file called `Snakefile_ex1.smk`</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="bu">cd</span> ~/workflow</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="fu">touch</span> Snakefile.ex1.smk</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a><span class="co"># edit the file with `nano` editor for example:</span></span></code></pre></div>
+<pre><code>rule fastqc:
     input:
         &quot;data/mydatalocal/Data/SRR3099585_chr18.fastq.gz&quot;
     output:
@@ -138,16 +237,61 @@ rule fastqc:
         envs/qc.yaml
     shell: &quot;fastqc --outdir results/FastQC/ {input}&quot;</code></pre>
 <p>Then execute snakemake:</p>
-<pre><code>$ pwd
-/home/ubuntu
-$ snakemake --snakefile snakemake/Snakefile.ex1.smk --cores 1 --use-conda</code></pre>
-<p>Building DAG of jobs…</p>
-<ol start="3" type="1">
-<li>Objective 2: One rule, 2 input files</li>
-</ol>
-<p>Objective 2: Add a second input RNAseq file to the rule.</p>
-<p>Hint: second input file: Data/SRR3099586_chr18.fastq.gz don’t forget to add the cognate output files</p>
-<p>Objective 2: Solution Create another Snakefile called Snakedile.ex2.smk:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="bu">pwd</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a><span class="ex">/home/ubuntu</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="ex">snakemake</span> --snakefile workflow/Snakefile.ex1.smk --cores 1 --use-conda</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true"></a><span class="ex">Building</span> DAG of jobs...</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true"></a><span class="ex">Creating</span> conda environment workflow/envs/qc.yaml...</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true"></a><span class="ex">Downloading</span> and installing remote packages.</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true"></a><span class="ex">Environment</span> for /home/ubuntu/workflow/envs/qc.yaml created (location: .snakemake/conda/1cfd55d9dd88f128b691aad4280f97b3_)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true"></a><span class="ex">Using</span> shell: /usr/bin/bash</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true"></a><span class="ex">Provided</span> cores: 1 (use --cores to define parallelism)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true"></a><span class="ex">Rules</span> claiming more threads will be scaled down.</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true"></a><span class="ex">Job</span> stats:</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true"></a><span class="ex">job</span>       count    min threads    max threads</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true"></a><span class="ex">------</span>  -------  -------------  -------------</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true"></a><span class="ex">all</span>           1              1              1</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true"></a><span class="ex">fastqc</span>        1              1              1</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true"></a><span class="ex">total</span>         2              1              1</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true"></a><span class="ex">Select</span> jobs to execute...</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true"></a><span class="ex">rule</span> fastqc:</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true"></a>    <span class="ex">input</span>: data/mydatalocal/Data/SRR3099585_chr18.fastq.gz</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true"></a>    <span class="ex">output</span>: results/FastQC/SRR3099585_chr18_fastqc.zip, results/FastQC/SRR3099585_chr18_fastqc.html</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true"></a>    <span class="ex">jobid</span>: 1</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true"></a>    <span class="ex">reason</span>: Missing output files: results/FastQC/SRR3099585_chr18_fastqc.zip, results/FastQC/SRR3099585_chr18_fastqc.html</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true"></a>    <span class="ex">resources</span>: tmpdir=/tmp</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true"></a></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true"></a><span class="ex">Activating</span> conda environment: .snakemake/conda/1cfd55d9dd88f128b691aad4280f97b3_</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true"></a><span class="ex">Started</span> analysis of SRR3099585_chr18.fastq.gz</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true"></a><span class="ex">Approx</span> 5% complete for SRR3099585_chr18.fastq.gz</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true"></a><span class="ex">Approx</span> 10% complete for SRR3099585_chr18.fastq.gz</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true"></a><span class="ex">...</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true"></a><span class="ex">Analysis</span> complete for SRR3099585_chr18.fastq.gz</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true"></a></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true"></a><span class="ex">Finished</span> job 1.</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true"></a><span class="ex">1</span> of 2 steps (50%) <span class="kw">done</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true"></a><span class="ex">Select</span> jobs to execute...</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true"></a></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true"></a><span class="ex">Finished</span> job 1.</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true"></a><span class="ex">1</span> of 2 steps (50%) <span class="kw">done</span></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true"></a><span class="ex">Select</span> jobs to execute...</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true"></a></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true"></a><span class="ex">localrule</span> all:</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true"></a>    <span class="ex">input</span>: results/FastQC/SRR3099585_chr18_fastqc.zip, results/FastQC/SRR3099585_chr18_fastqc.html</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true"></a>    <span class="ex">jobid</span>: 0</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true"></a>    <span class="ex">reason</span>: Input files updated by another job: results/FastQC/SRR3099585_chr18_fastqc.zip, results/FastQC/SRR3099585_chr18_fastqc.html</span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true"></a>    <span class="ex">resources</span>: tmpdir=/tmp</span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true"></a></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true"></a><span class="ex">Finished</span> job 0.</span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true"></a><span class="ex">2</span> of 2 steps (100%) <span class="kw">done</span></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true"></a><span class="ex">Complete</span> log: .snakemake/log/2023-07-06T095157.460406.snakemake.log</span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true"></a></span></code></pre></div>
+<h3 id="objective-2-one-rule-2-input-files">3. Objective 2: One rule, 2 input files</h3>
+<p>Add a second input RNAseq file to the rule, for exemple Data/SRR3099586_chr18.fastq.gz</p>
+<p>Don’t forget to add the cognate output files in the Snakefile !</p>
+<p>Create a new Snakefile Snakefile.ex2.smk containing:</p>
 <pre><code>rule fastqc:
   output:
     &quot;FastQC/SRR3099585_chr18_fastqc.zip&quot;, 
@@ -159,15 +303,55 @@ $ snakemake --snakefile snakemake/Snakefile.ex1.smk --cores 1 --use-conda</code>
     &quot;Data/SRR3099586_chr18.fastq.gz&quot;
   shell: &quot;fastqc --outdir FastQC/ {input}&quot;</code></pre>
 <p>Then execute snakemake:</p>
-<pre><code>$ pwd
-/home/ubuntu
-$ snakemake --snakefile snakemake/Snakefile.ex2.smk --cores 1 --use-conda</code></pre>
-<ol start="4" type="1">
-<li>Objective 3: Manage all the RNAseq files</li>
-</ol>
-<p>Boring with writing all input and output file names? Use the expand() function to manage all the input RNAseq files at once.</p>
-<p>Hint: Create a Python list at the begining of the snakefile and containing all the basename of the input files (don’t include the .fastq.gz suffix). Python list format: list_name = [“item1”, “item2”, …, “itemN”] replace the filename lists of the input and output directives by the expand() function</p>
-<p>Create another Snakefile called Snakedile.ex3.smk:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="bu">pwd</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a><span class="ex">/home/ubuntu</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="ex">snakemake</span> --snakefile workflow/Snakefile.ex2.smk --cores 1 --use-conda</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true"></a><span class="ex">Building</span> DAG of jobs...</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true"></a><span class="ex">Using</span> shell: /usr/bin/bash</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true"></a><span class="ex">Provided</span> cores: 1 (use --cores to define parallelism)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true"></a><span class="ex">Rules</span> claiming more threads will be scaled down.</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true"></a><span class="ex">Job</span> stats:</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true"></a><span class="ex">job</span>       count    min threads    max threads</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true"></a><span class="ex">------</span>  -------  -------------  -------------</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true"></a><span class="ex">all</span>           1              1              1</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true"></a><span class="ex">fastqc</span>        1              1              1</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true"></a><span class="ex">total</span>         2              1              1</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true"></a><span class="ex">Select</span> jobs to execute...</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true"></a><span class="ex">rule</span> fastqc:</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true"></a>    <span class="ex">input</span>: data/mydatalocal/Data/SRR3099585_chr18.fastq.gz, data/mydatalocal/Data/SRR3099586_chr18.fastq.gz</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true"></a>    <span class="ex">output</span>: results/FastQC/SRR3099585_chr18_fastqc.zip, results/FastQC/SRR3099585_chr18_fastqc.html, results/FastQC/SRR3099586_chr18_fastqc.zip, results/FastQC/SRR3099586_chr18_fastqc.html</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true"></a>    <span class="ex">jobid</span>: 1</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true"></a>    <span class="ex">reason</span>: Missing output files: results/FastQC/SRR3099586_chr18_fastqc.html, results/FastQC/SRR3099586_chr18_fastqc.zip<span class="kw">;</span> <span class="ex">Set</span> of input files has changed since last execution</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true"></a>    <span class="ex">resources</span>: tmpdir=/tmp</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true"></a></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true"></a><span class="ex">Activating</span> conda environment: .snakemake/conda/1cfd55d9dd88f128b691aad4280f97b3_</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true"></a></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true"></a><span class="ex">Finished</span> job 1.</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true"></a><span class="ex">1</span> of 2 steps (50%) <span class="kw">done</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true"></a><span class="ex">Select</span> jobs to execute...</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true"></a></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true"></a>[<span class="ex">Thu</span> Jul  6 10:08:14 2023]</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true"></a><span class="ex">localrule</span> all:</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true"></a>    <span class="ex">input</span>: results/FastQC/SRR3099585_chr18_fastqc.zip, results/FastQC/SRR3099585_chr18_fastqc.html, results/FastQC/SRR3099586_chr18_fastqc.zip, results/FastQC/SRR3099586_chr18_fastqc.html</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true"></a>    <span class="ex">jobid</span>: 0</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true"></a>    <span class="ex">reason</span>: Input files updated by another job: results/FastQC/SRR3099585_chr18_fastqc.zip, results/FastQC/SRR3099586_chr18_fastqc.zip, results/FastQC/SRR3099585_chr18_fastqc.html, results/FastQC/SRR3099586_chr18_fastqc.html</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true"></a>    <span class="ex">resources</span>: tmpdir=/tmp</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true"></a></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true"></a>[<span class="ex">Thu</span> Jul  6 10:08:14 2023]</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true"></a><span class="ex">Finished</span> job 0.</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true"></a><span class="ex">2</span> of 2 steps (100%) <span class="kw">done</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true"></a><span class="ex">Complete</span> log: .snakemake/log/2023-07-06T100804.103180.snakemake.log</span></code></pre></div>
+<h3 id="objective-3-manage-all-the-rnaseq-files">4. Objective 3: Manage all the RNAseq files</h3>
+<p>Boring with writing all input and output file names ?</p>
+<p>Hint:</p>
+<p>Use the expand() function to manage all the input RNAseq files at once.</p>
+<p>Create a Python list at the begining of the snakefile and containing all the basename of the input files (don’t include the .fastq.gz suffix).</p>
+<pre><code>Python list format: list_name = [&quot;item1&quot;, &quot;item2&quot;, ..., &quot;itemN&quot;]
+Replace the filename lists of the input and output directives by the `expand()` function.</code></pre>
+<p>Create another Snakefile called Snakefile.ex3.smk containing:</p>
 <pre><code>SAMPLES=[&quot;SRR3099585_chr18&quot;,&quot;SRR3099586_chr18&quot;,&quot;SRR3099587_chr18&quot;, &quot;SRR3105697_chr18&quot;, &quot;SRR3105698_chr18&quot;, &quot;SRR3105699_chr18&quot;]
 
 rule fastqc:
@@ -178,15 +362,58 @@ rule fastqc:
         expand(&quot;data/{sample}.fastq.gz&quot;, sample=SAMPLES)
   shell: &quot;fastqc --outdir FastQC {input}&quot;</code></pre>
 <p>Then execute snakemake:</p>
-<pre><code>$ pwd
-/home/ubuntu
-$`snakemake --snakefile snakemake/Snakefile.ex3.smk --cores 1 --use-conda</code></pre>
-<ol start="5" type="1">
-<li>Objective 4: Add a second step</li>
-</ol>
-<p>With a second tool, it is a “real” analysis workflow! The second tool multiqc will aggregate all the fastqc results.</p>
-<p>Hint: multiqc command: multiqc *_fastqc.zip multiqc inputs: the fastqc zip files 2 outputs of multiqc: a file multiqc_report.html &amp; a repository multiqc_data (to manage with directory(“multiqc_data”))</p>
-<p>Create another Snakefile called Snakedile.ex4.smk:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="bu">pwd</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true"></a><span class="ex">/home/ubuntu</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="ex">snakemake</span> --snakefile workflow/Snakefile.ex3.smk --cores 1 --use-conda</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true"></a><span class="ex">Building</span> DAG of jobs...</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true"></a><span class="ex">Using</span> shell: /usr/bin/bash</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true"></a><span class="ex">Provided</span> cores: 1 (use --cores to define parallelism)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true"></a><span class="ex">Rules</span> claiming more threads will be scaled down.</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true"></a><span class="ex">Job</span> stats:</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true"></a><span class="ex">job</span>       count    min threads    max threads</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true"></a><span class="ex">------</span>  -------  -------------  -------------</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true"></a><span class="ex">all</span>           1              1              1</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true"></a><span class="ex">fastqc</span>        1              1              1</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true"></a><span class="ex">total</span>         2              1              1</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true"></a><span class="ex">Select</span> jobs to execute...</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true"></a>[<span class="ex">Thu</span> Jul  6 11:15:19 2023]</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true"></a><span class="ex">rule</span> fastqc:</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true"></a>    <span class="ex">input</span>: data/mydatalocal/Data/SRR3099585_chr18.fastq.gz, data/mydatalocal/Data/SRR3099586_chr18.fastq.gz, data/mydatalocal/Data/SRR3099587_chr18.fastq.gz, data/mydatalocal/Data/SRR3105697_chr18.fastq.gz, data/mydatalocal/Data/SRR3105698_chr18.fastq.gz, data/mydatalocal/Data/SRR3105699_chr18.fastq.gz, data/mydatalocal/Data/SRR3099585_chr18.fastq.gz, data/mydatalocal/Data/SRR3099586_chr18.fastq.gz, data/mydatalocal/Data/SRR3099587_chr18.fastq.gz, data/mydatalocal/Data/SRR3105697_chr18.fastq.gz, data/mydatalocal/Data/SRR3105698_chr18.fastq.gz, data/mydatalocal/Data/SRR3105699_chr18.fastq.gz</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true"></a>    <span class="ex">output</span>: results/FastQC/SRR3099585_chr18_fastqc.zip, results/FastQC/SRR3099586_chr18_fastqc.zip, results/FastQC/SRR3099587_chr18_fastqc.zip, results/FastQC/SRR3105697_chr18_fastqc.zip, results/FastQC/SRR3105698_chr18_fastqc.zip, results/FastQC/SRR3105699_chr18_fastqc.zip, results/FastQC/SRR3099585_chr18_fastqc.html, results/FastQC/SRR3099586_chr18_fastqc.html, results/FastQC/SRR3099587_chr18_fastqc.html, results/FastQC/SRR3105697_chr18_fastqc.html, results/FastQC/SRR3105698_chr18_fastqc.html, results/FastQC/SRR3105699_chr18_fastqc.html</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true"></a>    <span class="ex">jobid</span>: 1</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true"></a>    <span class="ex">reason</span>: Missing output files: results/FastQC/SRR3105697_chr18_fastqc.zip, results/FastQC/SRR3099587_chr18_fastqc.zip, results/FastQC/SRR3105697_chr18_fastqc.html, results/FastQC/SRR3105698_chr18_fastqc.html, results/FastQC/SRR3099587_chr18_fastqc.html, results/FastQC/SRR3105698_chr18_fastqc.zip, results/FastQC/SRR3105699_chr18_fastqc.zip, results/FastQC/SRR3105699_chr18_fastqc.html<span class="kw">;</span> <span class="ex">Set</span> of input files has changed since last execution</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true"></a>    <span class="ex">resources</span>: tmpdir=/tmp</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true"></a></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true"></a><span class="ex">Activating</span> conda environment: .snakemake/conda/1cfd55d9dd88f128b691aad4280f97b3_</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true"></a><span class="ex">Started</span> analysis of SRR3099585_chr18.fastq.gz</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true"></a><span class="ex">Approx</span> 5% complete for SRR3099585_chr18.fastq.gz</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true"></a><span class="ex">...</span></span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true"></a><span class="ex">Analysis</span> complete for SRR3099585_chr18.fastq.gz</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true"></a><span class="ex">Started</span> analysis of SRR3099586_chr18.fastq.gz</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true"></a><span class="ex">...</span></span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true"></a><span class="ex">Finished</span> job 1.</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true"></a><span class="ex">1</span> of 2 steps (50%) <span class="kw">done</span></span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true"></a><span class="ex">Select</span> jobs to execute...</span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true"></a></span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true"></a><span class="ex">localrule</span> all:</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true"></a>    <span class="ex">input</span>: results/FastQC/SRR3099585_chr18_fastqc.zip, results/FastQC/SRR3099586_chr18_fastqc.zip, results/FastQC/SRR3099587_chr18_fastqc.zip, results/FastQC/SRR3105697_chr18_fastqc.zip, results/FastQC/SRR3105698_chr18_fastqc.zip, results/FastQC/SRR3105699_chr18_fastqc.zip, results/FastQC/SRR3099585_chr18_fastqc.html, results/FastQC/SRR3099586_chr18_fastqc.html, results/FastQC/SRR3099587_chr18_fastqc.html, results/FastQC/SRR3105697_chr18_fastqc.html, results/FastQC/SRR3105698_chr18_fastqc.html, results/FastQC/SRR3105699_chr18_fastqc.html</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true"></a>    <span class="ex">jobid</span>: 0</span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true"></a>    <span class="ex">reason</span>: Input files updated by another job: results/FastQC/SRR3105697_chr18_fastqc.zip, results/FastQC/SRR3099587_chr18_fastqc.zip, results/FastQC/SRR3105697_chr18_fastqc.html, results/FastQC/SRR3105699_chr18_fastqc.zip, results/FastQC/SRR3099585_chr18_fastqc.html, results/FastQC/SRR3105698_chr18_fastqc.html, results/FastQC/SRR3099587_chr18_fastqc.html, results/FastQC/SRR3099586_chr18_fastqc.html, results/FastQC/SRR3105698_chr18_fastqc.zip, results/FastQC/SRR3099585_chr18_fastqc.zip, results/FastQC/SRR3099586_chr18_fastqc.zip, results/FastQC/SRR3105699_chr18_fastqc.html</span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true"></a>    <span class="ex">resources</span>: tmpdir=/tmp</span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true"></a></span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true"></a><span class="ex">Finished</span> job 0.</span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true"></a><span class="ex">2</span> of 2 steps (100%) <span class="kw">done</span></span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true"></a></span></code></pre></div>
+<h3 id="objective-4-add-a-second-step">5. Objective 4: Add a second step</h3>
+<p>With a second tool, it starts becoming an analysis workflow!</p>
+<p>The second tool, multiqc will aggregate all the fastqc results.</p>
+<pre><code>multiqc command line : multiqc *_fastqc.zip
+inputs: the fastqc zip files
+2 outputs: a file multiqc_report.html &amp; a repository multiqc_data (to manage with directory(&quot;multiqc_data&quot;))</code></pre>
+<p>Create another Snakefile called Snakefile.ex4.smk:</p>
 <pre><code>SAMPLES=[&quot;SRR3099585_chr18&quot;, &quot;SRR3099586_chr18&quot;, &quot;SRR3099587_chr18&quot;, &quot;SRR3105697_chr18&quot;, &quot;SRR3105698_chr18&quot;, &quot;SRR3105699_chr18&quot;]
 
 rule all:
@@ -214,12 +441,81 @@ rule multiqc:
     shell:
         &quot;multiqc --outdir results/multiqc {input}&quot;</code></pre>
 <p>Then execute snakemake:</p>
-<pre><code>$ pwd
-/home/ubuntu
-$ snakemake --snakefile snakemake/Snakefile.ex4.smk --cores 1 --use-conda</code></pre>
-<ol start="6" type="1">
-<li>Extra objective, th log file</li>
-</ol>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="bu">pwd</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true"></a><span class="ex">/home/ubuntu</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true"></a><span class="kw">(</span><span class="ex">snakemake</span><span class="kw">)</span>$ <span class="ex">snakemake</span> --snakefile workflow/Snakefile.ex4.smk --cores 1 --use-conda</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true"></a><span class="ex">Building</span> DAG of jobs...</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true"></a><span class="ex">Creating</span> conda environment workflow/envs/qc.yaml...</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true"></a><span class="ex">Downloading</span> and installing remote packages.</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true"></a><span class="ex">Environment</span> for /home/ubuntu/workflow/envs/qc.yaml created (location: .snakemake/conda/efe5c6f7911ea7c09bf27b3f1015bb80_)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true"></a><span class="ex">Using</span> shell: /usr/bin/bash</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true"></a><span class="ex">Provided</span> cores: 1 (use --cores to define parallelism)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true"></a><span class="ex">Rules</span> claiming more threads will be scaled down.</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true"></a><span class="ex">Job</span> stats:</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true"></a><span class="ex">job</span>        count    min threads    max threads</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true"></a><span class="ex">-------</span>  -------  -------------  -------------</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true"></a><span class="ex">all</span>            1              1              1</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true"></a><span class="ex">fastqc</span>         1              1              1</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true"></a><span class="ex">multiqc</span>        1              1              1</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true"></a><span class="ex">total</span>          3              1              1</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true"></a></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true"></a><span class="ex">Select</span> jobs to execute...</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true"></a></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true"></a><span class="ex">...</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true"></a></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true"></a><span class="ex">rule</span> fastqc:</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true"></a>    <span class="ex">input</span>: data/mydatalocal/Data/SRR3099585_chr18.fastq.gz, data/mydatalocal/Data/SRR3099586_chr18.fastq.gz, data/mydatalocal/Data/SRR3099587_chr18.fastq.gz, data/mydatalocal/Data/SRR3105697_chr18.fastq.gz, data/mydatalocal/Data/SRR3105698_chr18.fastq.gz, data/mydatalocal/Data/SRR3105699_chr18.fastq.gz</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true"></a>    <span class="ex">output</span>: results/FastQC/SRR3099585_chr18_fastqc.zip, results/FastQC/SRR3099586_chr18_fastqc.zip, results/FastQC/SRR3099587_chr18_fastqc.zip, results/FastQC/SRR3105697_chr18_fastqc.zip, results/FastQC/SRR3105698_chr18_fastqc.zip, results/FastQC/SRR3105699_chr18_fastqc.zip, results/FastQC/SRR3099585_chr18_fastqc.html, results/FastQC/SRR3099586_chr18_fastqc.html, results/FastQC/SRR3099587_chr18_fastqc.html, results/FastQC/SRR3105697_chr18_fastqc.html, results/FastQC/SRR3105698_chr18_fastqc.html, results/FastQC/SRR3105699_chr18_fastqc.html</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true"></a>    <span class="ex">jobid</span>: 1</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true"></a>    <span class="ex">reason</span>: Missing output files: results/FastQC/SRR3105698_chr18_fastqc.html, results/FastQC/SRR3105697_chr18_fastqc.html, results/FastQC/SRR3099587_chr18_fastqc.zip, results/FastQC/SRR3099586_chr18_fastqc.zip, results/FastQC/SRR3105697_chr18_fastqc.zip, results/FastQC/SRR3105699_chr18_fastqc.zip, results/FastQC/SRR3105699_chr18_fastqc.html, results/FastQC/SRR3105698_chr18_fastqc.zip, results/FastQC/SRR3099586_chr18_fastqc.html, results/FastQC/SRR3099587_chr18_fastqc.html, results/FastQC/SRR3099585_chr18_fastqc.html, results/FastQC/SRR3099585_chr18_fastqc.zip</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true"></a>    <span class="ex">resources</span>: tmpdir=/tmp</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true"></a></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true"></a><span class="ex">Activating</span> conda environment: .snakemake/conda/efe5c6f7911ea7c09bf27b3f1015bb80_</span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true"></a></span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true"></a><span class="ex">...</span></span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true"></a><span class="ex">Finished</span> job 1.</span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true"></a><span class="ex">1</span> of 3 steps (33%) <span class="kw">done</span></span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true"></a><span class="ex">Select</span> jobs to execute...</span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true"></a></span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true"></a><span class="ex">rule</span> multiqc:</span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true"></a>    <span class="ex">input</span>: results/FastQC/SRR3099585_chr18_fastqc.zip, results/FastQC/SRR3099586_chr18_fastqc.zip, results/FastQC/SRR3099587_chr18_fastqc.zip, results/FastQC/SRR3105697_chr18_fastqc.zip, results/FastQC/SRR3105698_chr18_fastqc.zip, results/FastQC/SRR3105699_chr18_fastqc.zip</span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true"></a>    <span class="ex">output</span>: results/multiqc/multiqc_report.html</span>
+<span id="cb20-41"><a href="#cb20-41" aria-hidden="true"></a>    <span class="ex">jobid</span>: 2</span>
+<span id="cb20-42"><a href="#cb20-42" aria-hidden="true"></a>    <span class="ex">reason</span>: Missing output files: results/multiqc/multiqc_report.html<span class="kw">;</span> <span class="ex">Input</span> files updated by another job: results/FastQC/SRR3105697_chr18_fastqc.zip, results/FastQC/SRR3099585_chr18_fastqc.zip, results/FastQC/SRR3105699_chr18_fastqc.zip, results/FastQC/SRR3105698_chr18_fastqc.zip, results/FastQC/SRR3099587_chr18_fastqc.zip, results/FastQC/SRR3099586_chr18_fastqc.zip</span>
+<span id="cb20-43"><a href="#cb20-43" aria-hidden="true"></a>    <span class="ex">resources</span>: tmpdir=/tmp</span>
+<span id="cb20-44"><a href="#cb20-44" aria-hidden="true"></a></span>
+<span id="cb20-45"><a href="#cb20-45" aria-hidden="true"></a><span class="ex">Activating</span> conda environment: .snakemake/conda/efe5c6f7911ea7c09bf27b3f1015bb80_</span>
+<span id="cb20-46"><a href="#cb20-46" aria-hidden="true"></a></span>
+<span id="cb20-47"><a href="#cb20-47" aria-hidden="true"></a>  <span class="ex">///</span> MultiQC 🔍 <span class="kw">|</span> <span class="ex">v1.14</span></span>
+<span id="cb20-48"><a href="#cb20-48" aria-hidden="true"></a></span>
+<span id="cb20-49"><a href="#cb20-49" aria-hidden="true"></a><span class="kw">|</span>           <span class="ex">multiqc</span> <span class="kw">|</span> <span class="ex">Search</span> path : /home/ubuntu/results/FastQC/SRR3099585_chr18_fastqc.zip</span>
+<span id="cb20-50"><a href="#cb20-50" aria-hidden="true"></a><span class="kw">|</span>           <span class="ex">multiqc</span> <span class="kw">|</span> <span class="ex">Search</span> path : /home/ubuntu/results/FastQC/SRR3099586_chr18_fastqc.zip</span>
+<span id="cb20-51"><a href="#cb20-51" aria-hidden="true"></a><span class="kw">|</span>           <span class="ex">multiqc</span> <span class="kw">|</span> <span class="ex">Search</span> path : /home/ubuntu/results/FastQC/SRR3099587_chr18_fastqc.zip</span>
+<span id="cb20-52"><a href="#cb20-52" aria-hidden="true"></a><span class="kw">|</span>           <span class="ex">multiqc</span> <span class="kw">|</span> <span class="ex">Search</span> path : /home/ubuntu/results/FastQC/SRR3105697_chr18_fastqc.zip</span>
+<span id="cb20-53"><a href="#cb20-53" aria-hidden="true"></a><span class="kw">|</span>           <span class="ex">multiqc</span> <span class="kw">|</span> <span class="ex">Search</span> path : /home/ubuntu/results/FastQC/SRR3105698_chr18_fastqc.zip</span>
+<span id="cb20-54"><a href="#cb20-54" aria-hidden="true"></a><span class="kw">|</span>           <span class="ex">multiqc</span> <span class="kw">|</span> <span class="ex">Search</span> path : /home/ubuntu/results/FastQC/SRR3105699_chr18_fastqc.zip</span>
+<span id="cb20-55"><a href="#cb20-55" aria-hidden="true"></a><span class="kw">|</span>         <span class="ex">searching</span> <span class="kw">|</span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class="ex">100%</span> 6/6  </span>
+<span id="cb20-56"><a href="#cb20-56" aria-hidden="true"></a><span class="kw">|</span>            <span class="ex">fastqc</span> <span class="kw">|</span> <span class="ex">Found</span> 6 reports</span>
+<span id="cb20-57"><a href="#cb20-57" aria-hidden="true"></a><span class="kw">|</span>           <span class="ex">multiqc</span> <span class="kw">|</span> <span class="ex">Compressing</span> plot data</span>
+<span id="cb20-58"><a href="#cb20-58" aria-hidden="true"></a><span class="kw">|</span>           <span class="ex">multiqc</span> <span class="kw">|</span> <span class="ex">Report</span>      : results/multiqc/multiqc_report.html</span>
+<span id="cb20-59"><a href="#cb20-59" aria-hidden="true"></a><span class="kw">|</span>           <span class="ex">multiqc</span> <span class="kw">|</span> <span class="ex">Data</span>        : results/multiqc/multiqc_data</span>
+<span id="cb20-60"><a href="#cb20-60" aria-hidden="true"></a><span class="kw">|</span>           <span class="ex">multiqc</span> <span class="kw">|</span> <span class="ex">MultiQC</span> complete</span>
+<span id="cb20-61"><a href="#cb20-61" aria-hidden="true"></a></span>
+<span id="cb20-62"><a href="#cb20-62" aria-hidden="true"></a><span class="ex">Finished</span> job 2.</span>
+<span id="cb20-63"><a href="#cb20-63" aria-hidden="true"></a><span class="ex">2</span> of 3 steps (67%) <span class="kw">done</span></span>
+<span id="cb20-64"><a href="#cb20-64" aria-hidden="true"></a><span class="ex">Select</span> jobs to execute...</span>
+<span id="cb20-65"><a href="#cb20-65" aria-hidden="true"></a></span>
+<span id="cb20-66"><a href="#cb20-66" aria-hidden="true"></a><span class="ex">localrule</span> all:</span>
+<span id="cb20-67"><a href="#cb20-67" aria-hidden="true"></a>    <span class="ex">input</span>: results/FastQC/SRR3099585_chr18_fastqc.html, results/FastQC/SRR3099586_chr18_fastqc.html, results/FastQC/SRR3099587_chr18_fastqc.html, results/FastQC/SRR3105697_chr18_fastqc.html, results/FastQC/SRR3105698_chr18_fastqc.html, results/FastQC/SRR3105699_chr18_fastqc.html, results/multiqc/multiqc_report.html</span>
+<span id="cb20-68"><a href="#cb20-68" aria-hidden="true"></a>    <span class="ex">jobid</span>: 0</span>
+<span id="cb20-69"><a href="#cb20-69" aria-hidden="true"></a>    <span class="ex">reason</span>: Input files updated by another job: results/FastQC/SRR3105698_chr18_fastqc.html, results/FastQC/SRR3105697_chr18_fastqc.html, results/multiqc/multiqc_report.html, results/FastQC/SRR3105699_chr18_fastqc.html, results/FastQC/SRR3099586_chr18_fastqc.html, results/FastQC/SRR3099587_chr18_fastqc.html, results/FastQC/SRR3099585_chr18_fastqc.html</span>
+<span id="cb20-70"><a href="#cb20-70" aria-hidden="true"></a>    <span class="ex">resources</span>: tmpdir=/tmp</span>
+<span id="cb20-71"><a href="#cb20-71" aria-hidden="true"></a></span>
+<span id="cb20-72"><a href="#cb20-72" aria-hidden="true"></a><span class="ex">Finished</span> job 0.</span>
+<span id="cb20-73"><a href="#cb20-73" aria-hidden="true"></a><span class="ex">3</span> of 3 steps (100%) <span class="kw">done</span></span>
+<span id="cb20-74"><a href="#cb20-74" aria-hidden="true"></a><span class="ex">Complete</span> log: .snakemake/log/2023-07-06T140543.494495.snakemake.log</span></code></pre></div>
+<h3 id="extra-objective-the-log-file">6. Extra objective, the log file</h3>
 <p>Objective 6: In Unix systems, the output of a command is usually sent to 2 separate streams: the expected output to Standard Out (stdout, or ”&gt;”), and the error messages to Standard Error (stderr, or ”2&gt;”). To integrate stderr and stdout into the same log, use ”&amp;&gt;” (use it with care because output files are often printed to stdout).</p>
 <p>Hint: Redirect the stdout and stderr streams of the fastqc and multiqc rules by adding a ”log:” directive with two variables, out and err to separately redirect each streams.</p>
 <pre><code>  log:
@@ -231,7 +527,6 @@ $ snakemake --snakefile snakemake/Snakefile.ex4.smk --cores 1 --use-conda</code>
     std=&quot;Logs/multiqc.std&quot;,
     err=&quot;Logs/multiqc.err&quot;
   shell: &quot;multiqc {input} 1&gt;{log.std} 2&gt;{log.err}&quot; </code></pre>
-<p>A starting point is available in Snakefile.ex5.smk.</p>
             </div>
     </div>
   </div>
