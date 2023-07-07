@@ -57,8 +57,8 @@
 
         <ul>
         <li><a
-        href="#introduction-to-code-versioning-with-git">Introduction to
-        code versioning with git</a>
+        href="#introduction-au-versionnage-de-son-code-avec-git">Introduction
+        au versionnage de son code avec git</a>
         <ul>
         <li><a href="#i-configuration">I/ Configuration</a></li>
         <li><a href="#ii-premier-test-en-local">II/ Premier test en
@@ -79,17 +79,18 @@
             <div class="span9">
 
       
-      <h1 id="introduction-to-code-versioning-with-git">Introduction to
-code versioning with git</h1>
+      <h1
+id="introduction-au-versionnage-de-son-code-avec-git">Introduction au
+versionnage de son code avec git</h1>
 <p>Mateo Hiriart<br />
 2023-07-10</p>
 <p>Dans ce TP nous allons voir les bases de git afin de créer un projet
-et de versionner notre code pour garder une trace des modifications
-faites dans le temps.</p>
+et de versionner son code pour garder une trace des modifications faites
+dans le temps.</p>
 <p>Liens et commandes pour vous aider:<br />
-   Documentation:<a
+   Documentation : <a
 href="https://docs.github.com/fr">https://docs.github.com/fr</a><br />
-   Equivalent man: <a
+   Equivalent man : <a
 href="https://git-scm.com/doc">https://git-scm.com/doc</a><br />
    <code>git help</code></p>
 <h2 id="i-configuration">I/ Configuration</h2>
@@ -97,14 +98,15 @@ href="https://git-scm.com/doc">https://git-scm.com/doc</a><br />
 <li><p>Créer un compte sur <a href="https://github.com/">github</a> ou
 <a href="https://gitlab.com">gitlab</a></p></li>
 <li><p>A l’aide de la documentation configurez votre environnement avec
-la commande <code>git config</code> and ssh</p></li>
+la commande <code>git config</code>, ajoutez aussi votre clef ssh
+publique sur github ou gitlab.</p></li>
 </ol>
 <h2 id="ii-premier-test-en-local">II/ Premier test en local</h2>
 <ol type="1">
 <li><p>Créer un nouveau répertoire ‘test’ par exemple et déplacez-vous
 dedans.</p></li>
-<li><p>Initialiser votre premier dépôt git en local en et naviguez dans
-l’arborescence de votre projet. Utilisez <code>git status</code> et/ou
+<li><p>Initialiser votre premier dépôt git en local et naviguez dans
+l’arborescence de votre projet. Utiliser <code>git status</code> et/ou
 <code>git log</code> pour vérifier la création de votre dépôt
 git.</p></li>
 <li><p>Faire un premier <code>commit</code> avec un commentaire. Pour
@@ -127,7 +129,7 @@ droits par utilisateur.</p></li>
 copie en local avec la commande
 <code>git clone &lt;url_projet&gt;</code>. Vous trouverez l’url pour
 cloner le répertoire depuis la page github sous
-<code>&lt;&gt;code</code>. Utiliser <code>git remote -v</code> pour voir
+<code>&lt;&gt;code</code>. Utilisez <code>git remote -v</code> pour voir
 le lien entre votre dépôt local et le dépôt distant sur gitlab.</p></li>
 <li><p>Faites un <code>commit</code> avec un nouveau fichier ne pas
 utiliser le même nom de fichier et mettez à jour le répertoire distant
@@ -141,14 +143,15 @@ id="continuez-à-utiliser-le-repertoire-de-gitlab-en-binôme.">Continuez à
 utiliser le repertoire de gitlab en binôme.</h4>
 <ol type="1">
 <li><p>Effectuez tous les deux des modifications différentes sur le même
-fichier et ensuite utilisez les commandes <code>git commit</code> et
-<code>git push</code> pour appliquer la modification sur le répertoire
-distant github. Une erreur devrait survenir pour la dernière personne
-qui exécute la commande <code>push</code>.</p></li>
+fichier et ensuite validez ces modifications avec les commandes
+<code>git commit</code> et <code>git push</code> pour appliquer la
+modification sur le répertoire distant github. Une erreur devrait
+survenir pour la dernière personne qui exécute la commande
+<code>push</code>.</p></li>
 <li><p>Utilisez <code>git fetch</code> et <code>git rebase</code> pour
 importer les modifications et régler les problèmes de conflits.</p></li>
-<li><p>Refaire le même processus mais en échanger l’ordre pour que
-chaque binôme est besoin de “rebase” leur répertoire local.</p></li>
+<li><p>Refaire le même processus pour le second binôme afin de pouvoir
+utiliser les commandes de rebasage sur le répertoire local.</p></li>
 </ol>
 <h2 id="v-les-branches">V/ Les branches</h2>
 <ol type="1">
@@ -156,17 +159,17 @@ chaque binôme est besoin de “rebase” leur répertoire local.</p></li>
 <code>git branch</code>.</p></li>
 <li><p>Faites du développement sur cette nouvelle branche et utilisez à
 nouveau les commandes <code>git commit</code> et <code>git push</code>.
-Puis exécuter la commande proposer par git. Aller sur gitlab pour
-vérifier si votre nouvelle branche apparaît et comparer le dernier
+Puis exécuter la commande proposée par git. AlleZ sur gitlab pour
+vérifier si votre nouvelle branche apparaît et comparez le dernier
 commit avec la branche main.</p></li>
 <li><p>Rebasculez sur la branche main et fusionnez la nouvelle branche
 de développement sur la branche main avec la commande
 <code>git merge &lt;branch_name&gt;</code>, et utilisez si besoin
 <code>git fetch</code> et <code>git rebase</code> pour mettre à jour
 votre branche avant.</p></li>
-<li><p>(Optionel) Si vous avez des modification non ajouter avec
-<code>git add</code> il est possible de sauvegarder c’est modification
-dans un “stash” temporairement avec <code>git stash</code> et
+<li><p>(Optionel) Si vous avez des modifications non ajoutées avec
+<code>git add</code> il est possible de sauvegarder ces modifications
+dans un “stash” temporairement avec <code>git stash</code> et les
 réappliquer plus tard avec <code>git apply</code>.</p></li>
 </ol>
 <h2 id="vi-issue-et-mergepull-request">VI/ Issue et merge/pull
@@ -175,7 +178,7 @@ request</h2>
 <li><p>Allez sur gitlab et créez une issue pour se plaindre du readme
 sans intérêt.</p></li>
 <li><p>Créez ensuite un merge request depuis l’interface de l’issue de
-votre binôme et retourner sur l’issue pour voir le file d’activité. Vous
+votre binôme et retournez sur l’issue pour voir le file d’activité. Vous
 pouvez aussi tester les commentaires par la même occasion pour discuter
 avec votre binôme directement dans l’issue.</p></li>
 <li><p>Retournez sur votre répertoire local et importez les nouvelles
@@ -183,20 +186,19 @@ branches <code>git pull</code> ou <code>git fetch</code>. Faites un
 nouveau commit qui résout l’issue créée par votre binôme.</p></li>
 <li><p>Retournez à nouveau sur la page du merge request et appliquez vos
 modifications sur la branche main en validant le merge request. L’issue
-se fermeras automatiquement aussi les modifications seront appliquées
-sur la branche main. Bien évidement si votre branche n’est plus à jour
-avec la master il faut utiliser <code>git rebase</code> avant de
-merge.</p></li>
+se fermera automatiquement et vos modifications seront appliquées sur la
+branche main. Bien évidement si votre branche n’est plus à jour avec la
+master il faut utiliser <code>git rebase</code> avant de merge.</p></li>
 </ol>
 <h2 id="vii-licence-et-autre">VII/ Licence et autre</h2>
 <ol type="1">
-<li><p>Dernière étape ajoutez une licence à votre projet, vous pouvez
-utilise la même que sur le répertoire de cette formation. Assurez-vous
+<li><p>Dernière étape, ajoutez une licence à votre projet, vous pouvez
+utiliser la même que sur le répertoire de cette formation. Assurez-vous
 bien que le nom du fichier est “LICENCE” pour que gitlab ou github
-puissent la reconnaître.</p></li>
-<li><p>Explorer github ou gitlab pour voir les autres fonctionnalités et
+puissent le reconnaître.</p></li>
+<li><p>Explorez github ou gitlab pour voir les autres fonctionnalités et
 regarder d’autre projets plus important.</p></li>
-<li><p>Optionnel pour finir publier votre projet ou le
+<li><p>Optionnel : pour finir publiez votre projet ou le
 supprimer.</p></li>
 </ol>
             </div>

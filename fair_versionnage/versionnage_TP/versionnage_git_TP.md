@@ -1,9 +1,9 @@
-# Introduction to code versioning with git
+# Introduction au versionnage de son code avec git
 Mateo Hiriart  
 2023-07-10
 
 Dans ce TP nous allons voir les bases de git afin de créer un projet et de versionner
-notre code pour garder une trace des modifications faites dans le temps.
+son code pour garder une trace des modifications faites dans le temps.
 
 
 Liens et commandes pour vous aider:  
@@ -20,7 +20,7 @@ Liens et commandes pour vous aider:
 
 1) Créer un nouveau répertoire 'test' par exemple et déplacez-vous dedans.
 
-2) Initialiser votre premier dépôt git en local en et naviguez dans l'arborescence de votre projet.
+2) Initialiser votre premier dépôt git en local et naviguez dans l'arborescence de votre projet.
 Utiliser ``git status`` et/ou ``git log`` pour vérifier la création de votre dépôt git.
 
 3) Faire un premier `commit` avec un commentaire. Pour cela commencer par créer un fichier texte dans le répertoire courant, ensuite utilisez la commande `git status` pour vous aider.
@@ -43,23 +43,23 @@ de votre projet.
 ## IV/ Les conflits
 #### Continuez à utiliser le repertoire de gitlab en binôme.
 
-1) Effectuez tous les deux des modifications différentes sur le même fichier et ensuite utilisez les commandes `git commit` et `git push`
+1) Effectuez tous les deux des modifications différentes sur le même fichier et ensuite validez ces modifications avec les commandes `git commit` et `git push`
 pour appliquer la modification sur le répertoire distant github. Une erreur devrait survenir pour la dernière personne qui exécute la commande `push`.
 
 2) Utilisez `git fetch` et `git rebase` pour importer les modifications et régler les problèmes de conflits.
 
-3) Refaire le même processus pour el second binôme afind e pouvoir utiliser les commandes de rebasage sur le répertoire local.
+3) Refaire le même processus pour le second binôme afin de pouvoir utiliser les commandes de rebasage sur le répertoire local.
 
 ## V/ Les branches
 
 1) Créez chacun une nouvelle branche dans le projet avec `git branch`.
 
 2) Faites du développement sur cette nouvelle branche et utilisez à nouveau les commandes `git commit` et `git push`. Puis exécuter la commande proposée par git.
-AlleZ sur gitlab pour vérifier si votre nouvelle branche apparaît et compareZ le dernier commit avec la branche main.
+AlleZ sur gitlab pour vérifier si votre nouvelle branche apparaît et comparez le dernier commit avec la branche main.
 
 3) Rebasculez sur la branche main et fusionnez la nouvelle branche de développement sur la branche main avec la commande `git merge <branch_name>`, et utilisez si besoin  `git fetch` et `git rebase` pour mettre à jour votre branche avant.
 
-4) (Optionel) Si vous avez des modifications non ajoutées avec `git add` il est possible de sauvegarder ces modifications dans un "stash" temporairement avec `git stash` et réappliquer plus tard avec `git apply`.
+4) (Optionel) Si vous avez des modifications non ajoutées avec `git add` il est possible de sauvegarder ces modifications dans un "stash" temporairement avec `git stash` et les réappliquer plus tard avec `git apply`.
 
 ## VI/ Issue et merge/pull request
 
