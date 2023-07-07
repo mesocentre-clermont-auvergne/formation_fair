@@ -1,4 +1,4 @@
-name: jupyter
+name: fair_documentation_jupyter
 channels:
   - colomoto
   - bioconda
@@ -262,6 +262,7 @@ dependencies:
   - r-base=4.2.3=h4a03800_2
   - r-base64enc=0.1_3=r42h57805ef_1006
   - r-bh=1.81.0_1=r42hc72bb7e_1
+  - r-biocmanager=1.30.21=r42hc72bb7e_1
   - r-bit=4.0.5=r42h57805ef_1
   - r-bit64=4.0.5=r42h57805ef_2
   - r-bitops=1.0_7=r42h57805ef_2
