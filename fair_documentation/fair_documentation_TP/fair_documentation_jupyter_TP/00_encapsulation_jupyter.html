@@ -15243,7 +15243,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Connexion-to-jupyter-lab">Connexion to jupyter-lab<a class="anchor-link" href="#Connexion-to-jupyter-lab">&#182;</a></h2><ol>
-<li><p>Go to this adress: <a href="https://hub.mesocentre.uca.fr/hpc-jupyter/hub/login">https://hub.mesocentre.uca.fr/hpc-jupyter/hub/login</a></p>
+<li><p>Go to this address: <a href="https://hub.mesocentre.uca.fr/hpc-jupyter/hub/login">https://hub.mesocentre.uca.fr/hpc-jupyter/hub/login</a></p>
 <p><img src="images/jupyter_welcome.png" alt="drawing" width="1000"/></p>
 </li>
 <li><p>Ask a jupyter session</p>
@@ -15299,9 +15299,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 The magic commands allow you to interact with your environnement to analyse the data. <br />
 To call it, use the <code>%</code> symbol before in a <code>code cell</code> <br />
 The list of available magic commands is available typing : <code>%lsmagic</code>
-This command is available only on the line where it is write</p>
+This command is available only on the line where it is written</p>
 <p>The magic cells are cells with specific behaviour due to the magic cell command in the header of the cell <br />
-It is use for example to use command from another language (ruby, bash, R...)</p>
+It is use for example when calling other languages (ruby, bash, R...)
+In the jupyter notebook: </p>
 <ol>
 <li>List the magic commands</li>
 </ol>
@@ -15416,31 +15417,28 @@ It is use for example to use command from another language (ruby, bash, R...)</p
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Make-your-own-Kernel-to-work">Make your own Kernel to work<a class="anchor-link" href="#Make-your-own-Kernel-to-work">&#182;</a></h1><p>Jupyter work with <code>kernel</code> as the core of your analysis. You can build your own kernel and customize it with somes tools that you need.
-The main kernel are build with python or R environment but with the magic commands you can open the world !
-Here we will first build a kernel to python analysis then a R kernel for statistics.</p>
-<pre><code>Follow the guide from the mesocentre to install your kernel: https://hub.mesocentre.uca.fr/docs/cluster/applis/jupyterhub/
+<h1 id="Make-your-own-Kernel-to-work">Make your own Kernel to work<a class="anchor-link" href="#Make-your-own-Kernel-to-work">&#182;</a></h1><p>Jupyter works with <code>kernel</code> as the core of your analysis. You can build your own kernel and customize it with somes tools that you need.
+The main kernels are built with Python or R environment but with the magic commands you can open the world !
+Here we first build a kernel for Python analysis then a R kernel for statistics.</p>
+<pre><code>Follow the guide from the Mesocentre to install your kernel: https://hub.mesocentre.uca.fr/docs/cluster/applis/jupyterhub/
 </code></pre>
 <ol>
 <li>Install a Python Kernel with python 3.10</li>
 </ol>
 <pre><code>mamba install -c conda-forge nb_conda_kernels
-mamba create -n env_py38 python=3.8 numpy matplotlib pandas scipy dask
-mamba activate env_py38
-mamba install ipykernel jupyter_client
-python -m ipykernel install --user --name env_py38 --display-name &quot;kernel_python_3.8&quot;
+conda create -n env_py3.10 python=3.10 numpy ipykernel jupyter_client
+conda activate env_py3.10
+python -m ipykernel install --user --name env_py3.10 --display-name &quot;kernel_python_3.10&quot;
 </code></pre>
 <ol start="2">
 <li>Install a R kernel with r-base 4.2</li>
 </ol>
-<pre><code>mamba create --name env-r42 r-base=4.2 r-essentials r-irkernel
-mamba activate env-r42
-mamba install python=3.7 jupyter_client
-R -e &quot;IRkernel::installspec(name='env-r42', displayname='env_R_4.2', user=TRUE)&quot;
+<pre><code>conda create --name env-r4.2 r-base=4.2 r-essentials r-irkernel jupyter_client
+conda activate env-r4.2
+R -e &quot;IRkernel::installspec(name='env-r4.2', displayname='env_R_4.2', user=TRUE)&quot;
 </code></pre>
 <p>Test available kernels</p>
-<pre><code>mamba activate env_py38
-mamba env list
+<pre><code>conda activate env_py3.10
 jupyter kernelspec list
 </code></pre>
 
@@ -15454,24 +15452,24 @@ jupyter kernelspec list
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Work-with-both-python-and-R-in-the-same-notebook">Work with both python and R in the same notebook<a class="anchor-link" href="#Work-with-both-python-and-R-in-the-same-notebook">&#182;</a></h1><pre><code>Jupyter also to work both with python and R in the same notebook
-The simple way is to create a conda env with python and R, then install a specific library: rpy2
+<h1 id="Work-with-both-python-and-R-in-the-same-notebook">Work with both python and R in the same notebook<a class="anchor-link" href="#Work-with-both-python-and-R-in-the-same-notebook">&#182;</a></h1><pre><code>In Jupyter, it is possible to work both with Python and R in the same notebook.
+The simple way to do it is to create a conda environment with Python and R, then install a specific library: rpy2
 </code></pre>
 <ol>
-<li><p>In the previous R 4.2 kernel install rpy2 from conda</p>
+<li><p>In the previous R 4.2 kernel, install rpy2 from conda</p>
 <ul>
 <li>use the terminal interface from jupyter</li>
 <li>activate the conda env containing your R version</li>
 <li>install rpy2 from conda</li>
 </ul>
 </li>
-<li><p>Create a new notebook file with the kernel containg R and python</p>
+<li><p>Create a new notebook file with the kernel containg R and Python</p>
 </li>
 <li><p>Call the rpy2 package
 <code>%load_ext rpy2.ipython</code></p>
 </li>
-<li><p>Make a notebook with python and R cells <br />
-<code>Now to call a R code into a cell use : magic variables %%R</code></p>
+<li><p>Make a notebook with Python and R cells <br />
+<code>To call a R code into a cell use : magic variables %%R</code></p>
 </li>
 </ol>
 
@@ -15485,7 +15483,7 @@ The simple way is to create a conda env with python and R, then install a specif
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Import-python-libraries">Import python libraries<a class="anchor-link" href="#Import-python-libraries">&#182;</a></h2>
+<h2 id="Import-python-libraries">Import Python libraries<a class="anchor-link" href="#Import-python-libraries">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -15657,7 +15655,7 @@ The simple way is to create a conda env with python and R, then install a specif
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Plot-data-from-python-with-ggplot2-from-R">Plot data from python with ggplot2 from R<a class="anchor-link" href="#Plot-data-from-python-with-ggplot2-from-R">&#182;</a></h2>
+<h2 id="Plot-data-from-python-with-ggplot2-from-R">Plot data from Python with ggplot2 from R<a class="anchor-link" href="#Plot-data-from-python-with-ggplot2-from-R">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -15711,10 +15709,10 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Genomic-in-jupyter-notebook">Genomic in jupyter notebook<a class="anchor-link" href="#Genomic-in-jupyter-notebook">&#182;</a></h1><pre><code>You already know to build python or R kernel, but you can also consider all you analysis to be done in the notebooks.
-Here we illustrate the interaction of the notebook with your environment, to analyse genomic data using current bioinformatic tools
+<h1 id="Genomic-in-jupyter-notebook">Genomic in jupyter notebook<a class="anchor-link" href="#Genomic-in-jupyter-notebook">&#182;</a></h1><pre><code>You already know how to build Python or R kernel, but you can also consider all you analysis to be done in the notebook.
+Here we illustrate the interaction of the notebook with your environment, to analyse genomic data using current bioinformatic tools.
 </code></pre>
-<h2 id="Quality-assessement-of-a-SARS-COV-2-sample">Quality assessement of a SARS-COV-2 sample<a class="anchor-link" href="#Quality-assessement-of-a-SARS-COV-2-sample">&#182;</a></h2><p>sample file is located here : <a href="https://trace.ncbi.nlm.nih.gov/Traces/sra-reads-be/fastq?acc=SRR25109930">https://trace.ncbi.nlm.nih.gov/Traces/sra-reads-be/fastq?acc=SRR25109930</a>
+<h2 id="Quality-assessement-of-a-SARS-COV-2-sample">Quality assessement of a SARS-COV-2 sample<a class="anchor-link" href="#Quality-assessement-of-a-SARS-COV-2-sample">&#182;</a></h2><p>Sample file is located here : <a href="https://trace.ncbi.nlm.nih.gov/Traces/sra-reads-be/fastq?acc=SRR25109930">https://trace.ncbi.nlm.nih.gov/Traces/sra-reads-be/fastq?acc=SRR25109930</a>
 To download in command line :</p>
 <p><code>wget https://trace.ncbi.nlm.nih.gov/Traces/sra-reads-be/fastq?acc=SRR25109930 -o SRR25109930.fastq.gz</code></p>
 
@@ -15729,7 +15727,7 @@ To download in command line :</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ol>
-<li>Using the fastQC quality check tool you will control the quality of the sars-cov2 sample SRR25109930.fastq.gz</li>
+<li>Using the fastQC quality check tool you control the quality of the sars-cov2 sample SRR25109930.fastq.gz</li>
 </ol>
 
 </div>
@@ -15759,7 +15757,7 @@ To download in command line :</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ol start="2">
-<li>Using the fastQC quality check tool you will use the job submission to analyse the sars-cov2 sample</li>
+<li>Using the fastQC quality check tool you use the job submission to analyse the sars-cov2 sample</li>
 </ol>
 
 </div>
@@ -15822,7 +15820,7 @@ To download in command line :</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ol>
-<li>Index the Sars-Cov2 reference genome using bwa2</li>
+<li>Index the Sars-Cov2 reference genome using bwa2 tool</li>
 </ol>
 
 </div>
@@ -15937,7 +15935,7 @@ To download in command line :</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Transcriptomic-analysis-from-raw-data-to-differential-expression-results">Transcriptomic analysis from raw data to differential expression results<a class="anchor-link" href="#Transcriptomic-analysis-from-raw-data-to-differential-expression-results">&#182;</a></h1><h2 id="Transcript-count">Transcript count<a class="anchor-link" href="#Transcript-count">&#182;</a></h2><ol>
-<li>Index raw data using kallisto</li>
+<li>Index raw data using kallisto tool</li>
 <li>Estimate abundance of transcripts in the sample</li>
 </ol>
 
