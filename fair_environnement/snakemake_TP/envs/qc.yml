@@ -1,6 +1,8 @@
 name: qc # conda environment name
 channels: 
+  - defaults
   - bioconda
+  - conda-forge
 dependencies:
   - fastqc=0.11.9 # quality check of fastq data (java)
-  - multiqc=1.13 # reports aggregation (R package)
+  - multiqc=1.14 # reports aggregation (R package)
