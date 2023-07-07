@@ -1,4 +1,5 @@
 **/*.~lock*
+**/*.ipynb*
 **/*.Rproj.user
 **/*.Rhistory
 **/*.RData

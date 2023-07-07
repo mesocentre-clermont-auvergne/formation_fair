@@ -15101,7 +15101,116 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --></head>
+    <!-- End of mathjax configuration --><script type="module">
+  document.addEventListener("DOMContentLoaded", async () => {
+    const diagrams = document.querySelectorAll(".jp-Mermaid > pre.mermaid");
+    // do not load mermaidjs if not needed
+    if (!diagrams.length) {
+      return;
+    }
+    const mermaid = (await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.2.3/mermaid.esm.min.mjs")).default;
+
+    mermaid.initialize({
+      maxTextSize: 100000,
+      startOnLoad: false,
+      fontFamily: window
+        .getComputedStyle(document.body)
+        .getPropertyValue("--jp-ui-font-family"),
+      theme: document.querySelector("body[data-jp-theme-light='true']")
+        ? "default"
+        : "dark",
+    });
+
+    let _nextMermaidId = 0;
+
+    function makeMermaidImage(svg) {
+      const img = document.createElement('img');
+      const maxWidth = svg.match(/max-width: (\d+)/);
+      if (maxWidth && maxWidth[1]) {
+        const width = parseInt(maxWidth[1]);
+        if (width && !Number.isNaN(width) && Number.isFinite(width)) {
+          img.width = width;
+        }
+      }
+      img.setAttribute('src', `data:image/svg+xml,${encodeURIComponent(svg)}`);
+      return img;
+    }
+
+    async function makeMermaidError(text) {
+      let errorMessage = '';
+      try {
+        await mermaid.parse(text);
+      } catch (err) {
+        errorMessage = `${err}`;
+      }
+
+      const result = document.createElement('details');
+      const summary = document.createElement('summary');
+      const pre = document.createElement('pre');
+      const code = document.createElement('code');
+      code.innerText = text;
+      pre.appendChild(code);
+      summary.appendChild(pre);
+      result.appendChild(summary);
+
+      const warning = document.createElement('pre');
+      warning.innerText = errorMessage;
+      result.appendChild(warning);
+      return result;
+    }
+
+    async function renderOneMarmaid(src) {
+      const id = `jp-mermaid-${_nextMermaidId++}`;
+      const parent = src.parentNode;
+      let raw = src.textContent.trim();
+      const el = document.createElement("div");
+      el.style.visibility = "hidden";
+      document.body.appendChild(el);
+      let result = null;
+      try {
+        const { svg } = await mermaid.render(id, raw, el);
+        result = makeMermaidImage(svg);
+      } catch (err) {
+        parent.classList.add("jp-mod-warning");
+        result = await makeMermaidError(raw);
+      } finally {
+        el.remove();
+      }
+      parent.classList.add("jp-RenderedMermaid");
+      parent.appendChild(result);
+    }
+
+    void Promise.all([...diagrams].map(renderOneMarmaid));
+  });
+</script>
+<style>
+  .jp-RenderedMarkdown .jp-Mermaid:not(.jp-RenderedMermaid) {
+    display: none;
+  }
+  .jp-RenderedMarkdown .jp-RenderedMermaid.jp-mod-warning {
+    width: auto;
+    padding: 10px;
+    border: var(--jp-border-width) solid var(--jp-warn-color2);
+    border-radius: var(--jp-border-radius);
+    color: var(--jp-ui-font-color1);
+    font-size: var(--jp-ui-font-size1);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  .jp-RenderedMarkdown .jp-RenderedMermaid.jp-mod-warning details > pre {
+    margin-top: 1em;
+  }
+  .jp-RenderedMarkdown .jp-RenderedMermaid.jp-mod-warning summary {
+    color: var(--jp-warn-color2);
+  }
+  .jp-RenderedMarkdown .jp-RenderedMermaid.jp-mod-warning summary > pre {
+    display: inline-block;
+  }
+  .jp-RenderedMermaid > .mermaid {
+    display: none;
+  }
+</style>
+<!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
 <div id="cell-id=24b5badf-2cd5-4fb6-988f-06a834cd473c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -15135,16 +15244,16 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Connexion-to-jupyter-lab">Connexion to jupyter-lab<a class="anchor-link" href="#Connexion-to-jupyter-lab">&#182;</a></h2><ol>
 <li><p>Go to this adress: <a href="https://hub.mesocentre.uca.fr/hpc-jupyter/hub/login">https://hub.mesocentre.uca.fr/hpc-jupyter/hub/login</a></p>
- <img src="images/jupyter_welcome.png" alt="drawing" width="1000"/>
+<p><img src="images/jupyter_welcome.png" alt="drawing" width="1000"/></p>
 </li>
 <li><p>Ask a jupyter session</p>
-  <img src="images/start_server.png" alt="drawing" width="1000"/>
+<p><img src="images/start_server.png" alt="drawing" width="1000"/></p>
 </li>
 <li><p>Submit the job to open the session</p>
-  <img src="images/job_choice.png" alt="drawing" width="1000"/>
+<p><img src="images/job_choice.png" alt="drawing" width="1000"/></p>
 </li>
-<li><p>Discover your interface</p>
-  <img src="images/jupyter_page.png" alt="drawing" width="1000"/>
+<li><p>Discover your interface<br />
+<img src="images/jupyter_page.png" alt="drawing" width="1000"/></p>
 </li>
 </ol>
 
@@ -15163,8 +15272,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     - from the cluster terminal
 2. Launch the jupyter.ipynb
 3. Launch a console interface
-4. Launch a terminal interface
-</code></pre>
+4. Launch a terminal interface</code></pre>
 
 </div>
 </div>
@@ -15261,99 +15369,20 @@ It is use for example to use command from another language (ruby, bash, R...)</p
 </div>
 </div>
 </div>
-</div><div id="cell-id=e234ea59-cab9-4e39-aaba-4c9bc7411a0c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=e234ea59-cab9-4e39-aaba-4c9bc7411a0c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
-<span class="c1"># On the HPC2 cluster, when starting a new session, you need to activate the conda module</span>
-<span class="c1">#module load conda</span>
-<span class="c1"># list environments</span>
-conda<span class="w"> </span>env<span class="w"> </span>list
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre># conda environments:
-#
-                         /home/pierre/galaxy/database/dependencies/_conda/envs/__abromics_galaxy_json_extractor@_uv_
-                         /home/pierre/miniconda3
-base                     /opt/conda
-__abromics_galaxy_json_extractor@_uv_     /opt/conda/envs/__abromics_galaxy_json_extractor@_uv_
-__bowtie@1.3.1           /opt/conda/envs/__bowtie@1.3.1
-__bowtie@_uv_            /opt/conda/envs/__bowtie@_uv_
-__git-lfs@3.2.0          /opt/conda/envs/__git-lfs@3.2.0
-__git-lfs@_uv_           /opt/conda/envs/__git-lfs@_uv_
-__git@2.34.1             /opt/conda/envs/__git@2.34.1
-__git@2.37.1             /opt/conda/envs/__git@2.37.1
-__git@_uv_               /opt/conda/envs/__git@_uv_
-__gitpython@3.1.27       /opt/conda/envs/__gitpython@3.1.27
-__gitpython@3.1.31       /opt/conda/envs/__gitpython@3.1.31
-__pip@22.1.2             /opt/conda/envs/__pip@22.1.2
-__pip@_uv_               /opt/conda/envs/__pip@_uv_
-__python@3.10            /opt/conda/envs/__python@3.10
-__python@3.10.8          /opt/conda/envs/__python@3.10.8
-__python@3.11.3          /opt/conda/envs/__python@3.11.3
-__python@3.8             /opt/conda/envs/__python@3.8
-__python@_uv_            /opt/conda/envs/__python@_uv_
-__requests@2.27.1        /opt/conda/envs/__requests@2.27.1
-__requests@2.28.1        /opt/conda/envs/__requests@2.28.1
-__requests@_uv_          /opt/conda/envs/__requests@_uv_
-_galaxy_                 /opt/conda/envs/_galaxy_
-abromics_report          /opt/conda/envs/abromics_report
-amrfinderplus            /opt/conda/envs/amrfinderplus
-annotation               /opt/conda/envs/annotation
-assembly                 /opt/conda/envs/assembly
-bakta_1.8                /opt/conda/envs/bakta_1.8
-bracken                  /opt/conda/envs/bracken
-build3_10_8              /opt/conda/envs/build3_10_8
-confindr                 /opt/conda/envs/confindr
-ephemeris                /opt/conda/envs/ephemeris
-hamronization            /opt/conda/envs/hamronization
-jupyter               *  /opt/conda/envs/jupyter
-kraken                   /opt/conda/envs/kraken
-mulled-v1-8bd2e98f030d19606e777fc1ea4291c690fe061cf3a66552eca34c2423241806     /opt/conda/envs/mulled-v1-8bd2e98f030d19606e777fc1ea4291c690fe061cf3a66552eca34c2423241806
-planemo                  /opt/conda/envs/planemo
-prokka                   /opt/conda/envs/prokka
-refseqmasher             /opt/conda/envs/refseqmasher
-rnaseq                   /opt/conda/envs/rnaseq
-shovill                  /opt/conda/envs/shovill
-sphinx_doc               /opt/conda/envs/sphinx_doc
-staramr                  /opt/conda/envs/staramr
-taxonomy                 /opt/conda/envs/taxonomy
-test                     /opt/conda/envs/test
-test2                    /opt/conda/envs/test2
-test_staramr             /opt/conda/envs/test_staramr
-toto                     /opt/conda/envs/toto
-toto2                    /opt/conda/envs/toto2
-toto3                    /opt/conda/envs/toto3
-trimming                 /opt/conda/envs/trimming
-
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -15365,11 +15394,17 @@ trimming                 /opt/conda/envs/trimming
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <details>
   <summary>Magic command solution</summary>
+
 <ol>
 <li><code>%lsmagic</code></li>
 <li><code>%ls</code></li>
+<li><br />
+%%bash \</li>
 </ol>
+<h1 id="On-the-HPC2-cluster,-when-starting-a-new-session,-you-need-to-activate-the-conda-module-%5C">On the HPC2 cluster, when starting a new session, you need to activate the conda module \<a class="anchor-link" href="#On-the-HPC2-cluster,-when-starting-a-new-session,-you-need-to-activate-the-conda-module-%5C">&#182;</a></h1><p>module load conda \</p>
+<h1 id="list-environments-%5C">list environments \<a class="anchor-link" href="#list-environments-%5C">&#182;</a></h1><p>conda env list</p>
 </details>
+
 
 </div>
 </div>
@@ -15381,7 +15416,10 @@ trimming                 /opt/conda/envs/trimming
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Make-your-own-Kernel-to-work">Make your own Kernel to work<a class="anchor-link" href="#Make-your-own-Kernel-to-work">&#182;</a></h1><pre><code>Follow the guide from the mesocentre to install your kernel: https://hub.mesocentre.uca.fr/docs/cluster/applis/jupyterhub/
+<h1 id="Make-your-own-Kernel-to-work">Make your own Kernel to work<a class="anchor-link" href="#Make-your-own-Kernel-to-work">&#182;</a></h1><p>Jupyter work with <code>kernel</code> as the core of your analysis. You can build your own kernel and customize it with somes tools that you need.
+The main kernel are build with python or R environment but with the magic commands you can open the world !
+Here we will first build a kernel to python analysis then a R kernel for statistics.</p>
+<pre><code>Follow the guide from the mesocentre to install your kernel: https://hub.mesocentre.uca.fr/docs/cluster/applis/jupyterhub/
 </code></pre>
 <ol>
 <li>Install a Python Kernel with python 3.10</li>
@@ -15401,7 +15439,7 @@ mamba install python=3.7 jupyter_client
 R -e &quot;IRkernel::installspec(name='env-r42', displayname='env_R_4.2', user=TRUE)&quot;
 </code></pre>
 <p>Test available kernels</p>
-<pre><code>conda activate env_py38
+<pre><code>mamba activate env_py38
 mamba env list
 jupyter kernelspec list
 </code></pre>
@@ -15420,20 +15458,22 @@ jupyter kernelspec list
 The simple way is to create a conda env with python and R, then install a specific library: rpy2
 </code></pre>
 <ol>
-<li>In the previous R 4.2 kernel install rpy2 from conda<ul>
+<li><p>In the previous R 4.2 kernel install rpy2 from conda</p>
+<ul>
 <li>use the terminal interface from jupyter</li>
 <li>activate the conda env containing your R version</li>
 <li>install rpy2 from conda</li>
 </ul>
 </li>
-<li>Create a new notebook file with the kernel containg R and python</li>
-<li>Call the rpy2 package</li>
+<li><p>Create a new notebook file with the kernel containg R and python</p>
+</li>
+<li><p>Call the rpy2 package
+<code>%load_ext rpy2.ipython</code></p>
+</li>
+<li><p>Make a notebook with python and R cells <br />
+<code>Now to call a R code into a cell use : magic variables %%R</code></p>
+</li>
 </ol>
-<p><code>%load_ext rpy2.ipython</code></p>
-<ol start="5">
-<li>Make a notebook with python and R cells \</li>
-</ol>
-<p><code>Now to call a R code into a cell use : magic variables %%R</code></p>
 
 </div>
 </div>
@@ -15445,39 +15485,19 @@ The simple way is to create a conda env with python and R, then install a specif
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Import-python-libraries">Import python libraries<a class="anchor-link" href="#Import-python-libraries">&#182;</a></h3>
+<h2 id="Import-python-libraries">Import python libraries<a class="anchor-link" href="#Import-python-libraries">&#182;</a></h2>
 </div>
 </div>
 </div>
-</div><div id="cell-id=0654deb4-1737-47ff-b92a-e36f09317606" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%capture</span>
-<span class="o">%%</span><span class="n">bash</span>
-<span class="n">mamba</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">pandas</span> <span class="n">numpy</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">import</span><span class="o">-</span><span class="n">ipynb</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div><div id="cell-id=714b693a-ade5-4edc-9a52-3480dd1b3b47" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%capture</span>
-<span class="o">%</span><span class="n">load_ext</span> <span class="n">rpy2</span><span class="o">.</span><span class="n">ipython</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> rpy2.ipython
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -15496,45 +15516,21 @@ The simple way is to create a conda env with python and R, then install a specif
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Import-R-libraries">Import R libraries<a class="anchor-link" href="#Import-R-libraries">&#182;</a></h3>
+<h2 id="Import-R-libraries">Import R libraries<a class="anchor-link" href="#Import-R-libraries">&#182;</a></h2>
 </div>
 </div>
 </div>
-</div><div id="cell-id=0e3699a9-f5b4-487d-bb63-f872bf7b7fbb" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%capture</span>
-<span class="o">%%</span><span class="n">bash</span> 
-<span class="n">mamba</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">r</span><span class="o">-</span><span class="n">ggplot2</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div><div id="cell-id=7255bcf1-dd89-4d4d-83cb-07c1b5743d55" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%capture</span>
-<span class="o">%%</span><span class="n">R</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span>
 <span class="c1"># load</span>
-<span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">knitr</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">ade4</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">kableExtra</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">adegraphics</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">gridExtra</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15549,7 +15545,7 @@ The simple way is to create a conda env with python and R, then install a specif
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Import-a-dataframe-with-python">Import a dataframe with python<a class="anchor-link" href="#Import-a-dataframe-with-python">&#182;</a></h3>
+<h2 id="Import-a-dataframe-with-python">Import a dataframe with python<a class="anchor-link" href="#Import-a-dataframe-with-python">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -15558,7 +15554,7 @@ The simple way is to create a conda env with python and R, then install a specif
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
@@ -15581,7 +15577,7 @@ The simple way is to create a conda env with python and R, then install a specif
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
 
@@ -15661,7 +15657,7 @@ The simple way is to create a conda env with python and R, then install a specif
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Plot-the-data-with-ggplot2">Plot the data with ggplot2<a class="anchor-link" href="#Plot-the-data-with-ggplot2">&#182;</a></h3>
+<h2 id="Plot-data-from-python-with-ggplot2-from-R">Plot data from python with ggplot2 from R<a class="anchor-link" href="#Plot-data-from-python-with-ggplot2-from-R">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -15670,7 +15666,7 @@ The simple way is to create a conda env with python and R, then install a specif
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="n">df</span>
@@ -15715,20 +15711,39 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Genomic-in-jupyter-notebook">Genomic in jupyter notebook<a class="anchor-link" href="#Genomic-in-jupyter-notebook">&#182;</a></h2><h3 id="Quality-assessement-of-a-SARS-COV-2-sample">Quality assessement of a SARS-COV-2 sample<a class="anchor-link" href="#Quality-assessement-of-a-SARS-COV-2-sample">&#182;</a></h3>
+<h1 id="Genomic-in-jupyter-notebook">Genomic in jupyter notebook<a class="anchor-link" href="#Genomic-in-jupyter-notebook">&#182;</a></h1><pre><code>You already know to build python or R kernel, but you can also consider all you analysis to be done in the notebooks.
+Here we illustrate the interaction of the notebook with your environment, to analyse genomic data using current bioinformatic tools
+</code></pre>
+<h2 id="Quality-assessement-of-a-SARS-COV-2-sample">Quality assessement of a SARS-COV-2 sample<a class="anchor-link" href="#Quality-assessement-of-a-SARS-COV-2-sample">&#182;</a></h2><p>sample file is located here : <a href="https://trace.ncbi.nlm.nih.gov/Traces/sra-reads-be/fastq?acc=SRR25109930">https://trace.ncbi.nlm.nih.gov/Traces/sra-reads-be/fastq?acc=SRR25109930</a>
+To download in command line :</p>
+<p><code>wget https://trace.ncbi.nlm.nih.gov/Traces/sra-reads-be/fastq?acc=SRR25109930 -o SRR25109930.fastq.gz</code></p>
+
 </div>
 </div>
 </div>
-</div><div id="cell-id=165b8014-b0c1-4828-9ef1-835007ff676a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div id="cell-id=e7fe024b-e56c-4a4e-aa38-79633587983a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Using the fastQC quality check tool you will control the quality of the sars-cov2 sample SRR25109930.fastq.gz</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=165b8014-b0c1-4828-9ef1-835007ff676a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
-fastqc<span class="w"> </span>test_files/SRR25109930.fastq.gz<span class="w"> </span>--outdir<span class="w"> </span>test_files
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
      </div>
@@ -15736,56 +15751,58 @@ fastqc<span class="w"> </span>test_files/SRR25109930.fastq.gz<span class="w"> </
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
+<div id="cell-id=c51bd305-cf1d-4e37-be04-86d4b8f8502f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol start="2">
+<li>Using the fastQC quality check tool you will use the job submission to analyse the sars-cov2 sample</li>
+</ol>
 
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>Started analysis of SRR25109930.fastq.gz
-Approx 5% complete for SRR25109930.fastq.gz
-Approx 10% complete for SRR25109930.fastq.gz
-Approx 15% complete for SRR25109930.fastq.gz
-Approx 20% complete for SRR25109930.fastq.gz
-Approx 25% complete for SRR25109930.fastq.gz
-Approx 30% complete for SRR25109930.fastq.gz
-Approx 35% complete for SRR25109930.fastq.gz
-Approx 40% complete for SRR25109930.fastq.gz
-Approx 45% complete for SRR25109930.fastq.gz
-Approx 50% complete for SRR25109930.fastq.gz
-Approx 55% complete for SRR25109930.fastq.gz
-Approx 60% complete for SRR25109930.fastq.gz
-Approx 65% complete for SRR25109930.fastq.gz
-Approx 70% complete for SRR25109930.fastq.gz
-Approx 75% complete for SRR25109930.fastq.gz
-Approx 80% complete for SRR25109930.fastq.gz
-Approx 85% complete for SRR25109930.fastq.gz
-Approx 90% complete for SRR25109930.fastq.gz
-Approx 95% complete for SRR25109930.fastq.gz
-</pre>
 </div>
 </div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+</div>
+</div><div id="cell-id=48c87726-00e4-4130-82af-3462ece5033e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Analysis complete for SRR25109930.fastq.gz
-</pre>
+     </div>
+</div>
 </div>
 </div>
 
 </div>
+<div id="cell-id=058bacb4-86a0-4601-a0ec-76d56599f548" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<details>
+  <summary>Quality check solution</summary>
+
+<ol>
+<li><p><code>fastqc test_files/SRR25109930.fastq.gz --outdir test_files</code></p>
+</li>
+<li><p><code>sbatch ./test_files/fastqc.sh</code></p>
+</li>
+</ol>
+</details>
+
 
 </div>
-
+</div>
+</div>
 </div>
 <div id="cell-id=10ad6b44-ad12-4391-b015-a331eb9bc6fe" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15793,20 +15810,33 @@ Approx 95% complete for SRR25109930.fastq.gz
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Quality-alignement-of-a-SARS-COV-2-sample">Quality alignement of a SARS-COV-2 sample<a class="anchor-link" href="#Quality-alignement-of-a-SARS-COV-2-sample">&#182;</a></h3>
+<h3 id="Genome-alignement-of-a-SARS-COV-2-sample">Genome alignement of a SARS-COV-2 sample<a class="anchor-link" href="#Genome-alignement-of-a-SARS-COV-2-sample">&#182;</a></h3>
 </div>
 </div>
 </div>
-</div><div id="cell-id=f836339d-c78c-47b6-8a40-372714dd5210" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div id="cell-id=9b46c0c7-c928-4119-acf1-7a327170e0d9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Index the Sars-Cov2 reference genome using bwa2</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=7f1dba9e-0580-4d61-b4e1-99f0defa721a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
-bwa-mem2<span class="w"> </span>index<span class="w"> </span>test_files/sars_reference_genome/sequence_sarscov2.fasta
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
      </div>
@@ -15814,80 +15844,29 @@ bwa-mem2<span class="w"> </span>index<span class="w"> </span>test_files/sars_ref
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
+<div id="cell-id=85567b0b-41dc-42ce-85a5-a823ab34dbcd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol start="2">
+<li>Align raw reads data on the reference genome</li>
+</ol>
 
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>Looking to launch executable &#34;/opt/conda/envs/jupyter/bin/bwa-mem2.avx512bw&#34;, simd = .avx512bw
-Launching executable &#34;/opt/conda/envs/jupyter/bin/bwa-mem2.avx512bw&#34;
-[bwa_index] Pack FASTA... 0.00 sec
-* Entering FMI_search
-init ticks = 4430516
-ref seq len = 59806
-binary seq ticks = 3618176
-build suffix-array ticks = 16118190
-</pre>
 </div>
 </div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>ref_seq_len = 59806
-count = 0, 18548, 29903, 41258, 59806
-BWT[17048] = 4
-CP_SHIFT = 6, CP_MASK = 63
-sizeof CP_OCC = 64
-</pre>
 </div>
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>pos: 7476, ref_seq_len__: 7475
-build fm-index ticks = 5314324
-Total time taken: 0.0171
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>max_occ_ind = 934
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=4beec8d3-8e13-4f9b-9f58-0a9f608d3f85" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=61452ced-8fc6-4591-abcb-68a023079c8e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="w"> </span>bwa-mem2<span class="w"> </span>mem<span class="w"> </span>test_files/sars_reference_genome/sequence_sarscov2.fasta<span class="w"> </span>test_files/SRR25109930.fastq.gz<span class="w"> </span>-o<span class="w"> </span>test_files/sars_alignment.sam
-<span class="o">!</span><span class="w"> </span>samtools<span class="w"> </span>view<span class="w"> </span>-S<span class="w"> </span>-b<span class="w"> </span>test_files/sars_alignment.sam<span class="w"> </span>&gt;<span class="w"> </span>test_files/sars_alignment.bam
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
      </div>
@@ -15895,191 +15874,61 @@ Total time taken: 0.0171
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
+<div id="cell-id=efab5e14-0e63-4787-97cd-b748785485d3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol start="3">
+<li>Extract coverage information using samtools</li>
+</ol>
 
+</div>
+</div>
+</div>
+</div><div id="cell-id=a83900cd-2944-4e33-9dad-2fd16371812f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Looking to launch executable &#34;/opt/conda/envs/jupyter/bin/bwa-mem2.avx512bw&#34;, simd = .avx512bw
-Launching executable &#34;/opt/conda/envs/jupyter/bin/bwa-mem2.avx512bw&#34;
------------------------------
-Executing in AVX512 mode!!
------------------------------
-* SA compression enabled with xfactor: 8
-* Ref file: test_files/sars_reference_genome/sequence_sarscov2.fasta
-* Entering FMI_search
-* Index file found. Loading index from test_files/sars_reference_genome/sequence_sarscov2.fasta.bwt.2bit.64
-* Reference seq len for bi-index = 59807
-* sentinel-index: 17048
-* Count:
-0,	1
-1,	18549
-2,	29904
-3,	41259
-4,	59807
-
-* Reading other elements of the index from files test_files/sars_reference_genome/sequence_sarscov2.fasta
-* Index prefix: test_files/sars_reference_genome/sequence_sarscov2.fasta
-* Read 0 ALT contigs
-* Done reading Index!!
-* Reading reference genome..
-* Binary seq file = test_files/sars_reference_genome/sequence_sarscov2.fasta.0123
-* Reference genome size: 59806 bp
-* Done reading reference genome !!
-
-------------------------------------------
-1. Memory pre-allocation for Chaining: 139.3584 MB
-2. Memory pre-allocation for BSW: 239.6170 MB
-3. Memory pre-allocation for BWT: 77.3142 MB
-------------------------------------------
-* Threads used (compute): 1
-* No. of pipeline threads: 2
-
-[0000] read_chunk: 10000000, work_chunk_size: 10000479, nseq: 40214
-	[0000][ M::kt_pipeline] read 40214 sequences (10000479 bp)...
-[0000] Calling mem_process_seqs.., task: 0
-[0000] 1. Calling kt_for - worker_bwt
-[0000] read_chunk: 10000000, work_chunk_size: 10000033, nseq: 40092
-	[0000][ M::kt_pipeline] read 40092 sequences (10000033 bp)...
-[0000] 2. Calling kt_for - worker_aln
-[0000] 3. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 40214 reads in 4.010 CPU sec, 3.905 real sec
-[0000] Calling mem_process_seqs.., task: 1
-[0000] 1. Calling kt_for - worker_bwt
-[0000] read_chunk: 10000000, work_chunk_size: 10000317, nseq: 40286
-	[0000][ M::kt_pipeline] read 40286 sequences (10000317 bp)...
-[0000] 2. Calling kt_for - worker_aln
-[0000] 3. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 40092 reads in 3.039 CPU sec, 2.886 real sec
-[0000] Calling mem_process_seqs.., task: 2
-[0000] 1. Calling kt_for - worker_bwt
-[0000] read_chunk: 10000000, work_chunk_size: 10000232, nseq: 40246
-	[0000][ M::kt_pipeline] read 40246 sequences (10000232 bp)...
-[0000] 2. Calling kt_for - worker_aln
-[0000] 3. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 40286 reads in 2.937 CPU sec, 2.763 real sec
-[0000] Calling mem_process_seqs.., task: 3
-[0000] 1. Calling kt_for - worker_bwt
-[0000] read_chunk: 10000000, work_chunk_size: 10000292, nseq: 40080
-	[0000][ M::kt_pipeline] read 40080 sequences (10000292 bp)...
-[0000] 2. Calling kt_for - worker_aln
-[0000] 3. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 40246 reads in 3.059 CPU sec, 2.897 real sec
-[0000] Calling mem_process_seqs.., task: 4
-[0000] 1. Calling kt_for - worker_bwt
-[0000] read_chunk: 10000000, work_chunk_size: 10000238, nseq: 40218
-	[0000][ M::kt_pipeline] read 40218 sequences (10000238 bp)...
-[0000] 2. Calling kt_for - worker_aln
-[0000] 3. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 40080 reads in 2.952 CPU sec, 2.790 real sec
-[0000] Calling mem_process_seqs.., task: 5
-[0000] 1. Calling kt_for - worker_bwt
-[0000] read_chunk: 10000000, work_chunk_size: 10000360, nseq: 40642
-	[0000][ M::kt_pipeline] read 40642 sequences (10000360 bp)...
-[0000] 2. Calling kt_for - worker_aln
-[0000] 3. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 40218 reads in 2.974 CPU sec, 2.813 real sec
-[0000] Calling mem_process_seqs.., task: 6
-[0000] 1. Calling kt_for - worker_bwt
-[0000] read_chunk: 10000000, work_chunk_size: 10000023, nseq: 40540
-	[0000][ M::kt_pipeline] read 40540 sequences (10000023 bp)...
-[0000] 2. Calling kt_for - worker_aln
-[0000] 3. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 40642 reads in 3.094 CPU sec, 2.925 real sec
-[0000] Calling mem_process_seqs.., task: 7
-[0000] 1. Calling kt_for - worker_bwt
-[0000] read_chunk: 10000000, work_chunk_size: 10000005, nseq: 40984
-	[0000][ M::kt_pipeline] read 40984 sequences (10000005 bp)...
-[0000] 2. Calling kt_for - worker_aln
-[0000] 3. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 40540 reads in 3.389 CPU sec, 3.225 real sec
-[0000] Calling mem_process_seqs.., task: 8
-[0000] 1. Calling kt_for - worker_bwt
-[0000] read_chunk: 10000000, work_chunk_size: 10000363, nseq: 44428
-	[0000][ M::kt_pipeline] read 44428 sequences (10000363 bp)...
-[0000] 2. Calling kt_for - worker_aln
-[0000] 3. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 40984 reads in 5.064 CPU sec, 4.892 real sec
-[0000] Calling mem_process_seqs.., task: 9
-[0000] 1. Calling kt_for - worker_bwt
-[0000] read_chunk: 10000000, work_chunk_size: 10000015, nseq: 41842
-	[0000][ M::kt_pipeline] read 41842 sequences (10000015 bp)...
-[0000] 2. Calling kt_for - worker_aln
-[0000] 3. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 44428 reads in 7.661 CPU sec, 7.498 real sec
-[0000] Calling mem_process_seqs.., task: 10
-[0000] 1. Calling kt_for - worker_bwt
-[0000] read_chunk: 10000000, work_chunk_size: 10000055, nseq: 40820
-	[0000][ M::kt_pipeline] read 40820 sequences (10000055 bp)...
-[0000] 2. Calling kt_for - worker_aln
-[0000] 3. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 41842 reads in 4.327 CPU sec, 4.140 real sec
-[0000] Calling mem_process_seqs.., task: 11
-[0000] 1. Calling kt_for - worker_bwt
-[0000] read_chunk: 10000000, work_chunk_size: 6341350, nseq: 25636
-	[0000][ M::kt_pipeline] read 25636 sequences (6341350 bp)...
-[0000] 2. Calling kt_for - worker_aln
-[0000] 3. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 40820 reads in 5.356 CPU sec, 5.237 real sec
-[0000] Calling mem_process_seqs.., task: 12
-[0000] 1. Calling kt_for - worker_bwt
-[0000] read_chunk: 10000000, work_chunk_size: 0, nseq: 0
-[0000] 2. Calling kt_for - worker_aln
-[0000] 3. Calling kt_for - worker_sam
-	[0000][ M::mem_process_seqs] Processed 25636 reads in 4.341 CPU sec, 4.276 real sec
-[0000] read_chunk: 10000000, work_chunk_size: 0, nseq: 0
-[0000] Computation ends..
-No. of OMP threads: 1
-Processor is running @2995.546832 MHz
-Runtime profile:
-
-	Time taken for main_mem function: 50.45 sec
-
-	IO times (sec) :
-	Reading IO time (reads) avg: 1.26, (1.26, 1.26)
-	Writing IO time (SAM) avg: 0.93, (0.93, 0.93)
-	Reading IO time (Reference Genome) avg: 0.00, (0.00, 0.00)
-	Index read time avg: 0.00, (0.00, 0.00)
-
-	Overall time (sec) (Excluding Index reading time):
-	PROCESS() (Total compute time + (read + SAM) IO time) : 50.39
-	MEM_PROCESS_SEQ() (Total compute time (Kernel + SAM)), avg: 50.24, (50.24, 50.24)
-
-	 SAM Processing time (sec):
-	--WORKER_SAM avg: 27.22, (27.22, 27.22)
-
-	Kernels&#39; compute time (sec):
-	Total kernel (smem+sal+bsw) time avg: 23.02, (23.02, 23.02)
-		SMEM compute avg: 9.44, (9.44, 9.44)
-		SAL compute avg: 1.01, (1.01, 1.01)
-				MEM_SA avg: 0.59, (0.59, 0.59)
-
-		BSW time, avg: 12.33, (12.33, 12.33)
-
-Important parameter settings: 
-	BATCH_SIZE: 512
-	MAX_SEQ_LEN_REF: 256
-	MAX_SEQ_LEN_QER: 128
-	MAX_SEQ_LEN8: 128
-	SEEDS_PER_READ: 500
-	SIMD_WIDTH8 X: 64
-	SIMD_WIDTH16 X: 32
-	AVG_SEEDS_PER_READ: 64
-</pre>
+     </div>
+</div>
 </div>
 </div>
 
 </div>
+<div id="cell-id=e241ffae-448a-42ff-879e-ecc7d293b5ea" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<details>
+  <summary>Genome alignement solutions</summary>
+
+<ol>
+<li><p><code>bwa-mem2 index test_files/sars_reference_genome/sequence_sarscov2.fasta</code></p>
+</li>
+<li><p><code>bwa-mem2 mem test_files/sars_reference_genome/sequence_sarscov2.fasta test_files/SRR25109930.fastq.gz -o test_files/sars_alignment.sam</code>
+<code>samtools view -S -b test_files/sars_alignment.sam &gt; test_files/sars_alignment.bam</code></p>
+</li>
+<li><p><code>samtools coverage sars_alignment.sam</code></p>
+</li>
+</ol>
+</details>
+
 
 </div>
-
+</div>
+</div>
 </div>
 <div id="cell-id=70d39350-c985-407d-af50-7c3a1cc98f2b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -16087,19 +15936,23 @@ Important parameter settings:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Transcriptomic-analysis-from-raw-data-to-differential-expression-results">Transcriptomic analysis from raw data to differential expression results<a class="anchor-link" href="#Transcriptomic-analysis-from-raw-data-to-differential-expression-results">&#182;</a></h2><h3 id="Transcript-count">Transcript count<a class="anchor-link" href="#Transcript-count">&#182;</a></h3>
+<h1 id="Transcriptomic-analysis-from-raw-data-to-differential-expression-results">Transcriptomic analysis from raw data to differential expression results<a class="anchor-link" href="#Transcriptomic-analysis-from-raw-data-to-differential-expression-results">&#182;</a></h1><h2 id="Transcript-count">Transcript count<a class="anchor-link" href="#Transcript-count">&#182;</a></h2><ol>
+<li>Index raw data using kallisto</li>
+<li>Estimate abundance of transcripts in the sample</li>
+</ol>
+
 </div>
 </div>
 </div>
-</div><div id="cell-id=679dd72f-eea0-45ec-9d95-2ccabaa701b4" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=679dd72f-eea0-45ec-9d95-2ccabaa701b4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="w"> </span>kallisto<span class="w"> </span>index<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;test_files/hg38_transcripts.fa&quot;</span><span class="w"> </span><span class="s2">&quot;test_files/hg38_F.fq.gz&quot;</span><span class="w"> </span><span class="s2">&quot;test_files/hg38_R.fq.gz&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
      </div>
@@ -16107,114 +15960,45 @@ Important parameter settings:
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-[build] loading fasta file test_files/hg38_F.fq.gz
-[build] loading fasta file test_files/hg38_R.fq.gz
-[build] k-mer length: 31
-[build] warning: clipped off poly-A tail (longer than 10)
-        from 6 target sequences
-[build] warning: replaced 294 non-ACGUT characters in the input sequence
-        with pseudorandom nucleotides
-[build] counting k-mers ... done.
-[build] building target de Bruijn graph ...  done 
-[build] creating equivalence classes ...  done
-[build] target de Bruijn graph has 2469 contigs and contains 48269 k-mers 
-
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=e83754ff-3aba-4e83-9312-727f3b82d4ee" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=6754104d-580a-41fd-a613-abe976a7323b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="w"> </span>kallisto<span class="w"> </span>quant<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;test_files/hg38_transcripts.fa&quot;</span><span class="w"> </span><span class="s2">&quot;test_files/hg38_F.fq.gz&quot;</span><span class="w"> </span><span class="s2">&quot;test_files/hg38_R.fq.gz&quot;</span><span class="w"> </span>-b<span class="w"> </span><span class="m">100</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;test_files/kallisto_output&quot;</span>
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<details>
+  <summary>Transcriptomic analysis solutions</summary>
 
-     </div>
+<ol>
+<li><p><code>kallisto index -i &quot;test_files/hg38_transcripts.fa&quot; &quot;test_files/hg38_F.fq.gz&quot; &quot;test_files/hg38_R.fq.gz&quot;</code></p>
+</li>
+<li><p><code>kallisto quant -i &quot;test_files/hg38_transcripts.fa&quot; &quot;test_files/hg38_F.fq.gz&quot; &quot;test_files/hg38_R.fq.gz&quot; -b 100 -o &quot;test_files/kallisto_output&quot;</code></p>
+</li>
+</ol>
+</details>
+
+
 </div>
 </div>
 </div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-[quant] fragment length distribution will be estimated from the data
-[index] k-mer length: 31
-[index] number of targets: 1,488
-[index] number of k-mers: 48,269
-[index] number of equivalence classes: 2,871
-[quant] running in paired-end mode
-[quant] will process pair 1: test_files/hg38_F.fq.gz
-                             test_files/hg38_R.fq.gz
-[quant] finding pseudoalignments for the reads ... done
-[quant] processed 744 reads, 0 reads pseudoaligned
-[~warn] no reads pseudoaligned.
-[quant] estimated average fragment length: 0
-[   em] quantifying the abundances ... done
-[   em] the Expectation-Maximization algorithm ran for 52 rounds
-[~warn] Warning, zero reads pseudoaligned check your input files and index
-
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=df587cba-7bb1-46e5-9293-b97e6ce4b7c6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=f694a580-f273-453c-ae60-767b25b183c0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Differential analysis of counts</span>
-</pre></div>
-
-     </div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Differential-analysis-of-counts">Differential analysis of counts<a class="anchor-link" href="#Differential-analysis-of-counts">&#182;</a></h2>
 </div>
 </div>
 </div>
-
 </div><div id="cell-id=5877c736-8c41-4350-90b6-b06772f99046" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span>
@@ -16222,6 +16006,8 @@ Important parameter settings:
 <span class="nf">library</span><span class="p">(</span><span class="s">&quot;tximportData&quot;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="s">&quot;tximport&quot;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;RColorBrewer&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;pheatmap&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16249,21 +16035,6 @@ R[write to console]: Le chargement a nécessité le package : BiocGenerics
 
 R[write to console]: 
 Attachement du package : ‘BiocGenerics’
-
-
-R[write to console]: L&#39;objet suivant est masqué depuis ‘package:gridExtra’:
-
-    combine
-
-
-R[write to console]: L&#39;objet suivant est masqué depuis ‘package:adegraphics’:
-
-    score
-
-
-R[write to console]: L&#39;objet suivant est masqué depuis ‘package:ade4’:
-
-    score
 
 
 R[write to console]: Les objets suivants sont masqués depuis ‘package:stats’:
@@ -16361,7 +16132,7 @@ R[write to console]: Les objets suivants sont masqués depuis ‘package:matrixS
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span>
@@ -16370,7 +16141,7 @@ R[write to console]: Les objets suivants sont masqués depuis ‘package:matrixS
 <span class="n">samples</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.table</span><span class="p">(</span><span class="nf">file.path</span><span class="p">(</span><span class="n">dir</span><span class="p">,</span><span class="s">&quot;samples.txt&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">header</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="n">samples</span><span class="o">$</span><span class="n">condition</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;control&quot;</span><span class="p">,</span><span class="s">&quot;treated&quot;</span><span class="p">),</span><span class="n">each</span><span class="o">=</span><span class="m">3</span><span class="p">))</span>
 <span class="nf">rownames</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">samples</span><span class="o">$</span><span class="n">run</span>
-<span class="n">samples</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;pop&quot;</span><span class="p">,</span><span class="s">&quot;center&quot;</span><span class="p">,</span><span class="s">&quot;run&quot;</span><span class="p">,</span><span class="s">&quot;condition&quot;</span><span class="p">)]</span>
+<span class="n">samples</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;pop&quot;</span><span class="p">,</span><span class="s">&quot;assay&quot;</span><span class="p">,</span><span class="s">&quot;condition&quot;</span><span class="p">)]</span>
 </pre></div>
 
      </div>
@@ -16390,13 +16161,13 @@ R[write to console]: Les objets suivants sont masqués depuis ‘package:matrixS
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>          pop center       run condition
-ERR188297 TSI  UNIGE ERR188297   control
-ERR188088 TSI  UNIGE ERR188088   control
-ERR188329 TSI  UNIGE ERR188329   control
-ERR188288 TSI  UNIGE ERR188288   treated
-ERR188021 TSI  UNIGE ERR188021   treated
-ERR188356 TSI  UNIGE ERR188356   treated
+<pre>          pop                assay condition
+ERR188297 TSI NA20503.1.M_111124_5   control
+ERR188088 TSI NA20504.1.M_111124_7   control
+ERR188329 TSI NA20505.1.M_111124_6   control
+ERR188288 TSI NA20507.1.M_111124_7   treated
+ERR188021 TSI NA20508.1.M_111124_2   treated
+ERR188356 TSI NA20514.1.M_111124_4   treated
 </pre>
 </div>
 </div>
@@ -16410,7 +16181,7 @@ ERR188356 TSI  UNIGE ERR188356   treated
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span>
@@ -16483,7 +16254,7 @@ R[write to console]: summarizing length
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span>
@@ -16491,45 +16262,6 @@ R[write to console]: summarizing length
 <span class="n">ddsTxi</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">DESeqDataSetFromTximport</span><span class="p">(</span><span class="n">txi</span><span class="p">,</span>
 <span class="w">                                   </span><span class="n">colData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">samples</span><span class="p">,</span>
 <span class="w">                                   </span><span class="n">design</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">condition</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>R[write to console]: using counts and average transcript lengths from tximport
-
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=0db3ab62-4eb5-47f5-ac33-b3e41141a889" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span>
-<span class="c1"># Use DESeq2 model</span>
 <span class="n">dds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">DESeq</span><span class="p">(</span><span class="n">ddsTxi</span><span class="p">)</span>
 <span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">results</span><span class="p">(</span><span class="n">dds</span><span class="p">)</span>
 </pre></div>
@@ -16551,7 +16283,9 @@ R[write to console]: summarizing length
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>R[write to console]: estimating size factors
+<pre>R[write to console]: using counts and average transcript lengths from tximport
+
+R[write to console]: estimating size factors
 
 R[write to console]: using &#39;avgTxLength&#39; from assays(dds), correcting for library size
 
@@ -16573,12 +16307,64 @@ R[write to console]: fitting model and testing
 
 </div>
 
+</div><div id="cell-id=5b7c3e23-7ad6-44b0-85c6-1aff0d5083f9" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span>
+<span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>                      baseMean log2FoldChange     lfcSE       stat     pvalue
+ENSG00000000003.14    7.823792    -1.09305128 1.0746856 -1.0170894 0.30911092
+ENSG00000000005.5     0.000000             NA        NA         NA         NA
+ENSG00000000419.12 1231.709864    -0.19317198 0.2924613 -0.6605043 0.50893024
+ENSG00000000457.13  498.809533    -0.18008643 0.2984956 -0.6033136 0.54630011
+ENSG00000000460.16  716.121634    -0.08131913 0.3718999 -0.2186587 0.82691596
+ENSG00000000938.12 2696.996073    -0.57072368 0.3460502 -1.6492511 0.09909621
+                        padj
+ENSG00000000003.14 0.9999798
+ENSG00000000005.5         NA
+ENSG00000000419.12 0.9999798
+ENSG00000000457.13 0.9999798
+ENSG00000000460.16 0.9999798
+ENSG00000000938.12 0.9999798
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div><div id="cell-id=9f4ec128-a72b-44b4-8578-e851ec9e2ee2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span>
@@ -16623,7 +16409,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span>
@@ -16636,19 +16422,27 @@ class="
 </div>
 </div>
 
+</div>
+<div id="cell-id=968a59b4-acb5-4e2e-9b5a-04feff13adc4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Distance-matrix">Distance matrix<a class="anchor-link" href="#Distance-matrix">&#182;</a></h2>
+</div>
+</div>
+</div>
 </div><div id="cell-id=96d5665e-121f-4af8-b55d-618cccc52e5e" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span>
 <span class="c1"># Plot of sample distance</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">pheatmap</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&quot;RColorBrewer&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&quot;pheatmap&quot;</span><span class="p">)</span>
 <span class="n">sampleDistMatrix</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">sampleDists</span><span class="p">)</span>
 <span class="nf">rownames</span><span class="p">(</span><span class="n">sampleDistMatrix</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">vsd</span><span class="o">$</span><span class="n">condition</span><span class="p">,</span><span class="w"> </span><span class="n">vsd</span><span class="o">$</span><span class="n">sample</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;-&quot;</span><span class="p">)</span>
 <span class="nf">colnames</span><span class="p">(</span><span class="n">sampleDistMatrix</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">NULL</span>
@@ -16690,12 +16484,23 @@ class="
 
 </div>
 
+</div>
+<div id="cell-id=666b526b-522c-4022-baa6-c42a62ab773d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Sample-PCA">Sample PCA<a class="anchor-link" href="#Sample-PCA">&#182;</a></h2>
+</div>
+</div>
+</div>
 </div><div id="cell-id=526f73ee-b43b-4f65-9814-c456286d7f06" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">R</span>
@@ -16733,7 +16538,7 @@ class="
 
 </div>
 
-</div><div id="cell-id=196a20c5-354c-40a0-9ce8-479ffde2c3f5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=add87aa8-84f7-4ef6-9f18-a0d9fa7779a7" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
