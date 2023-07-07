@@ -26,7 +26,7 @@ Construction d'un projet de formation aux pratiques FAIR
 4. Gestion de workflow
     > - Gestionnaire de workflow avec snakemake
 
-4. Documentation du code
+5. Documentation du code
   - Introduction aux sytèmes de documentations
     > - Introduction à Rmarkdown
     > - Introduction à jupyter et jupyterlab
@@ -40,10 +40,10 @@ Le dépôt se structure selon les 4 thématiques développées :
    - Le [cours](fair_encapsulation/fair_encapsulation_cours/fair_introduction_encapsulation_cours.pdf)
    - Les [TP](fair_encapsulation/fair_encapsulation_TP) pour [conda](fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_conda/fair_encapsulation_conda.ipynb) et [singularity](fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_containers/fair_singularity_TP.html)
 
-[fair_workflow](fair_workflow) contient :
+4. [fair_workflow](fair_workflow) contient :
    - Le cours de gestion des workflows avec [snakemake](fair_workflow/fair_workflow_cours/introduction_snakemake.pdf)
    - Le [TP snakemake](fair_workflow/fair_workflow_TP/snakemake_TP.pdf)
-4. [fair_documentation](fair_documentation) contient :
+5. [fair_documentation](fair_documentation) contient :
     - Le [cours](fair_documentation/fair_documentation_cours/fair_introduction_documentation.pdf)
     - Le [TP jupyter](fair_documentation/fair_documentation_TP/fair_documentation_jupyter_TP/00_encapsulation_jupyter.ipynb)
     - Le [TP rmarkdown](fair_documentation/fair_documentation_TP/fair_documentation_rmardown_TP/rmarkdown_TP)
