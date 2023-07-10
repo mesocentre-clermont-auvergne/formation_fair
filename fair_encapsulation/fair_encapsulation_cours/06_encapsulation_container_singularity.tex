@@ -184,8 +184,7 @@ To generate this message, Docker took the following steps:
 \end{frame}
 
 \begin{frame}{Build my own image}
-Some few docker specific commands
-AJOUTER UN LIEN DOCKER POUR LE SITTTTTTEEEE
+Some few docker specific commands \href{https://docs.docker.com/engine/reference/commandline/cli/}{specific commands}
 \newline
 \newline
 \centering
@@ -227,10 +226,17 @@ RUN echo "HELLO WORLD !"
 
 \begin{frame}[fragile]{Build command}
 \begin{verbatim}
-AJOUTER UN SOUS TITRE POUR EXPLCICITE RLE CAS DE GITHUB
-AJOUTER code gras pour les commandes
 $ docker build [url/path] --tag [docker_name]
 special case with github url like :
+[url]\#[branch_name][file_path]
+$ docker build https://github.com/mesocentre-clermont-auvergne/formation_fair.git \
+\#main:/fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_containers/fair_encapsulation_docker/docker_assembly_raw 
+-t assembly_raw
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Special case from github}
+\begin{verbatim}
 [url]\#[branch_name][file_path]
 $ docker build https://github.com/mesocentre-clermont-auvergne/formation_fair.git \
 \#main:/fair_encapsulation/fair_encapsulation_TP/fair_encapsulation_containers/fair_encapsulation_docker/docker_assembly_raw 
