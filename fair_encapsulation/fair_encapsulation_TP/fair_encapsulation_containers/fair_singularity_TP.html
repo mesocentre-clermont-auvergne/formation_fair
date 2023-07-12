@@ -180,7 +180,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir fastqc_output    </span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker run <span class="at">-v</span> <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/in <span class="at">-w</span> /in staphb/fastqc fastqc SRR13957123_1.fastq.gz <span class="at">--outdir</span> fastqc_output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker run <span class="at">-v</span> <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/in <span class="at">-w</span> /in staphb/fastqc fastqc SRR13957123.fastq.gz <span class="at">--outdir</span> fastqc_output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Le fichier fastq peut être téléchargé depuis le site NIH avec la commande :</p>
+<p><code>wget -O SRR13957123.fastq.gz https://trace.ncbi.nlm.nih.gov/Traces/sra-reads-be/fastq?acc=SRR13957123</code></p>
 <p>Les resultats sont disponible dans le répertoire de travail.</p>
 <p>Enfin, pour supprimer une image <code>Docker</code> il suffit de faire :</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> docker image rm <span class="at">-f</span> IMAGE_ID</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
