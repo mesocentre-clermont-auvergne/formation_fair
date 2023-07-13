@@ -34,19 +34,21 @@ $ conda activate snakemake
 Create directories to get this architecture:
 
 ```
-├── data -> /ifb/data
-├── logs
-├── results
-└── workflow
+├──/home/ubuntu
+    ├── data -> /ifb/data
+    ├── logs
+    ├── results
+    └── workflow
+        ├──envs
 ```
 
 Note: On Ubuntu, `mkdir` command does the job.
 
 ```bash
-(snakemake)$ mkdir logs results workflow
+(snakemake)$ mkdir logs results workflow workflow/envs
 ```
 
-At the end of the practice, the architecture should look like this:
+At the end of the practice, the architecture will look like this:
 
 ```
 ├── data-> /ifb/data
@@ -71,7 +73,7 @@ At the end of the practice, the architecture should look like this:
 
 ## Conda environment based on the qc.yml file:
 
-Create a new file in workflow directory as follow,
+Create a new `qc.yaml` file in `workflows/envs` directory as follow,
 
     name: qc # conda environment name
     channels:
@@ -100,9 +102,11 @@ O.tauri_genome.fna      SRR3099586_chr18.fastq.gz  SRR3105697_chr18.fastq.gz  SR
 
 ### 1. The Snakefile example
 
-The final objective is to create a `Snakefile` to manage a small workflow with 2 steps: i) fastqc ii) multiqc
+The final objective is to create a `Snakefile` to manage a small workflow with 2 steps:
+- I) fastqc 
+- II) multiqc
 
-These two tools belonging to the bioinformatics domain allow to check the quality of high throughput sequence data. They are accessible via a Conda environment, `qc.yml`
+These two tools belonging to the bioinformatics domain allow to check the quality of high throughput sequence data. They are accessible via a Conda environment, `qc.yaml`
 
 note:
 If you have already run this notebook, you may need to run:
@@ -122,7 +126,7 @@ fastqc access: through a conda environment (see prerequisites on top)
 	outputfiles produced in outdir:
 	The 2 result files (*_fastqc.zip & *_fastqc.html) will be located in your outdirectory and named based on the prefix of input file (eg. SRR3099585_chr18_fastqc.zip)
 
-Create the Snakefile
+Create the Snakefile: `Snakefile.ex1.smk`
 
 ```bash
 # Go to workflow directory and create a new file called `Snakefile_ex1.smk`
@@ -137,7 +141,7 @@ Create the Snakefile
             "results/FastQC/SRR3099585_chr18_fastqc.zip",
             "results/FastQC/SRR3099585_chr18_fastqc.html"
         conda:
-            envs/qc.yaml
+            "envs/qc.yaml"
         shell: "fastqc --outdir results/FastQC/ {input}"
 
 Then execute snakemake:
@@ -146,6 +150,7 @@ Then execute snakemake:
 (snakemake)$ pwd
 /home/ubuntu
 (snakemake)$ snakemake --snakefile workflow/Snakefile.ex1.smk --cores 1 --use-conda
+
 Building DAG of jobs...
 Creating conda environment workflow/envs/qc.yaml...
 Downloading and installing remote packages.
@@ -205,17 +210,27 @@ Don’t forget to add the cognate output files in the Snakefile !
 
 Create a new Snakefile Snakefile.ex2.smk containing:
 
-    rule fastqc:
-      output:
-        "FastQC/SRR3099585_chr18_fastqc.zip",
-        "FastQC/SRR3099585_chr18_fastqc.html",
-        "FastQC/SRR3099586_chr18_fastqc.zip",
-        "FastQC/SRR3099586_chr18_fastqc.html"
-      input:
-        "Data/SRR3099585_chr18.fastq.gz",
-        "Data/SRR3099586_chr18.fastq.gz"
-      shell: "fastqc --outdir FastQC/ {input}"
+```commandline
+rule all:
+    input:
+        "results/FastQC/SRR3099585_chr18_fastqc.zip",
+        "results/FastQC/SRR3099585_chr18_fastqc.html",
+        "results/FastQC/SRR3099586_chr18_fastqc.zip",
+        "results/FastQC/SRR3099586_chr18_fastqc.html"
 
+rule fastqc:
+    input:
+        "data/mydatalocal/Data/SRR3099585_chr18.fastq.gz",
+        "data/mydatalocal/Data/SRR3099586_chr18.fastq.gz"
+    output:
+        "results/FastQC/SRR3099585_chr18_fastqc.zip", 
+        "results/FastQC/SRR3099585_chr18_fastqc.html",
+        "results/FastQC/SRR3099586_chr18_fastqc.zip",
+        "results/FastQC/SRR3099586_chr18_fastqc.html"
+    conda:
+        "envs/qc.yaml"
+    shell: "fastqc --outdir results/FastQC/ {input}"
+```
 Then execute snakemake:
 
 ```bash
@@ -272,23 +287,30 @@ Hint:
 Use the expand() function to manage all the input RNAseq files at once.
 
 Create a Python list at the begining of the snakefile and containing all the basename of the input files (don’t include the .fastq.gz suffix).
-
-	Python list format: list_name = ["item1", "item2", ..., "itemN"]
-	Replace the filename lists of the input and output directives by the `expand()` function.
-
+```commandline
+Python list format: list_name = ["item1", "item2", ..., "itemN"]
+Replace the filename lists of the input and output directives by the `expand()` function.
+```
 Create another Snakefile called Snakefile.ex3.smk containing:
+```commandline
+SAMPLES=["SRR3099585_chr18", "SRR3099586_chr18", "SRR3099587_chr18", "SRR3105697_chr18", "SRR3105698_chr18", "SRR3105699_chr18"]
 
-    SAMPLES=["SRR3099585_chr18","SRR3099586_chr18","SRR3099587_chr18", "SRR3105697_chr18", "SRR3105698_chr18", "SRR3105699_chr18"]
-
-    rule fastqc:
-      output:
-            expand("FastQC/{sample}_fastqc.zip", sample=SAMPLES),
-            expand("FastQC/{sample}_fastqc.html", sample=SAMPLES)
-      input:
-            expand("data/{sample}.fastq.gz", sample=SAMPLES)
-      shell: "fastqc --outdir FastQC {input}"
-
-
+rule all:
+    input:
+        expand("results/FastQC/{sample}_fastqc.zip", sample=SAMPLES),
+        expand("results/FastQC/{sample}_fastqc.html", sample=SAMPLES)
+        
+rule fastqc:
+    input:
+        expand("data/mydatalocal/Data/{sample}.fastq.gz", sample=SAMPLES),
+        expand("data/mydatalocal/Data/{sample}.fastq.gz", sample=SAMPLES)
+    output:
+        expand("results/FastQC/{sample}_fastqc.zip", sample=SAMPLES), 
+        expand("results/FastQC/{sample}_fastqc.html", sample=SAMPLES)
+    conda:
+        "envs/qc.yaml"
+    shell: "fastqc --outdir results/FastQC/ {input}"
+```
 Then execute snakemake:
 
 ```bash
@@ -351,34 +373,37 @@ The second tool, multiqc will aggregate all the fastqc results.
 	2 outputs: a file multiqc_report.html & a repository multiqc_data (to manage with directory("multiqc_data"))
 
 Create another Snakefile called Snakefile.ex4.smk:
+```commandline
+SAMPLES=["SRR3099585_chr18", "SRR3099586_chr18", "SRR3099587_chr18", "SRR3105697_chr18", "SRR3105698_chr18", "SRR3105699_chr18"]
 
-    SAMPLES=["SRR3099585_chr18", "SRR3099586_chr18", "SRR3099587_chr18", "SRR3105697_chr18", "SRR3105698_chr18", "SRR3105699_chr18"]
+rule all:
+    input:
+        expand("results/FastQC/{sample}_fastqc.html", sample=SAMPLES),
+        "results/multiqc/multiqc_report.html"
+        
+rule fastqc:
+    input:
+         expand("data/mydatalocal/Data/{sample}.fastq.gz", sample=SAMPLES)
+    output:
+        expand("results/FastQC/{sample}_fastqc.zip", sample=SAMPLES), 
+        expand("results/FastQC/{sample}_fastqc.html", sample=SAMPLES)
+    conda:
+        "envs/qc.yaml"
+    shell: "fastqc --outdir results/FastQC/ {input}"
 
-    rule all:
-        input:
-           expand("results/FastQC/{sample}_fastqc.html", sample=SAMPLES),
-           "results/multiqc/multiqc_report.html"
 
-    rule fastqc:
-       input:
-             expand("data/mydatalocal/Data/{sample}.fastq.gz", sample=SAMPLES)
-       output:
-             expand("results/FastQC/{sample}_fastqc.zip", sample=SAMPLES),
-             expand("results/FastQC/{sample}_fastqc.html", sample=SAMPLES)
-       conda:
-            "envs/qc.yaml"
-        shell: "fastqc --outdir results/FastQC/ {input}"
-
-    rule multiqc:
-       input:
-           expand("results/FastQC/{sample}_fastqc.zip", sample = SAMPLES)
-       output:
-            "results/multiqc/multiqc_report.html"
-       conda:
-            "envs/qc.yaml"
-        shell:
-            "multiqc --outdir results/multiqc {input}"
-
+rule multiqc:
+    input:
+        expand("results/FastQC/{sample}_fastqc.zip", sample = SAMPLES)
+    output:
+        "results/multiqc/multiqc_report.html"
+    log:
+        "logs/multiqc.log"
+    conda:
+        "envs/qc.yaml"
+    shell:
+        "multiqc --outdir results/multiqc {input}  2> {log}"
+```
 
 Then execute snakemake:
 
