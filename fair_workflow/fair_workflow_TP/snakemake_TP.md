@@ -103,7 +103,7 @@ O.tauri_genome.fna      SRR3099586_chr18.fastq.gz  SRR3105697_chr18.fastq.gz  SR
 ### 1. The Snakefile example
 
 The final objective is to create a `Snakefile` to manage a small workflow with 2 steps:
-- I) fastqc 
+- I) fastqc
 - II) multiqc
 
 These two tools belonging to the bioinformatics domain allow to check the quality of high throughput sequence data. They are accessible via a Conda environment, `qc.yaml`
@@ -141,7 +141,7 @@ Create the Snakefile: `Snakefile.ex1.smk`
             "results/FastQC/SRR3099585_chr18_fastqc.zip",
             "results/FastQC/SRR3099585_chr18_fastqc.html"
         conda:
-            "envs/qc.yaml"
+            envs/qc.yaml
         shell: "fastqc --outdir results/FastQC/ {input}"
 
 Then execute snakemake:
@@ -223,7 +223,7 @@ rule fastqc:
         "data/mydatalocal/Data/SRR3099585_chr18.fastq.gz",
         "data/mydatalocal/Data/SRR3099586_chr18.fastq.gz"
     output:
-        "results/FastQC/SRR3099585_chr18_fastqc.zip", 
+        "results/FastQC/SRR3099585_chr18_fastqc.zip",
         "results/FastQC/SRR3099585_chr18_fastqc.html",
         "results/FastQC/SRR3099586_chr18_fastqc.zip",
         "results/FastQC/SRR3099586_chr18_fastqc.html"
@@ -299,13 +299,13 @@ rule all:
     input:
         expand("results/FastQC/{sample}_fastqc.zip", sample=SAMPLES),
         expand("results/FastQC/{sample}_fastqc.html", sample=SAMPLES)
-        
+
 rule fastqc:
     input:
         expand("data/mydatalocal/Data/{sample}.fastq.gz", sample=SAMPLES),
         expand("data/mydatalocal/Data/{sample}.fastq.gz", sample=SAMPLES)
     output:
-        expand("results/FastQC/{sample}_fastqc.zip", sample=SAMPLES), 
+        expand("results/FastQC/{sample}_fastqc.zip", sample=SAMPLES),
         expand("results/FastQC/{sample}_fastqc.html", sample=SAMPLES)
     conda:
         "envs/qc.yaml"
@@ -380,12 +380,12 @@ rule all:
     input:
         expand("results/FastQC/{sample}_fastqc.html", sample=SAMPLES),
         "results/multiqc/multiqc_report.html"
-        
+
 rule fastqc:
     input:
          expand("data/mydatalocal/Data/{sample}.fastq.gz", sample=SAMPLES)
     output:
-        expand("results/FastQC/{sample}_fastqc.zip", sample=SAMPLES), 
+        expand("results/FastQC/{sample}_fastqc.zip", sample=SAMPLES),
         expand("results/FastQC/{sample}_fastqc.html", sample=SAMPLES)
     conda:
         "envs/qc.yaml"
